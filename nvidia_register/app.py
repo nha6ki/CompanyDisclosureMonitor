@@ -17,6 +17,7 @@ ROOT = Path(__file__).resolve().parent.parent
 sys.path.insert(0, str(ROOT))
 import reporting
 import companies
+import microsoft
 import periods
 import llm_runner
 import read_sections
@@ -333,8 +334,16 @@ def application(reg,port):
                 else:
                     body = page("Magnificent Seven 開示一覧", companies.render(
                         data, rows, ticker, item, hidden("token", reg.token)))
-            elif method == "GET" and path == "/demo":
-                body=(Path(__file__).resolve().parent/"public_demo"/"index.html").read_bytes()
+            elif method == "GET" and path in ("/demo", "/company/MSFT", "/company/NVDA"):
+                body = (Path(__file__).resolve().parent / "public_demo" / "index.html").read_bytes()
+                local = microsoft.local_result(reg.root)
+                if local.is_file():
+                    document = body.decode("utf-8")
+                    marker = '<script type="application/json" id="msft-record">'
+                    before, middle = document.split(marker, 1)
+                    _, after = middle.split("</script>", 1)
+                    data = json.dumps(read(local), ensure_ascii=True).replace("<", chr(92) + "u003c")
+                    body = (before + marker + data + "</script>" + after).encode("utf-8")
             elif method == "GET" and path == "/report":
                 number = int(parse_qs(env["QUERY_STRING"])["id"][0])
                 result = reg.db.execute("SELECT data FROM reports WHERE id=?",(number,)).fetchone()

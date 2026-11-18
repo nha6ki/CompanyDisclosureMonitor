@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<meta name="theme-color" content="#102b26"><title>NVIDIA filing coverage | Company Disclosure Monitor</title>
-<meta name="description" content="Explore eight quarters of NVIDIA SEC filings, compare GAAP figures with the source tables, and download the coverage report.">
+<meta name="theme-color" content="#102b26"><title>Company financials | Company Disclosure Monitor</title>
+<meta name="description" content="Explore NVIDIA and Microsoft quarterly GAAP revenue and diluted EPS, compare figures with SEC source tables, and download the evidence.">
 <style>
 :root{--ink:#172e29;--muted:#536760;--forest:#102e29;--line:#d5dcd3;--leaf:#c6ee72;--paper:#f6f7f2;--mono:'IBM Plex Mono',Consolas,monospace;font:16px/1.5 'Inter','Segoe UI',system-ui,sans-serif;color:var(--ink);background:var(--paper);font-variant-numeric:tabular-nums}
 *{box-sizing:border-box}body{margin:0}button,a,input,select{font:inherit}button,select{cursor:pointer}a{color:inherit;text-underline-offset:.2em}button{color:inherit}
@@ -36,57 +36,117 @@ table{border-collapse:collapse;width:100%;font-size:14px}th,td{padding:12px 14px
 @media(max-width:900px){.work{grid-template-columns:1fr  minmax(265px,.8fr);gap:14px}.pad{padding:15px}th,td{padding:10px 7px}.herogrid{gap:25px}}
 @media(max-width:730px){.herogrid,.work{grid-template-columns:1fr}.herogrid{padding-block:25px;gap:18px}.hero h1{font-size:41px}.hero .summary{margin:10px 0}.bars,.scale{height:102px}.herochart{padding:13px 16px}.work{padding-block:20px;gap:14px}.stats{grid-template-columns:repeat(2,1fr);gap:16px}.stat:nth-child(3){border:0;padding-left:0}.heading{flex-wrap:wrap}.ledger{scrollbar-width:thin}.ledger th,.ledger td{padding:11px 7px}.brand{font-size:15px}.focus{scroll-margin-top:10px}.wrap{padding-inline:16px}}
 @media print{header,.download,.skip,.lang,.method{display:none}.work{grid-template-columns:1fr}.hero{background:white;color:black}.herochart{display:none}}
+
+header .wrap{flex-wrap:wrap;padding-block:10px}.issuer-nav{display:flex;align-items:center;gap:.4rem;flex-wrap:wrap}.issuer-nav a{font-size:14px;padding:.3rem .65rem;border-radius:4px;text-decoration:none}.issuer-nav [aria-current=page]{background:#e1eadf;color:#193e30;font-weight:700}.issuer-nav a:hover{text-decoration:underline}.pill.bad{color:#822d21;background:#fbece7}.plot-col i{max-width:54px}
+@media(max-width:610px){.issuer-nav{width:100%;order:3}}
 </style></head><body>
 <a href="#register" class="skip" id="skip"></a>
-<header><div class="wrap"><a class="brand" href="#top"><span class="logo" aria-hidden="true"><i></i><i></i><i></i></span>Company Disclosure Monitor</a><button type="button" class="lang" id="lang"></button></div></header>
-<main id="top"><section class="hero"><div class="wrap herogrid"><div><p class="eyebrow">NASDAQ · NVDA &nbsp; / &nbsp; SEC Form 8-K</p><h1 id="title"></h1><p class="summary" id="summary"></p><p class="period" id="period"></p></div><figure class="herochart" style="margin:0"><figcaption class="charttop"><strong id="chartTitle"></strong><span class="chart-meta" id="axisUnit"></span></figcaption><div class="plot-tools" id="plotTools" role="group"></div><div class="plot"><div id="scale" class="scale" aria-hidden="true"></div><div class="bars" id="bars" role="group"></div><div id="periods" class="periods" aria-hidden="true"></div></div><div class="plot-detail"><output id="plotValue"></output><a href="#focus" id="plotLink"></a></div></figure></div></section>
+<header><div class="wrap"><a class="brand" href="#top"><span class="logo" aria-hidden="true"><i></i><i></i><i></i></span>Company Disclosure Monitor</a><nav class="issuer-nav" id="issuerNav" aria-label="Companies"><a id="back" hidden></a><a id="linkNVDA">NVIDIA</a><a id="linkMSFT">Microsoft</a></nav><button type="button" class="lang" id="lang"></button></div></header>
+<main id="top"><section class="hero"><div class="wrap herogrid"><div><p class="eyebrow" id="eyebrow"></p><h1 id="title"></h1><p class="summary" id="summary"></p><p class="period" id="period"></p></div><figure class="herochart" style="margin:0"><figcaption class="charttop"><strong id="chartTitle"></strong><span class="chart-meta" id="axisUnit"></span></figcaption><div class="plot-tools" id="plotTools" role="group"></div><div class="plot"><div id="scale" class="scale" aria-hidden="true"></div><div class="bars" id="bars" role="group"></div><div id="periods" class="periods" aria-hidden="true"></div></div><div class="plot-detail"><output id="plotValue"></output><a href="#focus" id="plotLink"></a></div></figure></div></section>
 <section class="wrap"><div class="stats" id="stats"></div></section>
 <div class="wrap work"><section class="card" id="register"><div class="pad"><div class="heading"><h2 id="ledgerTitle"></h2><button type="button" class="download" id="download"></button></div><p class="sub" id="ledgerSub"></p></div><div class="ledger"><table><thead id="head"></thead><tbody id="rows"></tbody></table></div></section>
 <section class="card pad focus" id="focus" tabindex="-1"><div class="kicker" id="evidence"></div><h2 id="selected"></h2><p class="meta" id="accession"></p><div class="tabs" id="tabs"></div><div id="reading" aria-live="polite"></div></section></div>
 <section class="wrap method"><details><summary id="methodTitle"></summary><p id="method"></p></details></section></main>
+<script type="application/json" id="msft-record">{"period": "FY2027Q1", "accession": "0001193125-26-436122", "filing": "https://www.sec.gov/Archives/edgar/data/789019/000119312526436122/msft-20261028.htm", "url": "https://www.sec.gov/Archives/edgar/data/789019/000119312526436122/msft-ex99_1.htm", "sha": "913edaadd93a01d9c0aa2b6fba936040b157951ba33579e7249390bc91e99b63", "quarterly": "https://www.sec.gov/Archives/edgar/data/789019/000119312526436133/msft-20260930.htm", "quarterlyAccession": "0001193125-26-436133", "quarterlySha": "b0a6acbf5de340588e12f990b56ece4e5d67de2922bf5aa9a6ab379c742e92a8", "facts": [{"metric": "Revenue", "value": "92279", "detail": "92279", "unit": "USD millions", "detailUnit": "USD millions", "summaryRow": "Total revenue", "row": "Total revenue", "column": "Three months ended September 30, 2026", "status": "一致", "reason": ""}, {"metric": "Diluted earnings per share", "value": "4.92", "detail": "4.92", "unit": "USD/share", "detailUnit": "USD/share", "summaryRow": "Earnings per share / Diluted", "row": "Earnings per share / Diluted", "column": "Three months ended September 30, 2026", "status": "一致", "reason": ""}]}</script>
 <script>
 'use strict';
-const records=[{"period": "FY2025Q4", "accession": "0001045810-25-000021", "url": "https://www.sec.gov/Archives/edgar/data/1045810/000104581025000021/q4fy25pr.htm", "filing": "https://www.sec.gov/Archives/edgar/data/1045810/000104581025000021/nvda-20250226.htm", "sha": "fa6ce87a0fdcc5575be02a3b0eee94254e40c48569daaa8f75242dccaa537df2", "facts": [{"value": "39331", "unit": "USD millions", "detail": "39,331", "detailUnit": "USD millions", "row": "Revenue", "column": "Three Months Ended January 26, 2025", "status": "一致", "metric": "Revenue", "summaryRow": "Revenue"}, {"value": "0.89", "unit": "USD/share", "detail": "0.89", "detailUnit": "USD/share", "row": "Net income per share / Diluted", "column": "Three Months Ended January 26, 2025", "status": "一致", "metric": "Diluted earnings per share", "summaryRow": "Diluted earnings per share*"}]}, {"period": "FY2026Q1", "accession": "0001045810-25-000115", "url": "https://www.sec.gov/Archives/edgar/data/1045810/000104581025000115/q1fy26pr.htm", "filing": "https://www.sec.gov/Archives/edgar/data/1045810/000104581025000115/nvda-20250528.htm", "sha": "79bc02be125714e0ce3c8dafce485fd7a8453e08cbd7dcb743838c62ddcd4aeb", "facts": [{"value": "44062", "unit": "USD millions", "detail": "44,062", "detailUnit": "USD millions", "row": "Revenue", "column": "Three Months Ended April 27, 2025", "status": "一致", "metric": "Revenue", "summaryRow": "Revenue"}, {"value": "0.76", "unit": "USD/share", "detail": "0.76", "detailUnit": "USD/share", "row": "Net income per share / Diluted", "column": "Three Months Ended April 27, 2025", "status": "一致", "metric": "Diluted earnings per share", "summaryRow": "Diluted earnings per share*"}]}, {"period": "FY2026Q2", "accession": "0001045810-25-000207", "url": "https://www.sec.gov/Archives/edgar/data/1045810/000104581025000207/q2fy26pr.htm", "filing": "https://www.sec.gov/Archives/edgar/data/1045810/000104581025000207/nvda-20250827.htm", "sha": "bc75009f7205708f8ba1aec6de315e428165cb4f1cf44eae0753da890d08cbe3", "facts": [{"value": "46743", "unit": "USD millions", "detail": "46,743", "detailUnit": "USD millions", "row": "Revenue", "column": "Three Months Ended July 27, 2025", "status": "一致", "metric": "Revenue", "summaryRow": "Revenue"}, {"value": "1.08", "unit": "USD/share", "detail": "1.08", "detailUnit": "USD/share", "row": "Net income per share / Diluted", "column": "Three Months Ended July 27, 2025", "status": "一致", "metric": "Diluted earnings per share", "summaryRow": "Diluted earnings per share"}]}, {"period": "FY2026Q3", "accession": "0001045810-25-000228", "url": "https://www.sec.gov/Archives/edgar/data/1045810/000104581025000228/q3fy26pr.htm", "filing": "https://www.sec.gov/Archives/edgar/data/1045810/000104581025000228/nvda-20251119.htm", "sha": "8ac74c45b465287f643a4b37726f70ef4ab63392692ca0cae9ef6b5f3a62621e", "facts": [{"value": "57006", "unit": "USD millions", "detail": "57,006", "detailUnit": "USD millions", "row": "Revenue", "column": "Three Months Ended October 26, 2025", "status": "一致", "metric": "Revenue", "summaryRow": "Revenue"}, {"value": "1.30", "unit": "USD/share", "detail": "1.30", "detailUnit": "USD/share", "row": "Net income per share / Diluted", "column": "Three Months Ended October 26, 2025", "status": "一致", "metric": "Diluted earnings per share", "summaryRow": "Diluted earnings per share"}]}, {"period": "FY2026Q4", "accession": "0001045810-26-000019", "url": "https://www.sec.gov/Archives/edgar/data/1045810/000104581026000019/q4fy26pr.htm", "filing": "https://www.sec.gov/Archives/edgar/data/1045810/000104581026000019/nvda-20260225.htm", "sha": "a43b65f0fef5cf4622c5c6908b255ec3dd4a409ec84ef2d7ee0321b566649666", "facts": [{"value": "68127", "unit": "USD millions", "detail": "68,127", "detailUnit": "USD millions", "row": "Revenue", "column": "Three Months Ended January 25, 2026", "status": "一致", "metric": "Revenue", "summaryRow": "Revenue"}, {"value": "1.76", "unit": "USD/share", "detail": "1.76", "detailUnit": "USD/share", "row": "Net income per share / Diluted", "column": "Three Months Ended January 25, 2026", "status": "一致", "metric": "Diluted earnings per share", "summaryRow": "Diluted earnings per share"}]}, {"period": "FY2027Q1", "accession": "0001045810-26-000051", "url": "https://www.sec.gov/Archives/edgar/data/1045810/000104581026000051/q1fy27pr.htm", "filing": "https://www.sec.gov/Archives/edgar/data/1045810/000104581026000051/nvda-20260520.htm", "sha": "2987ebc03457f44d67d847c14a68a2fca1dd130d6c841245057a4f8b6c29843d", "facts": [{"value": "81615", "unit": "USD millions", "detail": "81,615", "detailUnit": "USD millions", "row": "Revenue", "column": "Three Months Ended April 26, 2026", "status": "一致", "metric": "Revenue", "summaryRow": "Revenue"}, {"value": "2.39", "unit": "USD/share", "detail": "2.39", "detailUnit": "USD/share", "row": "Net income per share / Diluted", "column": "Three Months Ended April 26, 2026", "status": "一致", "metric": "Diluted earnings per share", "summaryRow": "Diluted earnings per share"}]}, {"period": "FY2027Q2", "accession": "0001045810-26-000073", "url": "https://www.sec.gov/Archives/edgar/data/1045810/000104581026000073/q2fy27pr.htm", "filing": "https://www.sec.gov/Archives/edgar/data/1045810/000104581026000073/nvda-20260826.htm", "sha": "972e6c1d066a7ed8f114fcd866c89177c6bfb3f54a80c318b71a8d936fb0d164", "facts": [{"value": "96221", "unit": "USD millions", "detail": "96,221", "detailUnit": "USD millions", "row": "Revenue", "column": "Three Months Ended July 26, 2026", "status": "一致", "metric": "Revenue", "summaryRow": "Revenue"}, {"value": "2.46", "unit": "USD/share", "detail": "2.46", "detailUnit": "USD/share", "row": "Net income per share / Diluted", "column": "Three Months Ended July 26, 2026", "status": "一致", "metric": "Diluted earnings per share", "summaryRow": "Diluted earnings per share"}]}, {"period": "FY2027Q3", "accession": "0001045810-26-000088", "url": "https://www.sec.gov/Archives/edgar/data/1045810/000104581026000088/q3fy27pr.htm", "filing": "https://www.sec.gov/Archives/edgar/data/1045810/000104581026000088/nvda-20261117.htm", "sha": "699e2bf368f8a57fd056d7edb7d9d97f8abf4e57ec086fe988fd4933a169ef35", "facts": [{"value": "115.8", "unit": "USD billions", "detail": "115,844", "detailUnit": "USD millions", "row": "Revenue", "column": "Three Months Ended October 25, 2026", "status": "丸めの範囲で一致", "metric": "Revenue", "summaryRow": "Revenue"}, {"value": "2.70", "unit": "USD/share", "detail": "2.70", "detailUnit": "USD/share", "row": "Net income per share / Diluted", "column": "Three Months Ended October 25, 2026", "status": "一致", "metric": "Diluted earnings per share", "summaryRow": "Diluted earnings per share"}]}];
+const nvidiaRecords=[{"period": "FY2025Q4", "accession": "0001045810-25-000021", "url": "https://www.sec.gov/Archives/edgar/data/1045810/000104581025000021/q4fy25pr.htm", "filing": "https://www.sec.gov/Archives/edgar/data/1045810/000104581025000021/nvda-20250226.htm", "sha": "fa6ce87a0fdcc5575be02a3b0eee94254e40c48569daaa8f75242dccaa537df2", "facts": [{"value": "39331", "unit": "USD millions", "detail": "39,331", "detailUnit": "USD millions", "row": "Revenue", "column": "Three Months Ended January 26, 2025", "status": "一致", "metric": "Revenue", "summaryRow": "Revenue"}, {"value": "0.89", "unit": "USD/share", "detail": "0.89", "detailUnit": "USD/share", "row": "Net income per share / Diluted", "column": "Three Months Ended January 26, 2025", "status": "一致", "metric": "Diluted earnings per share", "summaryRow": "Diluted earnings per share*"}]}, {"period": "FY2026Q1", "accession": "0001045810-25-000115", "url": "https://www.sec.gov/Archives/edgar/data/1045810/000104581025000115/q1fy26pr.htm", "filing": "https://www.sec.gov/Archives/edgar/data/1045810/000104581025000115/nvda-20250528.htm", "sha": "79bc02be125714e0ce3c8dafce485fd7a8453e08cbd7dcb743838c62ddcd4aeb", "facts": [{"value": "44062", "unit": "USD millions", "detail": "44,062", "detailUnit": "USD millions", "row": "Revenue", "column": "Three Months Ended April 27, 2025", "status": "一致", "metric": "Revenue", "summaryRow": "Revenue"}, {"value": "0.76", "unit": "USD/share", "detail": "0.76", "detailUnit": "USD/share", "row": "Net income per share / Diluted", "column": "Three Months Ended April 27, 2025", "status": "一致", "metric": "Diluted earnings per share", "summaryRow": "Diluted earnings per share*"}]}, {"period": "FY2026Q2", "accession": "0001045810-25-000207", "url": "https://www.sec.gov/Archives/edgar/data/1045810/000104581025000207/q2fy26pr.htm", "filing": "https://www.sec.gov/Archives/edgar/data/1045810/000104581025000207/nvda-20250827.htm", "sha": "bc75009f7205708f8ba1aec6de315e428165cb4f1cf44eae0753da890d08cbe3", "facts": [{"value": "46743", "unit": "USD millions", "detail": "46,743", "detailUnit": "USD millions", "row": "Revenue", "column": "Three Months Ended July 27, 2025", "status": "一致", "metric": "Revenue", "summaryRow": "Revenue"}, {"value": "1.08", "unit": "USD/share", "detail": "1.08", "detailUnit": "USD/share", "row": "Net income per share / Diluted", "column": "Three Months Ended July 27, 2025", "status": "一致", "metric": "Diluted earnings per share", "summaryRow": "Diluted earnings per share"}]}, {"period": "FY2026Q3", "accession": "0001045810-25-000228", "url": "https://www.sec.gov/Archives/edgar/data/1045810/000104581025000228/q3fy26pr.htm", "filing": "https://www.sec.gov/Archives/edgar/data/1045810/000104581025000228/nvda-20251119.htm", "sha": "8ac74c45b465287f643a4b37726f70ef4ab63392692ca0cae9ef6b5f3a62621e", "facts": [{"value": "57006", "unit": "USD millions", "detail": "57,006", "detailUnit": "USD millions", "row": "Revenue", "column": "Three Months Ended October 26, 2025", "status": "一致", "metric": "Revenue", "summaryRow": "Revenue"}, {"value": "1.30", "unit": "USD/share", "detail": "1.30", "detailUnit": "USD/share", "row": "Net income per share / Diluted", "column": "Three Months Ended October 26, 2025", "status": "一致", "metric": "Diluted earnings per share", "summaryRow": "Diluted earnings per share"}]}, {"period": "FY2026Q4", "accession": "0001045810-26-000019", "url": "https://www.sec.gov/Archives/edgar/data/1045810/000104581026000019/q4fy26pr.htm", "filing": "https://www.sec.gov/Archives/edgar/data/1045810/000104581026000019/nvda-20260225.htm", "sha": "a43b65f0fef5cf4622c5c6908b255ec3dd4a409ec84ef2d7ee0321b566649666", "facts": [{"value": "68127", "unit": "USD millions", "detail": "68,127", "detailUnit": "USD millions", "row": "Revenue", "column": "Three Months Ended January 25, 2026", "status": "一致", "metric": "Revenue", "summaryRow": "Revenue"}, {"value": "1.76", "unit": "USD/share", "detail": "1.76", "detailUnit": "USD/share", "row": "Net income per share / Diluted", "column": "Three Months Ended January 25, 2026", "status": "一致", "metric": "Diluted earnings per share", "summaryRow": "Diluted earnings per share"}]}, {"period": "FY2027Q1", "accession": "0001045810-26-000051", "url": "https://www.sec.gov/Archives/edgar/data/1045810/000104581026000051/q1fy27pr.htm", "filing": "https://www.sec.gov/Archives/edgar/data/1045810/000104581026000051/nvda-20260520.htm", "sha": "2987ebc03457f44d67d847c14a68a2fca1dd130d6c841245057a4f8b6c29843d", "facts": [{"value": "81615", "unit": "USD millions", "detail": "81,615", "detailUnit": "USD millions", "row": "Revenue", "column": "Three Months Ended April 26, 2026", "status": "一致", "metric": "Revenue", "summaryRow": "Revenue"}, {"value": "2.39", "unit": "USD/share", "detail": "2.39", "detailUnit": "USD/share", "row": "Net income per share / Diluted", "column": "Three Months Ended April 26, 2026", "status": "一致", "metric": "Diluted earnings per share", "summaryRow": "Diluted earnings per share"}]}, {"period": "FY2027Q2", "accession": "0001045810-26-000073", "url": "https://www.sec.gov/Archives/edgar/data/1045810/000104581026000073/q2fy27pr.htm", "filing": "https://www.sec.gov/Archives/edgar/data/1045810/000104581026000073/nvda-20260826.htm", "sha": "972e6c1d066a7ed8f114fcd866c89177c6bfb3f54a80c318b71a8d936fb0d164", "facts": [{"value": "96221", "unit": "USD millions", "detail": "96,221", "detailUnit": "USD millions", "row": "Revenue", "column": "Three Months Ended July 26, 2026", "status": "一致", "metric": "Revenue", "summaryRow": "Revenue"}, {"value": "2.46", "unit": "USD/share", "detail": "2.46", "detailUnit": "USD/share", "row": "Net income per share / Diluted", "column": "Three Months Ended July 26, 2026", "status": "一致", "metric": "Diluted earnings per share", "summaryRow": "Diluted earnings per share"}]}, {"period": "FY2027Q3", "accession": "0001045810-26-000088", "url": "https://www.sec.gov/Archives/edgar/data/1045810/000104581026000088/q3fy27pr.htm", "filing": "https://www.sec.gov/Archives/edgar/data/1045810/000104581026000088/nvda-20261117.htm", "sha": "699e2bf368f8a57fd056d7edb7d9d97f8abf4e57ec086fe988fd4933a169ef35", "facts": [{"value": "115.8", "unit": "USD billions", "detail": "115,844", "detailUnit": "USD millions", "row": "Revenue", "column": "Three Months Ended October 25, 2026", "status": "丸めの範囲で一致", "metric": "Revenue", "summaryRow": "Revenue"}, {"value": "2.70", "unit": "USD/share", "detail": "2.70", "detailUnit": "USD/share", "row": "Net income per share / Diluted", "column": "Three Months Ended October 25, 2026", "status": "一致", "metric": "Diluted earnings per share", "summaryRow": "Diluted earnings per share"}]}];
 const $=id=>document.getElementById(id);
-let ja=false,selected=records.length-1,metric=0;
-const tr=(en,jp)=>ja?jp:en;
-const periodText=p=>p.slice(0,6)+' '+p.slice(6);
-const numbers=(x,places)=>Number(x.replaceAll(',','')).toLocaleString('en-US',{minimumFractionDigits:places,maximumFractionDigits:places});
+const query = new URLSearchParams(location.search);
+const appPage = /^\/(?:demo|company\/(?:MSFT|NVDA))$/.test(location.pathname);
+const ticker = (location.pathname.match(/^\/company\/(MSFT|NVDA)$/)?.[1] || query.get('company')) === 'MSFT' ? 'MSFT' : 'NVDA';
+const msft = ticker === 'MSFT';
+const companyName = msft ? 'Microsoft' : 'NVIDIA';
+const records = msft ? [JSON.parse($('msft-record').textContent)] : nvidiaRecords;
+let ja = query.has('lang') ? query.get('lang') === 'ja' : navigator.language.startsWith('ja');
+let selected = records.length - 1;
+let metric = 0;
+const tr = (en, jp) => ja ? jp : en;
+const periodText = p => p.slice(0,6) + ' ' + p.slice(6);
+const numbers = (x, places) => x == null ? '—' : Number(String(x ?? '').replaceAll(',', '')).toLocaleString('en-US', {
+  minimumFractionDigits: places, maximumFractionDigits: places
+});
 function unit(u){return {'USD billions':tr('USD billion','十億ドル'),'USD millions':tr('USD million','百万ドル'),'USD/share':tr('USD/share','ドル／株')}[u]}
-function check(s){return s==='一致'?tr('Exact','一致'):tr('Rounded','丸め一致')}
-function pill(s){return '<span class="pill '+(s==='一致'?'':'round')+'">'+check(s)+'</span>'}
-function rev(d){const f=d.facts[0];return Number(f.value)/(f.unit==='USD millions'?1000:1)}
+const labels = {
+  '一致': ['Exact', '一致'], '丸めの範囲で一致': ['Match after rounding','丸め一致'],
+  '不一致': ['Mismatch','不一致'], '要確認': ['Needs review','要確認']
+};
+function pill(status){
+  const style = status === '一致' ? '' : status === '丸めの範囲で一致' ? 'round' : 'bad';
+  return '<span class="pill '+style+'">'+tr(...labels[status])+'</span>';
+}
+function rev(d){
+  const f = d.facts[0];
+  return f.value == null ? null : Number(f.value)/(f.unit === 'USD millions' ? 1000 : 1);
+}
 function focusPanel(){if(matchMedia('(max-width:730px)').matches){$('focus').focus({preventScroll:true});$('focus').scrollIntoView({block:'start'})}}
 function evidence(){
 const d=records[selected], f=d.facts[metric];$('selected').textContent=periodText(d.period);$('accession').textContent=d.accession;
 $('tabs').innerHTML=[tr('Revenue','売上高'),tr('Diluted EPS','希薄化後EPS')].map((t,i)=>'<button aria-pressed="'+(metric===i)+'" data-m="'+i+'">'+t+'</button>').join('');
-const dp=f.value.includes('.')?f.value.split('.')[1].length:0;
-const same=f.status==='一致';
-const reason=same?tr('The two tables agree at the reported precision.','同じ期間・単位にそろえると、2つの表の値が一致します。'):
- tr('115,844 million ÷ 1,000 = 115.844 billion. Rounded to one decimal, the result is 115.8 billion.','115,844百万ドルは115.844十億ドルです。小数第1位に丸めると、概要表の115.8十億ドルと一致します。');
-$('reading').innerHTML='<div class="fact"><span>'+tr('GAAP summary · ','GAAP概要表 · ')+f.summaryRow+'</span><strong>'+numbers(f.value,dp)+'</strong> <small>'+unit(f.unit)+'</small></div><div class="fact"><span>'+tr('Consolidated income statement · ','連結損益計算書 · ')+f.row+'</span><strong>'+f.detail+'</strong> <small>'+unit(f.detailUnit)+'</small></div>'+pill(f.status)+'<p class="rule">'+reason+'</p><p class="reference">'+f.column+'</p><div class="links"><a target="_blank" rel="noopener noreferrer" href="'+d.url+'">'+tr('Exhibit 99.1 ↗','決算添付 99.1 ↗')+'</a><a target="_blank" rel="noopener noreferrer" href="'+d.filing+'">'+tr('Form 8-K ↗','8-K本文 ↗')+'</a></div><p class="review">'+tr('Human review: pending','担当者確認：未確認')+'</p>';
+const reading = $('reading');
+reading.replaceChildren();
+function line(tag, text, className, parent=reading){
+  const el = document.createElement(tag);
+  el.textContent = text;
+  if(className) el.className = className;
+  parent.append(el);
+  return el;
+}
+function fact(title, value, units){
+  const box = line('div','','fact');
+  line('span',title,'',box);
+  const decimals = value == null ? 0 : (value.split('.')[1] || '').length;
+  line('strong',numbers(value,decimals),'',box);
+  line('small',' '+unit(units),'',box);
+}
+fact((msft ? tr('EX-99.1 income statement','決算添付99.1の損益計算書') : tr('GAAP summary','GAAP概要表'))+' · '+f.summaryRow,f.value,f.unit);
+fact((msft ? tr('10-Q income statement','10-Qの損益計算書') : tr('Consolidated income statement','連結損益計算書'))+' · '+f.row,f.detail,f.detailUnit);
+reading.insertAdjacentHTML('beforeend',pill(f.status));
+const rules = {
+  '一致': tr('The figures agree for the same quarter and unit.','対象四半期と単位をそろえると両方の数値が一致します。'),
+  '丸めの範囲で一致': tr('The more precise figure agrees when rounded to the summary table’s reporting precision.','詳細値を概要表の表示桁に丸めると一致します。'),
+  '不一致': tr('The reported figures differ for this quarter and unit.','同じ四半期・単位の数値が異なります。'),
+  '要確認': tr('One or more source values could not be verified.','原表から値を特定できないため、確認が必要です。')
+};
+line('p',rules[f.status],'rule');
+if(f.reason) line('p',f.reason,'reference');
+line('p',f.column,'reference');
+const links = line('div','','links');
+function source(url, title){
+  const a = line('a',title,'',links);
+  a.href = url;
+  a.target = '_blank';
+  a.rel = 'noopener noreferrer';
+}
+source(d.url,tr('Exhibit 99.1 ↗','決算添付 99.1 ↗'));
+if(msft) source(d.quarterly,tr('Form 10-Q ↗','10-Q原文 ↗'));
+source(d.filing,tr('Form 8-K ↗','8-K本文 ↗'));
+line('p',tr('Human review: pending','担当者確認：未確認'),'review');
 }
 function ledger(){
-$('rows').innerHTML=records.map((d,i)=>({d,i})).reverse().map(({d,i})=>'<tr class="'+(i===selected?'active':'')+'"><td><button class="pick" aria-pressed="'+(i===selected)+'" data-i="'+i+'">'+periodText(d.period)+'</button></td><td>'+String(rev(d))+'</td><td>'+numbers(d.facts[1].value,2)+'</td><td>'+pill(d.facts[0].status)+'</td></tr>').join('');
+$('rows').innerHTML=records.map((d,i)=>({d,i})).reverse().map(({d,i})=>'<tr class="'+(i===selected?'active':'')+'"><td><button class="pick" aria-pressed="'+(i===selected)+'" data-i="'+i+'">'+periodText(d.period)+'</button></td><td>'+(rev(d) ?? '—')+'</td><td>'+numbers(d.facts[1].value,2)+'</td><td>'+pill(d.facts[0].status)+'</td></tr>').join('');
 }
 function plot(){
   const isRevenue = metric === 0;
   const names = [tr('Revenue','売上高'),tr('Diluted EPS','希薄化後EPS')];
-  const values = records.map(d=>isRevenue ? rev(d) : Number(d.facts[1].value));
+  const values = records.map(d=>isRevenue ? rev(d) : (d.facts[1].value == null ? null : Number(d.facts[1].value)));
   const suffix = isRevenue ? tr('USD billions','十億ドル') : tr('USD/share','ドル／株');
   // Three equal intervals above a zero baseline; keep the two units independent.
-  const step = isRevenue ? 40 : 1;
+  const max = Math.max(1, ...values.filter(v=>v !== null));
+  const magnitude = 10 ** Math.floor(Math.log10(max / 3));
+  const step = Math.ceil(max / (3 * magnitude)) * magnitude;
+  for(const id of ['bars','periods']) $(id).style.gridTemplateColumns = 'repeat('+records.length+', minmax(0,1fr))';
   const ceiling = 3 * step;
-  const format = v=>isRevenue ? v.toLocaleString('en-US',{maximumFractionDigits:3}) : v.toFixed(2);
-  $('chartTitle').textContent=tr('Quarterly performance','四半期推移');
+  const format = v=>v == null ? '—' : isRevenue ? v.toLocaleString('en-US',{maximumFractionDigits:3}) : v.toFixed(2);
+  $('chartTitle').textContent=records.length === 1 ? tr('Reported quarter','対象四半期の値') : tr('Quarterly performance','四半期推移');
   $('axisUnit').textContent=suffix;
   $('plotTools').setAttribute('aria-label',tr('Chart metric','グラフの指標'));
   $('plotTools').innerHTML=names.map((n,i)=>'<button type="button" data-m="'+i+'" aria-pressed="'+(metric===i)+'">'+n+'</button>').join('');
-  $('scale').innerHTML=[0,1,2,3].map(n=>'<span style="bottom:'+(100*n/3)+'%">'+(n*step)+'</span>').join('');
+  $('scale').innerHTML=[0,1,2,3].map(n=>'<span style="bottom:'+(100*n/3)+'%">'+Number((n*step).toPrecision(6))+'</span>').join('');
   $('bars').setAttribute('aria-label',names[metric]+' · '+suffix);
   $('bars').innerHTML=records.map((d,i)=>{
     const label=periodText(d.period)+' · '+names[metric]+' · '+format(values[i])+' '+suffix;
-    return '<button type="button" class="plot-col" data-i="'+i+'" aria-pressed="'+(i===selected)+'" aria-label="'+label+'" title="'+label+'"><i aria-hidden="true" style="height:'+(100*values[i]/ceiling)+'%"></i></button>';
+    return '<button type="button" class="plot-col" data-i="'+i+'" aria-pressed="'+(i===selected)+'" aria-label="'+label+'" title="'+label+'"><i aria-hidden="true" style="height:'+(100*(values[i] ?? 0)/ceiling)+'%"></i></button>';
   }).join('');
   $('periods').innerHTML=records.map(d=>'<span>'+d.period.slice(-2)+'<small>FY'+d.period.slice(4,6)+'</small></span>').join('');
   $('plotValue').textContent=periodText(records[selected].period)+' · '+format(values[selected])+' '+suffix;
@@ -102,16 +162,44 @@ function selectChart(action,container){
 function draw(){
 document.documentElement.lang=ja?'ja':'en';
 $('lang').textContent=ja?'English':'日本語';$('lang').lang=ja?'en':'ja';
-$('title').textContent=tr('NVIDIA filing coverage','NVIDIA 決算開示台帳');
-$('summary').textContent=tr('Trace eight quarters of revenue and diluted EPS from SEC filings to a downloadable dataset.','8四半期の売上高と希薄化後EPSを、納品データからSECの原表までたどれます。');
-$('period').textContent='FY2025 Q4 — FY2027 Q3  ·  '+tr('Fixed dataset','固定データ');
+const lang = ja ? 'ja' : 'en';
+for(const symbol of ['NVDA','MSFT']){
+  const link = $('link'+symbol);
+  link.href = appPage ? '/company/'+symbol+'?lang='+lang : '?company='+symbol+'&lang='+lang;
+  if(symbol === ticker) link.setAttribute('aria-current','page');
+}
+if(appPage){
+  $('back').hidden = false;
+  $('back').href='/companies';
+  $('back').textContent=tr('All seven companies','7社の開示一覧');
+}
+$('issuerNav').setAttribute('aria-label',tr('Companies','企業を選ぶ'));
+$('eyebrow').textContent='NASDAQ · '+ticker+'  /  '+(msft ? 'SEC FORM 8-K + 10-Q' : 'SEC FORM 8-K');
+$('title').textContent=companyName+tr(' filing coverage',' 決算開示台帳');
+document.title=$('title').textContent+' | Company Disclosure Monitor';
+$('summary').textContent=msft
+  ? tr('Compare quarterly GAAP revenue and diluted EPS in the earnings release and Form 10-Q.','決算発表資料と10-Qの原表で、四半期の売上高・希薄化後EPSを照合します。')
+  : tr('Trace eight quarters of revenue and diluted EPS to the GAAP summary and income statement.','8四半期の売上高・希薄化後EPSを、決算発表のGAAP概要表と損益計算書で照合します。');
+$('period').textContent=records.length === 1 ? periodText(records[0].period) : periodText(records[0].period)+' — '+periodText(records.at(-1).period);
 plot();
-$('stats').innerHTML=[['8 / 8',tr('Quarters covered','対象四半期')],['16 / 16',tr('Metrics retrieved','取得した指標')],['15',tr('Exact matches','完全一致')],['1',tr('Match after rounding','丸めの範囲で一致')]].map(([n,t])=>'<div class="stat"><strong>'+n+'</strong><span>'+t+'</span></div>').join('');
+const facts=records.flatMap(d=>d.facts);
+const matches=facts.filter(f=>f.status==='一致').length;
+const rounded=facts.filter(f=>f.status==='丸めの範囲で一致').length;
+const needs=facts.length-matches-rounded;
+const stats=[
+  [records.length,tr('Fiscal quarters','対象四半期')],
+  [facts.filter(f=>f.value != null && f.detail != null).length+' / '+facts.length,tr('Value pairs retrieved','両資料の値を取得')],
+  [matches,tr('Exact matches','完全一致')],
+  needs || msft ? [needs,tr('Exceptions','要確認・不一致')] : [rounded,tr('Match after rounding','丸めの範囲で一致')]
+];
+$('stats').innerHTML=stats.map(([n,t])=>'<div class="stat"><strong>'+n+'</strong><span>'+t+'</span></div>').join('');
 $('ledgerTitle').textContent=tr('Quarterly register','四半期台帳');$('ledgerSub').textContent=tr('Select a quarter to inspect its source figures.','四半期を選ぶと、原表の値と判定理由を確認できます。');
 $('download').textContent=tr('↓  Download CSV','↓  CSVを取得');$('head').innerHTML='<tr>'+[tr('Fiscal quarter','会計四半期'),tr('Revenue ($B)','売上高 ($B)'),tr('EPS ($)','EPS ($)'),tr('Revenue check','売上照合')].map(t=>'<th scope="col">'+t+'</th>').join('')+'</tr>';
 $('evidence').textContent=tr('Source comparison','原表との照合');$('skip').textContent=tr('Skip to register','台帳へ移動');
 $('methodTitle').textContent=tr('Scope and verification method','対象範囲と検査方法');
-$('method').textContent=tr('This independent demo covers NVIDIA GAAP revenue and diluted EPS for the eight fiscal quarters shown. Python compares the current-quarter GAAP summary with the three-month column of the consolidated income statement in the same SEC exhibit. The register shows revenue in billions of US dollars. The evidence panel and CSV retain the source units. All 16 human reviews are pending.','NVIDIAの8四半期を対象とした独立デモです。Pythonが同じ提出書類内のGAAP概要表と連結損益計算書の当四半期（3か月）列を照合しています。台帳は売上高を十億ドルで表示し、原表比較とCSVは開示時の単位を保持します。16項目すべて担当者確認は未確認です。');
+$('method').textContent=msft
+  ? tr('Python compares the three-month column in the income statement of Exhibit 99.1 with the same period in the 10-Q. EPS comes from the diluted earnings-per-share row. Human review is pending.','Pythonが決算添付99.1と10-Qの損益計算書から、当四半期3か月の列を選んで照合します。EPSには希薄化後1株当たり利益の行を使用します。担当者確認は未確認です。')
+  : tr('This independent demo covers NVIDIA GAAP revenue and diluted EPS for the eight fiscal quarters shown. Python compares the current-quarter GAAP summary with the three-month column of the consolidated income statement in the same SEC exhibit. The register shows revenue in billions of US dollars. The evidence panel and CSV retain the source units. All 16 human reviews are pending.','NVIDIAの8四半期を対象とした独立デモです。Pythonが同じ提出書類内のGAAP概要表と連結損益計算書の当四半期（3か月）列を照合しています。台帳は売上高を十億ドルで表示し、原表比較とCSVは開示時の単位を保持します。16項目すべて担当者確認は未確認です。');
 ledger();evidence();
 }
 for(const id of ['bars','rows']){
@@ -131,9 +219,10 @@ for(const id of ['plotTools','tabs']){
 $('lang').onclick=()=>{ja=!ja;draw()};
 $('download').onclick=()=>{
 const fields=['Fiscal quarter','Metric','Reported value','Unit','Comparison value','Comparison unit','Comparison row','Comparison column','Check','Human review','Accession','Form 8-K','Exhibit 99.1','SHA-256'];
-const rows=records.flatMap(d=>d.facts.map(f=>[d.period,f.metric,f.value,f.unit,f.detail,f.detailUnit,f.row,f.column,f.status==='一致'?'Exact':'Match after rounding','Pending',d.accession,d.filing,d.url,d.sha]));
-const csv=[fields,...rows].map(r=>r.map(x=>'"'+String(x).replaceAll('"','""')+'"').join(',')).join('\r\n')+'\r\n';
-const url=URL.createObjectURL(new Blob(['\ufeff',csv],{type:'text/csv;charset=utf-8'})),a=document.createElement('a');a.href=url;a.download='nvidia-filing-coverage-FY2025Q4-FY2027Q3.csv';document.body.append(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(url),1000);
+if(msft) fields.push('Form 10-Q','10-Q accession','10-Q SHA-256','Exception');
+const rows=records.flatMap(d=>d.facts.map(f=>[d.period,f.metric,f.value,f.unit,f.detail,f.detailUnit,f.row,f.column,labels[f.status][0],'Pending',d.accession,d.filing,d.url,d.sha,...(msft ? [d.quarterly,d.quarterlyAccession,d.quarterlySha,f.reason] : [])]));
+const csv=[fields,...rows].map(r=>r.map(x=>'"'+String(x ?? '').replaceAll('"','""')+'"').join(',')).join('\r\n')+'\r\n';
+const url=URL.createObjectURL(new Blob(['\ufeff',csv],{type:'text/csv;charset=utf-8'})),a=document.createElement('a');a.href=url;a.download=msft ? 'microsoft-FY2027Q1-reconciliation.csv' : 'nvidia-filing-coverage-FY2025Q4-FY2027Q3.csv';document.body.append(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(url),1000);
 };
 draw();
 </script></body></html>

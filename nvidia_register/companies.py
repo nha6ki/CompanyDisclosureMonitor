@@ -134,6 +134,8 @@ def render(data, rows, ticker, item, token):
     return f"""
 <p>{period}</p><p>対象書類は Form 8-K・8-K/A です。提出番号からSEC原文を確認できます。</p>
 {notice}
+<nav class="actions" aria-label="企業の決算詳細"><a href="/company/NVDA?lang=ja">NVIDIAの四半期決算</a>
+<a href="/company/MSFT?lang=ja">Microsoftの四半期決算</a></nav>
 <form method="get" action="/companies"><label>企業 <select name="ticker">{''.join(options)}</select></label>
 <label>開示項目 <select name="item"><option value="">すべて</option>
 <option value="2.02"{selected}>Item 2.02（業績・財務状況）</option></select></label>
