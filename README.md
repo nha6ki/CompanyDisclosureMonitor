@@ -2,6 +2,12 @@
 
 A local SEC filing register with a self-contained English/Japanese demo. The NVIDIA baseline traces quarterly GAAP revenue and diluted EPS from Form 8-K exhibits to their source tables. The full workflow also supports filing collection, locally generated event candidates, human review and CSV delivery.
 
+## Magnificent Seven filing index
+
+Open <http://localhost:8774/companies> after starting the local application. The index opens with a bundled snapshot of 24 filings from August 21 through November 18, 2026 (inclusive). Filter Apple, Microsoft, Alphabet, Amazon, NVIDIA, Meta Platforms, or Tesla by issuer, narrow to SEC Item 2.02, follow an accession to the SEC primary document, or export the filtered rows as CSV.
+
+Use the update form with your SEC contact email to fetch each issuer's submissions over the latest 90 calendar days (US Eastern time). The index covers Form 8-K and 8-K/A, keyed by issuer CIK and accession. An update replaces the window for each successful issuer. A failed issuer keeps its last successful data, with an error and the date shown. The stored data consists of filing metadata and source links. Quarterly metric reconciliation and narrative review are available for NVIDIA.
+
 ## View the demo
 
 Open [the interactive filing register](nvidia_register/public_demo/index.html) in a browser after cloning. Choose a metric and quarter to compare reported figures, inspect the SEC source and download the fixed dataset. The eight-quarter snapshot covers FY2025 Q4 through FY2027 Q3. Fifteen automated comparisons match exactly and one matches at reported precision. Human review is pending for all 16 figures. The sample CSV files are in [examples](nvidia_register/examples/).

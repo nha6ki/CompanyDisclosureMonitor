@@ -16,6 +16,7 @@ from wsgiref.simple_server import make_server
 ROOT = Path(__file__).resolve().parent.parent
 sys.path.insert(0, str(ROOT))
 import reporting
+import companies
 import periods
 import llm_runner
 import read_sections
@@ -209,7 +210,7 @@ def hidden(name,value):
 
 
 def page(title, content):
-    return f'<!doctype html><html lang="ja"><meta charset="utf-8"><meta name="viewport" content="width=device-width"><title>{h(title)}</title><style>{STYLE}</style><body><header><nav><a href="/"><strong>Company Disclosure Monitor</strong></a><a href="/demo">公開デモを見る ↗</a></nav></header><main><h1>{h(title)}</h1>{content}</main></body></html>'.encode()
+    return f'<!doctype html><html lang="ja"><meta charset="utf-8"><meta name="viewport" content="width=device-width"><title>{h(title)}</title><style>{STYLE}</style><body><header><nav><a href="/"><strong>Company Disclosure Monitor</strong></a><a href="/companies">7社の開示一覧</a><a href="/demo">公開デモを見る ↗</a></nav></header><main><h1>{h(title)}</h1>{content}</main></body></html>'.encode()
 
 
 def index(reg, needs):
@@ -300,6 +301,9 @@ def application(reg,port):
                 if path == "/refresh":
                     reg.refresh()
                     target = "/"
+                elif path == "/companies-fetch":
+                    companies.refresh(reg.root, periods.fetcher(form["contact"]))
+                    target = "/companies"
                 elif path == "/coverage-fetch":
                     result=periods.run(reg.root,periods.fetcher(form['contact']),form.get('first'),form.get('last'))
                     target='/coverage?range='+result['first']+'-'+result['last']
@@ -318,6 +322,17 @@ def application(reg,port):
                     raise KeyError(path)
                 status,body = "303 See Other",b""
                 headers.append(("Location",target))
+            elif method == "GET" and path in ("/companies", "/companies.csv"):
+                ticker, item = companies.filters(parse_qs(env["QUERY_STRING"]))
+                data = companies.load(reg.root)
+                rows = companies.matches(data, ticker, item)
+                if path.endswith(".csv"):
+                    body = reporting.csvdata(companies.csv_rows(data, rows))
+                    mime = "text/csv; charset=utf-8"
+                    headers.append(("Content-Disposition", 'attachment; filename="m7_filings.csv"'))
+                else:
+                    body = page("Magnificent Seven 開示一覧", companies.render(
+                        data, rows, ticker, item, hidden("token", reg.token)))
             elif method == "GET" and path == "/demo":
                 body=(Path(__file__).resolve().parent/"public_demo"/"index.html").read_bytes()
             elif method == "GET" and path == "/report":
