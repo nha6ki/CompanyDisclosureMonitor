@@ -18,6 +18,7 @@ sys.path.insert(0, str(ROOT))
 import reporting
 import companies
 import microsoft
+import alphabet
 import periods
 import llm_runner
 import read_sections
@@ -334,13 +335,14 @@ def application(reg,port):
                 else:
                     body = page("Magnificent Seven 開示一覧", companies.render(
                         data, rows, ticker, item, hidden("token", reg.token)))
-            elif method == "GET" and path in ("/demo", "/company/MSFT", "/company/NVDA"):
+            elif method == "GET" and path in ("/demo", "/company/MSFT", "/company/NVDA", "/company/GOOGL"):
                 body = (Path(__file__).resolve().parent / "public_demo" / "index.html").read_bytes()
-                local = microsoft.local_result(reg.root)
-                if local.is_file():
-                    document = body.decode("utf-8")
-                    marker = '<script type="application/json" id="msft-record">'
-                    before, middle = document.split(marker, 1)
+                symbol = (parse_qs(env["QUERY_STRING"]).get("company", ["NVDA"])[0]
+                          if path == "/demo" else path.rsplit("/", 1)[1])
+                pairs = {"MSFT": microsoft.PAIR, "GOOGL": alphabet.PAIR}
+                if symbol in pairs and (local := pairs[symbol].local_result(reg.root)).is_file():
+                    marker = f'<script type="application/json" id="{symbol.lower()}-record">'
+                    before, middle = body.decode("utf-8").split(marker, 1)
                     _, after = middle.split("</script>", 1)
                     data = json.dumps(read(local), ensure_ascii=True).replace("<", chr(92) + "u003c")
                     body = (before + marker + data + "</script>" + after).encode("utf-8")
