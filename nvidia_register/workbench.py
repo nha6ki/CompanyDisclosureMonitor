@@ -61,6 +61,7 @@ def link(url,title):
 
 
 def render(db,f,rows,hidden,token):
+    from companies import narrative_url
     controls = ''.join('<label>'+title+' <select name="'+k+'">'+options(values,f[k],'すべて')+'</select></label> '
         for k,title,values in [('symbol','企業',ISSUERS),('status','照合',('例外すべて','一致',*pipeline.PROBLEMS)),
                                ('state','担当者確認',(*pipeline.DECISIONS,'再確認'))])
@@ -74,6 +75,8 @@ def render(db,f,rows,hidden,token):
     for r in rows:
         company=link('/company/'+r['symbol']+'?lang=ja',r['symbol'])
         sources=' · '.join(filter(None,[link(r['filing'],'8-K'),link(r['exhibit'],'添付99.1'),link(r['report'],r['form'])]))
+        if r['accession']:
+            sources += ' · '+link(narrative_url(r['symbol'],r['accession']),'この8-KのQwen抽出')
         if r['candidates']:
             sources+=' <details><summary>提出候補</summary>'+ ' · '.join(link(c['url'],c['form']+' '+c['acc']) for c in r['candidates'])+'</details>'
         fields=dict(token=token,symbol=r['symbol'],period=r['period'],version=r['version'],previous=r['previous'],back=query)

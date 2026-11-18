@@ -97,6 +97,8 @@ header{background:#fff}header .wrap{min-height:4.25rem}
 #emptyResult{padding:1.1rem;background:white;border-bottom:1px solid var(--line)}
 @media(max-width:820px){.overview-grid{grid-template-columns:minmax(0,1fr) minmax(280px,.9fr);gap:1.3rem}.feed-table th,.feed-table td{padding:.65rem}.spark-cell{display:none}.selects{gap:.6rem}}
 @media(max-width:650px){.overview-grid{grid-template-columns:1fr;gap:1.3rem}.overview-hero h1{font-size:2.55rem}.summary-box{padding:1rem}.summary-total strong{font-size:2.3rem}.feed-head,.tools{align-items:flex-start}.feed-head{flex-wrap:wrap}.filings{padding-top:1.6rem}.selects{width:100%;flex-wrap:wrap}.selects label{font-size:.83rem}.tools select{max-width:13rem}.feed-table table,.feed-table tbody{display:block}.feed-table thead{display:none}.feed-table tbody tr{display:grid;grid-template-columns:minmax(0,1fr) auto;align-items:center;gap:.45rem .5rem;padding:.9rem}.feed-table td{display:block;padding:0;white-space:normal}.feed-table .spark-cell{display:none}.identity-cell{grid-column:1}.date-cell{grid-column:2;grid-row:1;text-align:right!important}.period-code{grid-column:1;grid-row:2}.status-cell{grid-column:2;grid-row:2}.statusgroup{justify-content:flex-end}.review-col{grid-column:1/-1}.review-col::before{content:attr(data-label) ' · '}.company-link{gap:.5rem}.ticker{min-width:3.3rem}.public-foot{align-items:flex-start}}
+.register-bar{background:white;border-bottom:1px solid var(--line)}#registerNav{display:flex;gap:1.45rem}#registerNav a{padding:.95rem 0 .75rem;text-decoration:none;color:var(--muted);font-weight:650;border-bottom:3px solid transparent}#registerNav [aria-current]{color:var(--accent);border-color:var(--accent)}.narr-banner{background:var(--forest);color:white;padding:2.1rem 0}.narr-banner h1{font-size:clamp(1.7rem,4vw,3rem);margin:0 0 .5rem;color:white}.narr-banner p{color:var(--leaf);margin:0}.narr-body{padding-block:1.55rem 2.5rem}.narr-body label{display:grid;gap:.4rem;font-weight:600}.narr-body select{max-width:100%;width:36rem;min-height:43px;padding:.4rem;font:inherit;border:1px solid var(--line);background:white;border-radius:5px}.narr-doc{background:white;border:1px solid var(--line);border-radius:8px;padding:clamp(1rem,3vw,2rem);margin-top:1rem;overflow-wrap:anywhere}.narr-doc h2{font-size:clamp(1.3rem,3vw,2rem);margin:.3rem 0}.narr-meta,.narr-empty{color:var(--muted)}.narr-section{border-top:1px solid var(--line);margin-top:1.25rem;padding-top:1.2rem}.narr-section h3,.narr-event h4{margin:0 0 .5rem}.narr-event{margin:.8rem 0 1.2rem}.narr-event h4{font-size:1.12rem}.narr-event dl{display:grid;grid-template-columns:minmax(6.5rem,10rem) 1fr;margin:0}.narr-event dt,.narr-event dd{border-bottom:1px solid var(--line);margin:0;padding:.4rem}.narr-event dt{font-size:.88rem;color:var(--muted)}.narr-event dd a{font-size:.85rem;color:var(--accent);white-space:nowrap}.source-paragraphs{background:var(--tint);padding:.65rem .85rem;border-radius:5px}.source-paragraphs summary{font-weight:620;cursor:pointer}.source-paragraphs p:target{border-left:3px solid var(--accent);padding-left:.6rem}.narr-entry{display:block;font-size:.82rem;margin:.3rem 0 0;color:var(--accent);text-underline-offset:2px}
+@media(max-width:500px){.narr-event dl{grid-template-columns:1fr}.narr-event dt{border:0;padding-bottom:0}.narr-event dd{padding-top:.12rem}}
 </style></head><body>
 <a href="#register" class="skip" id="skip"></a>
 <header><div class="wrap"><a class="brand" href="#top"><span class="logo" aria-hidden="true"><i></i><i></i><i></i></span>Company Disclosure Monitor</a><nav class="issuer-nav" id="issuerNav" aria-label="Companies"><a id="back" hidden></a><a id="workflow" hidden></a></nav><button type="button" class="lang" id="lang"></button></div></header>
@@ -121,6 +123,10 @@ header{background:#fff}header .wrap{min-height:4.25rem}
   <footer class="wrap public-foot"><span id="publicScope"></span><a id="edgar" href="https://www.sec.gov/edgar/search/">SEC EDGAR</a></footer>
 </main>
 
+<div id="registerBar" class="register-bar" hidden><nav id="registerNav" class="wrap"></nav></div>
+<main id="narrative" hidden><section class="narr-banner"><div class="wrap"><h1 id="narrName"></h1><p id="narrCount"></p></div></section>
+<section class="wrap narr-body"><label><span id="narrLabel"></span><select id="narrSelect"></select></label><article id="narrDetail" class="narr-doc"></article></section></main>
+<script type="application/json" id="narrative-filings">{"AAPL":{"0001140361-26-042798":{"date":"2026-11-09","form":"8-K","url":"https://www.sec.gov/Archives/edgar/data/320193/000114036126042798/ef20085077_8k.htm","items":["8.01","9.01"],"sections":{}},"0000320193-26-000024":{"date":"2026-11-02","form":"8-K","url":"https://www.sec.gov/Archives/edgar/data/320193/000032019326000024/aapl-20261102.htm","items":["2.02","9.01"],"sections":{}},"0001140361-26-035325":{"date":"2026-09-01","form":"8-K/A","url":"https://www.sec.gov/Archives/edgar/data/320193/000114036126035325/ef20081427_8ka.htm","items":["5.02"],"sections":{}}},"MSFT":{"0001193125-26-448357":{"date":"2026-11-05","form":"8-K","url":"https://www.sec.gov/Archives/edgar/data/789019/000119312526448357/d177209d8k.htm","items":["5.02"],"sections":{}},"0001193125-26-447173":{"date":"2026-11-04","form":"8-K","url":"https://www.sec.gov/Archives/edgar/data/789019/000119312526447173/d178557d8k.htm","items":["8.01","9.01"],"sections":{}},"0001193125-26-436149":{"date":"2026-10-28","form":"8-K","url":"https://www.sec.gov/Archives/edgar/data/789019/000119312526436149/msft-20261028.htm","items":["8.01","9.01"],"sections":{}},"0001193125-26-436122":{"date":"2026-10-28","form":"8-K","url":"https://www.sec.gov/Archives/edgar/data/789019/000119312526436122/msft-20261028.htm","items":["2.02","9.01"],"sections":{}},"0001193125-26-380280":{"date":"2026-09-02","form":"8-K","url":"https://www.sec.gov/Archives/edgar/data/789019/000119312526380280/d291965d8k.htm","items":["7.01","9.01"],"sections":{}}},"GOOGL":{"0001193125-26-449835":{"date":"2026-11-05","form":"8-K","url":"https://www.sec.gov/Archives/edgar/data/1652044/000119312526449835/d174184d8k.htm","items":["8.01","9.01"],"sections":{}},"0001652044-26-000080":{"date":"2026-10-28","form":"8-K","url":"https://www.sec.gov/Archives/edgar/data/1652044/000165204426000080/goog-20261028.htm","items":["2.02","9.01"],"sections":{}}},"AMZN":{"0001018724-26-000038":{"date":"2026-10-29","form":"8-K","url":"https://www.sec.gov/Archives/edgar/data/1018724/000101872426000038/amzn-20261029.htm","items":["2.02","9.01"],"sections":{}},"0001104659-26-107526":{"date":"2026-09-14","form":"8-K","url":"https://www.sec.gov/Archives/edgar/data/1018724/000110465926107526/tm2624614d5_8k.htm","items":["8.01","9.01"],"sections":{}},"0001018724-26-000036":{"date":"2026-09-09","form":"8-K","url":"https://www.sec.gov/Archives/edgar/data/1018724/000101872426000036/amzn-20260908.htm","items":["5.02"],"sections":{}}},"NVDA":{"0001045810-26-000088":{"date":"2026-11-17","form":"8-K","url":"https://www.sec.gov/Archives/edgar/data/1045810/000104581026000088/nvda-20261117.htm","items":["2.02","9.01"],"sections":{}},"0001045810-26-000082":{"date":"2026-11-12","form":"8-K","url":"https://www.sec.gov/Archives/edgar/data/1045810/000104581026000082/nvda-20261111.htm","items":["5.02","9.01"],"sections":{}},"0001045810-26-000078":{"date":"2026-09-03","form":"8-K","url":"https://www.sec.gov/Archives/edgar/data/1045810/000104581026000078/nvda-20260902.htm","items":["8.01"],"sections":{"section-01":{"id":"section-01","item":"8.01","state":"pending","count":1,"model":"nvidia-qwen38-27b:16k","sourceHash":"0ea586510cc2e4b817a29091e1a0c35beaf64844d98e84f199f00b15d9f35df7","sectionHash":"83810dd041a2019a273688f5d9d1b9210433aad3d77c83d18b5b88702458cab7"}}},"0001045810-26-000073":{"date":"2026-08-26","form":"8-K","url":"https://www.sec.gov/Archives/edgar/data/1045810/000104581026000073/nvda-20260826.htm","items":["2.02","9.01"],"sections":{}},"0001045810-26-000028":{"date":"2026-05-08","form":"8-K","url":"https://www.sec.gov/Archives/edgar/data/1045810/000104581026000028/nvda-20260507.htm","items":["5.02"],"sections":{"section-01":{"id":"section-01","item":"5.02","state":"pending","count":1,"model":"nvidia-qwen38-27b:16k","sourceHash":"87dd325ef6f0977f11e5aadd6e6f6732d957333b03bdb7fa792b922df4e52419","sectionHash":"1514eceef8aee00298bdc99011196d79ba41e005296f44dc9e83ea4e0299ea64"}}},"0001045810-26-000026":{"date":"2026-04-27","form":"8-K","url":"https://www.sec.gov/Archives/edgar/data/1045810/000104581026000026/nvda-20260424.htm","items":["5.02"],"sections":{"section-01":{"id":"section-01","item":"5.02","state":"pending","count":2,"model":"nvidia-qwen38-27b:16k","sourceHash":"42a5d9b50b58468d22da14757d9108373a2a97ab052082ffdaac48528fece78f","sectionHash":"00b25cae209e60cbd2724528e4cff492d1563fb517781be6ec21710d8bab53b1"}}},"0001045810-26-000069":{"date":"2026-08-17","form":"8-K","url":"https://www.sec.gov/Archives/edgar/data/1045810/000104581026000069/nvda-20260817.htm","items":["1.01","2.03","7.01"],"sections":{}},"0001045810-26-000060":{"date":"2026-07-02","form":"8-K","url":"https://www.sec.gov/Archives/edgar/data/1045810/000104581026000060/nvda-20260628.htm","items":["5.02"],"sections":{}},"0001045810-26-000056":{"date":"2026-06-30","form":"8-K","url":"https://www.sec.gov/Archives/edgar/data/1045810/000104581026000056/nvda-20260624.htm","items":["5.07"],"sections":{}},"0001193125-26-275783":{"date":"2026-06-18","form":"8-K","url":"https://www.sec.gov/Archives/edgar/data/1045810/000119312526275783/d48176d8k.htm","items":["8.01","9.01"],"sections":{}},"0001045810-26-000051":{"date":"2026-05-20","form":"8-K","url":"https://www.sec.gov/Archives/edgar/data/1045810/000104581026000051/nvda-20260520.htm","items":["2.02","9.01"],"sections":{}}},"META":{"0001193125-26-458525":{"date":"2026-11-12","form":"8-K","url":"https://www.sec.gov/Archives/edgar/data/1326801/000119312526458525/d177728d8k.htm","items":["8.01","9.01"],"sections":{}},"0001193125-26-450074":{"date":"2026-11-05","form":"8-K","url":"https://www.sec.gov/Archives/edgar/data/1326801/000119312526450074/d166273d8k.htm","items":["8.01","9.01"],"sections":{}},"0001193125-26-438017":{"date":"2026-10-29","form":"8-K","url":"https://www.sec.gov/Archives/edgar/data/1326801/000119312526438017/d183592d8k.htm","items":["1.01","3.03","5.03","9.01"],"sections":{}},"0001628280-26-066700":{"date":"2026-10-21","form":"8-K","url":"https://www.sec.gov/Archives/edgar/data/1326801/000162828026066700/meta-20261019.htm","items":["1.01","2.02","8.01","9.01"],"sections":{}}},"TSLA":{"0001628280-26-066738":{"date":"2026-10-21","form":"8-K","url":"https://www.sec.gov/Archives/edgar/data/1318605/000162828026066738/tsla-20261021.htm","items":["2.02","9.01"],"sections":{}},"0001628280-26-064366":{"date":"2026-10-02","form":"8-K","url":"https://www.sec.gov/Archives/edgar/data/1318605/000162828026064366/tsla-20261002.htm","items":["2.02","9.01"],"sections":{}},"0001628280-26-063820":{"date":"2026-09-29","form":"8-K","url":"https://www.sec.gov/Archives/edgar/data/1318605/000162828026063820/tsla-20260929.htm","items":["1.01","1.02","2.03","9.01"],"sections":{}}}}</script>
 <main id="top" hidden><section class="hero"><div class="wrap herogrid"><div><p class="eyebrow" id="eyebrow"></p><h1 id="title"></h1><p class="summary" id="summary"></p><p class="period" id="period"></p></div><figure class="herochart" style="margin:0"><figcaption class="charttop"><strong id="chartTitle"></strong><span class="chart-meta" id="axisUnit"></span></figcaption><div class="plot-tools" id="plotTools" role="group"></div><div class="plot"><div id="scale" class="scale" aria-hidden="true"></div><div class="bars" id="bars" role="group"></div><div id="periods" class="periods" aria-hidden="true"></div></div><div class="plot-detail"><output id="plotValue"></output><a href="#focus" id="plotLink"></a></div></figure></div></section>
 <section class="wrap"><div class="stats" id="stats"></div></section>
 <div class="wrap work"><section class="card" id="register"><div class="pad"><div class="heading"><h2 id="ledgerTitle"></h2><button type="button" class="download" id="download"></button></div><p class="sub" id="ledgerSub"></p></div><div class="ledger"><table><thead id="head"></thead><tbody id="rows"></tbody></table></div></section>
@@ -231,6 +237,7 @@ source(d.filing,tr('Form 8-K ↗','8-K本文 ↗'));
 for(const c of d.candidates || []){
   if(c.url!==d.quarterly && c.url!==d.filing) source(c.url,c.form+' · '+c.acc);
 }
+if(d.accession){const a=line('a',tr('Qwen output for this 8-K','この8-KのQwen抽出'),'narr-entry');a.href=narrativeURL(ticker,d.accession);}
 line('p', tr('Human review · ','担当者確認 · ')+reviewText(d.state),'review');
 }
 function ledger(){
@@ -269,8 +276,124 @@ function selectChart(action,container){
   evidence();
   $(container).querySelector('[aria-pressed=true]').focus({preventScroll:true});
 }
+const narrativeData=JSON.parse($('narrative-filings').textContent);
+const eventPage=query.get('tab')==='events';
+let chosenAcc=query.get('filing');
+const vocabulary={
+  pending:['Awaiting review','人手確認待ち'], reviewed:['Reviewed','確認済み'],
+  changed:['Source changed · review again','原文更新・再確認'], needs_revision:['Needs revision','要修正'],
+  appointment:['Appointment','就任'], retirement_notice:['Retirement notice','退任通知'],
+  acquisition_agreement:['Acquisition agreement','買収契約'], decision:['Decision','決定日'],
+  agreement:['Agreement','契約日'], effective:['Effective','発効日'], notice:['Notice','通知日'],
+  expected_completion:['Expected completion','完了見込み'], transition_end:['Transition end','移行支援終了日'],
+  reported:['Reported','開示済み'], expected:['Expected','見込み'], scheduled:['Scheduled','予定'],
+  pending_effective:['Pending effective date','発効前'], retirement_announced:['Retirement announced','退任表明'],
+  agreement_signed_pending_close:['Signed, closing pending','契約締結・完了待ち']
+};
+function term(v){return vocabulary[v] ? tr(...vocabulary[v]) : v;}
+function narrativeURL(symbol,acc){
+  return detailURL(symbol)+'&tab=events'+(acc?'&filing='+encodeURIComponent(acc):'');
+}
+function ledgerLink(url,label){
+  const a=node('a',label);a.href=url;return a;
+}
+function issuerFilings(symbol){
+  const data=new Map(Object.entries(narrativeData[symbol]||{}));
+  for(const q of allHistory[symbol]||[]){
+    if(q.accession && q.filing && !data.has(q.accession))
+      data.set(q.accession,{date:q.releaseDate,form:'8-K',url:q.filing,items:[],sections:{}});
+  }
+  return [...data].sort((a,b)=>(b[1].date||'').localeCompare(a[1].date||'') || b[0].localeCompare(a[0]));
+}
+function renderRegisterNav(){
+  const nav=$('registerNav');
+  const links=[ledgerLink(detailURL(ticker,records[selected]?.period),tr('Quarterly figures','四半期決算')),
+               ledgerLink(narrativeURL(ticker),tr('Filing text · Qwen','開示本文・Qwen'))];
+  links[eventPage?1:0].setAttribute('aria-current','page');
+  nav.setAttribute('aria-label',tr('Company registers','企業の台帳'));nav.replaceChildren(...links);
+}
+function narrativeField(dl,label,field,prefix){
+  if(!field)return;
+  const dd=node('dd',field.value??tr('Unknown','不明'));
+  for(const n of field.block_numbers){
+    const a=ledgerLink('#'+prefix+'-'+n,'¶'+n);
+    a.setAttribute('aria-label',tr('Source paragraph ','根拠段落 ')+n);
+    a.onclick=()=>{document.getElementById(prefix).open=true;};
+    dd.append(' ',a);
+  }
+  dl.append(node('dt',label),dd);
+}
+function renderSection(sec,acc){
+  const box=node('section',null,'narr-section');
+  box.append(node('h3','Item '+sec.item+' · '+term(sec.state)));
+  if(!sec.events){
+    box.append(node('p',tr('Unreviewed output is available in the local review copy.','確認前の候補は手元の確認版で閲覧できます。')));return box;
+  }
+  const prefix='source-'+acc+'-'+sec.id;
+  for(const e of sec.events){
+    const article=node('article',null,'narr-event'),dl=node('dl');
+    article.append(node('h4',e.subject.value+' · '+term(e.event_type.value)));
+    for(const [label,field] of [[tr('Extracted summary (Japanese)','抽出内容'),e.summary_ja],
+      [tr('Subject','対象'),e.subject],[tr('Organization','組織'),e.organization],
+      [tr('Event type','分類'),{...e.event_type,value:term(e.event_type.value)}],
+      [tr('At filing date','提出時点の状態'),{...e.status_as_of_filing,value:term(e.status_as_of_filing.value)}],
+      ...e.dates.map(d=>[term(d.role)+' · '+term(d.certainty),d]),
+      ...e.conditions.map(c=>[tr('Condition','条件'),c]),[tr('Note (Japanese)','補足'),e.notes_ja]]){
+      narrativeField(dl,label,field,prefix);
+    }
+    article.append(dl);box.append(article);
+  }
+  if(!sec.events.length) box.append(node('p',tr('Extraction completed with zero candidates in this section.','この節は抽出完了・候補0件です。')));
+  for(const note of sec.missing||[])box.append(node('p',note));
+  if(sec.blocks.length){
+    const sources=node('details',null,'source-paragraphs');sources.id=prefix;
+    sources.append(node('summary',tr('Source paragraphs','SEC原文の根拠段落')+' ('+sec.blocks.length+')'));
+    for(const b of sec.blocks){
+      const p=node('p');p.id=prefix+'-'+b.block_number;
+      p.append(node('b','¶'+b.block_number),' '+b.text);p.lang='en';sources.append(p);
+    }
+    box.append(sources);
+  }
+  return box;
+}
+function drawNarratives(){
+  const entries=issuerFilings(ticker);
+  const extracted=entries.filter(([,f])=>Object.keys(f.sections).length);
+  const n=extracted.reduce((sum,[,f])=>sum+Object.values(f.sections).reduce((s,v)=>s+v.count,0),0);
+  $('narrName').textContent=companyName+tr(' filing text register',' 開示本文台帳');
+  $('narrCount').textContent=tr('Saved Qwen 27B output for '+extracted.length+' filings · '+n+' candidates',
+    'Qwen 27B 抽出結果あり '+extracted.length+' 書類 · '+n+' 候補');
+  document.title=$('narrName').textContent+' | Company Disclosure Monitor';
+  $('narrLabel').textContent=tr('Select a filing','提出書類を選択');
+  const picker=$('narrSelect'),panel=$('narrDetail');picker.replaceChildren();panel.replaceChildren();
+  if(!chosenAcc)chosenAcc=(extracted[0]||entries[0]||[])[0];
+  const selectedFile=entries.find(([acc])=>acc===chosenAcc)?.[1];
+  if(!selectedFile && chosenAcc)picker.append(new Option(tr('Filing not listed','台帳に該当書類なし'),chosenAcc));
+  for(const [yes,title] of [[true,tr('Saved results','抽出結果あり')],[false,tr('No saved output','保存結果なし')]]){
+    const group=node('optgroup');group.label=title;
+    for(const [acc,f] of entries.filter(([,f])=>Boolean(Object.keys(f.sections).length)===yes))
+      group.append(new Option([f.date,f.form,acc].filter(Boolean).join(' · '),acc));
+    if(group.children.length)picker.append(group);
+  }
+  picker.value=chosenAcc||'';picker.disabled=!entries.length;
+  if(!selectedFile){
+    panel.append(node('p',tr('No matching filing in this company’s register.','この企業の台帳に該当する提出書類はありません。')));return;
+  }
+  const f=selectedFile,sections=Object.values(f.sections);
+  panel.append(node('p',f.form+'  /  '+f.date+(f.items.length?'  /  Item '+f.items.join(', '):''),'narr-meta'),
+    node('h2',chosenAcc));
+  if(f.url && f.url.startsWith('https://www.sec.gov/Archives/')){
+    const a=ledgerLink(f.url,tr('Open SEC filing ↗','SEC提出原文を開く ↗'));a.target='_blank';a.rel='noopener noreferrer';panel.append(a);
+  }
+  if(!sections.length){
+    panel.append(node('p',tr('No saved Qwen output for this filing.','この提出書類に対応するQwenの抽出結果は保存されていません。'),'narr-empty'));return;
+  }
+  for(const sec of sections)panel.append(renderSection(sec,chosenAcc));
+}
+
 function draw(){
-$('overview').hidden=!onHome;$('top').hidden=onHome;
+$('overview').hidden=!onHome;$('top').hidden=onHome||eventPage;
+$('narrative').hidden=onHome||!eventPage;$('registerBar').hidden=onHome;
 document.querySelector('.brand').href=(appPage ? '/demo' : '')+'?lang='+(ja?'ja':'en');
 if(onHome){drawHome();return;}
 document.body.dataset.issuer=ticker;
@@ -285,7 +408,7 @@ for(const symbol of Object.keys(companies)){
     link.textContent = companies[symbol];
     $('issuerNav').append(link);
   }
-  link.href = detailURL(symbol);
+  link.href = eventPage ? narrativeURL(symbol) : detailURL(symbol);
   if(symbol === ticker) link.setAttribute('aria-current','page');
 }
 if(appPage){
@@ -297,6 +420,11 @@ $('back').hidden=false;
 $('back').href=(appPage ? '/demo' : '')+'?'+overviewParams();
 $('back').textContent=tr('Filing overview','決算開示一覧');
 $('issuerNav').setAttribute('aria-label',tr('Companies','企業を選ぶ'));
+renderRegisterNav();
+if(eventPage){
+  $('skip').href='#narrSelect';$('skip').textContent=tr('Select a filing','提出書類を選ぶ');
+  drawNarratives();return;
+}
 $('eyebrow').textContent='NASDAQ · '+ticker+'  /  '+(history ? 'SEC 8-K / 10-Q / 10-K' : has10Q ? 'SEC FORM 8-K + 10-Q' : 'SEC FORM 8-K');
 $('title').textContent=companyName+tr(' filing coverage',' 決算開示台帳');
 document.title=$('title').textContent+' | Company Disclosure Monitor';
@@ -422,6 +550,9 @@ function feedRow({symbol,d}){
   const row=node('tr');row.dataset.issuer=symbol;
   const identity=node('td',null,'identity-cell'), a=node('a',null,'company-link');
   a.href=detailURL(symbol,d.period);a.append(node('span',symbol,'ticker'),node('span',companies[symbol],'company-name'));identity.append(a);
+  const narrative=ledgerLink(narrativeURL(symbol,homeState.mode==='history'?d.accession:null),
+    homeState.mode==='history'?tr('Qwen · this filing','この書類のQwen'):tr('Filing text · Qwen','開示本文・Qwen'));
+  narrative.className='narr-entry';identity.append(narrative);
   const quarter=node('td',null,'period-code'), qLink=node('a',periodText(d.period),'quarter-link');
   qLink.href=a.href;quarter.append(qLink);
   const trend=node('td',null,'spark-cell');trend.append(revenueTrend(symbol,d.period));
@@ -488,7 +619,14 @@ $('homeDownload').onclick=()=>{
   const a=node('a');a.href=url;a.download='disclosure-'+(homeState.symbol||'m7')+'-'+homeState.mode+'.csv';document.body.append(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(url),1000);
 };
 
-$('lang').onclick=()=>{ja=!ja;draw()};
+$('narrSelect').onchange=e=>{
+  chosenAcc=e.target.value;
+  if(location.protocol!=='file:')window.history.replaceState(null,'',narrativeURL(ticker,chosenAcc));
+  drawNarratives();
+};
+$('lang').onclick=()=>{ja=!ja;draw();
+  if(!onHome && location.protocol!=='file:')window.history.replaceState(null,'',eventPage?narrativeURL(ticker,chosenAcc):detailURL(ticker,records[selected].period));
+};
 $('download').onclick=()=>{
 const fields=['Fiscal quarter','Metric','Reported value','Unit','Comparison value','Comparison unit','Comparison row','Comparison column','Check','Human review','Accession','Form 8-K','Exhibit 99.1','SHA-256'];
 if(history || has10Q) fields.push('Periodic report','Report accession','Report SHA-256','Exception','Report form','Period end');

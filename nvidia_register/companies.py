@@ -6,6 +6,7 @@ import json
 from pathlib import Path
 import re
 from zoneinfo import ZoneInfo
+from urllib.parse import urlencode
 
 from nvidia_sync import filing_rows, locked
 from earnings import atomic
@@ -24,6 +25,10 @@ ISSUERS = {
 SEED = Path(__file__).resolve().parent / "examples" / "m7_filings.json"
 FORMS = {"8-K", "8-K/A"}
 CSV_HEADER = ["企業", "ティッカー", "CIK", "提出日", "書類", "SEC Item", "提出番号", "SEC原文", "取得基準日"]
+
+
+def narrative_url(symbol, accession):
+    return '/company/' + symbol + '?' + urlencode(dict(lang='ja', tab='events', filing=accession))
 
 
 def window_start(end):
@@ -127,9 +132,10 @@ def render(data, rows, ticker, item, token):
         tr.append("<tr>" + "".join(f"<td>{escape(v)}</td>" for v in (
             r["filing_date"], ISSUERS[symbol][0], r["form"], ", ".join(r["api_items"]) or "—"))
             + f'<td><a href="{escape(r["document_url"])}">{escape(r["accession_number"])}</a></td>'
-            + f'<td>{escape(data[symbol]["as_of"])}</td></tr>')
+            + f'<td>{escape(data[symbol]["as_of"])}</td>'
+            + f'<td><a href="{escape(narrative_url(symbol, r["accession_number"]))}">本文抽出を確認</a></td></tr>')
     if not rows:
-        tr.append('<tr><td colspan="6">この条件に該当する提出書類は0件です。</td></tr>')
+        tr.append('<tr><td colspan="7">この条件に該当する提出書類は0件です。</td></tr>')
     notice = '<section role="alert"><h2>取得状況</h2><ul>' + "".join(errors) + "</ul></section>" if errors else ""
     detail_links = " ".join(f'<a href="/company/{symbol}?lang=ja">{name}の四半期決算</a>'
                             for symbol, (name, _) in ISSUERS.items())
@@ -142,7 +148,7 @@ def render(data, rows, ticker, item, token):
 <option value="2.02"{selected}>Item 2.02（業績・財務状況）</option></select></label>
 <button>絞り込む</button></form>
 <p><strong>{len(rows)} 件</strong>　<a href="/companies.csv?ticker={ticker}&amp;item={item}">表示中の一覧をCSVで保存</a></p>
-<table><tr><th>提出日</th><th>企業</th><th>書類</th><th>SEC Item</th><th>提出番号・原文</th><th>取得基準日</th></tr>
+<table><tr><th>提出日</th><th>企業</th><th>書類</th><th>SEC Item</th><th>提出番号・原文</th><th>取得基準日</th><th>Qwen 27B</th></tr>
 {''.join(tr)}</table>
 <details><summary>SECから全7社を更新</summary>
 <form method="post" action="/companies-fetch">{token}

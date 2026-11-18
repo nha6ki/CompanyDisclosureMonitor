@@ -34,6 +34,12 @@ Open [the bilingual filing overview](nvidia_register/public_demo/index.html) dir
 
 The earlier filing-pair exercises remain available in the local application by adding `&baseline=1` to a company URL with a language parameter, for example `/company/NVDA?lang=ja&baseline=1`. The NVIDIA baseline compares two tables inside one exhibit. The original six company-specific cases compare a pinned exhibit against its 10-Q. Their scripts and sample CSVs remain available.
 
+## Filing text and Qwen evidence
+
+Open a company and choose **開示本文・Qwen**. Each filing is keyed by issuer and SEC accession. The filing selector groups saved results separately. Each event field links to its numbered source paragraph. The quarterly evidence panel links directly to the selected earnings 8-K. A completed section with zero candidates is distinct from a filing with no saved output.
+
+The bundled November 17 local trial covers three NVIDIA filings and four candidates awaiting review. The Git demo embeds their coverage counts. The private review copy includes their text and cited paragraphs. The WSL application reads the optional local snapshot from `register_data/qwen_ledger_snapshot.json` and overlays current Qwen sections and review decisions from the register. Opening a ledger does not run inference.
+
 ## Local application
 
 The reference setup uses Windows 11, Ubuntu on WSL2, and Python with a virtual environment. From the repository root:

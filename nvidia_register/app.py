@@ -25,6 +25,7 @@ import periods
 import pipeline
 import workbench
 import demo_history
+import narratives
 import llm_runner
 import read_sections
 import structured_events as events
@@ -79,7 +80,7 @@ class Register:
                            document_url=doc["record"]["document_url"], status="sections_ready",
                            section=dict(section_id=source["section_id"], item=source["item"], text_sha256=source["section_sha256"],
                                         block_start=blocks[0]["block_number"], blocks=[b["text"] for b in blocks]))
-                self.add(doc, f, ctx, view["review"][acc]["status"])
+                self.add(doc, f, ctx, view["review"][acc]["status"], view["model"])
         for doc in docs.values():
             known_items = {s["ctx"]["section"]["item"] for s in doc["sections"].values()}
             if set(doc["record"]["api_items"]) - known_items - {"9.01"}:
@@ -114,10 +115,10 @@ class Register:
         issues = ["添付本文は未読（Item 9.01）"] if "9.01" in record["api_items"] else []
         return {"record":record, "issues":issues, "sections":{}}
 
-    def add(self, doc, f, ctx, state):
+    def add(self, doc, f, ctx, state, model=None):
         validate(f, ctx)
         sid = ctx["section"]["section_id"]
-        doc["sections"][sid] = dict(ctx=ctx, original=f, state=state,
+        doc["sections"][sid] = dict(ctx=ctx, original=f, state=state, model=model,
                                     fingerprint=digest([f, state]))
 
     def inbox(self, doc):
@@ -151,7 +152,7 @@ class Register:
             if len(data["filings"]) != 1:
                 raise ValueError("対象の提出書類が一意ではありません")
             if sid not in doc["sections"]:
-                self.add(doc, data["filings"][0], ctx, "pending")
+                self.add(doc, data["filings"][0], ctx, "pending", read(completed).get("config", {}).get("model"))
 
     def current(self, acc, sid):
         s = self.docs[acc]["sections"][sid]
@@ -222,6 +223,7 @@ def page(title, content):
 
 def index(reg, needs):
     rows = []
+    projection = narratives.collect(reg.root, reg)["NVDA"]
     for acc, doc in reg.ordered():
         issues = list(doc["issues"])
         m = reporting.metrics(reg,acc)
@@ -241,6 +243,11 @@ def index(reg, needs):
                 msg = LABEL[state]
             if state != "reviewed":
                 issues.append(sid + " " + msg)
+        for sid, saved in projection.get(acc, {}).get("sections", {}).items():
+            if sid not in doc["sections"]:
+                count += saved["count"]
+                if saved["state"] != "reviewed":
+                    issues.append("Qwen · Item " + saved["item"] + " " + LABEL[saved["state"]])
         if needs and not issues:
             continue
         r = doc["record"]
@@ -254,6 +261,7 @@ def index(reg, needs):
 def detail(reg, acc):
     doc = reg.docs[acc]
     parts = ['<a href="/">台帳に戻る</a>',f'<p><a href="{h(doc["record"]["document_url"])}">SEC原文</a></p>']
+    parts.append(f'<p><a href="{h(companies.narrative_url("NVDA",acc))}">この書類のQwen抽出・根拠段落</a></p>')
     financial = reporting.metric_page(reg,acc,hidden)
     if financial: parts.append(financial)
     parts.extend("<p>"+h("99.1の決算表を取得済み。他の添付は未確認" if financial and "添付本文は未読" in i else i)+"</p>" for i in doc["issues"])
@@ -374,7 +382,8 @@ def application(reg,port):
                 with closing(pipeline.connect(reg.root)) as db:
                     data = demo_history.presentation(r for r in pipeline.records(db) if not symbol or r['symbol']==symbol)
                     dates = dict(db.execute('SELECT symbol,asof FROM syncs'))
-                body = demo_history.embed(body.decode("utf-8"), data, dates).encode("utf-8")
+                html = demo_history.embed(body.decode("utf-8"), data, dates)
+                body = narratives.embed(html, narratives.collect(reg.root, reg), include_pending=True).encode("utf-8")
             elif method == "GET" and path == "/report":
                 number = int(parse_qs(env["QUERY_STRING"])["id"][0])
                 result = reg.db.execute("SELECT data FROM reports WHERE id=?",(number,)).fetchone()
