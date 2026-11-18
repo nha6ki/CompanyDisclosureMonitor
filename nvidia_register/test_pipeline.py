@@ -76,6 +76,22 @@ class QuarterWorkflowTest(unittest.TestCase):
         embedded=json.loads(demo_history.TEMPLATE.read_text().split(demo_history.MARKER)[1].split('</script>')[0])
         self.assertEqual(embedded,expected)
 
+    def test_landing_contains_all_issuers_dates_and_public_fields(self):
+        pipeline.review(self.db,dict(self.row,state='確認済み',reviewer='private-reviewer',note='private-note'))
+        code,_,html=route(self.reg,'/demo')
+        self.assertEqual(code,'200 OK')
+        self.assertNotIn(b'private-reviewer',html)
+        self.assertNotIn(b'private-note',html)
+        body=html.decode()
+        data=json.loads(body.split(demo_history.MARKER)[1].split('</script>')[0])
+        dates=json.loads(body.split('id="issuer-asof">')[1].split('</script>')[0])
+        self.assertEqual(set(data),set(pipeline.ISSUERS))
+        self.assertTrue(all(len(data[s])==8 and dates[s]=='2026-11-19' for s in data))
+        self.assertEqual(data['NVDA'][-1]['state'],'確認済み')
+        self.assertEqual(data['GOOGL'][-1]['releaseDate'],'2026-10-28')
+        self.assertEqual(data['GOOGL'][-1]['reportDate'],'2026-10-29')
+        self.assertTrue(any(c['form']=='10-K/A' for d in data['TSLA'] for c in d['candidates']))
+
     def test_offline_issuer_does_not_erase_good_data(self):
         before=list(pipeline.records(self.db))
         with patch.object(pipeline,'scan',side_effect=TimeoutError('timeout')):

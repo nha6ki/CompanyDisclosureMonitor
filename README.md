@@ -30,7 +30,7 @@ Choose **照合** to filter exceptions or **担当者確認** to filter human re
 
 ## Offline demo and original comparison cases
 
-Open [the bilingual register](nvidia_register/public_demo/index.html) directly in a browser to inspect the bundled eight quarters for each company, switch between revenue and diluted EPS, follow the SEC sources or download an issuer CSV. The local application renders the same company pages from the current database. The standalone file contains the bundled data and has no review editor.
+Open [the bilingual filing overview](nvidia_register/public_demo/index.html) directly in a browser, or open `/demo?lang=ja` in the local application. The overview lists the latest earnings release by company. Switch to the quarter history or select an automated check to filter all eight quarters. The displayed rows can be exported as a public CSV. Select a quarter for its revenue and diluted EPS, links to SEC evidence, and relevant amended filings. The overview and chart use issuer-specific accent colors and text ticker labels. The public view excludes reviewer identities and notes. The local application renders the same company pages from the current database. The standalone file contains the bundled data and has no review editor.
 
 The earlier filing-pair exercises remain available in the local application by adding `&baseline=1` to a company URL with a language parameter, for example `/company/NVDA?lang=ja&baseline=1`. The NVIDIA baseline compares two tables inside one exhibit. The original six company-specific cases compare a pinned exhibit against its 10-Q. Their scripts and sample CSVs remain available.
 

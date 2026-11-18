@@ -360,10 +360,10 @@ def application(reg,port):
                         data, rows, ticker, item, hidden("token", reg.token)))
             elif method == "GET" and (path == "/demo" or path.removeprefix("/company/") in companies.ISSUERS and path.startswith("/company/")):
                 body = (Path(__file__).resolve().parent / "public_demo" / "index.html").read_bytes()
-                symbol = (parse_qs(env["QUERY_STRING"]).get("company", ["NVDA"])[0]
+                symbol = (parse_qs(env["QUERY_STRING"]).get("company", [""])[0]
                           if path == "/demo" else path.rsplit("/", 1)[1])
                 if symbol not in companies.ISSUERS:
-                    symbol = "NVDA"
+                    symbol = ""
                 pairs = {"MSFT": microsoft.PAIR, "GOOGL": alphabet.PAIR, **issuer_financials.PAIRS}
                 if symbol in pairs and (local := pairs[symbol].local_result(reg.root)).is_file():
                     marker = f'<script type="application/json" id="{symbol.lower()}-record">'
@@ -372,8 +372,9 @@ def application(reg,port):
                     data = json.dumps(read(local), ensure_ascii=True).replace("<", chr(92) + "u003c")
                     body = (before + marker + data + "</script>" + after).encode("utf-8")
                 with closing(pipeline.connect(reg.root)) as db:
-                    data = demo_history.presentation(r for r in pipeline.records(db) if r['symbol']==symbol)
-                body = demo_history.embed(body.decode("utf-8"), data).encode("utf-8")
+                    data = demo_history.presentation(r for r in pipeline.records(db) if not symbol or r['symbol']==symbol)
+                    dates = dict(db.execute('SELECT symbol,asof FROM syncs'))
+                body = demo_history.embed(body.decode("utf-8"), data, dates).encode("utf-8")
             elif method == "GET" and path == "/report":
                 number = int(parse_qs(env["QUERY_STRING"])["id"][0])
                 result = reg.db.execute("SELECT data FROM reports WHERE id=?",(number,)).fetchone()
