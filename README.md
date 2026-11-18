@@ -36,7 +36,7 @@ The earlier filing-pair exercises remain available in the local application by a
 
 ## Filing text and Qwen evidence
 
-Open a company and choose **開示本文台帳（Qwen）**. Each filing is keyed by issuer and SEC accession. The filing selector groups saved results separately. Each event field links to its numbered source paragraph. The quarterly evidence panel links directly to the selected earnings 8-K. A completed section with zero candidates is distinct from a filing with no saved output.
+Open a company and choose **開示の要点**. Each filing is keyed by issuer and SEC accession. The filing selector groups saved results separately. Each event field links to its numbered source paragraph. The quarterly evidence panel links directly to the selected earnings 8-K. A completed section with zero candidates is distinct from a filing with no saved output.
 
 The bundled November 17 local trial covers three NVIDIA filings and four candidates awaiting review. The Git demo embeds their coverage counts. The private review copy includes their text and cited paragraphs. The WSL application reads the optional local snapshot from `register_data/qwen_ledger_snapshot.json` and overlays current Qwen sections and review decisions from the register. Opening a ledger does not run inference.
 

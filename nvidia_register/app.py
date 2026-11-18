@@ -277,7 +277,7 @@ def index(reg, needs):
 def detail(reg, acc):
     doc = reg.docs[acc]
     parts = ['<a href="/">NVIDIAの開示レビューに戻る</a>',f'<p><a href="{h(doc["record"]["document_url"])}">SEC原文</a></p>']
-    parts.append(f'<p><a href="{h(companies.narrative_url("NVDA",acc))}">この8-KのQwen抽出結果</a></p>')
+    parts.append(f'<p><a href="{h(companies.narrative_url("NVDA",acc))}">この8-Kの要点</a></p>')
     financial = reporting.metric_page(reg,acc,hidden)
     if financial: parts.append(financial)
     parts.extend("<p>"+h("99.1の決算表を取得済み。他の添付は未確認" if financial and "添付本文は未読" in i else i)+"</p>" for i in doc["issues"])
