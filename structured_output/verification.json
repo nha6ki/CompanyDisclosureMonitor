@@ -1,0 +1,17 @@
+{
+  "checked_on_jst": "2026-11-17",
+  "new_tests_passed": 17,
+  "all_tests_passed": 44,
+  "reference_filing_count": 3,
+  "reference_event_count": 4,
+  "mechanical_validation_errors": 0,
+  "semantic_correctness_verified": false,
+  "human_review_status": "pending",
+  "llm_api_invoked": false,
+  "model_input_contains_complete_selected_sections": true,
+  "reference_examples_in_model_input": false,
+  "original_extractor_unchanged": true,
+  "static_html_checks_passed": true,
+  "browser_visual_review_performed": false,
+  "jsonschema_tested_version": "4.26.0"
+}

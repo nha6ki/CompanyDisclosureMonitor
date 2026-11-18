@@ -1,0 +1,247 @@
+{
+  "schema_version": 1,
+  "extractor_version": "nvidia-evidence-0.1",
+  "mode": "rule_based_source_fragments",
+  "generated_japanese_summary": false,
+  "snapshot_at": "2026-11-17T10:29:00+09:00",
+  "fetch_error": null,
+  "filing_count": 5,
+  "files_with_candidates": 5,
+  "candidate_count": 10,
+  "filings": [
+    {
+      "ticker": "NVDA",
+      "accession_number": "0001045810-26-000082",
+      "filing_date": "2026-11-12",
+      "document_url": "https://www.sec.gov/Archives/edgar/data/1045810/000104581026000082/nvda-20261111.htm",
+      "api_items": [
+        "5.02",
+        "9.01"
+      ],
+      "sha256": "1543a0cc1775291131f5d22224435fff8a58de4e7d6804618ee82fbda1a1dd5c",
+      "candidates": [
+        {
+          "rule_id": "resignation",
+          "label": "辞任受理の表現",
+          "item": "5.02",
+          "block_number": 42,
+          "paragraph_sha256": "f52308d99e8d10e8733c8b3fd0bc8bbc0dad8b971f166fafeeb9f2121d681025",
+          "char_start": 63,
+          "char_end": 154,
+          "leading_omission": true,
+          "trailing_omission": true,
+          "quote_word_count": 12
+        },
+        {
+          "rule_id": "interim_role",
+          "label": "暫定役職の表現",
+          "item": "5.02",
+          "block_number": 43,
+          "paragraph_sha256": "7b7ec225b3e511e69c703f523ab86888eddf7a1364f85d65b6f2ffb1dad6838d",
+          "char_start": 135,
+          "char_end": 203,
+          "leading_omission": true,
+          "trailing_omission": true,
+          "quote_word_count": 12
+        }
+      ],
+      "candidate_count": 2,
+      "text_items": [
+        "5.02",
+        "9.01"
+      ],
+      "observed_sha256": "1543a0cc1775291131f5d22224435fff8a58de4e7d6804618ee82fbda1a1dd5c",
+      "status": "candidates_found",
+      "items_only_in_body": [],
+      "items_only_in_api": []
+    },
+    {
+      "ticker": "NVDA",
+      "accession_number": "0001045810-26-000078",
+      "filing_date": "2026-09-03",
+      "document_url": "https://www.sec.gov/Archives/edgar/data/1045810/000104581026000078/nvda-20260902.htm",
+      "api_items": [
+        "8.01"
+      ],
+      "sha256": "0ea586510cc2e4b817a29091e1a0c35beaf64844d98e84f199f00b15d9f35df7",
+      "candidates": [
+        {
+          "rule_id": "acquisition_agreement",
+          "label": "買収契約の表現",
+          "item": "8.01",
+          "block_number": 42,
+          "paragraph_sha256": "5940d994eba19ff708d0ba0818cebf3f490f8d72872c38da0160869bbc76cc53",
+          "char_start": 29,
+          "char_end": 117,
+          "leading_omission": true,
+          "trailing_omission": true,
+          "quote_word_count": 12
+        },
+        {
+          "rule_id": "completion_condition",
+          "label": "完了条件の表現",
+          "item": "8.01",
+          "block_number": 44,
+          "paragraph_sha256": "a4e1b0bda9fa8b246a626b5d07f564a25d6d3b58fd11bae7c7dce2e951b10839",
+          "char_start": 55,
+          "char_end": 134,
+          "leading_omission": true,
+          "trailing_omission": true,
+          "quote_word_count": 12
+        }
+      ],
+      "candidate_count": 2,
+      "text_items": [
+        "8.01",
+        "9.01"
+      ],
+      "observed_sha256": "0ea586510cc2e4b817a29091e1a0c35beaf64844d98e84f199f00b15d9f35df7",
+      "status": "candidates_found",
+      "items_only_in_body": [
+        "9.01"
+      ],
+      "items_only_in_api": []
+    },
+    {
+      "ticker": "NVDA",
+      "accession_number": "0001045810-26-000073",
+      "filing_date": "2026-08-26",
+      "document_url": "https://www.sec.gov/Archives/edgar/data/1045810/000104581026000073/nvda-20260826.htm",
+      "api_items": [
+        "2.02",
+        "9.01"
+      ],
+      "sha256": "1de9fb30a632ce28bdddb47aa86001b26bf07c8d5be82256cf8887c69840856b",
+      "candidates": [
+        {
+          "rule_id": "earnings",
+          "label": "決算発表の表現",
+          "item": "2.02",
+          "block_number": 42,
+          "paragraph_sha256": "70cad82a81e73968988d4053bf9d8e5a03c7758b630cb7c7da7a6ce010e2947c",
+          "char_start": 65,
+          "char_end": 138,
+          "leading_omission": true,
+          "trailing_omission": true,
+          "quote_word_count": 12
+        },
+        {
+          "rule_id": "cfo_commentary",
+          "label": "補足解説の表現",
+          "item": "2.02",
+          "block_number": 43,
+          "paragraph_sha256": "f5c0845eef1b1f21b4c98a7d12dcc6c298e9f5f89583e9a08c0609f15609e71a",
+          "char_start": 62,
+          "char_end": 144,
+          "leading_omission": true,
+          "trailing_omission": true,
+          "quote_word_count": 12
+        }
+      ],
+      "candidate_count": 2,
+      "text_items": [
+        "2.02",
+        "9.01"
+      ],
+      "observed_sha256": "1de9fb30a632ce28bdddb47aa86001b26bf07c8d5be82256cf8887c69840856b",
+      "status": "candidates_found",
+      "items_only_in_body": [],
+      "items_only_in_api": []
+    },
+    {
+      "ticker": "NVDA",
+      "accession_number": "0001045810-26-000069",
+      "filing_date": "2026-08-17",
+      "document_url": "https://www.sec.gov/Archives/edgar/data/1045810/000104581026000069/nvda-20260817.htm",
+      "api_items": [
+        "1.01",
+        "2.03",
+        "7.01"
+      ],
+      "sha256": "2904584596b8f31a4763aa821ab65d52829238a55a74b860c14ecc08e0844ce7",
+      "candidates": [
+        {
+          "rule_id": "partnership",
+          "label": "提携発表の表現",
+          "item": "1.01",
+          "block_number": 42,
+          "paragraph_sha256": "583b9c3d4eb947ccd5a67da40536b4fd38db045b5376de18a13dfb64c6bb82cd",
+          "char_start": 27,
+          "char_end": 124,
+          "leading_omission": true,
+          "trailing_omission": true,
+          "quote_word_count": 12
+        },
+        {
+          "rule_id": "payment_cap",
+          "label": "支払義務の上限表現",
+          "item": "1.01",
+          "block_number": 45,
+          "paragraph_sha256": "0665adc920bdc380d64d27b58315b3e26ce8aef6539791d501ca950e96288fa3",
+          "char_start": 0,
+          "char_end": 84,
+          "leading_omission": false,
+          "trailing_omission": true,
+          "quote_word_count": 12
+        }
+      ],
+      "candidate_count": 2,
+      "text_items": [
+        "1.01",
+        "2.03",
+        "7.01",
+        "9.01"
+      ],
+      "observed_sha256": "2904584596b8f31a4763aa821ab65d52829238a55a74b860c14ecc08e0844ce7",
+      "status": "candidates_found",
+      "items_only_in_body": [
+        "9.01"
+      ],
+      "items_only_in_api": []
+    },
+    {
+      "ticker": "NVDA",
+      "accession_number": "0001045810-26-000060",
+      "filing_date": "2026-07-02",
+      "document_url": "https://www.sec.gov/Archives/edgar/data/1045810/000104581026000060/nvda-20260628.htm",
+      "api_items": [
+        "5.02"
+      ],
+      "sha256": "a9a96bb6562f24b8dcb0cc09d1eca7788693a68f26074c2a6ef076eba45353ee",
+      "candidates": [
+        {
+          "rule_id": "retirement_intention",
+          "label": "退任意向の表現",
+          "item": "5.02",
+          "block_number": 43,
+          "paragraph_sha256": "5d999b6a50c0d1384f5a3b86bf016a9fa9ba26cd201225f30df967356db78d2f",
+          "char_start": 145,
+          "char_end": 215,
+          "leading_omission": true,
+          "trailing_omission": true,
+          "quote_word_count": 12
+        },
+        {
+          "rule_id": "appointment_effective",
+          "label": "発効条件の表現",
+          "item": "5.02",
+          "block_number": 45,
+          "paragraph_sha256": "df01a0147402d06d6ffd2eb7bf244bfec7a9eb0aedfd86bdb4b0dcae8df5fc44",
+          "char_start": 123,
+          "char_end": 203,
+          "leading_omission": true,
+          "trailing_omission": true,
+          "quote_word_count": 12
+        }
+      ],
+      "candidate_count": 2,
+      "text_items": [
+        "5.02"
+      ],
+      "observed_sha256": "a9a96bb6562f24b8dcb0cc09d1eca7788693a68f26074c2a6ef076eba45353ee",
+      "status": "candidates_found",
+      "items_only_in_body": [],
+      "items_only_in_api": []
+    }
+  ]
+}

@@ -1,0 +1,64 @@
+{
+  "release": "nvidia-trial-fix-1",
+  "reviewed_attachment_sha256": "7a92a18b9acca084874e71011de1c1f17ee61971df7b952312a0d28a753f275f",
+  "known_document_trial_not_general_accuracy_evaluation": true,
+  "changes": [
+    "String patterns are sent to the generator; full schema is also included in instructions.",
+    "Instructions clarify pending appointments, date roles, status consistency, evidence and role names.",
+    "Future day-precision effective/transition/completion dates marked reported are rejected."
+  ],
+  "historical_trial_recheck": [
+    {
+      "accession_number": "0001045810-26-000026",
+      "source_input_unchanged": true,
+      "original_candidate_changed": false,
+      "original_output_revalidated_errors": [
+        {
+          "code": "schema_error",
+          "path": "filings/0/events/0/event_id",
+          "message": "'evt-001' does not match '^event-[0-9]+$'"
+        },
+        {
+          "code": "schema_error",
+          "path": "filings/0/events/1/event_id",
+          "message": "'evt-002' does not match '^event-[0-9]+$'"
+        }
+      ],
+      "diagnostic_only_event_ids_changed_in_memory_errors": [
+        {
+          "code": "status_event_mismatch",
+          "path": "0001045810-26-000026",
+          "message": "出来事の有無と処理状態が一致しません。"
+        },
+        {
+          "code": "future_date_marked_reported",
+          "path": "0001045810-26-000026/event-1/dates/1",
+          "message": "提出日より後の発効・移行終了・完了日は、既に起きた日付として扱えません。本文に従いscheduledまたはexpectedにします。"
+        },
+        {
+          "code": "name_not_in_evidence",
+          "path": "0001045810-26-000026/event-2/organization",
+          "message": "指定された根拠内に氏名・名称の完全一致がありません。"
+        },
+        {
+          "code": "future_date_marked_reported",
+          "path": "0001045810-26-000026/event-2/dates/0",
+          "message": "提出日より後の発効・移行終了・完了日は、既に起きた日付として扱えません。本文に従いscheduledまたはexpectedにします。"
+        }
+      ]
+    },
+    {
+      "accession_number": "0001045810-26-000028",
+      "source_input_unchanged": true,
+      "original_candidate_changed": false,
+      "original_output_revalidated_errors": [],
+      "diagnostic_only_event_ids_changed_in_memory_errors": []
+    }
+  ],
+  "revised_llm_inference_performed": false,
+  "limitations": [
+    "No general semantic or omission detection added.",
+    "No original model output was corrected or approved.",
+    "Unseen-document accuracy remains unmeasured."
+  ]
+}

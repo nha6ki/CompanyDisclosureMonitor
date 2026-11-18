@@ -1,0 +1,15 @@
+{
+  "base_url": "http://127.0.0.1:11434/v1",
+  "model": "nvidia-qwen35-9b:16k",
+  "api_key_env": null,
+  "response_format": "json_schema",
+  "max_output_tokens": 8000,
+  "token_parameter": "max_tokens",
+  "instruction_role": "system",
+  "timeout_seconds": 900,
+  "generation": {
+    "temperature": 0,
+    "seed": 42,
+    "reasoning_effort": "none"
+  }
+}

@@ -1,0 +1,275 @@
+{
+  "validator_version": "nvidia-events-0.1",
+  "mechanical_checks_passed": true,
+  "semantic_correctness_verified": false,
+  "human_review_status": "pending",
+  "llm_invocation_performed": false,
+  "errors": [],
+  "resolved_evidence": [
+    {
+      "path": "0001045810-26-000028/event-1/subject",
+      "accession_number": "0001045810-26-000028",
+      "section_id": "section-01",
+      "block_number": 43,
+      "block_sha256": "1faf2ad34acb9e851a78ab256fd74d2389866b1300461d661d98a9e1c40f641c"
+    },
+    {
+      "path": "0001045810-26-000028/event-1/organization",
+      "accession_number": "0001045810-26-000028",
+      "section_id": "section-01",
+      "block_number": 43,
+      "block_sha256": "1faf2ad34acb9e851a78ab256fd74d2389866b1300461d661d98a9e1c40f641c"
+    },
+    {
+      "path": "0001045810-26-000028/event-1/event_type",
+      "accession_number": "0001045810-26-000028",
+      "section_id": "section-01",
+      "block_number": 43,
+      "block_sha256": "1faf2ad34acb9e851a78ab256fd74d2389866b1300461d661d98a9e1c40f641c"
+    },
+    {
+      "path": "0001045810-26-000028/event-1/summary_ja",
+      "accession_number": "0001045810-26-000028",
+      "section_id": "section-01",
+      "block_number": 43,
+      "block_sha256": "1faf2ad34acb9e851a78ab256fd74d2389866b1300461d661d98a9e1c40f641c"
+    },
+    {
+      "path": "0001045810-26-000028/event-1/status_as_of_filing",
+      "accession_number": "0001045810-26-000028",
+      "section_id": "section-01",
+      "block_number": 43,
+      "block_sha256": "1faf2ad34acb9e851a78ab256fd74d2389866b1300461d661d98a9e1c40f641c"
+    },
+    {
+      "path": "0001045810-26-000028/event-1/notes_ja",
+      "accession_number": "0001045810-26-000028",
+      "section_id": "section-01",
+      "block_number": 43,
+      "block_sha256": "1faf2ad34acb9e851a78ab256fd74d2389866b1300461d661d98a9e1c40f641c"
+    },
+    {
+      "path": "0001045810-26-000028/event-1/dates/0",
+      "accession_number": "0001045810-26-000028",
+      "section_id": "section-01",
+      "block_number": 43,
+      "block_sha256": "1faf2ad34acb9e851a78ab256fd74d2389866b1300461d661d98a9e1c40f641c"
+    },
+    {
+      "path": "0001045810-26-000028/event-1/dates/1",
+      "accession_number": "0001045810-26-000028",
+      "section_id": "section-01",
+      "block_number": 43,
+      "block_sha256": "1faf2ad34acb9e851a78ab256fd74d2389866b1300461d661d98a9e1c40f641c"
+    },
+    {
+      "path": "0001045810-26-000026/event-1/subject",
+      "accession_number": "0001045810-26-000026",
+      "section_id": "section-01",
+      "block_number": 43,
+      "block_sha256": "de3de0fb077ddc4097b61947862bc2a695856b924d644a43a06fe7e120231b41"
+    },
+    {
+      "path": "0001045810-26-000026/event-1/organization",
+      "accession_number": "0001045810-26-000026",
+      "section_id": "section-01",
+      "block_number": 43,
+      "block_sha256": "de3de0fb077ddc4097b61947862bc2a695856b924d644a43a06fe7e120231b41"
+    },
+    {
+      "path": "0001045810-26-000026/event-1/event_type",
+      "accession_number": "0001045810-26-000026",
+      "section_id": "section-01",
+      "block_number": 43,
+      "block_sha256": "de3de0fb077ddc4097b61947862bc2a695856b924d644a43a06fe7e120231b41"
+    },
+    {
+      "path": "0001045810-26-000026/event-1/summary_ja",
+      "accession_number": "0001045810-26-000026",
+      "section_id": "section-01",
+      "block_number": 43,
+      "block_sha256": "de3de0fb077ddc4097b61947862bc2a695856b924d644a43a06fe7e120231b41"
+    },
+    {
+      "path": "0001045810-26-000026/event-1/status_as_of_filing",
+      "accession_number": "0001045810-26-000026",
+      "section_id": "section-01",
+      "block_number": 43,
+      "block_sha256": "de3de0fb077ddc4097b61947862bc2a695856b924d644a43a06fe7e120231b41"
+    },
+    {
+      "path": "0001045810-26-000026/event-1/notes_ja",
+      "accession_number": "0001045810-26-000026",
+      "section_id": "section-01",
+      "block_number": 43,
+      "block_sha256": "de3de0fb077ddc4097b61947862bc2a695856b924d644a43a06fe7e120231b41"
+    },
+    {
+      "path": "0001045810-26-000026/event-1/dates/0",
+      "accession_number": "0001045810-26-000026",
+      "section_id": "section-01",
+      "block_number": 43,
+      "block_sha256": "de3de0fb077ddc4097b61947862bc2a695856b924d644a43a06fe7e120231b41"
+    },
+    {
+      "path": "0001045810-26-000026/event-1/dates/1",
+      "accession_number": "0001045810-26-000026",
+      "section_id": "section-01",
+      "block_number": 43,
+      "block_sha256": "de3de0fb077ddc4097b61947862bc2a695856b924d644a43a06fe7e120231b41"
+    },
+    {
+      "path": "0001045810-26-000026/event-1/dates/2",
+      "accession_number": "0001045810-26-000026",
+      "section_id": "section-01",
+      "block_number": 43,
+      "block_sha256": "de3de0fb077ddc4097b61947862bc2a695856b924d644a43a06fe7e120231b41"
+    },
+    {
+      "path": "0001045810-26-000026/event-2/subject",
+      "accession_number": "0001045810-26-000026",
+      "section_id": "section-01",
+      "block_number": 45,
+      "block_sha256": "57dfd23d46eaa5a48c275214ffb3f33377c8bd6739a6f2197a2454d220d0f0e5"
+    },
+    {
+      "path": "0001045810-26-000026/event-2/organization",
+      "accession_number": "0001045810-26-000026",
+      "section_id": "section-01",
+      "block_number": 43,
+      "block_sha256": "de3de0fb077ddc4097b61947862bc2a695856b924d644a43a06fe7e120231b41"
+    },
+    {
+      "path": "0001045810-26-000026/event-2/event_type",
+      "accession_number": "0001045810-26-000026",
+      "section_id": "section-01",
+      "block_number": 45,
+      "block_sha256": "57dfd23d46eaa5a48c275214ffb3f33377c8bd6739a6f2197a2454d220d0f0e5"
+    },
+    {
+      "path": "0001045810-26-000026/event-2/summary_ja",
+      "accession_number": "0001045810-26-000026",
+      "section_id": "section-01",
+      "block_number": 45,
+      "block_sha256": "57dfd23d46eaa5a48c275214ffb3f33377c8bd6739a6f2197a2454d220d0f0e5"
+    },
+    {
+      "path": "0001045810-26-000026/event-2/status_as_of_filing",
+      "accession_number": "0001045810-26-000026",
+      "section_id": "section-01",
+      "block_number": 45,
+      "block_sha256": "57dfd23d46eaa5a48c275214ffb3f33377c8bd6739a6f2197a2454d220d0f0e5"
+    },
+    {
+      "path": "0001045810-26-000026/event-2/conditions/0",
+      "accession_number": "0001045810-26-000026",
+      "section_id": "section-01",
+      "block_number": 45,
+      "block_sha256": "57dfd23d46eaa5a48c275214ffb3f33377c8bd6739a6f2197a2454d220d0f0e5"
+    },
+    {
+      "path": "0001045810-26-000026/event-2/dates/0",
+      "accession_number": "0001045810-26-000026",
+      "section_id": "section-01",
+      "block_number": 45,
+      "block_sha256": "57dfd23d46eaa5a48c275214ffb3f33377c8bd6739a6f2197a2454d220d0f0e5"
+    },
+    {
+      "path": "0001045810-26-000026/event-2/dates/1",
+      "accession_number": "0001045810-26-000026",
+      "section_id": "section-01",
+      "block_number": 45,
+      "block_sha256": "57dfd23d46eaa5a48c275214ffb3f33377c8bd6739a6f2197a2454d220d0f0e5"
+    },
+    {
+      "path": "0001045810-26-000078/event-1/subject",
+      "accession_number": "0001045810-26-000078",
+      "section_id": "section-01",
+      "block_number": 42,
+      "block_sha256": "5940d994eba19ff708d0ba0818cebf3f490f8d72872c38da0160869bbc76cc53"
+    },
+    {
+      "path": "0001045810-26-000078/event-1/organization",
+      "accession_number": "0001045810-26-000078",
+      "section_id": "section-01",
+      "block_number": 42,
+      "block_sha256": "5940d994eba19ff708d0ba0818cebf3f490f8d72872c38da0160869bbc76cc53"
+    },
+    {
+      "path": "0001045810-26-000078/event-1/event_type",
+      "accession_number": "0001045810-26-000078",
+      "section_id": "section-01",
+      "block_number": 42,
+      "block_sha256": "5940d994eba19ff708d0ba0818cebf3f490f8d72872c38da0160869bbc76cc53"
+    },
+    {
+      "path": "0001045810-26-000078/event-1/summary_ja",
+      "accession_number": "0001045810-26-000078",
+      "section_id": "section-01",
+      "block_number": 42,
+      "block_sha256": "5940d994eba19ff708d0ba0818cebf3f490f8d72872c38da0160869bbc76cc53"
+    },
+    {
+      "path": "0001045810-26-000078/event-1/status_as_of_filing",
+      "accession_number": "0001045810-26-000078",
+      "section_id": "section-01",
+      "block_number": 42,
+      "block_sha256": "5940d994eba19ff708d0ba0818cebf3f490f8d72872c38da0160869bbc76cc53"
+    },
+    {
+      "path": "0001045810-26-000078/event-1/status_as_of_filing",
+      "accession_number": "0001045810-26-000078",
+      "section_id": "section-01",
+      "block_number": 44,
+      "block_sha256": "a4e1b0bda9fa8b246a626b5d07f564a25d6d3b58fd11bae7c7dce2e951b10839"
+    },
+    {
+      "path": "0001045810-26-000078/event-1/notes_ja",
+      "accession_number": "0001045810-26-000078",
+      "section_id": "section-01",
+      "block_number": 44,
+      "block_sha256": "a4e1b0bda9fa8b246a626b5d07f564a25d6d3b58fd11bae7c7dce2e951b10839"
+    },
+    {
+      "path": "0001045810-26-000078/event-1/conditions/0",
+      "accession_number": "0001045810-26-000078",
+      "section_id": "section-01",
+      "block_number": 44,
+      "block_sha256": "a4e1b0bda9fa8b246a626b5d07f564a25d6d3b58fd11bae7c7dce2e951b10839"
+    },
+    {
+      "path": "0001045810-26-000078/event-1/dates/0",
+      "accession_number": "0001045810-26-000078",
+      "section_id": "section-01",
+      "block_number": 42,
+      "block_sha256": "5940d994eba19ff708d0ba0818cebf3f490f8d72872c38da0160869bbc76cc53"
+    },
+    {
+      "path": "0001045810-26-000078/event-1/dates/1",
+      "accession_number": "0001045810-26-000078",
+      "section_id": "section-01",
+      "block_number": 44,
+      "block_sha256": "a4e1b0bda9fa8b246a626b5d07f564a25d6d3b58fd11bae7c7dce2e951b10839"
+    }
+  ],
+  "review_items": [
+    {
+      "path": "0001045810-26-000028/event-1",
+      "reason": "人物・役割・日付の対応、要約の意味、条件の十分性は原文と照合して確認が必要です。"
+    },
+    {
+      "path": "0001045810-26-000026/event-1",
+      "reason": "人物・役割・日付の対応、要約の意味、条件の十分性は原文と照合して確認が必要です。"
+    },
+    {
+      "path": "0001045810-26-000026/event-2",
+      "reason": "人物・役割・日付の対応、要約の意味、条件の十分性は原文と照合して確認が必要です。"
+    },
+    {
+      "path": "0001045810-26-000078/event-1",
+      "reason": "人物・役割・日付の対応、要約の意味、条件の十分性は原文と照合して確認が必要です。"
+    }
+  ],
+  "input_kind": "assistant_prepared_reference",
+  "candidate_sha256": "45d84c237469645197083ea0f0220f497b0d2a36ec6939a241acaf4126c30ac3"
+}

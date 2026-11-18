@@ -1,0 +1,12 @@
+{
+  "checked_on_jst": "2026-11-17",
+  "new_tests_passed": 12,
+  "known_filings_checked": 10,
+  "sections_retained": 18,
+  "section_text_partition_checks_passed": 10,
+  "specific_context_in_previous_three_misses_verified": true,
+  "original_extractor_unchanged": true,
+  "semantic_extraction_accuracy_measured": false,
+  "unseen_documents_evaluated": false,
+  "browser_visual_review_performed": false
+}

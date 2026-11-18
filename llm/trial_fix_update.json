@@ -1,0 +1,60 @@
+{
+  "release": "nvidia-trial-fix-1",
+  "files": [
+    {
+      "path": "llm_runner.py",
+      "before_sha256": "fcba8a39affce74604c7029d3a42fbc9aa646f6e06e081e1bc19a5747010d30b",
+      "after_sha256": "3bff02d9a34394ac6c26614105774b0c9b8b326c20f64c099d4d9ca76abe7c20"
+    },
+    {
+      "path": "structured_events.py",
+      "before_sha256": "a3e6977b8802c1ff9cb7f1e249ad159041d964693725af130ffad48282777e9f",
+      "after_sha256": "ba93ef82115a3408adbd2deed602fb1fae0dec97d6d2a0acf6c09ed0129d141e"
+    },
+    {
+      "path": "structured/extraction_prompt.txt",
+      "before_sha256": "92cbeaab8c110eaf5446a82db78a84329ba29f97d828e220f262edaa2bf3d7ce",
+      "after_sha256": "dbabe9664d5f8b5ae2c7a9df630e0bcf0e647933c63193efc2ed9ed8c31d6b07"
+    },
+    {
+      "path": "test_llm_runner.py",
+      "before_sha256": "229660710ac07303e4ec7b2597c905a799996c8f070021fc9eb6f9a4897fc21f",
+      "after_sha256": "4fafbdc0807395f2325a3a56fc69e0d7c96d4eccc9a719fd408c1a2b7f800a66"
+    },
+    {
+      "path": "test_structured_events.py",
+      "before_sha256": "da5ec578e828049400e10f48688a17c81d3b4942e503e607a0a6acd532a253a9",
+      "after_sha256": "de86887071e40e1b9d39765a36a80063e515c3b97d408c9704f73b9f54c98eb3"
+    },
+    {
+      "path": "README.md",
+      "before_sha256": "db0de5fdfa4485df59b67c7d57a7ba0136b8eb3cc5146aab7d6545320f6a2674",
+      "after_sha256": "eb46410a12ee0922c6f342b6fbdae8d78110d9f38b26e8e98bd38b16984f2e8d"
+    },
+    {
+      "path": "LLM_CONNECTION.md",
+      "before_sha256": "f4ed669ac3c598ab55a254cfc53092ec334e1d75697f775fcee6b5693d894174",
+      "after_sha256": "0f7cb27b5a713dcc584ab0b7a16d2e95f336d9dc5723dd1b1c34af5d748bfb81"
+    },
+    {
+      "path": "llm/dry_run.json",
+      "before_sha256": "c3f1646b984cea0d3db8a0d1bf2ec75707e621eeaf0f0e7a91695a96f29afef1",
+      "after_sha256": "3d6d46962ecb7c4e1e5c00ff1ee32044d2c24b3ffbd727e0e12d4122aff7beea"
+    },
+    {
+      "path": "llm/verification.json",
+      "before_sha256": "bbde53ac815ae62d3c952f25bec352338138c78a1f2883c11744c5ce3b4fca4a",
+      "after_sha256": "92ca6835c9d3abef2e9095931ff64ad474ffeafa8a4509975de815cc1e6c2920"
+    },
+    {
+      "path": "llm/TRIAL_FIX.md",
+      "before_sha256": null,
+      "after_sha256": "3b1f70dd2600f6f831a4eefb5307ecf8d882a54e5235278f2876ec27781062a1"
+    },
+    {
+      "path": "llm/trial_fix_report.json",
+      "before_sha256": null,
+      "after_sha256": "7ede21b045b8500a1c8a728b8d382b02736ae21740971cd287acf572b7e7309e"
+    }
+  ]
+}

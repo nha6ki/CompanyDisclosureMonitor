@@ -1,0 +1,10 @@
+{
+  "checked_on_jst": "2026-11-17",
+  "original_extractor_unchanged": true,
+  "source_hashes_matched": 5,
+  "candidate_positions_verified": 4,
+  "html_structure_checked": true,
+  "missing_source_smoke_check_passed": true,
+  "changed_extractor_guard_check_passed": true,
+  "browser_visual_review_performed": false
+}

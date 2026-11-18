@@ -1,0 +1,61 @@
+{
+  "selection_rule": "前回の5件を除外し、保存済み一覧から提出日の新しい順に次の5件を選択。結果による選び直しなし。",
+  "selection_snapshot": "2026-11-17",
+  "extractor_sha256": "c7e5b54dd88687b59dc47a4a2edccb32f70889b5aad564cb4f30bdbe57f5105d",
+  "rules_modified": false,
+  "selection_before_extraction": true,
+  "filings": [
+    {
+      "ticker": "NVDA",
+      "accession_number": "0001045810-26-000056",
+      "filing_date": "2026-06-30",
+      "form": "8-K",
+      "api_items": [
+        "5.07"
+      ],
+      "document_url": "https://www.sec.gov/Archives/edgar/data/1045810/000104581026000056/nvda-20260624.htm"
+    },
+    {
+      "ticker": "NVDA",
+      "accession_number": "0001193125-26-275783",
+      "filing_date": "2026-06-18",
+      "form": "8-K",
+      "api_items": [
+        "8.01",
+        "9.01"
+      ],
+      "document_url": "https://www.sec.gov/Archives/edgar/data/1045810/000119312526275783/d48176d8k.htm"
+    },
+    {
+      "ticker": "NVDA",
+      "accession_number": "0001045810-26-000051",
+      "filing_date": "2026-05-20",
+      "form": "8-K",
+      "api_items": [
+        "2.02",
+        "9.01"
+      ],
+      "document_url": "https://www.sec.gov/Archives/edgar/data/1045810/000104581026000051/nvda-20260520.htm"
+    },
+    {
+      "ticker": "NVDA",
+      "accession_number": "0001045810-26-000028",
+      "filing_date": "2026-05-08",
+      "form": "8-K",
+      "api_items": [
+        "5.02"
+      ],
+      "document_url": "https://www.sec.gov/Archives/edgar/data/1045810/000104581026000028/nvda-20260507.htm"
+    },
+    {
+      "ticker": "NVDA",
+      "accession_number": "0001045810-26-000026",
+      "filing_date": "2026-04-27",
+      "form": "8-K",
+      "api_items": [
+        "5.02"
+      ],
+      "document_url": "https://www.sec.gov/Archives/edgar/data/1045810/000104581026000026/nvda-20260424.htm"
+    }
+  ]
+}

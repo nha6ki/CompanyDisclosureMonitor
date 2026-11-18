@@ -1,0 +1,10 @@
+{
+  "created_on_jst": "2026-11-17",
+  "creation_method": "ChatGPTが保存済みの原文を読んで作成した参照用データ。Pythonによる意味抽出やLLM API出力ではない。",
+  "llm_api_invoked": false,
+  "independent_annotation": false,
+  "human_approved": false,
+  "evaluation_split": "development_examples",
+  "filing_count": 3,
+  "event_count": 4
+}

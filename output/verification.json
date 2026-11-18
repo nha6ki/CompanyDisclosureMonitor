@@ -1,0 +1,12 @@
+{
+  "verified_on_jst": "2026-11-17",
+  "unit_tests_passed": 15,
+  "fixed_filings_run": 5,
+  "candidates_found": 10,
+  "source_hashes_matched": 5,
+  "all_quote_offsets_verified": true,
+  "prior_japanese_summaries_preserved": true,
+  "html_structure_and_internal_links_checked": true,
+  "browser_visual_review_performed": false,
+  "generalization_accuracy_evaluated": false
+}

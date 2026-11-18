@@ -1,0 +1,115 @@
+{
+  "release": "nvidia-trial-fix-1",
+  "logs": [
+    {
+      "status": "dry_run",
+      "execute_requested": false,
+      "api_requests_attempted": 0,
+      "api_responses_received": 0,
+      "automatic_retry": false,
+      "human_review_status": "pending",
+      "semantic_correctness_verified": false,
+      "publication_performed": false,
+      "config": {
+        "base_url": "http://127.0.0.1:11434/v1",
+        "model": "nvidia-qwen35-9b:16k",
+        "api_key_env": null,
+        "response_format": "json_schema",
+        "max_output_tokens": 8000,
+        "token_parameter": "max_tokens",
+        "instruction_role": "system",
+        "timeout_seconds": 900,
+        "generation": {
+          "temperature": 0,
+          "seed": 42,
+          "reasoning_effort": "none"
+        }
+      },
+      "requests": [
+        {
+          "accession_number": "0001045810-26-000028",
+          "request_sha256": "9fbb6c2a00d66d6971d9bd3d5daeeadfe0177bbbf87a98d1cc90466e8f929181",
+          "document_sha256": "779b3463699c84c724fbac60e0ea87ec59a953a162f774032c68969a2e5800bd",
+          "messages_sha256": "2173ea4c69ad007edd43550d96fa44f85900a9f57a10cda41bc151213a087536",
+          "source_sha256": "87dd325ef6f0977f11e5aadd6e6f6732d957333b03bdb7fa792b922df4e52419",
+          "section_sha256": "1514eceef8aee00298bdc99011196d79ba41e005296f44dc9e83ea4e0299ea64",
+          "request_bytes": 15252
+        },
+        {
+          "accession_number": "0001045810-26-000026",
+          "request_sha256": "3ccb2aed84213556da555ab69fb93f427e3ee0f30b3d2685fb1288974de4142e",
+          "document_sha256": "6e12b11465ec0f1b4995242ea40c6d8f40c389741b900e75528d38d3171a1c25",
+          "messages_sha256": "30e39bcd2ad8640a5b4f5827d71fcca0c0a1aa156c7a6cbee9d12b550b804eaa",
+          "source_sha256": "42a5d9b50b58468d22da14757d9108373a2a97ab052082ffdaac48528fece78f",
+          "section_sha256": "00b25cae209e60cbd2724528e4cff492d1563fb517781be6ec21710d8bab53b1",
+          "request_bytes": 16536
+        },
+        {
+          "accession_number": "0001045810-26-000078",
+          "request_sha256": "f56155c59a8b00ce80e229fcc851b83a93303c7a8da64cd881da55996f27ebd9",
+          "document_sha256": "002475ff1e00c163f06d8c4c86887dac5741a10f3d75b4a0cfecc4f6c35e9a92",
+          "messages_sha256": "93a80138177c872d4d562bdd509b56eb814fa869294939353ad414b8572efc1a",
+          "source_sha256": "0ea586510cc2e4b817a29091e1a0c35beaf64844d98e84f199f00b15d9f35df7",
+          "section_sha256": "83810dd041a2019a273688f5d9d1b9210433aad3d77c83d18b5b88702458cab7",
+          "request_bytes": 19727
+        }
+      ],
+      "missing_configuration": []
+    },
+    {
+      "status": "dry_run",
+      "execute_requested": false,
+      "api_requests_attempted": 0,
+      "api_responses_received": 0,
+      "automatic_retry": false,
+      "human_review_status": "pending",
+      "semantic_correctness_verified": false,
+      "publication_performed": false,
+      "config": {
+        "base_url": "http://127.0.0.1:11434/v1",
+        "model": "nvidia-qwen38-27b:16k",
+        "api_key_env": null,
+        "response_format": "json_schema",
+        "max_output_tokens": 8000,
+        "token_parameter": "max_tokens",
+        "instruction_role": "system",
+        "timeout_seconds": 900,
+        "generation": {
+          "temperature": 0,
+          "seed": 42,
+          "reasoning_effort": "none"
+        }
+      },
+      "requests": [
+        {
+          "accession_number": "0001045810-26-000028",
+          "request_sha256": "15084e31600d92eab0ddd13698b0a971f971b7cf3faeeb472cdba20d0ab725dc",
+          "document_sha256": "779b3463699c84c724fbac60e0ea87ec59a953a162f774032c68969a2e5800bd",
+          "messages_sha256": "2173ea4c69ad007edd43550d96fa44f85900a9f57a10cda41bc151213a087536",
+          "source_sha256": "87dd325ef6f0977f11e5aadd6e6f6732d957333b03bdb7fa792b922df4e52419",
+          "section_sha256": "1514eceef8aee00298bdc99011196d79ba41e005296f44dc9e83ea4e0299ea64",
+          "request_bytes": 15253
+        },
+        {
+          "accession_number": "0001045810-26-000026",
+          "request_sha256": "382138c3b23aff25e489576edc99b5406ba958e71c578291c669d06f367ca81f",
+          "document_sha256": "6e12b11465ec0f1b4995242ea40c6d8f40c389741b900e75528d38d3171a1c25",
+          "messages_sha256": "30e39bcd2ad8640a5b4f5827d71fcca0c0a1aa156c7a6cbee9d12b550b804eaa",
+          "source_sha256": "42a5d9b50b58468d22da14757d9108373a2a97ab052082ffdaac48528fece78f",
+          "section_sha256": "00b25cae209e60cbd2724528e4cff492d1563fb517781be6ec21710d8bab53b1",
+          "request_bytes": 16537
+        },
+        {
+          "accession_number": "0001045810-26-000078",
+          "request_sha256": "7a7fc3993eb0359e4b945e36f42966e14a55255b248bc1adc53285525f97dec3",
+          "document_sha256": "002475ff1e00c163f06d8c4c86887dac5741a10f3d75b4a0cfecc4f6c35e9a92",
+          "messages_sha256": "93a80138177c872d4d562bdd509b56eb814fa869294939353ad414b8572efc1a",
+          "source_sha256": "0ea586510cc2e4b817a29091e1a0c35beaf64844d98e84f199f00b15d9f35df7",
+          "section_sha256": "83810dd041a2019a273688f5d9d1b9210433aad3d77c83d18b5b88702458cab7",
+          "request_bytes": 19728
+        }
+      ],
+      "missing_configuration": []
+    }
+  ]
+}

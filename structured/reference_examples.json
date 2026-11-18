@@ -1,0 +1,306 @@
+{
+  "schema_version": "nvidia-events-0.1",
+  "filings": [
+    {
+      "accession_number": "0001045810-26-000028",
+      "source_sha256": "87dd325ef6f0977f11e5aadd6e6f6732d957333b03bdb7fa792b922df4e52419",
+      "section_id": "section-01",
+      "section_sha256": "1514eceef8aee00298bdc99011196d79ba41e005296f44dc9e83ea4e0299ea64",
+      "as_of_date": "2026-05-08",
+      "extraction_status": "events_found",
+      "events": [
+        {
+          "event_id": "event-1",
+          "event_type": {
+            "value": "appointment",
+            "block_numbers": [
+              43
+            ]
+          },
+          "subject": {
+            "value": "Suzanne Nora Johnson",
+            "block_numbers": [
+              43
+            ]
+          },
+          "organization": {
+            "value": "NVIDIA Corporation",
+            "block_numbers": [
+              43
+            ]
+          },
+          "summary_ja": {
+            "value": "取締役および監査委員への任命を決定。就任は7月13日の予定。",
+            "block_numbers": [
+              43
+            ]
+          },
+          "status_as_of_filing": {
+            "value": "pending_effective",
+            "block_numbers": [
+              43
+            ]
+          },
+          "dates": [
+            {
+              "role": "decision",
+              "value": "2026-05-07",
+              "precision": "day",
+              "certainty": "reported",
+              "block_numbers": [
+                43
+              ]
+            },
+            {
+              "role": "effective",
+              "value": "2026-07-13",
+              "precision": "day",
+              "certainty": "scheduled",
+              "block_numbers": [
+                43
+              ]
+            }
+          ],
+          "conditions": [],
+          "notes_ja": {
+            "value": "既存の職務上の約束により、任命の決定日と就任日が異なる。",
+            "block_numbers": [
+              43
+            ]
+          }
+        }
+      ],
+      "missing_information": [
+        "予定が実現したかは、この提出書類だけでは確認していない。",
+        "この参照例の意味内容について、ユーザーの承認はまだ得ていない。"
+      ]
+    },
+    {
+      "accession_number": "0001045810-26-000026",
+      "source_sha256": "42a5d9b50b58468d22da14757d9108373a2a97ab052082ffdaac48528fece78f",
+      "section_id": "section-01",
+      "section_sha256": "00b25cae209e60cbd2724528e4cff492d1563fb517781be6ec21710d8bab53b1",
+      "as_of_date": "2026-04-27",
+      "extraction_status": "events_found",
+      "events": [
+        {
+          "event_id": "event-1",
+          "event_type": {
+            "value": "retirement_notice",
+            "block_numbers": [
+              43
+            ]
+          },
+          "subject": {
+            "value": "Donald Robertson",
+            "block_numbers": [
+              43
+            ]
+          },
+          "organization": {
+            "value": "NVIDIA Corporation",
+            "block_numbers": [
+              43
+            ]
+          },
+          "summary_ja": {
+            "value": "VP兼最高会計責任者の役職を退く意向を会社に通知。",
+            "block_numbers": [
+              43
+            ]
+          },
+          "status_as_of_filing": {
+            "value": "retirement_announced",
+            "block_numbers": [
+              43
+            ]
+          },
+          "dates": [
+            {
+              "role": "notice",
+              "value": "2026-04-24",
+              "precision": "day",
+              "certainty": "reported",
+              "block_numbers": [
+                43
+              ]
+            },
+            {
+              "role": "effective",
+              "value": "2026-05-04",
+              "precision": "day",
+              "certainty": "scheduled",
+              "block_numbers": [
+                43
+              ]
+            },
+            {
+              "role": "transition_end",
+              "value": "2026-07-01",
+              "precision": "day",
+              "certainty": "scheduled",
+              "block_numbers": [
+                43
+              ]
+            }
+          ],
+          "conditions": [],
+          "notes_ja": {
+            "value": "役職の退任後もVP, Financeとして7月1日まで各種プロジェクトを支援する予定。会社からの退職済みとは扱わない。",
+            "block_numbers": [
+              43
+            ]
+          }
+        },
+        {
+          "event_id": "event-2",
+          "event_type": {
+            "value": "appointment",
+            "block_numbers": [
+              45
+            ]
+          },
+          "subject": {
+            "value": "Scott Gawel",
+            "block_numbers": [
+              45
+            ]
+          },
+          "organization": {
+            "value": "NVIDIA Corporation",
+            "block_numbers": [
+              43
+            ]
+          },
+          "summary_ja": {
+            "value": "VP兼最高会計責任者への任命を決定。雇用開始時に発効する予定。",
+            "block_numbers": [
+              45
+            ]
+          },
+          "status_as_of_filing": {
+            "value": "pending_effective",
+            "block_numbers": [
+              45
+            ]
+          },
+          "dates": [
+            {
+              "role": "decision",
+              "value": "2026-04-26",
+              "precision": "day",
+              "certainty": "reported",
+              "block_numbers": [
+                45
+              ]
+            },
+            {
+              "role": "effective",
+              "value": "2026-05-04",
+              "precision": "day",
+              "certainty": "scheduled",
+              "block_numbers": [
+                45
+              ]
+            }
+          ],
+          "conditions": [
+            {
+              "value": "2026年5月4日の雇用開始をもって発効する。",
+              "block_numbers": [
+                45
+              ]
+            }
+          ],
+          "notes_ja": null
+        }
+      ],
+      "missing_information": [
+        "予定が実現したかは、この提出書類だけでは確認していない。",
+        "この参照例の意味内容について、ユーザーの承認はまだ得ていない。"
+      ]
+    },
+    {
+      "accession_number": "0001045810-26-000078",
+      "source_sha256": "0ea586510cc2e4b817a29091e1a0c35beaf64844d98e84f199f00b15d9f35df7",
+      "section_id": "section-01",
+      "section_sha256": "83810dd041a2019a273688f5d9d1b9210433aad3d77c83d18b5b88702458cab7",
+      "as_of_date": "2026-09-03",
+      "extraction_status": "events_found",
+      "events": [
+        {
+          "event_id": "event-1",
+          "event_type": {
+            "value": "acquisition_agreement",
+            "block_numbers": [
+              42
+            ]
+          },
+          "subject": {
+            "value": "Hugging Face, Inc.",
+            "block_numbers": [
+              42
+            ]
+          },
+          "organization": {
+            "value": "NVIDIA Corporation",
+            "block_numbers": [
+              42
+            ]
+          },
+          "summary_ja": {
+            "value": "NVIDIAがHugging Faceを買収する最終契約を締結。",
+            "block_numbers": [
+              42
+            ]
+          },
+          "status_as_of_filing": {
+            "value": "agreement_signed_pending_close",
+            "block_numbers": [
+              42,
+              44
+            ]
+          },
+          "dates": [
+            {
+              "role": "agreement",
+              "value": "2026-09-02",
+              "precision": "day",
+              "certainty": "reported",
+              "block_numbers": [
+                42
+              ]
+            },
+            {
+              "role": "expected_completion",
+              "value": "2027-H1",
+              "precision": "half_year",
+              "certainty": "expected",
+              "block_numbers": [
+                44
+              ]
+            }
+          ],
+          "conditions": [
+            {
+              "value": "通常の完了条件の充足または免除が必要であり、必要な規制当局の承認取得を含む。",
+              "block_numbers": [
+                44
+              ]
+            }
+          ],
+          "notes_ja": {
+            "value": "完了時期は2027年前半という見込みで、特定の完了日や完了済みの事実を示していない。",
+            "block_numbers": [
+              44
+            ]
+          }
+        }
+      ],
+      "missing_information": [
+        "予定が実現したかは、この提出書類だけでは確認していない。",
+        "この参照例の意味内容について、ユーザーの承認はまだ得ていない。"
+      ]
+    }
+  ]
+}

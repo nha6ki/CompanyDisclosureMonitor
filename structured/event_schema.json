@@ -1,0 +1,340 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "NVIDIA event output v0.1",
+  "type": "object",
+  "properties": {
+    "schema_version": {
+      "const": "nvidia-events-0.1"
+    },
+    "filings": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "accession_number": {
+            "type": "string",
+            "pattern": "^\\d{10}-\\d{2}-\\d{6}$"
+          },
+          "source_sha256": {
+            "type": "string",
+            "pattern": "^[a-f0-9]{64}$"
+          },
+          "section_id": {
+            "type": "string",
+            "pattern": "^section-\\d+$"
+          },
+          "section_sha256": {
+            "type": "string",
+            "pattern": "^[a-f0-9]{64}$"
+          },
+          "as_of_date": {
+            "type": "string",
+            "pattern": "^\\d{4}-\\d{2}-\\d{2}$"
+          },
+          "extraction_status": {
+            "enum": [
+              "events_found",
+              "no_supported_event",
+              "needs_review"
+            ]
+          },
+          "events": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "event_id": {
+                  "type": "string",
+                  "pattern": "^event-[0-9]+$"
+                },
+                "event_type": {
+                  "type": "object",
+                  "properties": {
+                    "value": {
+                      "type": "string",
+                      "enum": [
+                        "appointment",
+                        "retirement_notice",
+                        "acquisition_agreement",
+                        "other"
+                      ]
+                    },
+                    "block_numbers": {
+                      "type": "array",
+                      "items": {
+                        "type": "integer",
+                        "minimum": 1
+                      },
+                      "minItems": 1,
+                      "maxItems": 8,
+                      "uniqueItems": true
+                    }
+                  },
+                  "required": [
+                    "value",
+                    "block_numbers"
+                  ],
+                  "additionalProperties": false
+                },
+                "subject": {
+                  "type": "object",
+                  "properties": {
+                    "value": {
+                      "type": "string",
+                      "minLength": 1
+                    },
+                    "block_numbers": {
+                      "type": "array",
+                      "items": {
+                        "type": "integer",
+                        "minimum": 1
+                      },
+                      "minItems": 1,
+                      "maxItems": 8,
+                      "uniqueItems": true
+                    }
+                  },
+                  "required": [
+                    "value",
+                    "block_numbers"
+                  ],
+                  "additionalProperties": false
+                },
+                "organization": {
+                  "type": "object",
+                  "properties": {
+                    "value": {
+                      "type": "string",
+                      "minLength": 1
+                    },
+                    "block_numbers": {
+                      "type": "array",
+                      "items": {
+                        "type": "integer",
+                        "minimum": 1
+                      },
+                      "minItems": 1,
+                      "maxItems": 8,
+                      "uniqueItems": true
+                    }
+                  },
+                  "required": [
+                    "value",
+                    "block_numbers"
+                  ],
+                  "additionalProperties": false
+                },
+                "summary_ja": {
+                  "type": "object",
+                  "properties": {
+                    "value": {
+                      "type": "string",
+                      "minLength": 1
+                    },
+                    "block_numbers": {
+                      "type": "array",
+                      "items": {
+                        "type": "integer",
+                        "minimum": 1
+                      },
+                      "minItems": 1,
+                      "maxItems": 8,
+                      "uniqueItems": true
+                    }
+                  },
+                  "required": [
+                    "value",
+                    "block_numbers"
+                  ],
+                  "additionalProperties": false
+                },
+                "status_as_of_filing": {
+                  "type": "object",
+                  "properties": {
+                    "value": {
+                      "type": "string",
+                      "enum": [
+                        "pending_effective",
+                        "retirement_announced",
+                        "agreement_signed_pending_close",
+                        "completed_as_reported",
+                        "unclear"
+                      ]
+                    },
+                    "block_numbers": {
+                      "type": "array",
+                      "items": {
+                        "type": "integer",
+                        "minimum": 1
+                      },
+                      "minItems": 1,
+                      "maxItems": 8,
+                      "uniqueItems": true
+                    }
+                  },
+                  "required": [
+                    "value",
+                    "block_numbers"
+                  ],
+                  "additionalProperties": false
+                },
+                "dates": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "role": {
+                        "enum": [
+                          "decision",
+                          "notice",
+                          "agreement",
+                          "effective",
+                          "expected_completion",
+                          "transition_end"
+                        ]
+                      },
+                      "value": {
+                        "type": [
+                          "string",
+                          "null"
+                        ]
+                      },
+                      "precision": {
+                        "enum": [
+                          "day",
+                          "half_year",
+                          null
+                        ]
+                      },
+                      "certainty": {
+                        "enum": [
+                          "reported",
+                          "scheduled",
+                          "expected",
+                          "unknown"
+                        ]
+                      },
+                      "block_numbers": {
+                        "type": "array",
+                        "items": {
+                          "type": "integer",
+                          "minimum": 1
+                        },
+                        "minItems": 0,
+                        "maxItems": 8,
+                        "uniqueItems": true
+                      }
+                    },
+                    "required": [
+                      "role",
+                      "value",
+                      "precision",
+                      "certainty",
+                      "block_numbers"
+                    ],
+                    "additionalProperties": false
+                  },
+                  "maxItems": 6
+                },
+                "conditions": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "value": {
+                        "type": "string",
+                        "minLength": 1
+                      },
+                      "block_numbers": {
+                        "type": "array",
+                        "items": {
+                          "type": "integer",
+                          "minimum": 1
+                        },
+                        "minItems": 1,
+                        "maxItems": 8,
+                        "uniqueItems": true
+                      }
+                    },
+                    "required": [
+                      "value",
+                      "block_numbers"
+                    ],
+                    "additionalProperties": false
+                  }
+                },
+                "notes_ja": {
+                  "anyOf": [
+                    {
+                      "type": "object",
+                      "properties": {
+                        "value": {
+                          "type": "string",
+                          "minLength": 1
+                        },
+                        "block_numbers": {
+                          "type": "array",
+                          "items": {
+                            "type": "integer",
+                            "minimum": 1
+                          },
+                          "minItems": 1,
+                          "maxItems": 8,
+                          "uniqueItems": true
+                        }
+                      },
+                      "required": [
+                        "value",
+                        "block_numbers"
+                      ],
+                      "additionalProperties": false
+                    },
+                    {
+                      "type": "null"
+                    }
+                  ]
+                }
+              },
+              "required": [
+                "event_id",
+                "event_type",
+                "subject",
+                "organization",
+                "summary_ja",
+                "status_as_of_filing",
+                "dates",
+                "conditions",
+                "notes_ja"
+              ],
+              "additionalProperties": false
+            }
+          },
+          "missing_information": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "minLength": 1
+            }
+          }
+        },
+        "required": [
+          "accession_number",
+          "source_sha256",
+          "section_id",
+          "section_sha256",
+          "as_of_date",
+          "extraction_status",
+          "events",
+          "missing_information"
+        ],
+        "additionalProperties": false
+      },
+      "minItems": 1
+    }
+  },
+  "required": [
+    "schema_version",
+    "filings"
+  ],
+  "additionalProperties": false
+}

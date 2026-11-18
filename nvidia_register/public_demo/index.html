@@ -1,0 +1,139 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#102b26"><title>NVIDIA filing coverage | Company Disclosure Monitor</title>
+<meta name="description" content="Explore eight quarters of NVIDIA SEC filings, compare GAAP figures with the source tables, and download the coverage report.">
+<style>
+:root{--ink:#172e29;--muted:#536760;--forest:#102e29;--line:#d5dcd3;--leaf:#c6ee72;--paper:#f6f7f2;--mono:'IBM Plex Mono',Consolas,monospace;font:16px/1.5 'Inter','Segoe UI',system-ui,sans-serif;color:var(--ink);background:var(--paper);font-variant-numeric:tabular-nums}
+*{box-sizing:border-box}body{margin:0}button,a,input,select{font:inherit}button,select{cursor:pointer}a{color:inherit;text-underline-offset:.2em}button{color:inherit}
+:focus-visible{outline:3px solid #007777;outline-offset:3px}.hero :focus-visible{outline-color:#fff}h1,h2,h3,p{margin:0}h1,h2,h3{line-height:1.12}a,button{touch-action:manipulation}
+.wrap{max-width:1320px;margin:auto;padding-inline:clamp(18px,4vw,66px)}header{background:#fafbf7;border-bottom:1px solid var(--line)}header .wrap{min-height:65px;display:flex;align-items:center;justify-content:space-between;gap:15px}
+.brand{display:inline-flex;gap:11px;align-items:center;line-height:1.18;text-decoration:none;font-weight:720;font-size:17px;letter-spacing:-.04em}.logo{display:flex;align-items:flex-end;gap:3px;padding:7px;background:var(--forest);height:32px;border-radius:4px}.logo i{width:4px;background:var(--leaf);height:9px}.logo i:nth-child(2){height:14px}.logo i:last-child{height:20px}
+.lang{padding:5px 10px;border-radius:4px;color:var(--ink);border:1px solid #abbaaf;background:transparent;font-size:13px;font-weight:650}
+.hero{color:#f6f8ef;background:var(--forest);border-bottom:4px solid var(--leaf)}.herogrid{display:grid;grid-template-columns:1.13fr 1fr;align-items:center;gap:clamp(32px,6vw,85px);padding-block:38px 34px}
+.eyebrow,.kicker,.meta{font:600 12px/1.45 var(--mono);letter-spacing:.085em;text-transform:uppercase}.eyebrow{color:#c1d7c8;margin-bottom:16px}.hero h1{font-size:clamp(38px,4.6vw,68px);letter-spacing:-.055em;font-weight:620}html[lang=ja] .hero h1{font-size:clamp(32px,3.7vw,52px);word-break:keep-all}.hero .summary{max-width:52ch;color:#d4e0d8;margin:14px 0 18px;font-size:15px}
+.period,.chart-meta{font:12px var(--mono);color:#bed0c5}.herochart{border:1px solid #446056;padding:19px 22px 13px;border-radius:7px;background:#16382f;min-width:0}.charttop{display:flex;align-items:center;justify-content:space-between;gap:10px}.charttop strong{font-size:14px}.chart-meta{font-size:11px}
+.plot-tools{display:flex;gap:4px;margin:12px 0 8px;flex-wrap:wrap}
+.plot-tools button{border-radius:4px;padding:6px 10px;font-size:13px;border:1px solid #527063;color:#e5efe6;background:transparent}
+.plot-tools button[aria-pressed=true]{background:var(--leaf);border-color:var(--leaf);color:#17382f;font-weight:650}
+.plot{display:grid;grid-template-columns:2.2em minmax(0,1fr);column-gap:6px;padding-top:12px}
+.scale{height:128px;position:relative;color:#c0d0c6;font:11px var(--mono);text-align:right}
+.scale span{position:absolute;right:0;transform:translateY(50%)}
+.bars{height:128px;display:grid;grid-template-columns:repeat(8,minmax(0,1fr));border-bottom:1px solid #809488;background:repeating-linear-gradient(to top,transparent 0 calc(33.333% - 1px),#3e584d calc(33.333% - 1px) 33.333%)}
+.plot-col{position:relative;display:flex;align-items:flex-end;justify-content:center;min-width:0;border:0;padding:0;background:transparent}
+.plot-col i{width:60%;min-width:7px;background:#85ae97;border-radius:2px 2px 0 0}
+.plot-col:hover i,.plot-col:focus-visible i{background:#aad9ad}
+.plot-col[aria-pressed=true] i{background:var(--leaf);outline:1px solid #e1f6b5;outline-offset:-1px}
+.periods{grid-column:2;display:grid;grid-template-columns:repeat(8,minmax(0,1fr));margin-top:5px;text-align:center;color:#d5e3d7;font:10px/1.45 var(--mono)}
+.periods small{display:block;font-size:9px;color:#b3c9ba}
+.plot-detail{margin-top:12px;padding-top:10px;border-top:1px solid #425c4f;display:flex;flex-wrap:wrap;justify-content:space-between;align-items:baseline;gap:6px 12px;font:13px/1.45 var(--mono)}
+.plot-detail a{font:600 13px system-ui;color:var(--leaf)}
+
+.stats{display:grid;grid-template-columns:repeat(4,1fr);border-bottom:1px solid var(--line);padding-block:21px}.stat{border-left:1px solid var(--line);padding-left:clamp(12px,2vw,30px)}.stat:first-child{border:0;padding-left:0}.stat strong{font-size:clamp(25px,2.8vw,39px);letter-spacing:-.06em;line-height:1.1;display:block}.stat span{display:block;color:var(--muted);font-size:13px;margin-top:5px}
+.work{display:grid;grid-template-columns:minmax(0,1.55fr) minmax(305px,1fr);gap:26px;padding-block:30px 40px;align-items:start}.card{background:#fff;border:1px solid var(--line);border-radius:8px;min-width:0;overflow:hidden}.pad{padding:22px}.heading{display:flex;justify-content:space-between;align-items:center;gap:14px}h2{font-size:clamp(21px,2vw,29px);letter-spacing:-.045em}.sub{margin-top:8px;color:var(--muted);font-size:14px}.download{border:0;background:var(--ink);color:white;border-radius:5px;padding:9px 13px;font-weight:650;font-size:13px;white-space:nowrap}
+table{border-collapse:collapse;width:100%;font-size:14px}th,td{padding:12px 14px;text-align:right;white-space:nowrap}th:first-child,td:first-child{text-align:left}thead{background:#eff2eb;color:#48594f;font-size:12px}tbody tr{border-top:1px solid #e5e9e1}.ledger tbody tr.active{background:#f2f8e7;box-shadow:inset 3px 0 #5f8e35}.pick{border:0;padding:6px 2px;text-decoration:underline;text-underline-offset:3px;background:transparent;font-weight:650}.pick[aria-pressed=true]{text-decoration:none}.ledger td{font-family:var(--mono);font-size:13px}.pill{display:inline-block;border-radius:4px;background:#e8f3ec;color:#24583f;font:600 12px/1.3 system-ui;padding:4px 7px}.pill.round{background:#fcf1d8;color:#735016}.ledger{overflow:auto}
+.focus{border-top:3px solid #829a56}.focus .kicker{color:#546547;margin-bottom:8px}.focus .meta{letter-spacing:0;color:var(--muted);font-weight:400;margin-top:8px}.tabs{display:flex;border-bottom:1px solid var(--line);gap:16px;margin:17px 0}.tabs button{border:0;background:transparent;border-bottom:2px solid transparent;padding:8px 0;font-size:14px;font-weight:650;color:var(--muted)}.tabs button[aria-pressed=true]{color:var(--ink);border-bottom-color:#517140}
+.fact{margin:11px 0;padding-bottom:11px;border-bottom:1px solid #e0e5dc}.fact span{font-size:13px;color:var(--muted);display:block}.fact strong{font:600 22px/1.6 var(--mono)}.fact small{font:13px var(--mono);color:var(--muted)}.rule{margin:11px 0;font-size:14px}.reference{font-size:13px;margin:12px 0 5px;color:var(--muted)}.links{display:flex;gap:15px;flex-wrap:wrap;font-size:14px;font-weight:650}.review{font-size:13px;margin-top:14px;color:var(--muted)}.method{padding-bottom:36px}.method details{border-block:1px solid var(--line);padding:15px 0}.method summary{cursor:pointer;font-weight:650}.method p{max-width:85ch;margin-top:10px;color:var(--muted)}.skip{position:absolute;left:-9999px}.skip:focus{left:1em;top:1em;background:white;padding:.5em;z-index:3}
+@media(max-width:900px){.work{grid-template-columns:1fr  minmax(265px,.8fr);gap:14px}.pad{padding:15px}th,td{padding:10px 7px}.herogrid{gap:25px}}
+@media(max-width:730px){.herogrid,.work{grid-template-columns:1fr}.herogrid{padding-block:25px;gap:18px}.hero h1{font-size:41px}.hero .summary{margin:10px 0}.bars,.scale{height:102px}.herochart{padding:13px 16px}.work{padding-block:20px;gap:14px}.stats{grid-template-columns:repeat(2,1fr);gap:16px}.stat:nth-child(3){border:0;padding-left:0}.heading{flex-wrap:wrap}.ledger{scrollbar-width:thin}.ledger th,.ledger td{padding:11px 7px}.brand{font-size:15px}.focus{scroll-margin-top:10px}.wrap{padding-inline:16px}}
+@media print{header,.download,.skip,.lang,.method{display:none}.work{grid-template-columns:1fr}.hero{background:white;color:black}.herochart{display:none}}
+</style></head><body>
+<a href="#register" class="skip" id="skip"></a>
+<header><div class="wrap"><a class="brand" href="#top"><span class="logo" aria-hidden="true"><i></i><i></i><i></i></span>Company Disclosure Monitor</a><button type="button" class="lang" id="lang"></button></div></header>
+<main id="top"><section class="hero"><div class="wrap herogrid"><div><p class="eyebrow">NASDAQ · NVDA &nbsp; / &nbsp; SEC Form 8-K</p><h1 id="title"></h1><p class="summary" id="summary"></p><p class="period" id="period"></p></div><figure class="herochart" style="margin:0"><figcaption class="charttop"><strong id="chartTitle"></strong><span class="chart-meta" id="axisUnit"></span></figcaption><div class="plot-tools" id="plotTools" role="group"></div><div class="plot"><div id="scale" class="scale" aria-hidden="true"></div><div class="bars" id="bars" role="group"></div><div id="periods" class="periods" aria-hidden="true"></div></div><div class="plot-detail"><output id="plotValue"></output><a href="#focus" id="plotLink"></a></div></figure></div></section>
+<section class="wrap"><div class="stats" id="stats"></div></section>
+<div class="wrap work"><section class="card" id="register"><div class="pad"><div class="heading"><h2 id="ledgerTitle"></h2><button type="button" class="download" id="download"></button></div><p class="sub" id="ledgerSub"></p></div><div class="ledger"><table><thead id="head"></thead><tbody id="rows"></tbody></table></div></section>
+<section class="card pad focus" id="focus" tabindex="-1"><div class="kicker" id="evidence"></div><h2 id="selected"></h2><p class="meta" id="accession"></p><div class="tabs" id="tabs"></div><div id="reading" aria-live="polite"></div></section></div>
+<section class="wrap method"><details><summary id="methodTitle"></summary><p id="method"></p></details></section></main>
+<script>
+'use strict';
+const records=[{"period": "FY2025Q4", "accession": "0001045810-25-000021", "url": "https://www.sec.gov/Archives/edgar/data/1045810/000104581025000021/q4fy25pr.htm", "filing": "https://www.sec.gov/Archives/edgar/data/1045810/000104581025000021/nvda-20250226.htm", "sha": "fa6ce87a0fdcc5575be02a3b0eee94254e40c48569daaa8f75242dccaa537df2", "facts": [{"value": "39331", "unit": "USD millions", "detail": "39,331", "detailUnit": "USD millions", "row": "Revenue", "column": "Three Months Ended January 26, 2025", "status": "一致", "metric": "Revenue", "summaryRow": "Revenue"}, {"value": "0.89", "unit": "USD/share", "detail": "0.89", "detailUnit": "USD/share", "row": "Net income per share / Diluted", "column": "Three Months Ended January 26, 2025", "status": "一致", "metric": "Diluted earnings per share", "summaryRow": "Diluted earnings per share*"}]}, {"period": "FY2026Q1", "accession": "0001045810-25-000115", "url": "https://www.sec.gov/Archives/edgar/data/1045810/000104581025000115/q1fy26pr.htm", "filing": "https://www.sec.gov/Archives/edgar/data/1045810/000104581025000115/nvda-20250528.htm", "sha": "79bc02be125714e0ce3c8dafce485fd7a8453e08cbd7dcb743838c62ddcd4aeb", "facts": [{"value": "44062", "unit": "USD millions", "detail": "44,062", "detailUnit": "USD millions", "row": "Revenue", "column": "Three Months Ended April 27, 2025", "status": "一致", "metric": "Revenue", "summaryRow": "Revenue"}, {"value": "0.76", "unit": "USD/share", "detail": "0.76", "detailUnit": "USD/share", "row": "Net income per share / Diluted", "column": "Three Months Ended April 27, 2025", "status": "一致", "metric": "Diluted earnings per share", "summaryRow": "Diluted earnings per share*"}]}, {"period": "FY2026Q2", "accession": "0001045810-25-000207", "url": "https://www.sec.gov/Archives/edgar/data/1045810/000104581025000207/q2fy26pr.htm", "filing": "https://www.sec.gov/Archives/edgar/data/1045810/000104581025000207/nvda-20250827.htm", "sha": "bc75009f7205708f8ba1aec6de315e428165cb4f1cf44eae0753da890d08cbe3", "facts": [{"value": "46743", "unit": "USD millions", "detail": "46,743", "detailUnit": "USD millions", "row": "Revenue", "column": "Three Months Ended July 27, 2025", "status": "一致", "metric": "Revenue", "summaryRow": "Revenue"}, {"value": "1.08", "unit": "USD/share", "detail": "1.08", "detailUnit": "USD/share", "row": "Net income per share / Diluted", "column": "Three Months Ended July 27, 2025", "status": "一致", "metric": "Diluted earnings per share", "summaryRow": "Diluted earnings per share"}]}, {"period": "FY2026Q3", "accession": "0001045810-25-000228", "url": "https://www.sec.gov/Archives/edgar/data/1045810/000104581025000228/q3fy26pr.htm", "filing": "https://www.sec.gov/Archives/edgar/data/1045810/000104581025000228/nvda-20251119.htm", "sha": "8ac74c45b465287f643a4b37726f70ef4ab63392692ca0cae9ef6b5f3a62621e", "facts": [{"value": "57006", "unit": "USD millions", "detail": "57,006", "detailUnit": "USD millions", "row": "Revenue", "column": "Three Months Ended October 26, 2025", "status": "一致", "metric": "Revenue", "summaryRow": "Revenue"}, {"value": "1.30", "unit": "USD/share", "detail": "1.30", "detailUnit": "USD/share", "row": "Net income per share / Diluted", "column": "Three Months Ended October 26, 2025", "status": "一致", "metric": "Diluted earnings per share", "summaryRow": "Diluted earnings per share"}]}, {"period": "FY2026Q4", "accession": "0001045810-26-000019", "url": "https://www.sec.gov/Archives/edgar/data/1045810/000104581026000019/q4fy26pr.htm", "filing": "https://www.sec.gov/Archives/edgar/data/1045810/000104581026000019/nvda-20260225.htm", "sha": "a43b65f0fef5cf4622c5c6908b255ec3dd4a409ec84ef2d7ee0321b566649666", "facts": [{"value": "68127", "unit": "USD millions", "detail": "68,127", "detailUnit": "USD millions", "row": "Revenue", "column": "Three Months Ended January 25, 2026", "status": "一致", "metric": "Revenue", "summaryRow": "Revenue"}, {"value": "1.76", "unit": "USD/share", "detail": "1.76", "detailUnit": "USD/share", "row": "Net income per share / Diluted", "column": "Three Months Ended January 25, 2026", "status": "一致", "metric": "Diluted earnings per share", "summaryRow": "Diluted earnings per share"}]}, {"period": "FY2027Q1", "accession": "0001045810-26-000051", "url": "https://www.sec.gov/Archives/edgar/data/1045810/000104581026000051/q1fy27pr.htm", "filing": "https://www.sec.gov/Archives/edgar/data/1045810/000104581026000051/nvda-20260520.htm", "sha": "2987ebc03457f44d67d847c14a68a2fca1dd130d6c841245057a4f8b6c29843d", "facts": [{"value": "81615", "unit": "USD millions", "detail": "81,615", "detailUnit": "USD millions", "row": "Revenue", "column": "Three Months Ended April 26, 2026", "status": "一致", "metric": "Revenue", "summaryRow": "Revenue"}, {"value": "2.39", "unit": "USD/share", "detail": "2.39", "detailUnit": "USD/share", "row": "Net income per share / Diluted", "column": "Three Months Ended April 26, 2026", "status": "一致", "metric": "Diluted earnings per share", "summaryRow": "Diluted earnings per share"}]}, {"period": "FY2027Q2", "accession": "0001045810-26-000073", "url": "https://www.sec.gov/Archives/edgar/data/1045810/000104581026000073/q2fy27pr.htm", "filing": "https://www.sec.gov/Archives/edgar/data/1045810/000104581026000073/nvda-20260826.htm", "sha": "972e6c1d066a7ed8f114fcd866c89177c6bfb3f54a80c318b71a8d936fb0d164", "facts": [{"value": "96221", "unit": "USD millions", "detail": "96,221", "detailUnit": "USD millions", "row": "Revenue", "column": "Three Months Ended July 26, 2026", "status": "一致", "metric": "Revenue", "summaryRow": "Revenue"}, {"value": "2.46", "unit": "USD/share", "detail": "2.46", "detailUnit": "USD/share", "row": "Net income per share / Diluted", "column": "Three Months Ended July 26, 2026", "status": "一致", "metric": "Diluted earnings per share", "summaryRow": "Diluted earnings per share"}]}, {"period": "FY2027Q3", "accession": "0001045810-26-000088", "url": "https://www.sec.gov/Archives/edgar/data/1045810/000104581026000088/q3fy27pr.htm", "filing": "https://www.sec.gov/Archives/edgar/data/1045810/000104581026000088/nvda-20261117.htm", "sha": "699e2bf368f8a57fd056d7edb7d9d97f8abf4e57ec086fe988fd4933a169ef35", "facts": [{"value": "115.8", "unit": "USD billions", "detail": "115,844", "detailUnit": "USD millions", "row": "Revenue", "column": "Three Months Ended October 25, 2026", "status": "丸めの範囲で一致", "metric": "Revenue", "summaryRow": "Revenue"}, {"value": "2.70", "unit": "USD/share", "detail": "2.70", "detailUnit": "USD/share", "row": "Net income per share / Diluted", "column": "Three Months Ended October 25, 2026", "status": "一致", "metric": "Diluted earnings per share", "summaryRow": "Diluted earnings per share"}]}];
+const $=id=>document.getElementById(id);
+let ja=false,selected=records.length-1,metric=0;
+const tr=(en,jp)=>ja?jp:en;
+const periodText=p=>p.slice(0,6)+' '+p.slice(6);
+const numbers=(x,places)=>Number(x.replaceAll(',','')).toLocaleString('en-US',{minimumFractionDigits:places,maximumFractionDigits:places});
+function unit(u){return {'USD billions':tr('USD billion','十億ドル'),'USD millions':tr('USD million','百万ドル'),'USD/share':tr('USD/share','ドル／株')}[u]}
+function check(s){return s==='一致'?tr('Exact','一致'):tr('Rounded','丸め一致')}
+function pill(s){return '<span class="pill '+(s==='一致'?'':'round')+'">'+check(s)+'</span>'}
+function rev(d){const f=d.facts[0];return Number(f.value)/(f.unit==='USD millions'?1000:1)}
+function focusPanel(){if(matchMedia('(max-width:730px)').matches){$('focus').focus({preventScroll:true});$('focus').scrollIntoView({block:'start'})}}
+function evidence(){
+const d=records[selected], f=d.facts[metric];$('selected').textContent=periodText(d.period);$('accession').textContent=d.accession;
+$('tabs').innerHTML=[tr('Revenue','売上高'),tr('Diluted EPS','希薄化後EPS')].map((t,i)=>'<button aria-pressed="'+(metric===i)+'" data-m="'+i+'">'+t+'</button>').join('');
+const dp=f.value.includes('.')?f.value.split('.')[1].length:0;
+const same=f.status==='一致';
+const reason=same?tr('The two tables agree at the reported precision.','同じ期間・単位にそろえると、2つの表の値が一致します。'):
+ tr('115,844 million ÷ 1,000 = 115.844 billion. Rounded to one decimal, the result is 115.8 billion.','115,844百万ドルは115.844十億ドルです。小数第1位に丸めると、概要表の115.8十億ドルと一致します。');
+$('reading').innerHTML='<div class="fact"><span>'+tr('GAAP summary · ','GAAP概要表 · ')+f.summaryRow+'</span><strong>'+numbers(f.value,dp)+'</strong> <small>'+unit(f.unit)+'</small></div><div class="fact"><span>'+tr('Consolidated income statement · ','連結損益計算書 · ')+f.row+'</span><strong>'+f.detail+'</strong> <small>'+unit(f.detailUnit)+'</small></div>'+pill(f.status)+'<p class="rule">'+reason+'</p><p class="reference">'+f.column+'</p><div class="links"><a target="_blank" rel="noopener noreferrer" href="'+d.url+'">'+tr('Exhibit 99.1 ↗','決算添付 99.1 ↗')+'</a><a target="_blank" rel="noopener noreferrer" href="'+d.filing+'">'+tr('Form 8-K ↗','8-K本文 ↗')+'</a></div><p class="review">'+tr('Human review: pending','担当者確認：未確認')+'</p>';
+}
+function ledger(){
+$('rows').innerHTML=records.map((d,i)=>({d,i})).reverse().map(({d,i})=>'<tr class="'+(i===selected?'active':'')+'"><td><button class="pick" aria-pressed="'+(i===selected)+'" data-i="'+i+'">'+periodText(d.period)+'</button></td><td>'+String(rev(d))+'</td><td>'+numbers(d.facts[1].value,2)+'</td><td>'+pill(d.facts[0].status)+'</td></tr>').join('');
+}
+function plot(){
+  const isRevenue = metric === 0;
+  const names = [tr('Revenue','売上高'),tr('Diluted EPS','希薄化後EPS')];
+  const values = records.map(d=>isRevenue ? rev(d) : Number(d.facts[1].value));
+  const suffix = isRevenue ? tr('USD billions','十億ドル') : tr('USD/share','ドル／株');
+  // Three equal intervals above a zero baseline; keep the two units independent.
+  const step = isRevenue ? 40 : 1;
+  const ceiling = 3 * step;
+  const format = v=>isRevenue ? v.toLocaleString('en-US',{maximumFractionDigits:3}) : v.toFixed(2);
+  $('chartTitle').textContent=tr('Quarterly performance','四半期推移');
+  $('axisUnit').textContent=suffix;
+  $('plotTools').setAttribute('aria-label',tr('Chart metric','グラフの指標'));
+  $('plotTools').innerHTML=names.map((n,i)=>'<button type="button" data-m="'+i+'" aria-pressed="'+(metric===i)+'">'+n+'</button>').join('');
+  $('scale').innerHTML=[0,1,2,3].map(n=>'<span style="bottom:'+(100*n/3)+'%">'+(n*step)+'</span>').join('');
+  $('bars').setAttribute('aria-label',names[metric]+' · '+suffix);
+  $('bars').innerHTML=records.map((d,i)=>{
+    const label=periodText(d.period)+' · '+names[metric]+' · '+format(values[i])+' '+suffix;
+    return '<button type="button" class="plot-col" data-i="'+i+'" aria-pressed="'+(i===selected)+'" aria-label="'+label+'" title="'+label+'"><i aria-hidden="true" style="height:'+(100*values[i]/ceiling)+'%"></i></button>';
+  }).join('');
+  $('periods').innerHTML=records.map(d=>'<span>'+d.period.slice(-2)+'<small>FY'+d.period.slice(4,6)+'</small></span>').join('');
+  $('plotValue').textContent=periodText(records[selected].period)+' · '+format(values[selected])+' '+suffix;
+  $('plotLink').textContent=tr('Inspect source tables ↓','原表と照合結果を見る ↓');
+}
+function selectChart(action,container){
+  action();
+  plot();
+  ledger();
+  evidence();
+  $(container).querySelector('[aria-pressed=true]').focus({preventScroll:true});
+}
+function draw(){
+document.documentElement.lang=ja?'ja':'en';
+$('lang').textContent=ja?'English':'日本語';$('lang').lang=ja?'en':'ja';
+$('title').textContent=tr('NVIDIA filing coverage','NVIDIA 決算開示台帳');
+$('summary').textContent=tr('Trace eight quarters of revenue and diluted EPS from SEC filings to a downloadable dataset.','8四半期の売上高と希薄化後EPSを、納品データからSECの原表までたどれます。');
+$('period').textContent='FY2025 Q4 — FY2027 Q3  ·  '+tr('Fixed dataset','固定データ');
+plot();
+$('stats').innerHTML=[['8 / 8',tr('Quarters covered','対象四半期')],['16 / 16',tr('Metrics retrieved','取得した指標')],['15',tr('Exact matches','完全一致')],['1',tr('Match after rounding','丸めの範囲で一致')]].map(([n,t])=>'<div class="stat"><strong>'+n+'</strong><span>'+t+'</span></div>').join('');
+$('ledgerTitle').textContent=tr('Quarterly register','四半期台帳');$('ledgerSub').textContent=tr('Select a quarter to inspect its source figures.','四半期を選ぶと、原表の値と判定理由を確認できます。');
+$('download').textContent=tr('↓  Download CSV','↓  CSVを取得');$('head').innerHTML='<tr>'+[tr('Fiscal quarter','会計四半期'),tr('Revenue ($B)','売上高 ($B)'),tr('EPS ($)','EPS ($)'),tr('Revenue check','売上照合')].map(t=>'<th scope="col">'+t+'</th>').join('')+'</tr>';
+$('evidence').textContent=tr('Source comparison','原表との照合');$('skip').textContent=tr('Skip to register','台帳へ移動');
+$('methodTitle').textContent=tr('Scope and verification method','対象範囲と検査方法');
+$('method').textContent=tr('This independent demo covers NVIDIA GAAP revenue and diluted EPS for the eight fiscal quarters shown. Python compares the current-quarter GAAP summary with the three-month column of the consolidated income statement in the same SEC exhibit. The register shows revenue in billions of US dollars. The evidence panel and CSV retain the source units. All 16 human reviews are pending.','NVIDIAの8四半期を対象とした独立デモです。Pythonが同じ提出書類内のGAAP概要表と連結損益計算書の当四半期（3か月）列を照合しています。台帳は売上高を十億ドルで表示し、原表比較とCSVは開示時の単位を保持します。16項目すべて担当者確認は未確認です。');
+ledger();evidence();
+}
+for(const id of ['bars','rows']){
+  $(id).onclick=e=>{
+    const button=e.target.closest('button[data-i]');
+    if(!button)return;
+    selectChart(()=>{selected=Number(button.dataset.i)},id);
+    if(id==='rows') focusPanel();
+  };
+}
+for(const id of ['plotTools','tabs']){
+  $(id).onclick=e=>{
+    const button=e.target.closest('button[data-m]');
+    if(button) selectChart(()=>{metric=Number(button.dataset.m)},id);
+  };
+}
+$('lang').onclick=()=>{ja=!ja;draw()};
+$('download').onclick=()=>{
+const fields=['Fiscal quarter','Metric','Reported value','Unit','Comparison value','Comparison unit','Comparison row','Comparison column','Check','Human review','Accession','Form 8-K','Exhibit 99.1','SHA-256'];
+const rows=records.flatMap(d=>d.facts.map(f=>[d.period,f.metric,f.value,f.unit,f.detail,f.detailUnit,f.row,f.column,f.status==='一致'?'Exact':'Match after rounding','Pending',d.accession,d.filing,d.url,d.sha]));
+const csv=[fields,...rows].map(r=>r.map(x=>'"'+String(x).replaceAll('"','""')+'"').join(',')).join('\r\n')+'\r\n';
+const url=URL.createObjectURL(new Blob(['\ufeff',csv],{type:'text/csv;charset=utf-8'})),a=document.createElement('a');a.href=url;a.download='nvidia-filing-coverage-FY2025Q4-FY2027Q3.csv';document.body.append(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(url),1000);
+};
+draw();
+</script></body></html>

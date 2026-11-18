@@ -1,0 +1,496 @@
+{
+  "reader_version": "nvidia-sections-0.2",
+  "semantic_extraction_performed": false,
+  "filing_count": 10,
+  "sections_ready": 10,
+  "section_count": 18,
+  "fetch_error": null,
+  "filings": [
+    {
+      "ticker": "NVDA",
+      "accession_number": "0001045810-26-000082",
+      "filing_date": "2026-11-12",
+      "document_url": "https://www.sec.gov/Archives/edgar/data/1045810/000104581026000082/nvda-20261111.htm",
+      "api_items": [
+        "5.02",
+        "9.01"
+      ],
+      "sha256": "1543a0cc1775291131f5d22224435fff8a58de4e7d6804618ee82fbda1a1dd5c",
+      "group": "original_five",
+      "observed_sha256": "1543a0cc1775291131f5d22224435fff8a58de4e7d6804618ee82fbda1a1dd5c",
+      "status": "sections_ready",
+      "sections": [
+        {
+          "section_id": "section-01",
+          "item": "5.02",
+          "label": "取締役・役員・報酬関連",
+          "heading_recognized": true,
+          "block_start": 41,
+          "block_end_inclusive": 45,
+          "block_count": 5,
+          "character_count": 1268,
+          "text_sha256": "425891d3e5f7305b651f42de680567de4dfb88f8dfe9c693d9d98a2262a03ef7"
+        },
+        {
+          "section_id": "section-02",
+          "item": "9.01",
+          "label": "財務諸表・添付資料",
+          "heading_recognized": true,
+          "block_start": 46,
+          "block_end_inclusive": 53,
+          "block_count": 8,
+          "character_count": 228,
+          "text_sha256": "3c82fbeef69674ed36a84d23023f7b64b38e77f749e8cec6f431212015cba2e0"
+        }
+      ],
+      "visible_block_count": 60,
+      "retained_block_count": 13,
+      "first_item_block": 41,
+      "last_item_block": 53,
+      "warnings": [],
+      "partition_check_passed": true,
+      "body_items": [
+        "5.02",
+        "9.01"
+      ],
+      "items_only_in_body": [],
+      "items_only_in_api": [],
+      "baseline_candidate_count": 2
+    },
+    {
+      "ticker": "NVDA",
+      "accession_number": "0001045810-26-000078",
+      "filing_date": "2026-09-03",
+      "document_url": "https://www.sec.gov/Archives/edgar/data/1045810/000104581026000078/nvda-20260902.htm",
+      "api_items": [
+        "8.01"
+      ],
+      "sha256": "0ea586510cc2e4b817a29091e1a0c35beaf64844d98e84f199f00b15d9f35df7",
+      "group": "original_five",
+      "observed_sha256": "0ea586510cc2e4b817a29091e1a0c35beaf64844d98e84f199f00b15d9f35df7",
+      "status": "sections_ready",
+      "sections": [
+        {
+          "section_id": "section-01",
+          "item": "8.01",
+          "label": "その他の事象",
+          "heading_recognized": true,
+          "block_start": 41,
+          "block_end_inclusive": 56,
+          "block_count": 16,
+          "character_count": 5492,
+          "text_sha256": "83810dd041a2019a273688f5d9d1b9210433aad3d77c83d18b5b88702458cab7"
+        },
+        {
+          "section_id": "section-02",
+          "item": "9.01",
+          "label": "財務諸表・添付資料",
+          "heading_recognized": true,
+          "block_start": 57,
+          "block_end_inclusive": 62,
+          "block_count": 6,
+          "character_count": 184,
+          "text_sha256": "1aa3b331aa88b595d428a6522900c5377d5f5bbd10aaf288b45e5e1245c18191"
+        }
+      ],
+      "visible_block_count": 69,
+      "retained_block_count": 22,
+      "first_item_block": 41,
+      "last_item_block": 62,
+      "warnings": [],
+      "partition_check_passed": true,
+      "body_items": [
+        "8.01",
+        "9.01"
+      ],
+      "items_only_in_body": [
+        "9.01"
+      ],
+      "items_only_in_api": [],
+      "baseline_candidate_count": 2
+    },
+    {
+      "ticker": "NVDA",
+      "accession_number": "0001045810-26-000073",
+      "filing_date": "2026-08-26",
+      "document_url": "https://www.sec.gov/Archives/edgar/data/1045810/000104581026000073/nvda-20260826.htm",
+      "api_items": [
+        "2.02",
+        "9.01"
+      ],
+      "sha256": "1de9fb30a632ce28bdddb47aa86001b26bf07c8d5be82256cf8887c69840856b",
+      "group": "original_five",
+      "observed_sha256": "1de9fb30a632ce28bdddb47aa86001b26bf07c8d5be82256cf8887c69840856b",
+      "status": "sections_ready",
+      "sections": [
+        {
+          "section_id": "section-01",
+          "item": "2.02",
+          "label": "業績・財務状況",
+          "heading_recognized": true,
+          "block_start": 41,
+          "block_end_inclusive": 44,
+          "block_count": 4,
+          "character_count": 1229,
+          "text_sha256": "5d204d43e1d0c8536128c7575fa05c12663f831aa23707c5c4899432f8149111"
+        },
+        {
+          "section_id": "section-02",
+          "item": "9.01",
+          "label": "財務諸表・添付資料",
+          "heading_recognized": true,
+          "block_start": 45,
+          "block_end_inclusive": 54,
+          "block_count": 10,
+          "character_count": 361,
+          "text_sha256": "a7b6ec8e2636c781a19da601969d4c3a58d3a9702b01ecdd9a010d475e4324e8"
+        }
+      ],
+      "visible_block_count": 61,
+      "retained_block_count": 14,
+      "first_item_block": 41,
+      "last_item_block": 54,
+      "warnings": [],
+      "partition_check_passed": true,
+      "body_items": [
+        "2.02",
+        "9.01"
+      ],
+      "items_only_in_body": [],
+      "items_only_in_api": [],
+      "baseline_candidate_count": 2
+    },
+    {
+      "ticker": "NVDA",
+      "accession_number": "0001045810-26-000069",
+      "filing_date": "2026-08-17",
+      "document_url": "https://www.sec.gov/Archives/edgar/data/1045810/000104581026000069/nvda-20260817.htm",
+      "api_items": [
+        "1.01",
+        "2.03",
+        "7.01"
+      ],
+      "sha256": "2904584596b8f31a4763aa821ab65d52829238a55a74b860c14ecc08e0844ce7",
+      "group": "original_five",
+      "observed_sha256": "2904584596b8f31a4763aa821ab65d52829238a55a74b860c14ecc08e0844ce7",
+      "status": "sections_ready",
+      "sections": [
+        {
+          "section_id": "section-01",
+          "item": "1.01",
+          "label": "重要契約",
+          "heading_recognized": true,
+          "block_start": 41,
+          "block_end_inclusive": 49,
+          "block_count": 9,
+          "character_count": 3198,
+          "text_sha256": "4b8e49a0b66948cc7abf0d1a04f0a6c9dd2d25a1e2450eecc2a4f186c12cacbb"
+        },
+        {
+          "section_id": "section-02",
+          "item": "2.03",
+          "label": "債務等に関する開示",
+          "heading_recognized": true,
+          "block_start": 50,
+          "block_end_inclusive": 51,
+          "block_count": 2,
+          "character_count": 226,
+          "text_sha256": "71ed2425648e0bc9ba1b749b55f8f3b8a13fbb576d6b24f25219a9da908d5ea1"
+        },
+        {
+          "section_id": "section-03",
+          "item": "7.01",
+          "label": "Regulation FDに基づく開示",
+          "heading_recognized": true,
+          "block_start": 52,
+          "block_end_inclusive": 56,
+          "block_count": 5,
+          "character_count": 3443,
+          "text_sha256": "f9055c72b4c9b2c51477e349da41a25fee1b562a403d4a43fd28a7496c9fcb1f"
+        },
+        {
+          "section_id": "section-04",
+          "item": "9.01",
+          "label": "財務諸表・添付資料",
+          "heading_recognized": true,
+          "block_start": 57,
+          "block_end_inclusive": 64,
+          "block_count": 8,
+          "character_count": 227,
+          "text_sha256": "cb64cd9e8e62363e01f96625a9f07753825f86d44eb46414ceb870c716bf07a6"
+        }
+      ],
+      "visible_block_count": 71,
+      "retained_block_count": 24,
+      "first_item_block": 41,
+      "last_item_block": 64,
+      "warnings": [],
+      "partition_check_passed": true,
+      "body_items": [
+        "1.01",
+        "2.03",
+        "7.01",
+        "9.01"
+      ],
+      "items_only_in_body": [
+        "9.01"
+      ],
+      "items_only_in_api": [],
+      "baseline_candidate_count": 2
+    },
+    {
+      "ticker": "NVDA",
+      "accession_number": "0001045810-26-000060",
+      "filing_date": "2026-07-02",
+      "document_url": "https://www.sec.gov/Archives/edgar/data/1045810/000104581026000060/nvda-20260628.htm",
+      "api_items": [
+        "5.02"
+      ],
+      "sha256": "a9a96bb6562f24b8dcb0cc09d1eca7788693a68f26074c2a6ef076eba45353ee",
+      "group": "original_five",
+      "observed_sha256": "a9a96bb6562f24b8dcb0cc09d1eca7788693a68f26074c2a6ef076eba45353ee",
+      "status": "sections_ready",
+      "sections": [
+        {
+          "section_id": "section-01",
+          "item": "5.02",
+          "label": "取締役・役員・報酬関連",
+          "heading_recognized": true,
+          "block_start": 41,
+          "block_end_inclusive": 48,
+          "block_count": 8,
+          "character_count": 2967,
+          "text_sha256": "0b28b737d41ab3690e3a1e1427bfc31e27dfa55493b8c4bd0faf13a25b3e6980"
+        }
+      ],
+      "visible_block_count": 55,
+      "retained_block_count": 8,
+      "first_item_block": 41,
+      "last_item_block": 48,
+      "warnings": [],
+      "partition_check_passed": true,
+      "body_items": [
+        "5.02"
+      ],
+      "items_only_in_body": [],
+      "items_only_in_api": [],
+      "baseline_candidate_count": 2
+    },
+    {
+      "ticker": "NVDA",
+      "accession_number": "0001045810-26-000056",
+      "filing_date": "2026-06-30",
+      "document_url": "https://www.sec.gov/Archives/edgar/data/1045810/000104581026000056/nvda-20260624.htm",
+      "api_items": [
+        "5.07"
+      ],
+      "sha256": "970aa003b3ef389563bf35dc7bd5b6fdec0c1cdd62d9dad1c6f946fd037b9c9d",
+      "group": "additional_five",
+      "observed_sha256": "970aa003b3ef389563bf35dc7bd5b6fdec0c1cdd62d9dad1c6f946fd037b9c9d",
+      "status": "sections_ready",
+      "sections": [
+        {
+          "section_id": "section-01",
+          "item": "5.07",
+          "label": "株主総会等の投票結果",
+          "heading_recognized": true,
+          "block_start": 41,
+          "block_end_inclusive": 187,
+          "block_count": 147,
+          "character_count": 4520,
+          "text_sha256": "7b73e00ae0b7e729de858265be9dcbfb59028aa3f6ab83efafc60b5d7f68c696"
+        }
+      ],
+      "visible_block_count": 194,
+      "retained_block_count": 147,
+      "first_item_block": 41,
+      "last_item_block": 187,
+      "warnings": [],
+      "partition_check_passed": true,
+      "body_items": [
+        "5.07"
+      ],
+      "items_only_in_body": [],
+      "items_only_in_api": [],
+      "baseline_candidate_count": 0
+    },
+    {
+      "ticker": "NVDA",
+      "accession_number": "0001193125-26-275783",
+      "filing_date": "2026-06-18",
+      "document_url": "https://www.sec.gov/Archives/edgar/data/1045810/000119312526275783/d48176d8k.htm",
+      "api_items": [
+        "8.01",
+        "9.01"
+      ],
+      "sha256": "a145b2ce82a4ce1020d30cba68a1177333f075d42eb4122c8a48f7ce15e7bfab",
+      "group": "additional_five",
+      "observed_sha256": "a145b2ce82a4ce1020d30cba68a1177333f075d42eb4122c8a48f7ce15e7bfab",
+      "status": "sections_ready",
+      "sections": [
+        {
+          "section_id": "section-01",
+          "item": "8.01",
+          "label": "その他の事象",
+          "heading_recognized": true,
+          "block_start": 46,
+          "block_end_inclusive": 51,
+          "block_count": 6,
+          "character_count": 3072,
+          "text_sha256": "839b63b33e309ef6231da3928b86a0f8d7137dacd00141549246b4f56f295a37"
+        },
+        {
+          "section_id": "section-02",
+          "item": "9.01",
+          "label": "財務諸表・添付資料",
+          "heading_recognized": true,
+          "block_start": 52,
+          "block_end_inclusive": 88,
+          "block_count": 37,
+          "character_count": 1291,
+          "text_sha256": "2885fde0bf4739d438ee7a1c9b7cdf3ac51a89dec53f6e1a2800d2d60d977d2e"
+        }
+      ],
+      "visible_block_count": 98,
+      "retained_block_count": 43,
+      "first_item_block": 46,
+      "last_item_block": 88,
+      "warnings": [],
+      "partition_check_passed": true,
+      "body_items": [
+        "8.01",
+        "9.01"
+      ],
+      "items_only_in_body": [],
+      "items_only_in_api": [],
+      "baseline_candidate_count": 0
+    },
+    {
+      "ticker": "NVDA",
+      "accession_number": "0001045810-26-000051",
+      "filing_date": "2026-05-20",
+      "document_url": "https://www.sec.gov/Archives/edgar/data/1045810/000104581026000051/nvda-20260520.htm",
+      "api_items": [
+        "2.02",
+        "9.01"
+      ],
+      "sha256": "e7fef4ec99768546104476b9591e12b38a931b5079a2bf5db1762a9f44be636a",
+      "group": "additional_five",
+      "observed_sha256": "e7fef4ec99768546104476b9591e12b38a931b5079a2bf5db1762a9f44be636a",
+      "status": "sections_ready",
+      "sections": [
+        {
+          "section_id": "section-01",
+          "item": "2.02",
+          "label": "業績・財務状況",
+          "heading_recognized": true,
+          "block_start": 41,
+          "block_end_inclusive": 44,
+          "block_count": 4,
+          "character_count": 1228,
+          "text_sha256": "69631eed88da6d2ffc15e93f0d72925b55a0cb1123850b6490f05e12f0740732"
+        },
+        {
+          "section_id": "section-02",
+          "item": "9.01",
+          "label": "財務諸表・添付資料",
+          "heading_recognized": true,
+          "block_start": 45,
+          "block_end_inclusive": 54,
+          "block_count": 10,
+          "character_count": 356,
+          "text_sha256": "89b5128838fcab9ea090c0241b8397625e0cd61f0e83ebd94b1a8219058ea354"
+        }
+      ],
+      "visible_block_count": 61,
+      "retained_block_count": 14,
+      "first_item_block": 41,
+      "last_item_block": 54,
+      "warnings": [],
+      "partition_check_passed": true,
+      "body_items": [
+        "2.02",
+        "9.01"
+      ],
+      "items_only_in_body": [],
+      "items_only_in_api": [],
+      "baseline_candidate_count": 2
+    },
+    {
+      "ticker": "NVDA",
+      "accession_number": "0001045810-26-000028",
+      "filing_date": "2026-05-08",
+      "document_url": "https://www.sec.gov/Archives/edgar/data/1045810/000104581026000028/nvda-20260507.htm",
+      "api_items": [
+        "5.02"
+      ],
+      "sha256": "87dd325ef6f0977f11e5aadd6e6f6732d957333b03bdb7fa792b922df4e52419",
+      "group": "additional_five",
+      "observed_sha256": "87dd325ef6f0977f11e5aadd6e6f6732d957333b03bdb7fa792b922df4e52419",
+      "status": "sections_ready",
+      "sections": [
+        {
+          "section_id": "section-01",
+          "item": "5.02",
+          "label": "取締役・役員・報酬関連",
+          "heading_recognized": true,
+          "block_start": 41,
+          "block_end_inclusive": 45,
+          "block_count": 5,
+          "character_count": 1496,
+          "text_sha256": "1514eceef8aee00298bdc99011196d79ba41e005296f44dc9e83ea4e0299ea64"
+        }
+      ],
+      "visible_block_count": 52,
+      "retained_block_count": 5,
+      "first_item_block": 41,
+      "last_item_block": 45,
+      "warnings": [],
+      "partition_check_passed": true,
+      "body_items": [
+        "5.02"
+      ],
+      "items_only_in_body": [],
+      "items_only_in_api": [],
+      "baseline_candidate_count": 0
+    },
+    {
+      "ticker": "NVDA",
+      "accession_number": "0001045810-26-000026",
+      "filing_date": "2026-04-27",
+      "document_url": "https://www.sec.gov/Archives/edgar/data/1045810/000104581026000026/nvda-20260424.htm",
+      "api_items": [
+        "5.02"
+      ],
+      "sha256": "42a5d9b50b58468d22da14757d9108373a2a97ab052082ffdaac48528fece78f",
+      "group": "additional_five",
+      "observed_sha256": "42a5d9b50b58468d22da14757d9108373a2a97ab052082ffdaac48528fece78f",
+      "status": "sections_ready",
+      "sections": [
+        {
+          "section_id": "section-01",
+          "item": "5.02",
+          "label": "取締役・役員・報酬関連",
+          "heading_recognized": true,
+          "block_start": 41,
+          "block_end_inclusive": 49,
+          "block_count": 9,
+          "character_count": 2614,
+          "text_sha256": "00b25cae209e60cbd2724528e4cff492d1563fb517781be6ec21710d8bab53b1"
+        }
+      ],
+      "visible_block_count": 56,
+      "retained_block_count": 9,
+      "first_item_block": 41,
+      "last_item_block": 49,
+      "warnings": [],
+      "partition_check_passed": true,
+      "body_items": [
+        "5.02"
+      ],
+      "items_only_in_body": [],
+      "items_only_in_api": [],
+      "baseline_candidate_count": 2
+    }
+  ]
+}

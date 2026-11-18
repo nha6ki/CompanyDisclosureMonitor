@@ -1,0 +1,10 @@
+{
+  "base_url": "https://api.openai.com/v1",
+  "model": null,
+  "api_key_env": "OPENAI_API_KEY",
+  "response_format": "json_schema",
+  "max_output_tokens": 8000,
+  "token_parameter": "max_completion_tokens",
+  "instruction_role": "developer",
+  "timeout_seconds": 60
+}

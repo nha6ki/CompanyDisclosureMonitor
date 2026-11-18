@@ -1,0 +1,19 @@
+{
+  "release": "nvidia-trial-fix-1",
+  "checked_on_jst": "2026-11-17",
+  "all_tests_passed": 64,
+  "new_tests_passed": 5,
+  "real_source_documents_prepared_per_model": 3,
+  "model_presets_prepared": 2,
+  "source_and_messages_identical_between_models": true,
+  "api_requests_sent_for_this_revision": 0,
+  "revised_local_llm_live_test_performed": false,
+  "prior_live_trial_reviewed": true,
+  "prior_9b_responses_received": 2,
+  "prior_27b_extraction_performed": false,
+  "reference_mechanical_checks_passed": true,
+  "reference_semantic_correctness_verified": false,
+  "api_key_required_for_local": false,
+  "original_extractor_unchanged": true,
+  "original_extractor_sha256": "c7e5b54dd88687b59dc47a4a2edccb32f70889b5aad564cb4f30bdbe57f5105d"
+}

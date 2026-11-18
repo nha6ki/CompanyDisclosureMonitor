@@ -1,0 +1,123 @@
+{
+  "scope": "previously_reviewed_NVIDIA_ten",
+  "reference_date_jst": "2026-11-17",
+  "baseline_extractor_sha256": "c7e5b54dd88687b59dc47a4a2edccb32f70889b5aad564cb4f30bdbe57f5105d",
+  "filings": [
+    {
+      "ticker": "NVDA",
+      "accession_number": "0001045810-26-000082",
+      "filing_date": "2026-11-12",
+      "document_url": "https://www.sec.gov/Archives/edgar/data/1045810/000104581026000082/nvda-20261111.htm",
+      "api_items": [
+        "5.02",
+        "9.01"
+      ],
+      "sha256": "1543a0cc1775291131f5d22224435fff8a58de4e7d6804618ee82fbda1a1dd5c",
+      "group": "original_five"
+    },
+    {
+      "ticker": "NVDA",
+      "accession_number": "0001045810-26-000078",
+      "filing_date": "2026-09-03",
+      "document_url": "https://www.sec.gov/Archives/edgar/data/1045810/000104581026000078/nvda-20260902.htm",
+      "api_items": [
+        "8.01"
+      ],
+      "sha256": "0ea586510cc2e4b817a29091e1a0c35beaf64844d98e84f199f00b15d9f35df7",
+      "group": "original_five"
+    },
+    {
+      "ticker": "NVDA",
+      "accession_number": "0001045810-26-000073",
+      "filing_date": "2026-08-26",
+      "document_url": "https://www.sec.gov/Archives/edgar/data/1045810/000104581026000073/nvda-20260826.htm",
+      "api_items": [
+        "2.02",
+        "9.01"
+      ],
+      "sha256": "1de9fb30a632ce28bdddb47aa86001b26bf07c8d5be82256cf8887c69840856b",
+      "group": "original_five"
+    },
+    {
+      "ticker": "NVDA",
+      "accession_number": "0001045810-26-000069",
+      "filing_date": "2026-08-17",
+      "document_url": "https://www.sec.gov/Archives/edgar/data/1045810/000104581026000069/nvda-20260817.htm",
+      "api_items": [
+        "1.01",
+        "2.03",
+        "7.01"
+      ],
+      "sha256": "2904584596b8f31a4763aa821ab65d52829238a55a74b860c14ecc08e0844ce7",
+      "group": "original_five"
+    },
+    {
+      "ticker": "NVDA",
+      "accession_number": "0001045810-26-000060",
+      "filing_date": "2026-07-02",
+      "document_url": "https://www.sec.gov/Archives/edgar/data/1045810/000104581026000060/nvda-20260628.htm",
+      "api_items": [
+        "5.02"
+      ],
+      "sha256": "a9a96bb6562f24b8dcb0cc09d1eca7788693a68f26074c2a6ef076eba45353ee",
+      "group": "original_five"
+    },
+    {
+      "ticker": "NVDA",
+      "accession_number": "0001045810-26-000056",
+      "filing_date": "2026-06-30",
+      "document_url": "https://www.sec.gov/Archives/edgar/data/1045810/000104581026000056/nvda-20260624.htm",
+      "api_items": [
+        "5.07"
+      ],
+      "sha256": "970aa003b3ef389563bf35dc7bd5b6fdec0c1cdd62d9dad1c6f946fd037b9c9d",
+      "group": "additional_five"
+    },
+    {
+      "ticker": "NVDA",
+      "accession_number": "0001193125-26-275783",
+      "filing_date": "2026-06-18",
+      "document_url": "https://www.sec.gov/Archives/edgar/data/1045810/000119312526275783/d48176d8k.htm",
+      "api_items": [
+        "8.01",
+        "9.01"
+      ],
+      "sha256": "a145b2ce82a4ce1020d30cba68a1177333f075d42eb4122c8a48f7ce15e7bfab",
+      "group": "additional_five"
+    },
+    {
+      "ticker": "NVDA",
+      "accession_number": "0001045810-26-000051",
+      "filing_date": "2026-05-20",
+      "document_url": "https://www.sec.gov/Archives/edgar/data/1045810/000104581026000051/nvda-20260520.htm",
+      "api_items": [
+        "2.02",
+        "9.01"
+      ],
+      "sha256": "e7fef4ec99768546104476b9591e12b38a931b5079a2bf5db1762a9f44be636a",
+      "group": "additional_five"
+    },
+    {
+      "ticker": "NVDA",
+      "accession_number": "0001045810-26-000028",
+      "filing_date": "2026-05-08",
+      "document_url": "https://www.sec.gov/Archives/edgar/data/1045810/000104581026000028/nvda-20260507.htm",
+      "api_items": [
+        "5.02"
+      ],
+      "sha256": "87dd325ef6f0977f11e5aadd6e6f6732d957333b03bdb7fa792b922df4e52419",
+      "group": "additional_five"
+    },
+    {
+      "ticker": "NVDA",
+      "accession_number": "0001045810-26-000026",
+      "filing_date": "2026-04-27",
+      "document_url": "https://www.sec.gov/Archives/edgar/data/1045810/000104581026000026/nvda-20260424.htm",
+      "api_items": [
+        "5.02"
+      ],
+      "sha256": "42a5d9b50b58468d22da14757d9108373a2a97ab052082ffdaac48528fece78f",
+      "group": "additional_five"
+    }
+  ]
+}

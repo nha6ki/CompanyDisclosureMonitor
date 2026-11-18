@@ -1,0 +1,50 @@
+{
+  "reviewer": "ChatGPTによる抽出後の原文照合",
+  "filings": {
+    "0001045810-26-000056": {
+      "verdict": "候補なし：項目が未対応",
+      "caught": "なし",
+      "missed": "株主総会の議案採否・投票結果",
+      "reason": "Item 5.07は現行コードの見出し対応表にも抽出ルールにもありません。本文に項目がないのではなく、プログラムの対応不足です。",
+      "manual_quote": "Submission of Matters to a Vote of Security Holders",
+      "manual_quote_location": "Item 5.07 見出し",
+      "candidate_relevance": "not_applicable"
+    },
+    "0001193125-26-275783": {
+      "verdict": "候補なし：出来事が未対応",
+      "caught": "なし",
+      "missed": "社債発行の完了と関連契約",
+      "reason": "Item 8.01は認識できましたが、社債発行を拾うルールがありません。8.01の買収契約向けルールでは拾えませんでした。",
+      "manual_quote": "completed an offering of",
+      "manual_quote_location": "Item 8.01 第1段落",
+      "candidate_relevance": "not_applicable"
+    },
+    "0001045810-26-000051": {
+      "verdict": "候補あり：2箇所",
+      "caught": "決算発表・CFO解説の表現",
+      "missed": "添付資料中の売上高・利益・見通し等は今回の抽出対象外",
+      "reason": "前回の決算開示と同型の表現に一致しました。本文の案内箇所を取り出せていますが、添付資料の内容を読んだ結果ではありません。",
+      "manual_quote": "",
+      "manual_quote_location": "",
+      "candidate_relevance": "候補ラベルは原文の段落内容に対応している"
+    },
+    "0001045810-26-000028": {
+      "verdict": "候補なし：任命表現を取りこぼし",
+      "caught": "なし",
+      "missed": "取締役・監査委員の任命と発効日",
+      "reason": "現行の任命ルールは「Board appointed」「Company appointed」等を想定しています。実際の本文は「NVIDIA Corporation appointed」であり、この表現を拾えませんでした。",
+      "manual_quote": "NVIDIA Corporation appointed Suzanne Nora Johnson",
+      "manual_quote_location": "Item 5.02 (d) 第1段落",
+      "candidate_relevance": "not_applicable"
+    },
+    "0001045810-26-000026": {
+      "verdict": "候補あり：2箇所",
+      "caught": "退任意向・発効条件の表現",
+      "missed": "後任の氏名・発効日・報酬条件などは抜粋に含まれない",
+      "reason": "対応する表現は拾えました。ただし各12語の短い断片なので、人物や日付を含む出来事全体の把握には原文が必要です。",
+      "manual_quote": "",
+      "manual_quote_location": "",
+      "candidate_relevance": "候補ラベルは原文の段落内容に対応している"
+    }
+  }
+}
