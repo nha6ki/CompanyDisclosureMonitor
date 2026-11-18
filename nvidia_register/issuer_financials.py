@@ -64,7 +64,7 @@ def compact(value):
     return "".join(value.lower().split())
 
 
-def statement_table(raw, symbol):
+def statement_table(raw, symbol, quarter_end=None):
     rule = RULES[symbol]
     grid = Grid()
     grid.feed(raw.decode("utf-8-sig"))
@@ -79,15 +79,22 @@ def statement_table(raw, symbol):
         if tail[1] and compact("(" + rule.units + ")") in tail[2] and "(unaudited)" in tail[2]:
             candidates.append(rows)
     rows = one(candidates, "Cannot uniquely identify the consolidated statement with its monetary units.")
-    end, year = PAIRS[symbol].quarter_end.rsplit(", ", 1)
+    quarter_end = quarter_end or PAIRS[symbol].quarter_end
+    end, year = quarter_end.rsplit(", ", 1)
     group_text = "Three Months Ended" if symbol == "AAPL" else f"Three Months Ended {end},"
     index, group = one(((i, cell) for i, row in enumerate(rows) for cell in row
                         if compact(cell[2]) == compact(group_text)), "Missing or ambiguous three-month header.")
     if index + 1 >= len(rows):
         raise ValueError("Missing column dates.")
-    date_label = PAIRS[symbol].quarter_end if symbol == "AAPL" else year
-    col = one(((lo, hi) for lo, hi, val in rows[index+1] if group[0] <= lo and hi <= group[1]
-               and compact(val) == compact(date_label)), "Cannot identify the quarter within its column group.")
+    date_label = quarter_end if symbol == "AAPL" else year
+    headers = rows[index+1]
+    if (len(rows[index]) == 1 and symbol != "AAPL" and
+            sorted(c[2] for c in headers) == [str(int(year)-1), year]):
+        # Single-period header sometimes has a visual offset from both year cells.
+        scope = headers
+    else:
+        scope = [c for c in headers if group[0] <= c[0] and c[1] <= group[1]]
+    col = one(((lo, hi) for lo, hi, val in scope if compact(val) == compact(date_label)), "Cannot identify the quarter within its column group.")
     rows = rows[index+2:]
     if not any('$' in v for row in rows for lo, hi, v in row if col[0] <= lo and hi <= col[1]):
         raise ValueError("Cannot establish dollar units for the quarter.")
@@ -122,11 +129,11 @@ class SlideText(HTMLParser):
     def handle_data(self, data):
         text = " ".join(data.split())
         if text.startswith("In millions of USD or shares as applicable, except per share data ") and re.search(
-                r"STATEMENTOFOPERATIONS\(UNAUDITED\)\d+$", compact(text).upper()):
+                r"STATEMENTOFOPERATIONS\(UNAUDITED\)\d+(?:$|\(\d+\))", compact(text).upper()):
             self.statements.append(text)
 
 
-def tesla_slide(raw):
+def tesla_slide(raw, period="Q3-2026"):
     p = SlideText()
     p.feed(raw.decode("utf-8-sig"))
     p.close()
@@ -134,7 +141,7 @@ def tesla_slide(raw):
     header = text.split("except per share data ", 1)[1].partition(" REVENUES ")[0].split()
     if len(set(header)) != len(header) or not all(re.fullmatch(r"Q[1-4]-20\d\d", v) for v in header):
         raise ValueError("Unexpected Tesla quarterly header.")
-    col = one((i for i,v in enumerate(header) if v == "Q3-2026"), "Cannot identify Q3-2026.")
+    col = one((i for i,v in enumerate(header) if v == period), "Cannot identify requested quarterly column.")
     return text, (col, len(header))
 
 
@@ -144,7 +151,7 @@ def value_from_slide(text, position, name):
         pattern = r"\bTotal revenues (.*?) COST OF REVENUES\b"
     else:
         pattern = (r"Net income per share of common stock attributable to common stockholders Basic [^A-Za-z]+"
-                   r"Diluted (.*?) Weighted average shares used in computing net income per share")
+                   r"Diluted (?:\(\d+\) )?(.*?) Weighted average shares used in computing net income per share")
     row = one(re.findall(pattern, text), "Missing or ambiguous Tesla " + name + " row.")
     token = (r"\$\s*" if name == METRICS[1] else "") + NUMBER
     if not re.fullmatch(token + (r"(?:\s+" + token + ")") + "{" + str(width-1) + "}", row):

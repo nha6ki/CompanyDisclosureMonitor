@@ -1,5 +1,6 @@
 """Local NVIDIA register. Run with the extractor project's Python environment."""
 import argparse
+from contextlib import closing
 import csv
 from copy import deepcopy
 import io
@@ -10,7 +11,7 @@ import sys
 from hashlib import sha256
 from html import escape as h
 from pathlib import Path
-from urllib.parse import parse_qs
+from urllib.parse import parse_qs, urlencode
 from wsgiref.simple_server import make_server
 
 ROOT = Path(__file__).resolve().parent.parent
@@ -21,6 +22,9 @@ import microsoft
 import alphabet
 import issuer_financials
 import periods
+import pipeline
+import workbench
+import demo_history
 import llm_runner
 import read_sections
 import structured_events as events
@@ -213,7 +217,7 @@ def hidden(name,value):
 
 
 def page(title, content):
-    return f'<!doctype html><html lang="ja"><meta charset="utf-8"><meta name="viewport" content="width=device-width"><title>{h(title)}</title><style>{STYLE}</style><body><header><nav><a href="/"><strong>Company Disclosure Monitor</strong></a><a href="/companies">7社の開示一覧</a><a href="/demo">公開デモを見る ↗</a></nav></header><main><h1>{h(title)}</h1>{content}</main></body></html>'.encode()
+    return f'<!doctype html><html lang="ja"><meta charset="utf-8"><meta name="viewport" content="width=device-width"><title>{h(title)}</title><style>{STYLE}</style><body><header><nav><a href="/"><strong>Company Disclosure Monitor</strong></a><a href="/companies">7社の開示一覧</a><a href="/workflow">四半期の照合・確認</a><a href="/demo">公開デモを見る ↗</a></nav></header><main><h1>{h(title)}</h1>{content}</main></body></html>'.encode()
 
 
 def index(reg, needs):
@@ -304,6 +308,14 @@ def application(reg,port):
                 if path == "/refresh":
                     reg.refresh()
                     target = "/"
+                elif path == "/workflow-review":
+                    with closing(pipeline.connect(reg.root)) as db:
+                        pipeline.review(db,form)
+                    query = workbench.filters(parse_qs(form.get('back','')))
+                    target = '/workflow?' + urlencode({k:v for k,v in query.items() if v})
+                elif path == "/workflow-sync":
+                    pipeline.sync(reg.root,periods.fetcher(form["contact"]))
+                    target = "/workflow"
                 elif path == "/companies-fetch":
                     companies.refresh(reg.root, periods.fetcher(form["contact"]))
                     target = "/companies"
@@ -325,6 +337,16 @@ def application(reg,port):
                     raise KeyError(path)
                 status,body = "303 See Other",b""
                 headers.append(("Location",target))
+            elif method == "GET" and path in ("/workflow", "/workflow.csv"):
+                conditions = workbench.filters(parse_qs(env["QUERY_STRING"]))
+                with closing(pipeline.connect(reg.root)) as db:
+                    rows = workbench.selected(db,conditions)
+                    if path.endswith(".csv"):
+                        body = workbench.export(rows)
+                        mime = "text/csv; charset=utf-8"
+                        headers.append(("Content-Disposition",'attachment; filename="m7-quarterly.csv"'))
+                    else:
+                        body = page("7社の四半期照合",workbench.render(db,conditions,rows,hidden,reg.token))
             elif method == "GET" and path in ("/companies", "/companies.csv"):
                 ticker, item = companies.filters(parse_qs(env["QUERY_STRING"]))
                 data = companies.load(reg.root)
@@ -340,6 +362,8 @@ def application(reg,port):
                 body = (Path(__file__).resolve().parent / "public_demo" / "index.html").read_bytes()
                 symbol = (parse_qs(env["QUERY_STRING"]).get("company", ["NVDA"])[0]
                           if path == "/demo" else path.rsplit("/", 1)[1])
+                if symbol not in companies.ISSUERS:
+                    symbol = "NVDA"
                 pairs = {"MSFT": microsoft.PAIR, "GOOGL": alphabet.PAIR, **issuer_financials.PAIRS}
                 if symbol in pairs and (local := pairs[symbol].local_result(reg.root)).is_file():
                     marker = f'<script type="application/json" id="{symbol.lower()}-record">'
@@ -347,6 +371,9 @@ def application(reg,port):
                     _, after = middle.split("</script>", 1)
                     data = json.dumps(read(local), ensure_ascii=True).replace("<", chr(92) + "u003c")
                     body = (before + marker + data + "</script>" + after).encode("utf-8")
+                with closing(pipeline.connect(reg.root)) as db:
+                    data = demo_history.presentation(r for r in pipeline.records(db) if r['symbol']==symbol)
+                body = demo_history.embed(body.decode("utf-8"), data).encode("utf-8")
             elif method == "GET" and path == "/report":
                 number = int(parse_qs(env["QUERY_STRING"])["id"][0])
                 result = reg.db.execute("SELECT data FROM reports WHERE id=?",(number,)).fetchone()

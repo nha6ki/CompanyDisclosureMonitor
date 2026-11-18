@@ -12,35 +12,37 @@ PAIR = filing_pair.FilingPair("GOOGL", "FY2026Q3", "September 30, 2026",
 LABELS = ("Revenues", "Diluted net income per common share")
 
 
-def statement(raw):
+def statement(raw, end="September 30", year="2026"):
     grid = Grid()
     grid.feed(raw.decode("utf-8-sig"))
     grid.close()
     heading = re.compile(r"\bAlphabet Inc\. Consolidated Statements of Income "
-                         r"\(in millions, except per share amounts[,;] unaudited\)$", re.I)
+                         r"\(in millions, except per share amounts(?:[,;] unaudited)?\)$", re.I)
     rows = one(([row for row in rows if row] for title, rows in grid.tables if heading.search(title)),
                "Cannot identify Alphabet's consolidated income statement with per-share units.")
     if not rows:
         raise ValueError("Empty consolidated income statement.")
-    quarter = one((cell for cell in rows[0] if cell[2] in ("Quarter Ended September 30,", "Three Months Ended")),
+    quarter = one((cell for cell in rows[0] if cell[2] in (f"Quarter Ended {end},", "Three Months Ended", f"Three Months Ended {end},")),
                   "Cannot identify the three-month column group.")
-    start, end, title = quarter
+    day_label = end + ","
+    start, right_edge, title = quarter
     year_index = 1
     if title == "Three Months Ended":
-        if len(rows) < 2 or (start, end, "September 30,") not in rows[1]:
+        if len(rows) < 2 or (start, right_edge, day_label) not in rows[1]:
             raise ValueError("The three-month period has a different ending date.")
         year_index += 1
     if len(rows) <= year_index:
         raise ValueError("Missing year headers.")
-    current = one(((left, right) for left, right, year in rows[year_index]
-                   if start <= left and right <= end and year == "2026"),
-                  "Cannot identify 2026 within the three-month column group.")
+    current = one(((left, right) for left, right, value in rows[year_index]
+                   if start <= left and right <= right_edge and value == year),
+                  "Cannot identify the requested year within the three-month column group.")
     return rows[year_index + 1:], current
 
 
 def metric_value(rows, column, name):
     label = LABELS[filing_pair.METRICS.index(name)]
-    row = one((row for row in rows if re.sub(r" \(Note \d+\)$", "", row[0][2]) == label),
+    labels = {label} if name == filing_pair.METRICS[0] else {label, "Diluted net income per share"}
+    row = one((row for row in rows if re.sub(r" \(Note \d+\)$", "", row[0][2]) in labels),
               "Missing or ambiguous consolidated row: " + label)
     cells = [text for left, right, text in row if column[0] <= left and right <= column[1]]
     amount = "".join(cells)

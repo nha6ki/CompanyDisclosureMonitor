@@ -8,23 +8,31 @@ Open <http://localhost:8774/companies> after starting the local application. The
 
 Use the update form with your SEC contact email to fetch each issuer's submissions over the latest 90 calendar days (US Eastern time). The index covers Form 8-K and 8-K/A, keyed by issuer CIK and accession. An update replaces the window for each successful issuer. A failed issuer keeps its last successful data, with an error and the date shown. The stored data consists of filing metadata and source links. The company detail links open the financial comparisons for all seven issuers. Narrative review is available for NVIDIA.
 
-## View the demo
+## Quarterly reconciliation for all seven companies
 
-Open [the interactive filing register](nvidia_register/public_demo/index.html) in a browser after cloning. Choose a metric and quarter to compare reported figures, inspect the SEC source and download the fixed dataset. The NVIDIA eight-quarter snapshot covers FY2025 Q4 through FY2027 Q3. Fifteen automated comparisons match exactly and one matches at reported precision. Human review is pending for all 16 figures. The sample CSV files are in [examples](nvidia_register/examples/).
+Open `/workflow` in the local application for a common review queue, or open a company from `/companies` for its eight-quarter chart and source links. The bundled November 19, 2026 snapshot contains 56 fiscal quarters and 112 figures. It uses consolidated GAAP revenue (USD millions) and diluted EPS (USD/share). The eight quarters are issuer-specific. Filter the common CSV by actual quarter-end dates to compare a calendar window across issuers.
 
-All seven issuers use the same bilingual page; open a company from the filing index or use the company links in the offline HTML. Microsoft FY2027 Q1 covers the three months ended September 30, 2026. Python reads total revenue and diluted earnings per share independently from Exhibit 99.1 and the 10-Q. Each result retains the filing links, comparison column and source units. The CSV also includes both accession numbers and both source hashes.
+The daily or manual update detects Item 2.02 earnings releases, locates the release’s actual quarter and waits for its 10-Q or 10-K. SEC accession, issuer, fiscal quarter, period end, monetary units, and source hashes identify the evidence. For periodic filings Python selects directly reported three-month consolidated XBRL facts. Fourth-quarter results remain visible from the release even if the 10-K has no comparable quarterly fact. Amended or conflicting filings remain in the review queue with their source links. Unmapped releases and failed downloads are shown separately. The filing index’s 90-day metadata update is independent of the quarterly update.
 
-To repeat the Microsoft check against the pinned source documents, run `python nvidia_register/microsoft.py --contact YOUR_EMAIL` in the application environment. Reload the company page to see the result. A different amount is flagged as a mismatch; unreadable or ambiguous values are marked for review. The embedded snapshot works offline. Updating the seven-company filing index refreshes filing metadata; the Microsoft comparison currently covers this one quarter.
-
-Alphabet FY2026 Q3 covers the three months ended September 30, 2026. The 8-K and 10-Q were filed one day apart. The parser selects the current year inside the three-month header and uses the consolidated statement's diluted EPS row. Run `python nvidia_register/alphabet.py --contact YOUR_EMAIL` to repeat this filing-pair comparison and update the Alphabet page. The offline preview includes the verified quarter.
-
-Apple, Amazon, Meta Platforms and Tesla each include one verified filing pair. Apple FY2026 Q3 ended June 27. Its subsequent fourth quarter has an annual 10-K. Amazon, Meta and Tesla Q3 2026 ended September 30. The parsers use each issuer’s consolidated income statement and identify the quarter independently of the nine-month columns. Tesla’s exhibit uses the text of the financial-statement slide (page 27) and its five quarter headers. The dated snapshots can be reproduced with one command:
+Run from the repository root with the application environment, or use the **7社を更新** button in the review queue. The first online refresh downloads archival evidence. Later refreshes reuse cached SEC archive documents.
 
 ```sh
-python nvidia_register/issuer_financials.py --contact YOUR_EMAIL
+python nvidia_register/pipeline.py --contact YOUR_EMAIL
 ```
 
-Add `--company AAPL`, `AMZN`, `META`, or `TSLA` to limit the check to selected issuers. Reload the local company page to see its result. Source links in the offline demo require an internet connection.
+To install a daily update on the Windows host, run the following in WSL with that same Python environment. Windows runs the task as the current user, using Windows local time.
+
+```sh
+python nvidia_register/install_daily.py --workflow --contact YOUR_EMAIL --at 09:00
+```
+
+Choose **照合** to filter exceptions or **担当者確認** to filter human review state. A reviewer records one decision per company and quarter; changes in the underlying evidence flag earlier decisions for re-review. CSV export includes only matching metrics and retains provenance, decision, reviewer, note and timestamp. Review history and raw downloads are kept locally under `register_data/`. The latest eight quarters remain on screen while older saved rows and decisions stay in SQLite.
+
+## Offline demo and original comparison cases
+
+Open [the bilingual register](nvidia_register/public_demo/index.html) directly in a browser to inspect the bundled eight quarters for each company, switch between revenue and diluted EPS, follow the SEC sources or download an issuer CSV. The local application renders the same company pages from the current database. The standalone file contains the bundled data and has no review editor.
+
+The earlier filing-pair exercises remain available in the local application by adding `&baseline=1` to a company URL with a language parameter, for example `/company/NVDA?lang=ja&baseline=1`. The NVIDIA baseline compares two tables inside one exhibit. The original six company-specific cases compare a pinned exhibit against its 10-Q. Their scripts and sample CSVs remain available.
 
 ## Local application
 

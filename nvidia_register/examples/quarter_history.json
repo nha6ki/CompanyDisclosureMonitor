@@ -1,0 +1,2144 @@
+{
+ "asof": "2026-11-19",
+ "issuers": {
+  "AAPL": {
+   "rows": [
+    {
+     "symbol": "AAPL",
+     "period": "FY2025Q1",
+     "end": "2024-12-28",
+     "estimated": false,
+     "filing": "https://www.sec.gov/Archives/edgar/data/320193/000032019325000007/aapl-20250130.htm",
+     "accession": "0000320193-25-000007",
+     "exhibit": "https://www.sec.gov/Archives/edgar/data/320193/000032019325000007/a8-kex991q1202512282024.htm",
+     "release_date": "2025-01-30",
+     "report": "https://www.sec.gov/Archives/edgar/data/320193/000032019325000008/aapl-20241228.htm",
+     "report_acc": "0000320193-25-000008",
+     "form": "10-Q",
+     "report_date": "2025-01-31",
+     "sha": "7ecb5ff5cd7b49bb180c80c7a800255ec8bd306b225f6ba692ea393f1ffbcc6b",
+     "report_sha": "abadbd26cda0c2d0089d133ee755a1106326b0fd026322c35a12fbd4a0bde5bf",
+     "metrics": [
+      {
+       "metric": "Revenue",
+       "unit": "USD millions",
+       "release": "124300",
+       "comparison": "124300",
+       "status": "一致",
+       "reason": "",
+       "locator": "us-gaap:RevenueFromContractWithCustomerExcludingAssessedTax · c-1 · 2024-09-29 – 2024-12-28"
+      },
+      {
+       "metric": "Diluted earnings per share",
+       "unit": "USD/share",
+       "release": "2.40",
+       "comparison": "2.40",
+       "status": "一致",
+       "reason": "",
+       "locator": "us-gaap:EarningsPerShareDiluted · c-1 · 2024-09-29 – 2024-12-28"
+      }
+     ],
+     "candidates": []
+    },
+    {
+     "symbol": "AAPL",
+     "period": "FY2025Q2",
+     "end": "2025-03-29",
+     "estimated": false,
+     "filing": "https://www.sec.gov/Archives/edgar/data/320193/000032019325000055/aapl-20250501.htm",
+     "accession": "0000320193-25-000055",
+     "exhibit": "https://www.sec.gov/Archives/edgar/data/320193/000032019325000055/a8-kex991q2202503292025.htm",
+     "release_date": "2025-05-01",
+     "report": "https://www.sec.gov/Archives/edgar/data/320193/000032019325000057/aapl-20250329.htm",
+     "report_acc": "0000320193-25-000057",
+     "form": "10-Q",
+     "report_date": "2025-05-02",
+     "sha": "555fe89b625cb1a607d023ae5179a12d34fcdcdeee23f0309b8d5f4b78905701",
+     "report_sha": "eb68d9c56c3323c3e610facebbb0e7f9a21b555aa7c6e3d293972145a220ad48",
+     "metrics": [
+      {
+       "metric": "Revenue",
+       "unit": "USD millions",
+       "release": "95359",
+       "comparison": "95359",
+       "status": "一致",
+       "reason": "",
+       "locator": "us-gaap:RevenueFromContractWithCustomerExcludingAssessedTax · c-20 · 2024-12-29 – 2025-03-29"
+      },
+      {
+       "metric": "Diluted earnings per share",
+       "unit": "USD/share",
+       "release": "1.65",
+       "comparison": "1.65",
+       "status": "一致",
+       "reason": "",
+       "locator": "us-gaap:EarningsPerShareDiluted · c-20 · 2024-12-29 – 2025-03-29"
+      }
+     ],
+     "candidates": []
+    },
+    {
+     "symbol": "AAPL",
+     "period": "FY2025Q3",
+     "end": "2025-06-28",
+     "estimated": false,
+     "filing": "https://www.sec.gov/Archives/edgar/data/320193/000032019325000071/aapl-20250731.htm",
+     "accession": "0000320193-25-000071",
+     "exhibit": "https://www.sec.gov/Archives/edgar/data/320193/000032019325000071/a8-kex991q3202506282025.htm",
+     "release_date": "2025-07-31",
+     "report": "https://www.sec.gov/Archives/edgar/data/320193/000032019325000073/aapl-20250628.htm",
+     "report_acc": "0000320193-25-000073",
+     "form": "10-Q",
+     "report_date": "2025-08-01",
+     "sha": "f406f82840bb1b222a9112ed2c5ae609e77c7c87a8fdf8829b33ba577d22b8f4",
+     "report_sha": "ef49651a716c112d0a0373f1bb41d70fd3984f8fc6b1e0c660e90517d02fb013",
+     "metrics": [
+      {
+       "metric": "Revenue",
+       "unit": "USD millions",
+       "release": "94036",
+       "comparison": "94036",
+       "status": "一致",
+       "reason": "",
+       "locator": "us-gaap:RevenueFromContractWithCustomerExcludingAssessedTax · c-19 · 2025-03-30 – 2025-06-28"
+      },
+      {
+       "metric": "Diluted earnings per share",
+       "unit": "USD/share",
+       "release": "1.57",
+       "comparison": "1.57",
+       "status": "一致",
+       "reason": "",
+       "locator": "us-gaap:EarningsPerShareDiluted · c-19 · 2025-03-30 – 2025-06-28"
+      }
+     ],
+     "candidates": []
+    },
+    {
+     "symbol": "AAPL",
+     "period": "FY2025Q4",
+     "end": "2025-09-27",
+     "estimated": false,
+     "filing": "https://www.sec.gov/Archives/edgar/data/320193/000032019325000077/aapl-20251030.htm",
+     "accession": "0000320193-25-000077",
+     "exhibit": "https://www.sec.gov/Archives/edgar/data/320193/000032019325000077/a8-kex991q4202509272025.htm",
+     "release_date": "2025-10-30",
+     "report": "https://www.sec.gov/Archives/edgar/data/320193/000032019325000079/aapl-20250927.htm",
+     "report_acc": "0000320193-25-000079",
+     "form": "10-K",
+     "report_date": "2025-10-31",
+     "sha": "03c1c831c513dd038e9538e74a0b15c1903f4e2ecedecaee22ac192ca608532d",
+     "report_sha": "1aa7482bc93c4fe93f0b6c1b37b2bb9f0123c751d01d34a01ac59e807bc04077",
+     "metrics": [
+      {
+       "metric": "Revenue",
+       "unit": "USD millions",
+       "release": "102466",
+       "comparison": null,
+       "status": "比較値なし",
+       "reason": "対象3か月の連結XBRL値なし",
+       "locator": ""
+      },
+      {
+       "metric": "Diluted earnings per share",
+       "unit": "USD/share",
+       "release": "1.85",
+       "comparison": null,
+       "status": "比較値なし",
+       "reason": "対象3か月の連結XBRL値なし",
+       "locator": ""
+      }
+     ],
+     "candidates": []
+    },
+    {
+     "symbol": "AAPL",
+     "period": "FY2026Q1",
+     "end": "2025-12-27",
+     "estimated": false,
+     "filing": "https://www.sec.gov/Archives/edgar/data/320193/000032019326000005/aapl-20260129.htm",
+     "accession": "0000320193-26-000005",
+     "exhibit": "https://www.sec.gov/Archives/edgar/data/320193/000032019326000005/a8-kex991q1202612272025.htm",
+     "release_date": "2026-01-29",
+     "report": "https://www.sec.gov/Archives/edgar/data/320193/000032019326000006/aapl-20251227.htm",
+     "report_acc": "0000320193-26-000006",
+     "form": "10-Q",
+     "report_date": "2026-01-30",
+     "sha": "05753a0a7fa67e73cc3b03e935296c6ba37ce060d76aa75ce02272b39537e9be",
+     "report_sha": "120c9301f5ecd201dad9b25a7727ac6a4d76a1f5d9be7bb80c14e9360ec2aab0",
+     "metrics": [
+      {
+       "metric": "Revenue",
+       "unit": "USD millions",
+       "release": "143756",
+       "comparison": "143756",
+       "status": "一致",
+       "reason": "",
+       "locator": "us-gaap:RevenueFromContractWithCustomerExcludingAssessedTax · c-1 · 2025-09-28 – 2025-12-27"
+      },
+      {
+       "metric": "Diluted earnings per share",
+       "unit": "USD/share",
+       "release": "2.84",
+       "comparison": "2.84",
+       "status": "一致",
+       "reason": "",
+       "locator": "us-gaap:EarningsPerShareDiluted · c-1 · 2025-09-28 – 2025-12-27"
+      }
+     ],
+     "candidates": []
+    },
+    {
+     "symbol": "AAPL",
+     "period": "FY2026Q2",
+     "end": "2026-03-28",
+     "estimated": false,
+     "filing": "https://www.sec.gov/Archives/edgar/data/320193/000032019326000011/aapl-20260430.htm",
+     "accession": "0000320193-26-000011",
+     "exhibit": "https://www.sec.gov/Archives/edgar/data/320193/000032019326000011/a8-kex991q2202603282026.htm",
+     "release_date": "2026-04-30",
+     "report": "https://www.sec.gov/Archives/edgar/data/320193/000032019326000013/aapl-20260328.htm",
+     "report_acc": "0000320193-26-000013",
+     "form": "10-Q",
+     "report_date": "2026-05-01",
+     "sha": "25f9da5f0733fb3ac055e9513a66fbbc68ff4f46094c44d644c86ac87f2fb8d7",
+     "report_sha": "5c5e26db2d80447c02149798b109dd37c296c4375a3763ccdf95a5e35a71abfa",
+     "metrics": [
+      {
+       "metric": "Revenue",
+       "unit": "USD millions",
+       "release": "111184",
+       "comparison": "111184",
+       "status": "一致",
+       "reason": "",
+       "locator": "us-gaap:RevenueFromContractWithCustomerExcludingAssessedTax · c-18 · 2025-12-28 – 2026-03-28"
+      },
+      {
+       "metric": "Diluted earnings per share",
+       "unit": "USD/share",
+       "release": "2.01",
+       "comparison": "2.01",
+       "status": "一致",
+       "reason": "",
+       "locator": "us-gaap:EarningsPerShareDiluted · c-18 · 2025-12-28 – 2026-03-28"
+      }
+     ],
+     "candidates": []
+    },
+    {
+     "symbol": "AAPL",
+     "period": "FY2026Q3",
+     "end": "2026-06-27",
+     "estimated": false,
+     "filing": "https://www.sec.gov/Archives/edgar/data/320193/000032019326000018/aapl-20260730.htm",
+     "accession": "0000320193-26-000018",
+     "exhibit": "https://www.sec.gov/Archives/edgar/data/320193/000032019326000018/a8-kex991q3202606272026.htm",
+     "release_date": "2026-07-30",
+     "report": "https://www.sec.gov/Archives/edgar/data/320193/000032019326000020/aapl-20260627.htm",
+     "report_acc": "0000320193-26-000020",
+     "form": "10-Q",
+     "report_date": "2026-07-31",
+     "sha": "418e50d3e380df70c98af5d79644f6972ec3b526834407a828caf94eb6f1e35c",
+     "report_sha": "9afca93bb6e1dd4a20410bb6e708cdf5e9d5cbed3827c55dcde7efb655edf0e4",
+     "metrics": [
+      {
+       "metric": "Revenue",
+       "unit": "USD millions",
+       "release": "109417",
+       "comparison": "109417",
+       "status": "一致",
+       "reason": "",
+       "locator": "us-gaap:RevenueFromContractWithCustomerExcludingAssessedTax · c-18 · 2026-03-29 – 2026-06-27"
+      },
+      {
+       "metric": "Diluted earnings per share",
+       "unit": "USD/share",
+       "release": "2.02",
+       "comparison": "2.02",
+       "status": "一致",
+       "reason": "",
+       "locator": "us-gaap:EarningsPerShareDiluted · c-18 · 2026-03-29 – 2026-06-27"
+      }
+     ],
+     "candidates": []
+    },
+    {
+     "symbol": "AAPL",
+     "period": "FY2026Q4",
+     "end": "2026-09-26",
+     "estimated": false,
+     "filing": "https://www.sec.gov/Archives/edgar/data/320193/000032019326000024/aapl-20261102.htm",
+     "accession": "0000320193-26-000024",
+     "exhibit": "https://www.sec.gov/Archives/edgar/data/320193/000032019326000024/a8-kex991q4202609262026.htm",
+     "release_date": "2026-11-02",
+     "report": "https://www.sec.gov/Archives/edgar/data/320193/000032019326000026/aapl-20260926.htm",
+     "report_acc": "0000320193-26-000026",
+     "form": "10-K",
+     "report_date": "2026-11-03",
+     "sha": "1055bbd4fc275a543f1ce7d7e3eb34ba5c79f2a04226bfa2df355da5c489a752",
+     "report_sha": "a57a9acaf658191789ccc31102d9e86d97dab038ae65b7efcd5a8fb1c5feafdc",
+     "metrics": [
+      {
+       "metric": "Revenue",
+       "unit": "USD millions",
+       "release": "114477",
+       "comparison": null,
+       "status": "比較値なし",
+       "reason": "対象3か月の連結XBRL値なし",
+       "locator": ""
+      },
+      {
+       "metric": "Diluted earnings per share",
+       "unit": "USD/share",
+       "release": "2.10",
+       "comparison": null,
+       "status": "比較値なし",
+       "reason": "対象3か月の連結XBRL値なし",
+       "locator": ""
+      }
+     ],
+     "candidates": []
+    }
+   ],
+   "issues": []
+  },
+  "MSFT": {
+   "rows": [
+    {
+     "symbol": "MSFT",
+     "period": "FY2025Q2",
+     "end": "2024-12-31",
+     "estimated": false,
+     "filing": "https://www.sec.gov/Archives/edgar/data/789019/000095017025010484/msft-20250129.htm",
+     "accession": "0000950170-25-010484",
+     "exhibit": "https://www.sec.gov/Archives/edgar/data/789019/000095017025010484/msft-ex99_1.htm",
+     "release_date": "2025-01-29",
+     "report": "https://www.sec.gov/Archives/edgar/data/789019/000095017025010491/msft-20241231.htm",
+     "report_acc": "0000950170-25-010491",
+     "form": "10-Q",
+     "report_date": "2025-01-29",
+     "sha": "10e292cf4ded056a340045cd839414f2c3a15bdb69f2b6663c24f22b31847030",
+     "report_sha": "8a778c2d558e59ea40184ac0610ae37aef28275b22a2b7eb320a2c9ca66543f3",
+     "metrics": [
+      {
+       "metric": "Revenue",
+       "unit": "USD millions",
+       "release": "69632",
+       "comparison": "69632",
+       "status": "一致",
+       "reason": "",
+       "locator": "us-gaap:RevenueFromContractWithCustomerExcludingAssessedTax · C_260c7ff0-ff30-4842-9c1d-bb65f8e57f70 · 2024-10-01 – 2024-12-31"
+      },
+      {
+       "metric": "Diluted earnings per share",
+       "unit": "USD/share",
+       "release": "3.23",
+       "comparison": "3.23",
+       "status": "一致",
+       "reason": "",
+       "locator": "us-gaap:EarningsPerShareDiluted · C_260c7ff0-ff30-4842-9c1d-bb65f8e57f70 · 2024-10-01 – 2024-12-31"
+      }
+     ],
+     "candidates": []
+    },
+    {
+     "symbol": "MSFT",
+     "period": "FY2025Q3",
+     "end": "2025-03-31",
+     "estimated": false,
+     "filing": "https://www.sec.gov/Archives/edgar/data/789019/000095017025061032/msft-20250430.htm",
+     "accession": "0000950170-25-061032",
+     "exhibit": "https://www.sec.gov/Archives/edgar/data/789019/000095017025061032/msft-ex99_1.htm",
+     "release_date": "2025-04-30",
+     "report": "https://www.sec.gov/Archives/edgar/data/789019/000095017025061046/msft-20250331.htm",
+     "report_acc": "0000950170-25-061046",
+     "form": "10-Q",
+     "report_date": "2025-04-30",
+     "sha": "bba900f493c6e2eb55c754648b72dbafe65549440c060cd6b4d9a4f6ebee2a4d",
+     "report_sha": "9e3518772d828182911eda6ed1d87746a0dbb0b5a121a6701c4d30d90733288c",
+     "metrics": [
+      {
+       "metric": "Revenue",
+       "unit": "USD millions",
+       "release": "70066",
+       "comparison": "70066",
+       "status": "一致",
+       "reason": "",
+       "locator": "us-gaap:RevenueFromContractWithCustomerExcludingAssessedTax · C_f5d91e16-4fa6-44d0-96d4-472f3551cf38 · 2025-01-01 – 2025-03-31"
+      },
+      {
+       "metric": "Diluted earnings per share",
+       "unit": "USD/share",
+       "release": "3.46",
+       "comparison": "3.46",
+       "status": "一致",
+       "reason": "",
+       "locator": "us-gaap:EarningsPerShareDiluted · C_f5d91e16-4fa6-44d0-96d4-472f3551cf38 · 2025-01-01 – 2025-03-31"
+      }
+     ],
+     "candidates": []
+    },
+    {
+     "symbol": "MSFT",
+     "period": "FY2025Q4",
+     "end": "2025-06-30",
+     "estimated": false,
+     "filing": "https://www.sec.gov/Archives/edgar/data/789019/000095017025100226/msft-20250730.htm",
+     "accession": "0000950170-25-100226",
+     "exhibit": "https://www.sec.gov/Archives/edgar/data/789019/000095017025100226/msft-ex99_1.htm",
+     "release_date": "2025-07-30",
+     "report": "https://www.sec.gov/Archives/edgar/data/789019/000095017025100235/msft-20250630.htm",
+     "report_acc": "0000950170-25-100235",
+     "form": "10-K",
+     "report_date": "2025-07-30",
+     "sha": "d72d760a58619d84643278ae8df96721c01c70db336db6c2c002c51d17b6cfc1",
+     "report_sha": "78a507e1d8afa48d803a7c323d42bb8d4836fa10b87dbd8dd356f3cd86248e0f",
+     "metrics": [
+      {
+       "metric": "Revenue",
+       "unit": "USD millions",
+       "release": "76441",
+       "comparison": null,
+       "status": "比較値なし",
+       "reason": "対象3か月の連結XBRL値なし",
+       "locator": ""
+      },
+      {
+       "metric": "Diluted earnings per share",
+       "unit": "USD/share",
+       "release": "3.65",
+       "comparison": null,
+       "status": "比較値なし",
+       "reason": "対象3か月の連結XBRL値なし",
+       "locator": ""
+      }
+     ],
+     "candidates": []
+    },
+    {
+     "symbol": "MSFT",
+     "period": "FY2026Q1",
+     "end": "2025-09-30",
+     "estimated": false,
+     "filing": "https://www.sec.gov/Archives/edgar/data/789019/000119312525256310/msft-20251028.htm",
+     "accession": "0001193125-25-256310",
+     "exhibit": "https://www.sec.gov/Archives/edgar/data/789019/000119312525256310/msft-ex99_1.htm",
+     "release_date": "2025-10-29",
+     "report": "https://www.sec.gov/Archives/edgar/data/789019/000119312525256321/msft-20250930.htm",
+     "report_acc": "0001193125-25-256321",
+     "form": "10-Q",
+     "report_date": "2025-10-29",
+     "sha": "baeca304411cccbe20f5f84c34f9e61d9f35aa32a18081b2ff0ffc0e94b022e8",
+     "report_sha": "c0b0599c8fe5cfd5f06da76108b87ac12a93cc0088ccc00536280c1f60a5566e",
+     "metrics": [
+      {
+       "metric": "Revenue",
+       "unit": "USD millions",
+       "release": "77673",
+       "comparison": "77673",
+       "status": "一致",
+       "reason": "",
+       "locator": "us-gaap:RevenueFromContractWithCustomerExcludingAssessedTax · C_77513f4d-d996-497e-8795-6472b2325bfb · 2025-07-01 – 2025-09-30"
+      },
+      {
+       "metric": "Diluted earnings per share",
+       "unit": "USD/share",
+       "release": "3.72",
+       "comparison": "3.72",
+       "status": "一致",
+       "reason": "",
+       "locator": "us-gaap:EarningsPerShareDiluted · C_77513f4d-d996-497e-8795-6472b2325bfb · 2025-07-01 – 2025-09-30"
+      }
+     ],
+     "candidates": []
+    },
+    {
+     "symbol": "MSFT",
+     "period": "FY2026Q2",
+     "end": "2025-12-31",
+     "estimated": false,
+     "filing": "https://www.sec.gov/Archives/edgar/data/789019/000119312526027198/msft-20260128.htm",
+     "accession": "0001193125-26-027198",
+     "exhibit": "https://www.sec.gov/Archives/edgar/data/789019/000119312526027198/msft-ex99_1.htm",
+     "release_date": "2026-01-28",
+     "report": "https://www.sec.gov/Archives/edgar/data/789019/000119312526027207/msft-20251231.htm",
+     "report_acc": "0001193125-26-027207",
+     "form": "10-Q",
+     "report_date": "2026-01-28",
+     "sha": "c12168c74b879b8c85fdd6b8084b08d0fc0c4639a6fee161db2909c5b7c9ec33",
+     "report_sha": "50369ba60726a25ec887033e9e57f7fbcbe60eb5c4b80962132d480a950dab29",
+     "metrics": [
+      {
+       "metric": "Revenue",
+       "unit": "USD millions",
+       "release": "81273",
+       "comparison": "81273",
+       "status": "一致",
+       "reason": "",
+       "locator": "us-gaap:RevenueFromContractWithCustomerExcludingAssessedTax · C_0641e570-0e18-4add-8c73-cc64b54d1f88 · 2025-10-01 – 2025-12-31"
+      },
+      {
+       "metric": "Diluted earnings per share",
+       "unit": "USD/share",
+       "release": "5.16",
+       "comparison": "5.16",
+       "status": "一致",
+       "reason": "",
+       "locator": "us-gaap:EarningsPerShareDiluted · C_0641e570-0e18-4add-8c73-cc64b54d1f88 · 2025-10-01 – 2025-12-31"
+      }
+     ],
+     "candidates": []
+    },
+    {
+     "symbol": "MSFT",
+     "period": "FY2026Q3",
+     "end": "2026-03-31",
+     "estimated": false,
+     "filing": "https://www.sec.gov/Archives/edgar/data/789019/000119312526191457/msft-20260429.htm",
+     "accession": "0001193125-26-191457",
+     "exhibit": "https://www.sec.gov/Archives/edgar/data/789019/000119312526191457/msft-ex99_1.htm",
+     "release_date": "2026-04-29",
+     "report": "https://www.sec.gov/Archives/edgar/data/789019/000119312526191507/msft-20260331.htm",
+     "report_acc": "0001193125-26-191507",
+     "form": "10-Q",
+     "report_date": "2026-04-29",
+     "sha": "9fa555d8bfe86df184a716716c218648177ba64dca2fba9b7a95c4ee0af3c5c9",
+     "report_sha": "becb5256c472e7772b2e73d150ef2d903232b3af482249e5385e5bad6d5b7301",
+     "metrics": [
+      {
+       "metric": "Revenue",
+       "unit": "USD millions",
+       "release": "82886",
+       "comparison": "82886",
+       "status": "一致",
+       "reason": "",
+       "locator": "us-gaap:RevenueFromContractWithCustomerExcludingAssessedTax · C_c2ccc5b0-c925-4f23-934c-ae4c5790d1f6 · 2026-01-01 – 2026-03-31"
+      },
+      {
+       "metric": "Diluted earnings per share",
+       "unit": "USD/share",
+       "release": "4.27",
+       "comparison": "4.27",
+       "status": "一致",
+       "reason": "",
+       "locator": "us-gaap:EarningsPerShareDiluted · C_c2ccc5b0-c925-4f23-934c-ae4c5790d1f6 · 2026-01-01 – 2026-03-31"
+      }
+     ],
+     "candidates": []
+    },
+    {
+     "symbol": "MSFT",
+     "period": "FY2026Q4",
+     "end": "2026-06-30",
+     "estimated": false,
+     "filing": "https://www.sec.gov/Archives/edgar/data/789019/000119312526323632/msft-20260729.htm",
+     "accession": "0001193125-26-323632",
+     "exhibit": "https://www.sec.gov/Archives/edgar/data/789019/000119312526323632/msft-ex99_1.htm",
+     "release_date": "2026-07-29",
+     "report": "https://www.sec.gov/Archives/edgar/data/789019/000119312526323660/msft-20260630.htm",
+     "report_acc": "0001193125-26-323660",
+     "form": "10-K",
+     "report_date": "2026-07-29",
+     "sha": "1ee486a49f19236f39f9f06f303a107ea3c59ff88f954cc1e3346dfcb192c454",
+     "report_sha": "272a7589057cb08403551d303f80905682cdbf61f4741e495ceb0983446653a0",
+     "metrics": [
+      {
+       "metric": "Revenue",
+       "unit": "USD millions",
+       "release": "90007",
+       "comparison": null,
+       "status": "比較値なし",
+       "reason": "対象3か月の連結XBRL値なし",
+       "locator": ""
+      },
+      {
+       "metric": "Diluted earnings per share",
+       "unit": "USD/share",
+       "release": "4.81",
+       "comparison": null,
+       "status": "比較値なし",
+       "reason": "対象3か月の連結XBRL値なし",
+       "locator": ""
+      }
+     ],
+     "candidates": []
+    },
+    {
+     "symbol": "MSFT",
+     "period": "FY2027Q1",
+     "end": "2026-09-30",
+     "estimated": false,
+     "filing": "https://www.sec.gov/Archives/edgar/data/789019/000119312526436122/msft-20261028.htm",
+     "accession": "0001193125-26-436122",
+     "exhibit": "https://www.sec.gov/Archives/edgar/data/789019/000119312526436122/msft-ex99_1.htm",
+     "release_date": "2026-10-28",
+     "report": "https://www.sec.gov/Archives/edgar/data/789019/000119312526436133/msft-20260930.htm",
+     "report_acc": "0001193125-26-436133",
+     "form": "10-Q",
+     "report_date": "2026-10-28",
+     "sha": "913edaadd93a01d9c0aa2b6fba936040b157951ba33579e7249390bc91e99b63",
+     "report_sha": "b0a6acbf5de340588e12f990b56ece4e5d67de2922bf5aa9a6ab379c742e92a8",
+     "metrics": [
+      {
+       "metric": "Revenue",
+       "unit": "USD millions",
+       "release": "92279",
+       "comparison": "92279",
+       "status": "一致",
+       "reason": "",
+       "locator": "us-gaap:RevenueFromContractWithCustomerExcludingAssessedTax · C_4ca01806-c4cd-49d2-87c6-16fd7f17ad5d · 2026-07-01 – 2026-09-30"
+      },
+      {
+       "metric": "Diluted earnings per share",
+       "unit": "USD/share",
+       "release": "4.92",
+       "comparison": "4.92",
+       "status": "一致",
+       "reason": "",
+       "locator": "us-gaap:EarningsPerShareDiluted · C_4ca01806-c4cd-49d2-87c6-16fd7f17ad5d · 2026-07-01 – 2026-09-30"
+      }
+     ],
+     "candidates": []
+    }
+   ],
+   "issues": []
+  },
+  "GOOGL": {
+   "rows": [
+    {
+     "symbol": "GOOGL",
+     "period": "FY2024Q4",
+     "end": "2024-12-31",
+     "estimated": false,
+     "filing": "https://www.sec.gov/Archives/edgar/data/1652044/000165204425000010/goog-20250204.htm",
+     "accession": "0001652044-25-000010",
+     "exhibit": "https://www.sec.gov/Archives/edgar/data/1652044/000165204425000010/googexhibit991q42024.htm",
+     "release_date": "2025-02-04",
+     "report": "https://www.sec.gov/Archives/edgar/data/1652044/000165204425000014/goog-20241231.htm",
+     "report_acc": "0001652044-25-000014",
+     "form": "10-K",
+     "report_date": "2025-02-05",
+     "sha": "83aab51b779c49342e81210e11d88044575b43dc72cd546556623bfa60d1c748",
+     "report_sha": "e45854a50e0fe087c889629cbea50e019f5e5cdf4f808c8f230ada673dd9a194",
+     "metrics": [
+      {
+       "metric": "Revenue",
+       "unit": "USD millions",
+       "release": "96469",
+       "comparison": null,
+       "status": "比較値なし",
+       "reason": "対象3か月の連結XBRL値なし",
+       "locator": ""
+      },
+      {
+       "metric": "Diluted earnings per share",
+       "unit": "USD/share",
+       "release": "2.15",
+       "comparison": null,
+       "status": "比較値なし",
+       "reason": "対象3か月の連結XBRL値なし",
+       "locator": ""
+      }
+     ],
+     "candidates": []
+    },
+    {
+     "symbol": "GOOGL",
+     "period": "FY2025Q1",
+     "end": "2025-03-31",
+     "estimated": false,
+     "filing": "https://www.sec.gov/Archives/edgar/data/1652044/000165204425000040/goog-20250423.htm",
+     "accession": "0001652044-25-000040",
+     "exhibit": "https://www.sec.gov/Archives/edgar/data/1652044/000165204425000040/googexhibit991q12025.htm",
+     "release_date": "2025-04-24",
+     "report": "https://www.sec.gov/Archives/edgar/data/1652044/000165204425000043/goog-20250331.htm",
+     "report_acc": "0001652044-25-000043",
+     "form": "10-Q",
+     "report_date": "2025-04-25",
+     "sha": "b7d004b4fc2d1746b890be8c9518aa1b55c37af5a6c314370c99ec98dcf0f53b",
+     "report_sha": "30958deed11a5bfcead58050e3a70e8cd3187ef59c718709fb5f0ac151d17b95",
+     "metrics": [
+      {
+       "metric": "Revenue",
+       "unit": "USD millions",
+       "release": "90234",
+       "comparison": "90234",
+       "status": "一致",
+       "reason": "",
+       "locator": "us-gaap:RevenueFromContractWithCustomerExcludingAssessedTax · c-1 · 2025-01-01 – 2025-03-31"
+      },
+      {
+       "metric": "Diluted earnings per share",
+       "unit": "USD/share",
+       "release": "2.81",
+       "comparison": "2.81",
+       "status": "一致",
+       "reason": "",
+       "locator": "us-gaap:EarningsPerShareDiluted · c-1 · 2025-01-01 – 2025-03-31"
+      }
+     ],
+     "candidates": []
+    },
+    {
+     "symbol": "GOOGL",
+     "period": "FY2025Q2",
+     "end": "2025-06-30",
+     "estimated": false,
+     "filing": "https://www.sec.gov/Archives/edgar/data/1652044/000165204425000056/goog-20250723.htm",
+     "accession": "0001652044-25-000056",
+     "exhibit": "https://www.sec.gov/Archives/edgar/data/1652044/000165204425000056/googexhibit991q22025.htm",
+     "release_date": "2025-07-23",
+     "report": "https://www.sec.gov/Archives/edgar/data/1652044/000165204425000062/goog-20250630.htm",
+     "report_acc": "0001652044-25-000062",
+     "form": "10-Q",
+     "report_date": "2025-07-24",
+     "sha": "d1024d802fad91491e4c29a52c45cfec5070816e263d34e4610361f42363fb1d",
+     "report_sha": "90c1dbbe9864ea698bb0a85dba7656338e9884a1ad767d5e6750bff7973b633b",
+     "metrics": [
+      {
+       "metric": "Revenue",
+       "unit": "USD millions",
+       "release": "96428",
+       "comparison": "96428",
+       "status": "一致",
+       "reason": "",
+       "locator": "us-gaap:Revenues · c-21 · 2025-04-01 – 2025-06-30"
+      },
+      {
+       "metric": "Diluted earnings per share",
+       "unit": "USD/share",
+       "release": "2.31",
+       "comparison": "2.31",
+       "status": "一致",
+       "reason": "",
+       "locator": "us-gaap:EarningsPerShareDiluted · c-21 · 2025-04-01 – 2025-06-30"
+      }
+     ],
+     "candidates": []
+    },
+    {
+     "symbol": "GOOGL",
+     "period": "FY2025Q3",
+     "end": "2025-09-30",
+     "estimated": false,
+     "filing": "https://www.sec.gov/Archives/edgar/data/1652044/000165204425000087/goog-20251029.htm",
+     "accession": "0001652044-25-000087",
+     "exhibit": "https://www.sec.gov/Archives/edgar/data/1652044/000165204425000087/googexhibit991q32025.htm",
+     "release_date": "2025-10-29",
+     "report": "https://www.sec.gov/Archives/edgar/data/1652044/000165204425000091/goog-20250930.htm",
+     "report_acc": "0001652044-25-000091",
+     "form": "10-Q",
+     "report_date": "2025-10-30",
+     "sha": "035146db29dd7735e02f7704d2b9e40fdb5e09a48d9c4ed7a98c17d50fa3e7e6",
+     "report_sha": "182f1db397f39d9107ad14685e6335bd9bf0fe51abe42809ba792fe4e4b3d081",
+     "metrics": [
+      {
+       "metric": "Revenue",
+       "unit": "USD millions",
+       "release": "102346",
+       "comparison": "102346",
+       "status": "一致",
+       "reason": "",
+       "locator": "us-gaap:Revenues · c-21 · 2025-07-01 – 2025-09-30"
+      },
+      {
+       "metric": "Diluted earnings per share",
+       "unit": "USD/share",
+       "release": "2.87",
+       "comparison": "2.87",
+       "status": "一致",
+       "reason": "",
+       "locator": "us-gaap:EarningsPerShareDiluted · c-21 · 2025-07-01 – 2025-09-30"
+      }
+     ],
+     "candidates": []
+    },
+    {
+     "symbol": "GOOGL",
+     "period": "FY2025Q4",
+     "end": "2025-12-31",
+     "estimated": false,
+     "filing": "https://www.sec.gov/Archives/edgar/data/1652044/000165204426000012/goog-20260204.htm",
+     "accession": "0001652044-26-000012",
+     "exhibit": "https://www.sec.gov/Archives/edgar/data/1652044/000165204426000012/googexhibit991q42025.htm",
+     "release_date": "2026-02-04",
+     "report": "https://www.sec.gov/Archives/edgar/data/1652044/000165204426000018/goog-20251231.htm",
+     "report_acc": "0001652044-26-000018",
+     "form": "10-K",
+     "report_date": "2026-02-05",
+     "sha": "19cac19147e1a5cadd4fd09d25aaf00b5c281870386a2daf21f4b13e708965e3",
+     "report_sha": "6cd47e03a34cdd6847ddeb6d90546a706fac3266e99359e0f1f4a00286497e46",
+     "metrics": [
+      {
+       "metric": "Revenue",
+       "unit": "USD millions",
+       "release": "113828",
+       "comparison": null,
+       "status": "比較値なし",
+       "reason": "対象3か月の連結XBRL値なし",
+       "locator": ""
+      },
+      {
+       "metric": "Diluted earnings per share",
+       "unit": "USD/share",
+       "release": "2.82",
+       "comparison": null,
+       "status": "比較値なし",
+       "reason": "対象3か月の連結XBRL値なし",
+       "locator": ""
+      }
+     ],
+     "candidates": []
+    },
+    {
+     "symbol": "GOOGL",
+     "period": "FY2026Q1",
+     "end": "2026-03-31",
+     "estimated": false,
+     "filing": "https://www.sec.gov/Archives/edgar/data/1652044/000165204426000043/goog-20260429.htm",
+     "accession": "0001652044-26-000043",
+     "exhibit": "https://www.sec.gov/Archives/edgar/data/1652044/000165204426000043/googexhibit991q12026.htm",
+     "release_date": "2026-04-29",
+     "report": "https://www.sec.gov/Archives/edgar/data/1652044/000165204426000048/goog-20260331.htm",
+     "report_acc": "0001652044-26-000048",
+     "form": "10-Q",
+     "report_date": "2026-04-30",
+     "sha": "e82863b6c37f3059b8795b65d2884bb1b8b98fed98e5ba977263f1da8a57db88",
+     "report_sha": "e74883f95d118c0dc1488e450ad7ddfcefd137e1415601cc97e7d29c1116116e",
+     "metrics": [
+      {
+       "metric": "Revenue",
+       "unit": "USD millions",
+       "release": "109896",
+       "comparison": "109896",
+       "status": "一致",
+       "reason": "",
+       "locator": "us-gaap:Revenues · c-1 · 2026-01-01 – 2026-03-31"
+      },
+      {
+       "metric": "Diluted earnings per share",
+       "unit": "USD/share",
+       "release": "5.11",
+       "comparison": "5.11",
+       "status": "一致",
+       "reason": "",
+       "locator": "us-gaap:EarningsPerShareDiluted · c-1 · 2026-01-01 – 2026-03-31"
+      }
+     ],
+     "candidates": []
+    },
+    {
+     "symbol": "GOOGL",
+     "period": "FY2026Q2",
+     "end": "2026-06-30",
+     "estimated": false,
+     "filing": "https://www.sec.gov/Archives/edgar/data/1652044/000165204426000066/goog-20260722.htm",
+     "accession": "0001652044-26-000066",
+     "exhibit": "https://www.sec.gov/Archives/edgar/data/1652044/000165204426000066/googexhibit991q22026.htm",
+     "release_date": "2026-07-22",
+     "report": "https://www.sec.gov/Archives/edgar/data/1652044/000165204426000071/goog-20260630.htm",
+     "report_acc": "0001652044-26-000071",
+     "form": "10-Q",
+     "report_date": "2026-07-23",
+     "sha": "3da2f9bed3f4d73a4498c577778dc41a1ae2433f274974e2bb08345cf02ae223",
+     "report_sha": "a5f7079d2449fac80bcddd812d494e364f113589f62cf944b426d51fa0ddac10",
+     "metrics": [
+      {
+       "metric": "Revenue",
+       "unit": "USD millions",
+       "release": "119796",
+       "comparison": "119796",
+       "status": "一致",
+       "reason": "",
+       "locator": "us-gaap:Revenues · c-41 · 2026-04-01 – 2026-06-30"
+      },
+      {
+       "metric": "Diluted earnings per share",
+       "unit": "USD/share",
+       "release": "9.11",
+       "comparison": "9.11",
+       "status": "一致",
+       "reason": "",
+       "locator": "us-gaap:EarningsPerShareDiluted · c-41 · 2026-04-01 – 2026-06-30"
+      }
+     ],
+     "candidates": []
+    },
+    {
+     "symbol": "GOOGL",
+     "period": "FY2026Q3",
+     "end": "2026-09-30",
+     "estimated": false,
+     "filing": "https://www.sec.gov/Archives/edgar/data/1652044/000165204426000080/goog-20261028.htm",
+     "accession": "0001652044-26-000080",
+     "exhibit": "https://www.sec.gov/Archives/edgar/data/1652044/000165204426000080/googexhibit991q32026.htm",
+     "release_date": "2026-10-28",
+     "report": "https://www.sec.gov/Archives/edgar/data/1652044/000165204426000084/goog-20260930.htm",
+     "report_acc": "0001652044-26-000084",
+     "form": "10-Q",
+     "report_date": "2026-10-29",
+     "sha": "142f91ec04cc02992e8119eaee516c1591a1aadfa7c1fede5ce5a3cf0ffee180",
+     "report_sha": "05e101ee90c126065e67822feabb1b40a91fa17cfab83bc1ac0721ff553b9fea",
+     "metrics": [
+      {
+       "metric": "Revenue",
+       "unit": "USD millions",
+       "release": "127577",
+       "comparison": "127577",
+       "status": "一致",
+       "reason": "",
+       "locator": "us-gaap:Revenues · c-41 · 2026-07-01 – 2026-09-30"
+      },
+      {
+       "metric": "Diluted earnings per share",
+       "unit": "USD/share",
+       "release": "2.12",
+       "comparison": "2.12",
+       "status": "一致",
+       "reason": "",
+       "locator": "us-gaap:EarningsPerShareDiluted · c-41 · 2026-07-01 – 2026-09-30"
+      }
+     ],
+     "candidates": []
+    }
+   ],
+   "issues": []
+  },
+  "AMZN": {
+   "rows": [
+    {
+     "symbol": "AMZN",
+     "period": "FY2024Q4",
+     "end": "2024-12-31",
+     "estimated": false,
+     "filing": "https://www.sec.gov/Archives/edgar/data/1018724/000101872425000002/amzn-20250206.htm",
+     "accession": "0001018724-25-000002",
+     "exhibit": "https://www.sec.gov/Archives/edgar/data/1018724/000101872425000002/amzn-20241231xex991.htm",
+     "release_date": "2025-02-06",
+     "report": "https://www.sec.gov/Archives/edgar/data/1018724/000101872425000004/amzn-20241231.htm",
+     "report_acc": "0001018724-25-000004",
+     "form": "10-K",
+     "report_date": "2025-02-07",
+     "sha": "bab7e95596ad922cd4edef04b02f60c8b0a26a2cca3c5850ecc60d34437f97cf",
+     "report_sha": "a6ce053b296d488811bb800d8f883bd1fb5d36502c5424028c3c4395dd68763e",
+     "metrics": [
+      {
+       "metric": "Revenue",
+       "unit": "USD millions",
+       "release": "187792",
+       "comparison": null,
+       "status": "比較値なし",
+       "reason": "対象3か月の連結XBRL値なし",
+       "locator": ""
+      },
+      {
+       "metric": "Diluted earnings per share",
+       "unit": "USD/share",
+       "release": "1.86",
+       "comparison": null,
+       "status": "比較値なし",
+       "reason": "対象3か月の連結XBRL値なし",
+       "locator": ""
+      }
+     ],
+     "candidates": []
+    },
+    {
+     "symbol": "AMZN",
+     "period": "FY2025Q1",
+     "end": "2025-03-31",
+     "estimated": false,
+     "filing": "https://www.sec.gov/Archives/edgar/data/1018724/000101872425000034/amzn-20250501.htm",
+     "accession": "0001018724-25-000034",
+     "exhibit": "https://www.sec.gov/Archives/edgar/data/1018724/000101872425000034/amzn-20250331xex991.htm",
+     "release_date": "2025-05-01",
+     "report": "https://www.sec.gov/Archives/edgar/data/1018724/000101872425000036/amzn-20250331.htm",
+     "report_acc": "0001018724-25-000036",
+     "form": "10-Q",
+     "report_date": "2025-05-02",
+     "sha": "b6223a67e007aed7c5f20f088c6edab33eb5ad586ee1851d802f69eaaf01466a",
+     "report_sha": "e37180be577b82df310200b1d3610202fda6872e5a7d61fe081f33a2b3023101",
+     "metrics": [
+      {
+       "metric": "Revenue",
+       "unit": "USD millions",
+       "release": "155667",
+       "comparison": "155667",
+       "status": "一致",
+       "reason": "",
+       "locator": "us-gaap:RevenueFromContractWithCustomerExcludingAssessedTax · c-1 · 2025-01-01 – 2025-03-31"
+      },
+      {
+       "metric": "Diluted earnings per share",
+       "unit": "USD/share",
+       "release": "1.59",
+       "comparison": "1.59",
+       "status": "一致",
+       "reason": "",
+       "locator": "us-gaap:EarningsPerShareDiluted · c-1 · 2025-01-01 – 2025-03-31"
+      }
+     ],
+     "candidates": []
+    },
+    {
+     "symbol": "AMZN",
+     "period": "FY2025Q2",
+     "end": "2025-06-30",
+     "estimated": false,
+     "filing": "https://www.sec.gov/Archives/edgar/data/1018724/000101872425000084/amzn-20250731.htm",
+     "accession": "0001018724-25-000084",
+     "exhibit": "https://www.sec.gov/Archives/edgar/data/1018724/000101872425000084/amzn-20250630xex991.htm",
+     "release_date": "2025-07-31",
+     "report": "https://www.sec.gov/Archives/edgar/data/1018724/000101872425000086/amzn-20250630.htm",
+     "report_acc": "0001018724-25-000086",
+     "form": "10-Q",
+     "report_date": "2025-08-01",
+     "sha": "831907eb9d07d10d9b3cf0ccaaccd402a3174fd2292ff736ab62580e2a01dab2",
+     "report_sha": "ded0385afc1d6ab0789742696fc7370f1fe8e673514e845c4c5f6dd5f4378eac",
+     "metrics": [
+      {
+       "metric": "Revenue",
+       "unit": "USD millions",
+       "release": "167702",
+       "comparison": "167702",
+       "status": "一致",
+       "reason": "",
+       "locator": "us-gaap:RevenueFromContractWithCustomerExcludingAssessedTax · c-10 · 2025-04-01 – 2025-06-30"
+      },
+      {
+       "metric": "Diluted earnings per share",
+       "unit": "USD/share",
+       "release": "1.68",
+       "comparison": "1.68",
+       "status": "一致",
+       "reason": "",
+       "locator": "us-gaap:EarningsPerShareDiluted · c-10 · 2025-04-01 – 2025-06-30"
+      }
+     ],
+     "candidates": []
+    },
+    {
+     "symbol": "AMZN",
+     "period": "FY2025Q3",
+     "end": "2025-09-30",
+     "estimated": false,
+     "filing": "https://www.sec.gov/Archives/edgar/data/1018724/000101872425000121/amzn-20251030.htm",
+     "accession": "0001018724-25-000121",
+     "exhibit": "https://www.sec.gov/Archives/edgar/data/1018724/000101872425000121/amzn-20250930xex991.htm",
+     "release_date": "2025-10-30",
+     "report": "https://www.sec.gov/Archives/edgar/data/1018724/000101872425000123/amzn-20250930.htm",
+     "report_acc": "0001018724-25-000123",
+     "form": "10-Q",
+     "report_date": "2025-10-31",
+     "sha": "2be2bd88c0e1b0cbc1bfcf77859502221a7edc05bdac2d7c2660bceed7ddcb4d",
+     "report_sha": "f9dc0d026ccb4168b1fdb8814dfb17a2432c194ec568379554194a9ce4b930f2",
+     "metrics": [
+      {
+       "metric": "Revenue",
+       "unit": "USD millions",
+       "release": "180169",
+       "comparison": "180169",
+       "status": "一致",
+       "reason": "",
+       "locator": "us-gaap:RevenueFromContractWithCustomerExcludingAssessedTax · c-10 · 2025-07-01 – 2025-09-30"
+      },
+      {
+       "metric": "Diluted earnings per share",
+       "unit": "USD/share",
+       "release": "1.95",
+       "comparison": "1.95",
+       "status": "一致",
+       "reason": "",
+       "locator": "us-gaap:EarningsPerShareDiluted · c-10 · 2025-07-01 – 2025-09-30"
+      }
+     ],
+     "candidates": []
+    },
+    {
+     "symbol": "AMZN",
+     "period": "FY2025Q4",
+     "end": "2025-12-31",
+     "estimated": false,
+     "filing": "https://www.sec.gov/Archives/edgar/data/1018724/000101872426000002/amzn-20260205.htm",
+     "accession": "0001018724-26-000002",
+     "exhibit": "https://www.sec.gov/Archives/edgar/data/1018724/000101872426000002/amzn-20251231xex991.htm",
+     "release_date": "2026-02-05",
+     "report": "https://www.sec.gov/Archives/edgar/data/1018724/000101872426000004/amzn-20251231.htm",
+     "report_acc": "0001018724-26-000004",
+     "form": "10-K",
+     "report_date": "2026-02-06",
+     "sha": "3040e9a3a6298bf25da2a097e6c2027fd5cbacbdba30433b091d16026dc3d6a3",
+     "report_sha": "76d7a40c83edb532bfd48c1da4b1bdda1c14f0a28c8d82aa046b67855ed27f03",
+     "metrics": [
+      {
+       "metric": "Revenue",
+       "unit": "USD millions",
+       "release": "213386",
+       "comparison": null,
+       "status": "比較値なし",
+       "reason": "対象3か月の連結XBRL値なし",
+       "locator": ""
+      },
+      {
+       "metric": "Diluted earnings per share",
+       "unit": "USD/share",
+       "release": "1.95",
+       "comparison": null,
+       "status": "比較値なし",
+       "reason": "対象3か月の連結XBRL値なし",
+       "locator": ""
+      }
+     ],
+     "candidates": []
+    },
+    {
+     "symbol": "AMZN",
+     "period": "FY2026Q1",
+     "end": "2026-03-31",
+     "estimated": false,
+     "filing": "https://www.sec.gov/Archives/edgar/data/1018724/000101872426000012/amzn-20260429.htm",
+     "accession": "0001018724-26-000012",
+     "exhibit": "https://www.sec.gov/Archives/edgar/data/1018724/000101872426000012/amzn-20260331xex991.htm",
+     "release_date": "2026-04-29",
+     "report": "https://www.sec.gov/Archives/edgar/data/1018724/000101872426000014/amzn-20260331.htm",
+     "report_acc": "0001018724-26-000014",
+     "form": "10-Q",
+     "report_date": "2026-04-30",
+     "sha": "f9fb172506a8454d80c1adcfbc7c14efc5f0225f3728e3f3bb377965e8d3d202",
+     "report_sha": "5a47c137022a163a993ca5937ee9089ec04776e80b86bd447706f0cd113ba135",
+     "metrics": [
+      {
+       "metric": "Revenue",
+       "unit": "USD millions",
+       "release": "181519",
+       "comparison": "181519",
+       "status": "一致",
+       "reason": "",
+       "locator": "us-gaap:RevenueFromContractWithCustomerExcludingAssessedTax · c-1 · 2026-01-01 – 2026-03-31"
+      },
+      {
+       "metric": "Diluted earnings per share",
+       "unit": "USD/share",
+       "release": "2.78",
+       "comparison": "2.78",
+       "status": "一致",
+       "reason": "",
+       "locator": "us-gaap:EarningsPerShareDiluted · c-1 · 2026-01-01 – 2026-03-31"
+      }
+     ],
+     "candidates": []
+    },
+    {
+     "symbol": "AMZN",
+     "period": "FY2026Q2",
+     "end": "2026-06-30",
+     "estimated": false,
+     "filing": "https://www.sec.gov/Archives/edgar/data/1018724/000101872426000024/amzn-20260730.htm",
+     "accession": "0001018724-26-000024",
+     "exhibit": "https://www.sec.gov/Archives/edgar/data/1018724/000101872426000024/amzn-20260630xex991.htm",
+     "release_date": "2026-07-30",
+     "report": "https://www.sec.gov/Archives/edgar/data/1018724/000101872426000026/amzn-20260630.htm",
+     "report_acc": "0001018724-26-000026",
+     "form": "10-Q",
+     "report_date": "2026-07-31",
+     "sha": "c48c05149809712fd31384384473b6b9710b037dc8d1f6c641d155a499dbce2a",
+     "report_sha": "7bd2fae20369fb3871881aa159aeb413c652c0046f0f34e23b527f8409d16ac6",
+     "metrics": [
+      {
+       "metric": "Revenue",
+       "unit": "USD millions",
+       "release": "200606",
+       "comparison": "200606",
+       "status": "一致",
+       "reason": "",
+       "locator": "us-gaap:RevenueFromContractWithCustomerExcludingAssessedTax · c-19 · 2026-04-01 – 2026-06-30"
+      },
+      {
+       "metric": "Diluted earnings per share",
+       "unit": "USD/share",
+       "release": "5.75",
+       "comparison": "5.75",
+       "status": "一致",
+       "reason": "",
+       "locator": "us-gaap:EarningsPerShareDiluted · c-19 · 2026-04-01 – 2026-06-30"
+      }
+     ],
+     "candidates": []
+    },
+    {
+     "symbol": "AMZN",
+     "period": "FY2026Q3",
+     "end": "2026-09-30",
+     "estimated": false,
+     "filing": "https://www.sec.gov/Archives/edgar/data/1018724/000101872426000038/amzn-20261029.htm",
+     "accession": "0001018724-26-000038",
+     "exhibit": "https://www.sec.gov/Archives/edgar/data/1018724/000101872426000038/amzn-20260930xex991.htm",
+     "release_date": "2026-10-29",
+     "report": "https://www.sec.gov/Archives/edgar/data/1018724/000101872426000040/amzn-20260930.htm",
+     "report_acc": "0001018724-26-000040",
+     "form": "10-Q",
+     "report_date": "2026-10-30",
+     "sha": "a824be9fc31a5219e9667c5f80391b3e9365f5f17223c29142d18a7372d9e79a",
+     "report_sha": "f0f2dd95692c8d88d073a9d90b83e806b4d073d047007a8860d30cbb5863f273",
+     "metrics": [
+      {
+       "metric": "Revenue",
+       "unit": "USD millions",
+       "release": "201944",
+       "comparison": "201944",
+       "status": "一致",
+       "reason": "",
+       "locator": "us-gaap:RevenueFromContractWithCustomerExcludingAssessedTax · c-23 · 2026-07-01 – 2026-09-30"
+      },
+      {
+       "metric": "Diluted earnings per share",
+       "unit": "USD/share",
+       "release": "1.89",
+       "comparison": "1.89",
+       "status": "一致",
+       "reason": "",
+       "locator": "us-gaap:EarningsPerShareDiluted · c-23 · 2026-07-01 – 2026-09-30"
+      }
+     ],
+     "candidates": []
+    }
+   ],
+   "issues": []
+  },
+  "NVDA": {
+   "rows": [
+    {
+     "symbol": "NVDA",
+     "period": "FY2025Q4",
+     "end": "2025-01-26",
+     "estimated": false,
+     "filing": "https://www.sec.gov/Archives/edgar/data/1045810/000104581025000021/nvda-20250226.htm",
+     "accession": "0001045810-25-000021",
+     "exhibit": "https://www.sec.gov/Archives/edgar/data/1045810/000104581025000021/q4fy25pr.htm",
+     "release_date": "2025-02-26",
+     "report": "https://www.sec.gov/Archives/edgar/data/1045810/000104581025000023/nvda-20250126.htm",
+     "report_acc": "0001045810-25-000023",
+     "form": "10-K",
+     "report_date": "2025-02-26",
+     "sha": "fa6ce87a0fdcc5575be02a3b0eee94254e40c48569daaa8f75242dccaa537df2",
+     "report_sha": "74f32072fa751c1e8ac70c1aae8e017d0ca899846db563f11167d1b4d38859c2",
+     "metrics": [
+      {
+       "metric": "Revenue",
+       "unit": "USD millions",
+       "release": "39331",
+       "comparison": null,
+       "status": "比較値なし",
+       "reason": "対象3か月の連結XBRL値なし",
+       "locator": ""
+      },
+      {
+       "metric": "Diluted earnings per share",
+       "unit": "USD/share",
+       "release": "0.89",
+       "comparison": null,
+       "status": "比較値なし",
+       "reason": "対象3か月の連結XBRL値なし",
+       "locator": ""
+      }
+     ],
+     "candidates": []
+    },
+    {
+     "symbol": "NVDA",
+     "period": "FY2026Q1",
+     "end": "2025-04-27",
+     "estimated": false,
+     "filing": "https://www.sec.gov/Archives/edgar/data/1045810/000104581025000115/nvda-20250528.htm",
+     "accession": "0001045810-25-000115",
+     "exhibit": "https://www.sec.gov/Archives/edgar/data/1045810/000104581025000115/q1fy26pr.htm",
+     "release_date": "2025-05-28",
+     "report": "https://www.sec.gov/Archives/edgar/data/1045810/000104581025000116/nvda-20250427.htm",
+     "report_acc": "0001045810-25-000116",
+     "form": "10-Q",
+     "report_date": "2025-05-28",
+     "sha": "79bc02be125714e0ce3c8dafce485fd7a8453e08cbd7dcb743838c62ddcd4aeb",
+     "report_sha": "8302b9eadb8e89003bfbbe4396d0f55cd422eff6fd278876cbba9591498e3a7d",
+     "metrics": [
+      {
+       "metric": "Revenue",
+       "unit": "USD millions",
+       "release": "44062",
+       "comparison": "44062",
+       "status": "一致",
+       "reason": "",
+       "locator": "us-gaap:Revenues · c-1 · 2025-01-27 – 2025-04-27"
+      },
+      {
+       "metric": "Diluted earnings per share",
+       "unit": "USD/share",
+       "release": "0.76",
+       "comparison": "0.76",
+       "status": "一致",
+       "reason": "",
+       "locator": "us-gaap:EarningsPerShareDiluted · c-1 · 2025-01-27 – 2025-04-27"
+      }
+     ],
+     "candidates": []
+    },
+    {
+     "symbol": "NVDA",
+     "period": "FY2026Q2",
+     "end": "2025-07-27",
+     "estimated": false,
+     "filing": "https://www.sec.gov/Archives/edgar/data/1045810/000104581025000207/nvda-20250827.htm",
+     "accession": "0001045810-25-000207",
+     "exhibit": "https://www.sec.gov/Archives/edgar/data/1045810/000104581025000207/q2fy26pr.htm",
+     "release_date": "2025-08-27",
+     "report": "https://www.sec.gov/Archives/edgar/data/1045810/000104581025000209/nvda-20250727.htm",
+     "report_acc": "0001045810-25-000209",
+     "form": "10-Q",
+     "report_date": "2025-08-27",
+     "sha": "bc75009f7205708f8ba1aec6de315e428165cb4f1cf44eae0753da890d08cbe3",
+     "report_sha": "88ffd85fcd099b8757914e57045672a90f662705e3f570e5b4f3a9f370226c28",
+     "metrics": [
+      {
+       "metric": "Revenue",
+       "unit": "USD millions",
+       "release": "46743",
+       "comparison": "46743",
+       "status": "一致",
+       "reason": "",
+       "locator": "us-gaap:Revenues · c-3 · 2025-04-28 – 2025-07-27"
+      },
+      {
+       "metric": "Diluted earnings per share",
+       "unit": "USD/share",
+       "release": "1.08",
+       "comparison": "1.08",
+       "status": "一致",
+       "reason": "",
+       "locator": "us-gaap:EarningsPerShareDiluted · c-3 · 2025-04-28 – 2025-07-27"
+      }
+     ],
+     "candidates": []
+    },
+    {
+     "symbol": "NVDA",
+     "period": "FY2026Q3",
+     "end": "2025-10-26",
+     "estimated": false,
+     "filing": "https://www.sec.gov/Archives/edgar/data/1045810/000104581025000228/nvda-20251119.htm",
+     "accession": "0001045810-25-000228",
+     "exhibit": "https://www.sec.gov/Archives/edgar/data/1045810/000104581025000228/q3fy26pr.htm",
+     "release_date": "2025-11-19",
+     "report": "https://www.sec.gov/Archives/edgar/data/1045810/000104581025000230/nvda-20251026.htm",
+     "report_acc": "0001045810-25-000230",
+     "form": "10-Q",
+     "report_date": "2025-11-19",
+     "sha": "8ac74c45b465287f643a4b37726f70ef4ab63392692ca0cae9ef6b5f3a62621e",
+     "report_sha": "03ba0025e2f9683e36028abf6b317b416bf5f0a713638682de6b898692136b35",
+     "metrics": [
+      {
+       "metric": "Revenue",
+       "unit": "USD millions",
+       "release": "57006",
+       "comparison": "57006",
+       "status": "一致",
+       "reason": "",
+       "locator": "us-gaap:Revenues · c-3 · 2025-07-28 – 2025-10-26"
+      },
+      {
+       "metric": "Diluted earnings per share",
+       "unit": "USD/share",
+       "release": "1.30",
+       "comparison": "1.30",
+       "status": "一致",
+       "reason": "",
+       "locator": "us-gaap:EarningsPerShareDiluted · c-3 · 2025-07-28 – 2025-10-26"
+      }
+     ],
+     "candidates": []
+    },
+    {
+     "symbol": "NVDA",
+     "period": "FY2026Q4",
+     "end": "2026-01-25",
+     "estimated": false,
+     "filing": "https://www.sec.gov/Archives/edgar/data/1045810/000104581026000019/nvda-20260225.htm",
+     "accession": "0001045810-26-000019",
+     "exhibit": "https://www.sec.gov/Archives/edgar/data/1045810/000104581026000019/q4fy26pr.htm",
+     "release_date": "2026-02-25",
+     "report": "https://www.sec.gov/Archives/edgar/data/1045810/000104581026000021/nvda-20260125.htm",
+     "report_acc": "0001045810-26-000021",
+     "form": "10-K",
+     "report_date": "2026-02-25",
+     "sha": "a43b65f0fef5cf4622c5c6908b255ec3dd4a409ec84ef2d7ee0321b566649666",
+     "report_sha": "2a8b6e294f59a9437d802de932f1a8f6221c81b5c143b9e94050170b03976667",
+     "metrics": [
+      {
+       "metric": "Revenue",
+       "unit": "USD millions",
+       "release": "68127",
+       "comparison": null,
+       "status": "比較値なし",
+       "reason": "対象3か月の連結XBRL値なし",
+       "locator": ""
+      },
+      {
+       "metric": "Diluted earnings per share",
+       "unit": "USD/share",
+       "release": "1.76",
+       "comparison": null,
+       "status": "比較値なし",
+       "reason": "対象3か月の連結XBRL値なし",
+       "locator": ""
+      }
+     ],
+     "candidates": []
+    },
+    {
+     "symbol": "NVDA",
+     "period": "FY2027Q1",
+     "end": "2026-04-26",
+     "estimated": false,
+     "filing": "https://www.sec.gov/Archives/edgar/data/1045810/000104581026000051/nvda-20260520.htm",
+     "accession": "0001045810-26-000051",
+     "exhibit": "https://www.sec.gov/Archives/edgar/data/1045810/000104581026000051/q1fy27pr.htm",
+     "release_date": "2026-05-20",
+     "report": "https://www.sec.gov/Archives/edgar/data/1045810/000104581026000052/nvda-20260426.htm",
+     "report_acc": "0001045810-26-000052",
+     "form": "10-Q",
+     "report_date": "2026-05-20",
+     "sha": "2987ebc03457f44d67d847c14a68a2fca1dd130d6c841245057a4f8b6c29843d",
+     "report_sha": "705df02ed8e8c9de7fc7df965ca7cceb61b0c456b9ff34d2cdfbcea4be092ef1",
+     "metrics": [
+      {
+       "metric": "Revenue",
+       "unit": "USD millions",
+       "release": "81615",
+       "comparison": "81615",
+       "status": "一致",
+       "reason": "",
+       "locator": "us-gaap:Revenues · c-1 · 2026-01-26 – 2026-04-26"
+      },
+      {
+       "metric": "Diluted earnings per share",
+       "unit": "USD/share",
+       "release": "2.39",
+       "comparison": "2.39",
+       "status": "一致",
+       "reason": "",
+       "locator": "us-gaap:EarningsPerShareDiluted · c-1 · 2026-01-26 – 2026-04-26"
+      }
+     ],
+     "candidates": []
+    },
+    {
+     "symbol": "NVDA",
+     "period": "FY2027Q2",
+     "end": "2026-07-26",
+     "estimated": false,
+     "filing": "https://www.sec.gov/Archives/edgar/data/1045810/000104581026000073/nvda-20260826.htm",
+     "accession": "0001045810-26-000073",
+     "exhibit": "https://www.sec.gov/Archives/edgar/data/1045810/000104581026000073/q2fy27pr.htm",
+     "release_date": "2026-08-26",
+     "report": "https://www.sec.gov/Archives/edgar/data/1045810/000104581026000075/nvda-20260726.htm",
+     "report_acc": "0001045810-26-000075",
+     "form": "10-Q",
+     "report_date": "2026-08-26",
+     "sha": "972e6c1d066a7ed8f114fcd866c89177c6bfb3f54a80c318b71a8d936fb0d164",
+     "report_sha": "6435175cdcf30d81a149c8f245b748aa58fcb9a5015b5b7c53aed4c47ada6500",
+     "metrics": [
+      {
+       "metric": "Revenue",
+       "unit": "USD millions",
+       "release": "96221",
+       "comparison": "96221",
+       "status": "一致",
+       "reason": "",
+       "locator": "us-gaap:Revenues · c-3 · 2026-04-27 – 2026-07-26"
+      },
+      {
+       "metric": "Diluted earnings per share",
+       "unit": "USD/share",
+       "release": "2.46",
+       "comparison": "2.46",
+       "status": "一致",
+       "reason": "",
+       "locator": "us-gaap:EarningsPerShareDiluted · c-3 · 2026-04-27 – 2026-07-26"
+      }
+     ],
+     "candidates": []
+    },
+    {
+     "symbol": "NVDA",
+     "period": "FY2027Q3",
+     "end": "2026-10-25",
+     "estimated": false,
+     "filing": "https://www.sec.gov/Archives/edgar/data/1045810/000104581026000088/nvda-20261117.htm",
+     "accession": "0001045810-26-000088",
+     "exhibit": "https://www.sec.gov/Archives/edgar/data/1045810/000104581026000088/q3fy27pr.htm",
+     "release_date": "2026-11-17",
+     "report": "",
+     "report_acc": "",
+     "form": "",
+     "report_date": "",
+     "sha": "699e2bf368f8a57fd056d7edb7d9d97f8abf4e57ec086fe988fd4933a169ef35",
+     "report_sha": "",
+     "metrics": [
+      {
+       "metric": "Revenue",
+       "unit": "USD millions",
+       "release": "115844",
+       "comparison": null,
+       "status": "照合待ち",
+       "reason": "同じ期末の10-Qまたは10-Kを待っています",
+       "locator": ""
+      },
+      {
+       "metric": "Diluted earnings per share",
+       "unit": "USD/share",
+       "release": "2.70",
+       "comparison": null,
+       "status": "照合待ち",
+       "reason": "同じ期末の10-Qまたは10-Kを待っています",
+       "locator": ""
+      }
+     ],
+     "candidates": []
+    }
+   ],
+   "issues": []
+  },
+  "META": {
+   "rows": [
+    {
+     "symbol": "META",
+     "period": "FY2024Q4",
+     "end": "2024-12-31",
+     "estimated": false,
+     "filing": "https://www.sec.gov/Archives/edgar/data/1326801/000132680125000014/meta-20250129.htm",
+     "accession": "0001326801-25-000014",
+     "exhibit": "https://www.sec.gov/Archives/edgar/data/1326801/000132680125000014/meta-12312024xexhibit991.htm",
+     "release_date": "2025-01-29",
+     "report": "https://www.sec.gov/Archives/edgar/data/1326801/000132680125000017/meta-20241231.htm",
+     "report_acc": "0001326801-25-000017",
+     "form": "10-K",
+     "report_date": "2025-01-30",
+     "sha": "88b959c6a5cbfc09fe180a40d98358d82e430872bf3aa8eca0bcfd9d40309433",
+     "report_sha": "fba414e4192914a6f92f9d527aae372cfeaf72d26853528af44c74f5d9851e0d",
+     "metrics": [
+      {
+       "metric": "Revenue",
+       "unit": "USD millions",
+       "release": "48385",
+       "comparison": null,
+       "status": "比較値なし",
+       "reason": "対象3か月の連結XBRL値なし",
+       "locator": ""
+      },
+      {
+       "metric": "Diluted earnings per share",
+       "unit": "USD/share",
+       "release": "8.02",
+       "comparison": null,
+       "status": "比較値なし",
+       "reason": "対象3か月の連結XBRL値なし",
+       "locator": ""
+      }
+     ],
+     "candidates": []
+    },
+    {
+     "symbol": "META",
+     "period": "FY2025Q1",
+     "end": "2025-03-31",
+     "estimated": false,
+     "filing": "https://www.sec.gov/Archives/edgar/data/1326801/000132680125000050/meta-20250430.htm",
+     "accession": "0001326801-25-000050",
+     "exhibit": "https://www.sec.gov/Archives/edgar/data/1326801/000132680125000050/meta-03312025xexhibit991.htm",
+     "release_date": "2025-04-30",
+     "report": "https://www.sec.gov/Archives/edgar/data/1326801/000132680125000054/meta-20250331.htm",
+     "report_acc": "0001326801-25-000054",
+     "form": "10-Q",
+     "report_date": "2025-05-01",
+     "sha": "467f17e3dee7dc4d37d939dc381c0867646aaec6b8f841529dd6bbad781028d8",
+     "report_sha": "66bb52cbf602c6855e20375231feae6a8a80980cc7750004d7865b89e940404e",
+     "metrics": [
+      {
+       "metric": "Revenue",
+       "unit": "USD millions",
+       "release": "42314",
+       "comparison": "42314",
+       "status": "一致",
+       "reason": "",
+       "locator": "us-gaap:RevenueFromContractWithCustomerExcludingAssessedTax · c-1 · 2025-01-01 – 2025-03-31"
+      },
+      {
+       "metric": "Diluted earnings per share",
+       "unit": "USD/share",
+       "release": "6.43",
+       "comparison": "6.43",
+       "status": "一致",
+       "reason": "",
+       "locator": "us-gaap:EarningsPerShareDiluted · c-1 · 2025-01-01 – 2025-03-31"
+      }
+     ],
+     "candidates": []
+    },
+    {
+     "symbol": "META",
+     "period": "FY2025Q2",
+     "end": "2025-06-30",
+     "estimated": false,
+     "filing": "https://www.sec.gov/Archives/edgar/data/1326801/000162828025036719/meta-20250730.htm",
+     "accession": "0001628280-25-036719",
+     "exhibit": "https://www.sec.gov/Archives/edgar/data/1326801/000162828025036719/meta-06302025xexhibit991.htm",
+     "release_date": "2025-07-30",
+     "report": "https://www.sec.gov/Archives/edgar/data/1326801/000162828025036791/meta-20250630.htm",
+     "report_acc": "0001628280-25-036791",
+     "form": "10-Q",
+     "report_date": "2025-07-31",
+     "sha": "8fe1f60066963270e7d57e32d361e68e34ca3561abe734d591913fbe6ffe7f44",
+     "report_sha": "d763f402798f3ddf0bce1056b43624d241e2eb5a95854ca1c114911979dcee01",
+     "metrics": [
+      {
+       "metric": "Revenue",
+       "unit": "USD millions",
+       "release": "47516",
+       "comparison": "47516",
+       "status": "一致",
+       "reason": "",
+       "locator": "us-gaap:RevenueFromContractWithCustomerExcludingAssessedTax · c-10 · 2025-04-01 – 2025-06-30"
+      },
+      {
+       "metric": "Diluted earnings per share",
+       "unit": "USD/share",
+       "release": "7.14",
+       "comparison": "7.14",
+       "status": "一致",
+       "reason": "",
+       "locator": "us-gaap:EarningsPerShareDiluted · c-10 · 2025-04-01 – 2025-06-30"
+      }
+     ],
+     "candidates": []
+    },
+    {
+     "symbol": "META",
+     "period": "FY2025Q3",
+     "end": "2025-09-30",
+     "estimated": false,
+     "filing": "https://www.sec.gov/Archives/edgar/data/1326801/000162828025047114/meta-20251029.htm",
+     "accession": "0001628280-25-047114",
+     "exhibit": "https://www.sec.gov/Archives/edgar/data/1326801/000162828025047114/meta-09302025xexhibit991.htm",
+     "release_date": "2025-10-29",
+     "report": "https://www.sec.gov/Archives/edgar/data/1326801/000162828025047240/meta-20250930.htm",
+     "report_acc": "0001628280-25-047240",
+     "form": "10-Q",
+     "report_date": "2025-10-30",
+     "sha": "019c6ef0a06dc21069a61b820e3789ad8dcb0a165b1115dcc49c782870e62240",
+     "report_sha": "a9afbed5ca916a6647308ab21a45cbc69e7a4c5be27b8a7221fab4270ce6a657",
+     "metrics": [
+      {
+       "metric": "Revenue",
+       "unit": "USD millions",
+       "release": "51242",
+       "comparison": "51242",
+       "status": "一致",
+       "reason": "",
+       "locator": "us-gaap:RevenueFromContractWithCustomerExcludingAssessedTax · c-10 · 2025-07-01 – 2025-09-30"
+      },
+      {
+       "metric": "Diluted earnings per share",
+       "unit": "USD/share",
+       "release": "1.05",
+       "comparison": "1.05",
+       "status": "一致",
+       "reason": "",
+       "locator": "us-gaap:EarningsPerShareDiluted · c-10 · 2025-07-01 – 2025-09-30"
+      }
+     ],
+     "candidates": []
+    },
+    {
+     "symbol": "META",
+     "period": "FY2025Q4",
+     "end": "2025-12-31",
+     "estimated": false,
+     "filing": "https://www.sec.gov/Archives/edgar/data/1326801/000162828026003832/meta-20260128.htm",
+     "accession": "0001628280-26-003832",
+     "exhibit": "https://www.sec.gov/Archives/edgar/data/1326801/000162828026003832/meta-12312025xexhibit991.htm",
+     "release_date": "2026-01-28",
+     "report": "https://www.sec.gov/Archives/edgar/data/1326801/000162828026003942/meta-20251231.htm",
+     "report_acc": "0001628280-26-003942",
+     "form": "10-K",
+     "report_date": "2026-01-29",
+     "sha": "f52c1c1743e862a714e8196282fc244ed3186264ba45b1c928cce62414704621",
+     "report_sha": "f78fe1cbc2a5c786cbb67362e22a79c19ae606f5cdbae9faed231f210a574053",
+     "metrics": [
+      {
+       "metric": "Revenue",
+       "unit": "USD millions",
+       "release": "59893",
+       "comparison": null,
+       "status": "比較値なし",
+       "reason": "対象3か月の連結XBRL値なし",
+       "locator": ""
+      },
+      {
+       "metric": "Diluted earnings per share",
+       "unit": "USD/share",
+       "release": "8.88",
+       "comparison": null,
+       "status": "比較値なし",
+       "reason": "対象3か月の連結XBRL値なし",
+       "locator": ""
+      }
+     ],
+     "candidates": []
+    },
+    {
+     "symbol": "META",
+     "period": "FY2026Q1",
+     "end": "2026-03-31",
+     "estimated": false,
+     "filing": "https://www.sec.gov/Archives/edgar/data/1326801/000162828026028364/meta-20260429.htm",
+     "accession": "0001628280-26-028364",
+     "exhibit": "https://www.sec.gov/Archives/edgar/data/1326801/000162828026028364/meta-03312026xexhibit991.htm",
+     "release_date": "2026-04-29",
+     "report": "https://www.sec.gov/Archives/edgar/data/1326801/000162828026028526/meta-20260331.htm",
+     "report_acc": "0001628280-26-028526",
+     "form": "10-Q",
+     "report_date": "2026-04-30",
+     "sha": "90738e6f458bbea6358aabab4f6d6717337d0e628cffea8f39170bc0b410a3ac",
+     "report_sha": "08ebd28b12f9931f6db8c0803cd6b09b1f086451fd7a3625ea4c0dcec6eceb1c",
+     "metrics": [
+      {
+       "metric": "Revenue",
+       "unit": "USD millions",
+       "release": "56311",
+       "comparison": "56311",
+       "status": "一致",
+       "reason": "",
+       "locator": "us-gaap:RevenueFromContractWithCustomerExcludingAssessedTax · c-1 · 2026-01-01 – 2026-03-31"
+      },
+      {
+       "metric": "Diluted earnings per share",
+       "unit": "USD/share",
+       "release": "10.44",
+       "comparison": "10.44",
+       "status": "一致",
+       "reason": "",
+       "locator": "us-gaap:EarningsPerShareDiluted · c-1 · 2026-01-01 – 2026-03-31"
+      }
+     ],
+     "candidates": []
+    },
+    {
+     "symbol": "META",
+     "period": "FY2026Q2",
+     "end": "2026-06-30",
+     "estimated": false,
+     "filing": "https://www.sec.gov/Archives/edgar/data/1326801/000162828026050596/meta-20260729.htm",
+     "accession": "0001628280-26-050596",
+     "exhibit": "https://www.sec.gov/Archives/edgar/data/1326801/000162828026050596/meta-06302026xexhibit991.htm",
+     "release_date": "2026-07-29",
+     "report": "https://www.sec.gov/Archives/edgar/data/1326801/000162828026050705/meta-20260630.htm",
+     "report_acc": "0001628280-26-050705",
+     "form": "10-Q",
+     "report_date": "2026-07-30",
+     "sha": "9141d30cf5fa5063b8f2d041bb4a08548b55a3ce526d4abcd5fd875402bb05cf",
+     "report_sha": "6ed73c37a6bf6c45f5becbf56107d45228849955dd5c6d43e0cd3e0d5e6a4d24",
+     "metrics": [
+      {
+       "metric": "Revenue",
+       "unit": "USD millions",
+       "release": "60801",
+       "comparison": "60801",
+       "status": "一致",
+       "reason": "",
+       "locator": "us-gaap:RevenueFromContractWithCustomerExcludingAssessedTax · c-10 · 2026-04-01 – 2026-06-30"
+      },
+      {
+       "metric": "Diluted earnings per share",
+       "unit": "USD/share",
+       "release": "6.18",
+       "comparison": "6.18",
+       "status": "一致",
+       "reason": "",
+       "locator": "us-gaap:EarningsPerShareDiluted · c-10 · 2026-04-01 – 2026-06-30"
+      }
+     ],
+     "candidates": []
+    },
+    {
+     "symbol": "META",
+     "period": "FY2026Q3",
+     "end": "2026-09-30",
+     "estimated": false,
+     "filing": "https://www.sec.gov/Archives/edgar/data/1326801/000162828026066700/meta-20261019.htm",
+     "accession": "0001628280-26-066700",
+     "exhibit": "https://www.sec.gov/Archives/edgar/data/1326801/000162828026066700/meta-09302026xexhibit991.htm",
+     "release_date": "2026-10-21",
+     "report": "https://www.sec.gov/Archives/edgar/data/1326801/000162828026066773/meta-20260930.htm",
+     "report_acc": "0001628280-26-066773",
+     "form": "10-Q",
+     "report_date": "2026-10-22",
+     "sha": "2ea5ee6ea5f9fb960cae74f5bd421b5e052fdc3a246ade2b534757ccc673801d",
+     "report_sha": "0ea75a9311407dc3202c051c3166c7dbc7f4714ee77d599691dcab16b75a916e",
+     "metrics": [
+      {
+       "metric": "Revenue",
+       "unit": "USD millions",
+       "release": "64601",
+       "comparison": "64601",
+       "status": "一致",
+       "reason": "",
+       "locator": "us-gaap:RevenueFromContractWithCustomerExcludingAssessedTax · c-10 · 2026-07-01 – 2026-09-30"
+      },
+      {
+       "metric": "Diluted earnings per share",
+       "unit": "USD/share",
+       "release": "3.83",
+       "comparison": "3.83",
+       "status": "一致",
+       "reason": "",
+       "locator": "us-gaap:EarningsPerShareDiluted · c-10 · 2026-07-01 – 2026-09-30"
+      }
+     ],
+     "candidates": []
+    }
+   ],
+   "issues": []
+  },
+  "TSLA": {
+   "rows": [
+    {
+     "symbol": "TSLA",
+     "period": "FY2024Q4",
+     "end": "2024-12-31",
+     "estimated": false,
+     "filing": "https://www.sec.gov/Archives/edgar/data/1318605/000162828025002993/tsla-20250129.htm",
+     "accession": "0001628280-25-002993",
+     "exhibit": "https://www.sec.gov/Archives/edgar/data/1318605/000162828025002993/exhibit991.htm",
+     "release_date": "2025-01-29",
+     "report": "https://www.sec.gov/Archives/edgar/data/1318605/000162828025003063/tsla-20241231.htm",
+     "report_acc": "0001628280-25-003063",
+     "form": "10-K",
+     "report_date": "2025-01-30",
+     "sha": "ce4f7697ba8cc4a76c2c1b9e043d843e5fd601ddc2ffec3a5b86c1c74f402d39",
+     "report_sha": "",
+     "metrics": [
+      {
+       "metric": "Revenue",
+       "unit": "USD millions",
+       "release": "25707",
+       "comparison": null,
+       "status": "訂正・重複",
+       "reason": "提出候補の訂正・重複または期末日不一致",
+       "locator": ""
+      },
+      {
+       "metric": "Diluted earnings per share",
+       "unit": "USD/share",
+       "release": "0.66",
+       "comparison": null,
+       "status": "訂正・重複",
+       "reason": "提出候補の訂正・重複または期末日不一致",
+       "locator": ""
+      }
+     ],
+     "candidates": [
+      {
+       "acc": "0001628280-25-002993",
+       "form": "8-K",
+       "url": "https://www.sec.gov/Archives/edgar/data/1318605/000162828025002993/tsla-20250129.htm"
+      },
+      {
+       "acc": "0001628280-25-003063",
+       "form": "10-K",
+       "url": "https://www.sec.gov/Archives/edgar/data/1318605/000162828025003063/tsla-20241231.htm"
+      },
+      {
+       "acc": "0001104659-25-042659",
+       "form": "10-K/A",
+       "url": "https://www.sec.gov/Archives/edgar/data/1318605/000110465925042659/tm252787d2_10ka.htm"
+      }
+     ]
+    },
+    {
+     "symbol": "TSLA",
+     "period": "FY2025Q1",
+     "end": "2025-03-31",
+     "estimated": false,
+     "filing": "https://www.sec.gov/Archives/edgar/data/1318605/000162828025018851/tsla-20250422.htm",
+     "accession": "0001628280-25-018851",
+     "exhibit": "https://www.sec.gov/Archives/edgar/data/1318605/000162828025018851/exhbit991.htm",
+     "release_date": "2025-04-22",
+     "report": "https://www.sec.gov/Archives/edgar/data/1318605/000162828025018911/tsla-20250331.htm",
+     "report_acc": "0001628280-25-018911",
+     "form": "10-Q",
+     "report_date": "2025-04-23",
+     "sha": "8244fbd3d5a7afe73edd61de01aad84c07a305705e5d662a0ea5df090a4eea0c",
+     "report_sha": "0a4599f22d2c58fe72c8d9835c0a5244420387d111211f0150e80ecd1ca7f6fd",
+     "metrics": [
+      {
+       "metric": "Revenue",
+       "unit": "USD millions",
+       "release": "19335",
+       "comparison": "19335",
+       "status": "一致",
+       "reason": "",
+       "locator": "us-gaap:RevenueFromContractWithCustomerExcludingAssessedTax · c-1 · 2025-01-01 – 2025-03-31"
+      },
+      {
+       "metric": "Diluted earnings per share",
+       "unit": "USD/share",
+       "release": "0.12",
+       "comparison": "0.12",
+       "status": "一致",
+       "reason": "",
+       "locator": "us-gaap:EarningsPerShareDiluted · c-1 · 2025-01-01 – 2025-03-31"
+      }
+     ],
+     "candidates": []
+    },
+    {
+     "symbol": "TSLA",
+     "period": "FY2025Q2",
+     "end": "2025-06-30",
+     "estimated": false,
+     "filing": "https://www.sec.gov/Archives/edgar/data/1318605/000162828025035738/tsla-20250723.htm",
+     "accession": "0001628280-25-035738",
+     "exhibit": "https://www.sec.gov/Archives/edgar/data/1318605/000162828025035738/exhibit991.htm",
+     "release_date": "2025-07-23",
+     "report": "https://www.sec.gov/Archives/edgar/data/1318605/000162828025035806/tsla-20250630.htm",
+     "report_acc": "0001628280-25-035806",
+     "form": "10-Q",
+     "report_date": "2025-07-24",
+     "sha": "1a7137736db5edccf1b6fbaacafd678c13af656a92e29bb8dcb6183a1fe1e809",
+     "report_sha": "52ed29d209255825d33858fafd29c17ca342a5d62f315c0aa6001676aa5220b0",
+     "metrics": [
+      {
+       "metric": "Revenue",
+       "unit": "USD millions",
+       "release": "22496",
+       "comparison": "22496",
+       "status": "一致",
+       "reason": "",
+       "locator": "us-gaap:RevenueFromContractWithCustomerExcludingAssessedTax · c-33 · 2025-04-01 – 2025-06-30"
+      },
+      {
+       "metric": "Diluted earnings per share",
+       "unit": "USD/share",
+       "release": "0.33",
+       "comparison": "0.33",
+       "status": "一致",
+       "reason": "",
+       "locator": "us-gaap:EarningsPerShareDiluted · c-33 · 2025-04-01 – 2025-06-30"
+      }
+     ],
+     "candidates": []
+    },
+    {
+     "symbol": "TSLA",
+     "period": "FY2025Q3",
+     "end": "2025-09-30",
+     "estimated": false,
+     "filing": "https://www.sec.gov/Archives/edgar/data/1318605/000162828025045861/tsla-20251022.htm",
+     "accession": "0001628280-25-045861",
+     "exhibit": "https://www.sec.gov/Archives/edgar/data/1318605/000162828025045861/exhibit991.htm",
+     "release_date": "2025-10-22",
+     "report": "https://www.sec.gov/Archives/edgar/data/1318605/000162828025045968/tsla-20250930.htm",
+     "report_acc": "0001628280-25-045968",
+     "form": "10-Q",
+     "report_date": "2025-10-23",
+     "sha": "fa490e505c1cafdf3fc825784a1076a2b5bcbb1e7ea51baf489defc747b8f13c",
+     "report_sha": "cc264bfe1648e78c3de92fb9c81bbe3b42815942f491c0536e61f9bb84fe90e7",
+     "metrics": [
+      {
+       "metric": "Revenue",
+       "unit": "USD millions",
+       "release": "28095",
+       "comparison": "28095",
+       "status": "一致",
+       "reason": "",
+       "locator": "us-gaap:RevenueFromContractWithCustomerExcludingAssessedTax · c-33 · 2025-07-01 – 2025-09-30"
+      },
+      {
+       "metric": "Diluted earnings per share",
+       "unit": "USD/share",
+       "release": "0.39",
+       "comparison": "0.39",
+       "status": "一致",
+       "reason": "",
+       "locator": "us-gaap:EarningsPerShareDiluted · c-33 · 2025-07-01 – 2025-09-30"
+      }
+     ],
+     "candidates": []
+    },
+    {
+     "symbol": "TSLA",
+     "period": "FY2025Q4",
+     "end": "2025-12-31",
+     "estimated": false,
+     "filing": "https://www.sec.gov/Archives/edgar/data/1318605/000162828026003837/tsla-20260128.htm",
+     "accession": "0001628280-26-003837",
+     "exhibit": "https://www.sec.gov/Archives/edgar/data/1318605/000162828026003837/exhibit991.htm",
+     "release_date": "2026-01-28",
+     "report": "https://www.sec.gov/Archives/edgar/data/1318605/000162828026003952/tsla-20251231.htm",
+     "report_acc": "0001628280-26-003952",
+     "form": "10-K",
+     "report_date": "2026-01-29",
+     "sha": "3800555b49158d4ae501a01f3bf7773763a667d8b48c7e558443c164c9211e9a",
+     "report_sha": "",
+     "metrics": [
+      {
+       "metric": "Revenue",
+       "unit": "USD millions",
+       "release": "24901",
+       "comparison": null,
+       "status": "訂正・重複",
+       "reason": "提出候補の訂正・重複または期末日不一致",
+       "locator": ""
+      },
+      {
+       "metric": "Diluted earnings per share",
+       "unit": "USD/share",
+       "release": "0.24",
+       "comparison": null,
+       "status": "訂正・重複",
+       "reason": "提出候補の訂正・重複または期末日不一致",
+       "locator": ""
+      }
+     ],
+     "candidates": [
+      {
+       "acc": "0001628280-26-003837",
+       "form": "8-K",
+       "url": "https://www.sec.gov/Archives/edgar/data/1318605/000162828026003837/tsla-20260128.htm"
+      },
+      {
+       "acc": "0001628280-26-003952",
+       "form": "10-K",
+       "url": "https://www.sec.gov/Archives/edgar/data/1318605/000162828026003952/tsla-20251231.htm"
+      },
+      {
+       "acc": "0001104659-26-053166",
+       "form": "10-K/A",
+       "url": "https://www.sec.gov/Archives/edgar/data/1318605/000110465926053166/tm2611837d1_10ka.htm"
+      }
+     ]
+    },
+    {
+     "symbol": "TSLA",
+     "period": "FY2026Q1",
+     "end": "2026-03-31",
+     "estimated": false,
+     "filing": "https://www.sec.gov/Archives/edgar/data/1318605/000162828026026551/tsla-20260422.htm",
+     "accession": "0001628280-26-026551",
+     "exhibit": "https://www.sec.gov/Archives/edgar/data/1318605/000162828026026551/exhibit991.htm",
+     "release_date": "2026-04-22",
+     "report": "https://www.sec.gov/Archives/edgar/data/1318605/000162828026026673/tsla-20260331.htm",
+     "report_acc": "0001628280-26-026673",
+     "form": "10-Q",
+     "report_date": "2026-04-23",
+     "sha": "b2c721f441170f7c1ece2528c172f5d76f10d2837d8964af2508b7a9af47d77f",
+     "report_sha": "8feb8360434320e3d86a4c7028701fab77db791dcf7e548fb968f070ecb1d1a8",
+     "metrics": [
+      {
+       "metric": "Revenue",
+       "unit": "USD millions",
+       "release": "22387",
+       "comparison": "22387",
+       "status": "一致",
+       "reason": "",
+       "locator": "us-gaap:RevenueFromContractWithCustomerExcludingAssessedTax · c-1 · 2026-01-01 – 2026-03-31"
+      },
+      {
+       "metric": "Diluted earnings per share",
+       "unit": "USD/share",
+       "release": "0.13",
+       "comparison": "0.13",
+       "status": "一致",
+       "reason": "",
+       "locator": "us-gaap:EarningsPerShareDiluted · c-1 · 2026-01-01 – 2026-03-31"
+      }
+     ],
+     "candidates": []
+    },
+    {
+     "symbol": "TSLA",
+     "period": "FY2026Q2",
+     "end": "2026-06-30",
+     "estimated": false,
+     "filing": "https://www.sec.gov/Archives/edgar/data/1318605/000162828026049213/tsla-20260722.htm",
+     "accession": "0001628280-26-049213",
+     "exhibit": "https://www.sec.gov/Archives/edgar/data/1318605/000162828026049213/exhibit991.htm",
+     "release_date": "2026-07-22",
+     "report": "https://www.sec.gov/Archives/edgar/data/1318605/000162828026049270/tsla-20260630.htm",
+     "report_acc": "0001628280-26-049270",
+     "form": "10-Q",
+     "report_date": "2026-07-23",
+     "sha": "a735c85ff171eb5407f2ef7dec916e85d222255b5b9c228c56d3b6bbaf6c49b0",
+     "report_sha": "d73ba014ab80bb4e7b180ed03f9d8466465fd90bb783306ebea031b466399dac",
+     "metrics": [
+      {
+       "metric": "Revenue",
+       "unit": "USD millions",
+       "release": "28236",
+       "comparison": "28236",
+       "status": "一致",
+       "reason": "",
+       "locator": "us-gaap:RevenueFromContractWithCustomerExcludingAssessedTax · c-33 · 2026-04-01 – 2026-06-30"
+      },
+      {
+       "metric": "Diluted earnings per share",
+       "unit": "USD/share",
+       "release": "0.32",
+       "comparison": "0.32",
+       "status": "一致",
+       "reason": "",
+       "locator": "us-gaap:EarningsPerShareDiluted · c-33 · 2026-04-01 – 2026-06-30"
+      }
+     ],
+     "candidates": []
+    },
+    {
+     "symbol": "TSLA",
+     "period": "FY2026Q3",
+     "end": "2026-09-30",
+     "estimated": false,
+     "filing": "https://www.sec.gov/Archives/edgar/data/1318605/000162828026066738/tsla-20261021.htm",
+     "accession": "0001628280-26-066738",
+     "exhibit": "https://www.sec.gov/Archives/edgar/data/1318605/000162828026066738/exhibit9914.htm",
+     "release_date": "2026-10-21",
+     "report": "https://www.sec.gov/Archives/edgar/data/1318605/000162828026066775/tsla-20260930.htm",
+     "report_acc": "0001628280-26-066775",
+     "form": "10-Q",
+     "report_date": "2026-10-22",
+     "sha": "16ad073fcfab1bc5804614b9364fff04b3a47866e9435d77d632397697c466b3",
+     "report_sha": "e037800784513ee9661f438d365e3b01b908ed1d892c4ca27ed43a18a678e60f",
+     "metrics": [
+      {
+       "metric": "Revenue",
+       "unit": "USD millions",
+       "release": "28046",
+       "comparison": "28046",
+       "status": "一致",
+       "reason": "",
+       "locator": "us-gaap:RevenueFromContractWithCustomerExcludingAssessedTax · c-33 · 2026-07-01 – 2026-09-30"
+      },
+      {
+       "metric": "Diluted earnings per share",
+       "unit": "USD/share",
+       "release": "0.22",
+       "comparison": "0.22",
+       "status": "一致",
+       "reason": "",
+       "locator": "us-gaap:EarningsPerShareDiluted · c-33 · 2026-07-01 – 2026-09-30"
+      }
+     ],
+     "candidates": []
+    }
+   ],
+   "issues": []
+  }
+ }
+}
