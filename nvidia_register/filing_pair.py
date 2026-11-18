@@ -52,12 +52,13 @@ def read_values(raw, statement, metric_value):
     return values
 
 
-def compare(pair, get, extract, labels):
+def compare(pair, get, extract, labels, *, quarterly_extract=None):
     url = exhibit_link(get(pair.primary), pair.primary)
     release = get(url)
     quarterly = get(pair.quarterly)
     facts = []
-    for i, (a, b) in enumerate(zip(extract(release), extract(quarterly), strict=True)):
+    quarterly_values = (quarterly_extract or extract)(quarterly)
+    for i, (a, b) in enumerate(zip(extract(release), quarterly_values, strict=True)):
         value, e1 = a
         detail, e2 = b
         errors = [f"{source}: {msg}" for source, msg in (("EX-99.1", e1), ("10-Q", e2)) if msg]

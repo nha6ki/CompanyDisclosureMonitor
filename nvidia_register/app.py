@@ -19,6 +19,7 @@ import reporting
 import companies
 import microsoft
 import alphabet
+import issuer_financials
 import periods
 import llm_runner
 import read_sections
@@ -335,11 +336,11 @@ def application(reg,port):
                 else:
                     body = page("Magnificent Seven 開示一覧", companies.render(
                         data, rows, ticker, item, hidden("token", reg.token)))
-            elif method == "GET" and path in ("/demo", "/company/MSFT", "/company/NVDA", "/company/GOOGL"):
+            elif method == "GET" and (path == "/demo" or path.removeprefix("/company/") in companies.ISSUERS and path.startswith("/company/")):
                 body = (Path(__file__).resolve().parent / "public_demo" / "index.html").read_bytes()
                 symbol = (parse_qs(env["QUERY_STRING"]).get("company", ["NVDA"])[0]
                           if path == "/demo" else path.rsplit("/", 1)[1])
-                pairs = {"MSFT": microsoft.PAIR, "GOOGL": alphabet.PAIR}
+                pairs = {"MSFT": microsoft.PAIR, "GOOGL": alphabet.PAIR, **issuer_financials.PAIRS}
                 if symbol in pairs and (local := pairs[symbol].local_result(reg.root)).is_file():
                     marker = f'<script type="application/json" id="{symbol.lower()}-record">'
                     before, middle = body.decode("utf-8").split(marker, 1)
