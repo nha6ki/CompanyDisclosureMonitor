@@ -76,7 +76,7 @@ def render(db,f,rows,hidden,token):
         company=link('/company/'+r['symbol']+'?lang=ja',r['symbol'])
         sources=' · '.join(filter(None,[link(r['filing'],'8-K'),link(r['exhibit'],'添付99.1'),link(r['report'],r['form'])]))
         if r['accession']:
-            sources += ' · '+link(narrative_url(r['symbol'],r['accession']),'この8-Kの要点')
+            sources += ' · '+link(narrative_url(r['symbol'],r['accession']),'この8-Kの開示要点')
         if r['candidates']:
             sources+=' <details><summary>提出候補</summary>'+ ' · '.join(link(c['url'],c['form']+' '+c['acc']) for c in r['candidates'])+'</details>'
         fields=dict(token=token,symbol=r['symbol'],period=r['period'],version=r['version'],previous=r['previous'],back=query)

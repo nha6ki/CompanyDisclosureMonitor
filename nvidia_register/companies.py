@@ -133,7 +133,7 @@ def render(data, rows, ticker, item, token):
             r["filing_date"], ISSUERS[symbol][0], r["form"], ", ".join(r["api_items"]) or "—"))
             + f'<td><a href="{escape(r["document_url"])}">{escape(r["accession_number"])}</a></td>'
             + f'<td>{escape(data[symbol]["as_of"])}</td>'
-            + f'<td><a href="{escape(narrative_url(symbol, r["accession_number"]))}">この8-Kの要点</a></td></tr>')
+            + f'<td><a href="{escape(narrative_url(symbol, r["accession_number"]))}">この8-Kの開示要点</a></td></tr>')
     if not rows:
         tr.append('<tr><td colspan="7">この条件に該当する提出書類は0件です。</td></tr>')
     notice = '<section role="alert"><h2>取得状況</h2><ul>' + "".join(errors) + "</ul></section>" if errors else ""
@@ -145,7 +145,7 @@ def render(data, rows, ticker, item, token):
 <option value="2.02"{selected}>Item 2.02（業績・財務状況）</option></select></label>
 <button>絞り込む</button></form>
 <p><strong>{len(rows)} 件</strong>　<a href="/companies.csv?ticker={ticker}&amp;item={item}">CSVをダウンロード</a></p>
-<table><tr><th>提出日</th><th>企業</th><th>書類</th><th>SEC Item</th><th>提出番号・原文</th><th>取得基準日</th><th>開示の要点</th></tr>
+<table><tr><th>提出日</th><th>企業</th><th>書類</th><th>SEC Item</th><th>提出番号・原文</th><th>取得基準日</th><th>開示要点</th></tr>
 {''.join(tr)}</table>
 <details><summary>SECから全7社を更新</summary>
 <form method="post" action="/companies-fetch">{token}
