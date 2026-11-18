@@ -37,8 +37,8 @@ table{border-collapse:collapse;width:100%;font-size:14px}th,td{padding:12px 14px
 @media(max-width:730px){.herogrid,.work{grid-template-columns:1fr}.herogrid{padding-block:25px;gap:18px}.hero h1{font-size:41px}.hero .summary{margin:10px 0}.bars,.scale{height:102px}.herochart{padding:13px 16px}.work{padding-block:20px;gap:14px}.stats{grid-template-columns:repeat(2,1fr);gap:16px}.stat:nth-child(3){border:0;padding-left:0}.heading{flex-wrap:wrap}.ledger{scrollbar-width:thin}.ledger th,.ledger td{padding:11px 7px}.brand{font-size:15px}.focus{scroll-margin-top:10px}.wrap{padding-inline:16px}}
 @media print{header,.download,.skip,.lang,.method{display:none}.work{grid-template-columns:1fr}.hero{background:white;color:black}.herochart{display:none}}
 
-header .wrap{flex-wrap:wrap;padding-block:10px}.issuer-nav{display:flex;align-items:center;gap:.4rem;flex-wrap:wrap}.issuer-nav a{font-size:14px;padding:.3rem .65rem;border-radius:4px;text-decoration:none}.issuer-nav [aria-current=page]{background:#e1eadf;color:#193e30;font-weight:700}.issuer-nav a:hover{text-decoration:underline}.pill.bad{color:#822d21;background:#fbece7}.plot-col i{max-width:54px}
-@media(max-width:610px){.issuer-nav{width:100%;order:3}}
+.pill.bad{color:#822d21;background:#fbece7}.plot-col i{max-width:54px}
+
 /* Shared issuer palette. Status colors are independent of the selected company. */
 :root{--forest:#172b41;--leaf:#c4d9f4;--surface:#21374e;--series:#7792ae;--accent:#365d84;--tint:#edf2f8;--ink:#17283c;--muted:#526478;--line:#d7dfe6;--paper:#f7f8fa}
 [data-issuer=AAPL]{--forest:#282d39;--leaf:#e1e7ef;--surface:#363e4b;--series:#a3adbc;--accent:#4a5362;--tint:#eff1f4}
@@ -50,7 +50,16 @@ header .wrap{flex-wrap:wrap;padding-block:10px}.issuer-nav{display:flex;align-it
 [data-issuer=TSLA]{--forest:#482331;--leaf:#ffb8ca;--surface:#5a2a3a;--series:#be8295;--accent:#a2304e;--tint:#fbebf0}
 [hidden]{display:none!important}
 body{background:var(--paper)}
-header{background:#fff}header .wrap{min-height:4.25rem}
+header{background:#fff}
+header .masthead{min-height:3.45rem;flex-wrap:wrap;gap:.35rem .8rem;padding-block:.45rem}
+.mast-actions{display:flex;align-items:center;gap:.85rem;margin-left:auto}.mast-actions a{font-size:.87rem;color:var(--muted);text-underline-offset:.2em}
+.nav-band{border-top:1px solid #e5e9ed}
+header .issuer-nav{display:flex;min-height:0;align-items:stretch;justify-content:flex-start;gap:.12rem .28rem;flex-wrap:wrap;padding-block:.25rem}
+.issuer-nav a{display:inline-flex;align-items:center;min-height:38px;padding:.25rem .72rem;white-space:nowrap;font-size:.91rem;font-weight:540;color:#33465b;text-decoration:none;border-radius:4px}
+.issuer-nav a:hover{background:#edf2f6;text-decoration:underline;text-underline-offset:3px}
+.issuer-nav a[aria-current=page]{color:var(--accent);background:var(--tint);box-shadow:inset 0 -2px var(--accent);font-weight:700}
+@media(max-width:650px){header .issuer-nav{gap:.08rem .18rem;padding-block:.3rem}.issuer-nav a{padding:.25rem .55rem;min-height:36px}.mast-actions{gap:.45rem}}
+@media(max-width:380px){header .masthead .brand{font-size:.95rem;gap:.4rem}.masthead .lang{padding-inline:.6rem}.issuer-nav a{font-size:.86rem}}
 .logo{background:#1d344b}.logo i{background:#d4e3f5}.lang{min-height:36px;padding:.35rem .8rem;color:#293e58;border-color:#c9d3de}
 .issuer-nav [aria-current=page],.ledger tbody tr.active{background:var(--tint);color:var(--ink)}
 .ledger tbody tr.active{box-shadow:inset 3px 0 var(--accent)}
@@ -101,7 +110,13 @@ header{background:#fff}header .wrap{min-height:4.25rem}
 @media(max-width:500px){.narr-event dl{grid-template-columns:1fr}.narr-event dt{border:0;padding-bottom:0}.narr-event dd{padding-top:.12rem}}
 </style></head><body>
 <a href="#register" class="skip" id="skip"></a>
-<header><div class="wrap"><a class="brand" href="#top"><span class="logo" aria-hidden="true"><i></i><i></i><i></i></span>Company Disclosure Monitor</a><nav class="issuer-nav" id="issuerNav" aria-label="Companies"><a id="back" hidden></a><a id="workflow" hidden></a></nav><button type="button" class="lang" id="lang"></button></div></header>
+<header class="site-header">
+  <div class="wrap masthead">
+    <a class="brand" href="#overview"><span class="logo" aria-hidden="true"><i></i><i></i><i></i></span>Company Disclosure Monitor</a>
+    <div class="mast-actions"><a id="workflow" hidden></a><button type="button" class="lang" id="lang"></button></div>
+  </div>
+  <div class="nav-band"><nav class="wrap issuer-nav" id="issuerNav" aria-label="Company navigation"><a id="back"></a></nav></div>
+</header>
 <main id="overview" hidden>
   <section class="overview-hero"><div class="wrap overview-grid">
     <div><p class="market-label" id="marketLabel"></p><h1 id="homeTitle"></h1><p id="homeIntro"></p><p class="snapshot-date" id="snapshotDate"></p></div>
@@ -161,12 +176,25 @@ const requestedIndex=records.findIndex(d=>d.period===query.get('period'));
 let selected=requestedIndex<0 ? records.length-1 : requestedIndex;
 let metric = 0;
 const tr = (en, jp) => ja ? jp : en;
+const wording = {
+  overview: ['Earnings filing monitor','決算開示モニター'],
+  earnings: ['Quarterly earnings register','四半期決算台帳'],
+  narrative: ['Filing text register (Qwen)','開示本文台帳（Qwen）'],
+  filingOutput: ['Qwen results for this 8-K','この8-KのQwen抽出結果'],
+  review: ['Human review','担当者確認'],
+  exportCsv: ['Download CSV','CSVをダウンロード'],
+  workflow: ['Quarterly reconciliation','四半期決算の照合'],
+  pending: ['Pending review','確認待ち']
+};
+const uiText = key => tr(...wording[key]);
+const issuerEntries = Object.entries(companies).sort((a,b)=>a[1].localeCompare(b[1],'en'));
+function companyTitle(key){return companyName+(ja?'の':' · ')+uiText(key);}
 const periodText = p => p.slice(0,6) + ' ' + p.slice(6);
 const numbers = (x, places) => x == null ? '—' : Number(String(x ?? '').replaceAll(',', '')).toLocaleString('en-US', {
   minimumFractionDigits: places, maximumFractionDigits: places
 });
 const reviewNames={'未確認':'Pending','確認済み':'Reviewed','要対応':'Action required','再確認':'Review again'};
-const reviewText = state => tr(reviewNames[state] || 'Pending',state || '未確認');
+const reviewText = state => !state || state==='未確認' ? uiText('pending') : tr(reviewNames[state] || state,state);
 function unit(u){return {'USD billions':tr('USD billion','十億ドル'),'USD millions':tr('USD million','百万ドル'),'USD/share':tr('USD/share','ドル／株')}[u]}
 const labels = {
   '一致': ['Exact', '一致'], '丸めの範囲で一致': ['Match after rounding','丸め一致'],
@@ -221,7 +249,7 @@ if(f.reason){
   line('p',tr(explanations[f.reason]||f.reason,f.reason),'reference');
 }
 line('p',f.column,'reference');
-if(history && d.releaseDate) line('p',tr('Release filed · ','決算発表提出 · ')+d.releaseDate,'reference');
+if(history && d.releaseDate) line('p',tr('Release filing date · ','決算発表の提出日 · ')+d.releaseDate,'reference');
 if(history && d.reportDate) line('p',(d.form||tr('Periodic filing','定期報告書'))+tr(' filed · ',' 提出 · ')+d.reportDate,'reference');
 const links = line('div','','links');
 function source(url, title){
@@ -237,8 +265,8 @@ source(d.filing,tr('Form 8-K ↗','8-K本文 ↗'));
 for(const c of d.candidates || []){
   if(c.url!==d.quarterly && c.url!==d.filing) source(c.url,c.form+' · '+c.acc);
 }
-if(d.accession){const a=line('a',tr('Qwen output for this 8-K','この8-KのQwen抽出'),'narr-entry');a.href=narrativeURL(ticker,d.accession);}
-line('p', tr('Human review · ','担当者確認 · ')+reviewText(d.state),'review');
+if(d.accession){const a=line('a',uiText('filingOutput'),'narr-entry');a.href=narrativeURL(ticker,d.accession);}
+line('p', uiText('review')+' · '+reviewText(d.state),'review');
 }
 function ledger(){
 $('rows').innerHTML=records.map((d,i)=>({d,i})).reverse().map(({d,i})=>'<tr class="'+(i===selected?'active':'')+'"><td><button class="pick" aria-pressed="'+(i===selected)+'" data-i="'+i+'">'+periodText(d.period)+'</button></td><td>'+(rev(d) ?? '—')+'</td><td>'+numbers(d.facts[1].value,2)+'</td><td>'+pill(d.facts[0].status)+'</td></tr>').join('');
@@ -280,7 +308,7 @@ const narrativeData=JSON.parse($('narrative-filings').textContent);
 const eventPage=query.get('tab')==='events';
 let chosenAcc=query.get('filing');
 const vocabulary={
-  pending:['Awaiting review','人手確認待ち'], reviewed:['Reviewed','確認済み'],
+  pending:wording.pending, reviewed:['Reviewed','確認済み'],
   changed:['Source changed · review again','原文更新・再確認'], needs_revision:['Needs revision','要修正'],
   appointment:['Appointment','就任'], retirement_notice:['Retirement notice','退任通知'],
   acquisition_agreement:['Acquisition agreement','買収契約'], decision:['Decision','決定日'],
@@ -307,8 +335,8 @@ function issuerFilings(symbol){
 }
 function renderRegisterNav(){
   const nav=$('registerNav');
-  const links=[ledgerLink(detailURL(ticker,records[selected]?.period),tr('Quarterly figures','四半期決算')),
-               ledgerLink(narrativeURL(ticker),tr('Filing text · Qwen','開示本文・Qwen'))];
+  const links=[ledgerLink(detailURL(ticker,records[selected]?.period),uiText('earnings')),
+               ledgerLink(narrativeURL(ticker),uiText('narrative'))];
   links[eventPage?1:0].setAttribute('aria-current','page');
   nav.setAttribute('aria-label',tr('Company registers','企業の台帳'));nav.replaceChildren(...links);
 }
@@ -360,16 +388,16 @@ function drawNarratives(){
   const entries=issuerFilings(ticker);
   const extracted=entries.filter(([,f])=>Object.keys(f.sections).length);
   const n=extracted.reduce((sum,[,f])=>sum+Object.values(f.sections).reduce((s,v)=>s+v.count,0),0);
-  $('narrName').textContent=companyName+tr(' filing text register',' 開示本文台帳');
-  $('narrCount').textContent=tr('Saved Qwen 27B output for '+extracted.length+' filings · '+n+' candidates',
-    'Qwen 27B 抽出結果あり '+extracted.length+' 書類 · '+n+' 候補');
+  $('narrName').textContent=companyTitle('narrative');
+  $('narrCount').textContent=tr('Qwen 27B · '+extracted.length+' filings with saved results · '+n+' candidates',
+    'Qwen 27Bの抽出結果がある書類 '+extracted.length+' 件 · 候補 '+n+' 件');
   document.title=$('narrName').textContent+' | Company Disclosure Monitor';
-  $('narrLabel').textContent=tr('Select a filing','提出書類を選択');
+  $('narrLabel').textContent=tr('Select a filing','提出書類を選ぶ');
   const picker=$('narrSelect'),panel=$('narrDetail');picker.replaceChildren();panel.replaceChildren();
   if(!chosenAcc)chosenAcc=(extracted[0]||entries[0]||[])[0];
   const selectedFile=entries.find(([acc])=>acc===chosenAcc)?.[1];
   if(!selectedFile && chosenAcc)picker.append(new Option(tr('Filing not listed','台帳に該当書類なし'),chosenAcc));
-  for(const [yes,title] of [[true,tr('Saved results','抽出結果あり')],[false,tr('No saved output','保存結果なし')]]){
+  for(const [yes,title] of [[true,tr('Saved results','抽出結果あり')],[false,tr('No saved results','抽出結果なし')]]){
     const group=node('optgroup');group.label=title;
     for(const [acc,f] of entries.filter(([,f])=>Boolean(Object.keys(f.sections).length)===yes))
       group.append(new Option([f.date,f.form,acc].filter(Boolean).join(' · '),acc));
@@ -383,7 +411,7 @@ function drawNarratives(){
   panel.append(node('p',f.form+'  /  '+f.date+(f.items.length?'  /  Item '+f.items.join(', '):''),'narr-meta'),
     node('h2',chosenAcc));
   if(f.url && f.url.startsWith('https://www.sec.gov/Archives/')){
-    const a=ledgerLink(f.url,tr('Open SEC filing ↗','SEC提出原文を開く ↗'));a.target='_blank';a.rel='noopener noreferrer';panel.append(a);
+    const a=ledgerLink(f.url,tr('Open SEC filing ↗','SEC原文を開く ↗'));a.target='_blank';a.rel='noopener noreferrer';panel.append(a);
   }
   if(!sections.length){
     panel.append(node('p',tr('No saved Qwen output for this filing.','この提出書類に対応するQwenの抽出結果は保存されていません。'),'narr-empty'));return;
@@ -391,42 +419,46 @@ function drawNarratives(){
   for(const sec of sections)panel.append(renderSection(sec,chosenAcc));
 }
 
+function renderHeader(){
+  const monitorURL=(appPage?'/demo':'')+'?'+overviewParams();
+  document.querySelector('.brand').href=monitorURL;
+  const monitor=$('back');
+  monitor.href=monitorURL;
+  monitor.textContent=uiText('overview');
+  const nav=$('issuerNav');
+  nav.setAttribute('aria-label',tr('Monitor and company registers','決算開示モニターと企業別台帳'));
+  for(const [symbol,name] of issuerEntries){
+    let link=$('link'+symbol);
+    if(!link){
+      link=node('a',name);
+      link.id='link'+symbol;
+      nav.append(link);
+    }
+    link.href=!onHome && eventPage ? narrativeURL(symbol) : detailURL(symbol);
+  }
+  for(const link of nav.querySelectorAll('[aria-current]'))link.removeAttribute('aria-current');
+  (onHome ? monitor : $('link'+ticker)).setAttribute('aria-current','page');
+  $('workflow').hidden=!appPage;
+  if(appPage){
+    $('workflow').href='/workflow'+(onHome?'':'?symbol='+ticker);
+    $('workflow').textContent=uiText('workflow');
+  }
+  document.documentElement.lang=ja?'ja':'en';
+  $('lang').textContent=ja?'English':'日本語';$('lang').lang=ja?'en':'ja';
+}
 function draw(){
 $('overview').hidden=!onHome;$('top').hidden=onHome||eventPage;
 $('narrative').hidden=onHome||!eventPage;$('registerBar').hidden=onHome;
-document.querySelector('.brand').href=(appPage ? '/demo' : '')+'?lang='+(ja?'ja':'en');
 if(onHome){drawHome();return;}
 document.body.dataset.issuer=ticker;
-document.documentElement.lang=ja?'ja':'en';
-$('lang').textContent=ja?'English':'日本語';$('lang').lang=ja?'en':'ja';
-const lang = ja ? 'ja' : 'en';
-for(const symbol of Object.keys(companies)){
-  let link = $('link'+symbol);
-  if(!link){
-    link = document.createElement('a');
-    link.id = 'link'+symbol;
-    link.textContent = companies[symbol];
-    $('issuerNav').append(link);
-  }
-  link.href = eventPage ? narrativeURL(symbol) : detailURL(symbol);
-  if(symbol === ticker) link.setAttribute('aria-current','page');
-}
-if(appPage){
-  $('workflow').hidden=false;
-  $('workflow').href='/workflow?symbol='+ticker;
-  $('workflow').textContent=tr('Review quarters','四半期の確認');
-}
-$('back').hidden=false;
-$('back').href=(appPage ? '/demo' : '')+'?'+overviewParams();
-$('back').textContent=tr('Filing overview','決算開示一覧');
-$('issuerNav').setAttribute('aria-label',tr('Companies','企業を選ぶ'));
+renderHeader();
 renderRegisterNav();
 if(eventPage){
   $('skip').href='#narrSelect';$('skip').textContent=tr('Select a filing','提出書類を選ぶ');
   drawNarratives();return;
 }
 $('eyebrow').textContent='NASDAQ · '+ticker+'  /  '+(history ? 'SEC 8-K / 10-Q / 10-K' : has10Q ? 'SEC FORM 8-K + 10-Q' : 'SEC FORM 8-K');
-$('title').textContent=companyName+tr(' filing coverage',' 決算開示台帳');
+$('title').textContent=companyTitle('earnings');
 document.title=$('title').textContent+' | Company Disclosure Monitor';
 $('summary').textContent=history ? tr('Track quarterly GAAP revenue and diluted EPS from the earnings release through the periodic filing.','決算発表から定期報告書まで、四半期の売上高と希薄化後EPSを原文で追跡できます。') : has10Q
   ? tr('Compare quarterly GAAP revenue and diluted EPS in the earnings release and Form 10-Q.','決算発表資料と10-Qの原表で、四半期の売上高・希薄化後EPSを照合します。')
@@ -440,17 +472,17 @@ const needs=facts.length-matches-rounded;
 const stats=[
   [records.length,tr('Fiscal quarters','対象四半期')],
   [facts.filter(f=>f.value != null && f.detail != null).length+' / '+facts.length,tr('Value pairs retrieved','両資料の値を取得')],
-  [matches,tr('Exact matches','完全一致')],
+  [matches,tr('Exact matches','一致')],
   needs || has10Q ? [needs,tr('Exceptions','要確認・不一致')] : [rounded,tr('Match after rounding','丸めの範囲で一致')]
 ];
 $('stats').innerHTML=stats.map(([n,t])=>'<div class="stat"><strong>'+n+'</strong><span>'+t+'</span></div>').join('');
-$('ledgerTitle').textContent=tr('Quarterly register','四半期台帳');$('ledgerSub').textContent=tr('Select a quarter to inspect its source figures.','四半期を選ぶと、原表の値と判定理由を確認できます。');
-$('download').textContent=tr('↓  Download CSV','↓  CSVを取得');$('head').innerHTML='<tr>'+[tr('Fiscal quarter','会計四半期'),tr('Revenue ($B)','売上高 ($B)'),tr('EPS ($)','EPS ($)'),tr('Revenue check','売上照合')].map(t=>'<th scope="col">'+t+'</th>').join('')+'</tr>';
-$('evidence').textContent=tr('Source comparison','原表との照合');$('skip').textContent=tr('Skip to register','台帳へ移動');
+$('ledgerTitle').textContent=tr('Quarterly figures','四半期別の決算指標');$('ledgerSub').textContent=tr('Select a quarter to inspect its source figures.','四半期を選ぶと、原表の値と判定理由を確認できます。');
+$('download').textContent=uiText('exportCsv');$('head').innerHTML='<tr>'+[tr('Fiscal quarter','会計四半期'),tr('Revenue ($B)','売上高（十億ドル）'),tr('Diluted EPS ($)','希薄化後EPS（ドル）'),tr('Revenue check','売上高の照合')].map(t=>'<th scope="col">'+t+'</th>').join('')+'</tr>';
+$('evidence').textContent=tr('Source table comparison','SEC原文の表との照合');$('skip').textContent=tr('Skip to register','台帳へ移動');
 $('methodTitle').textContent=tr('Scope and verification method','対象範囲と検査方法');
 $('method').textContent=history ? tr('We compare consolidated three-month figures in Exhibit 99.1 against the same quarter in the 10-Q or 10-K. A missing quarterly figure is left blank. Amended filings require review.','決算添付99.1の当四半期の連結数値を、同じ期末の10-Qまたは10-Kにある3か月分の値と照合します。直接記載された比較値がなければ空欄にし、訂正提出は確認対象とします。') : has10Q
-  ? tr('Python compares the three-month column in the income statement of Exhibit 99.1 with the same period in the 10-Q. EPS comes from the diluted earnings-per-share row. Human review is pending.','Pythonが決算添付99.1と10-Qの損益計算書から、当四半期3か月の列を選んで照合します。EPSには希薄化後1株当たり利益の行を使用します。担当者確認は未確認です。')
-  : tr('This independent demo covers NVIDIA GAAP revenue and diluted EPS for the eight fiscal quarters shown. Python compares the current-quarter GAAP summary with the three-month column of the consolidated income statement in the same SEC exhibit. The register shows revenue in billions of US dollars. The evidence panel and CSV retain the source units. All 16 human reviews are pending.','NVIDIAの8四半期を対象とした独立デモです。Pythonが同じ提出書類内のGAAP概要表と連結損益計算書の当四半期（3か月）列を照合しています。台帳は売上高を十億ドルで表示し、原表比較とCSVは開示時の単位を保持します。16項目すべて担当者確認は未確認です。');
+  ? tr('Python compares the three-month column in the income statement of Exhibit 99.1 with the same period in the 10-Q. EPS comes from the diluted earnings-per-share row. Human review is pending.','Pythonが決算添付99.1と10-Qの損益計算書から、当四半期3か月の列を選んで照合します。EPSには希薄化後1株当たり利益の行を使用します。担当者による確認を待っています。')
+  : tr('This independent demo covers NVIDIA GAAP revenue and diluted EPS for the eight fiscal quarters shown. Python compares the current-quarter GAAP summary with the three-month column of the consolidated income statement in the same SEC exhibit. The register shows revenue in billions of US dollars. The evidence panel and CSV retain the source units. All 16 human reviews are pending.','NVIDIAの8四半期を対象とした独立デモです。Pythonが同じ提出書類内のGAAP概要表と連結損益計算書の当四半期（3か月）列を照合しています。台帳は売上高を十億ドルで表示し、原表比較とCSVは開示時の単位を保持します。16項目すべてが担当者の確認待ちです。');
 if(!history && ticker === 'AAPL') $('method').textContent += tr(' The selected quarter ends June 27, 2026 and has a matching 10-Q. The subsequent fourth quarter is covered by the annual 10-K.',' この照合は10-Qのある2026年6月27日終了の四半期が対象です。続く第4四半期は年次報告書10-Kの対象です。');
 if(!history && ticker === 'TSLA') $('method').textContent += tr(' Exhibit 99.1 is a slide deck. The parser reads the Q3-2026 column on its statement of operations (slide 27).',' 決算添付はスライド形式です。27ページの損益計算書からQ3-2026列を読み取ります。');
 ledger();evidence();
@@ -551,7 +583,7 @@ function feedRow({symbol,d}){
   const identity=node('td',null,'identity-cell'), a=node('a',null,'company-link');
   a.href=detailURL(symbol,d.period);a.append(node('span',symbol,'ticker'),node('span',companies[symbol],'company-name'));identity.append(a);
   const narrative=ledgerLink(narrativeURL(symbol,homeState.mode==='history'?d.accession:null),
-    homeState.mode==='history'?tr('Qwen · this filing','この書類のQwen'):tr('Filing text · Qwen','開示本文・Qwen'));
+    homeState.mode==='history'?uiText('filingOutput'):uiText('narrative'));
   narrative.className='narr-entry';identity.append(narrative);
   const quarter=node('td',null,'period-code'), qLink=node('a',periodText(d.period),'quarter-link');
   qLink.href=a.href;quarter.append(qLink);
@@ -561,22 +593,21 @@ function feedRow({symbol,d}){
     const badge=node('span',statusText(status),'machine-badge');badge.dataset.kind=statusKind[status]||'issue';group.append(badge);
   }
   statuses.append(group);
-  const state=node('td',reviewText(d.state),'review-col');state.dataset.label=tr('Human review','担当者確認');
+  const state=node('td',reviewText(d.state),'review-col');state.dataset.label=uiText('review');
   row.append(identity,node('td',d.releaseDate||'—','date-cell'),quarter,trend,statuses,state);
   return row;
 }
 function drawHome(){
-  const lang=ja?'ja':'en';
+  renderHeader();
   if(location.protocol==='https:' || location.protocol==='http:'){
     window.history.replaceState(null,'','?'+overviewParams()+location.hash);
   }
-  document.documentElement.lang=lang;document.title=tr('Filing overview','決算開示一覧')+' | Company Disclosure Monitor';
+  document.title=uiText('overview')+' | Company Disclosure Monitor';
   document.body.dataset.issuer=homeState.symbol;
-  $('lang').textContent=ja?'English':'日本語';$('lang').lang=ja?'en':'ja';
-  $('issuerNav').hidden=true;$('skip').href='#filings';$('skip').textContent=tr('Skip to earnings filings','決算開示一覧へ移動');
-  $('homeTitle').textContent=tr('Earnings filing monitor','決算開示モニター');
+  $('skip').href='#filings';$('skip').textContent=tr('Skip to earnings filings','決算開示一覧へ移動');
+  $('homeTitle').textContent=uiText('overview');
   $('marketLabel').textContent='MAGNIFICENT SEVEN  /  SEC EDGAR';
-  $('homeIntro').textContent=tr('Follow revenue and diluted earnings per share from earnings releases to quarterly and annual filings.','米国主要7社の決算発表から定期報告書まで、売上高と希薄化後EPSを原文でたどれます。');
+  $('homeIntro').textContent=tr('Compare quarterly revenue and diluted EPS across seven companies. Open a company register to trace each figure or Qwen extraction to its SEC filing.','米国主要7社の売上高と希薄化後EPSを四半期別に比較できます。各社の台帳では、決算指標とQwenの抽出結果をSEC原文で確認できます。');
   const scope=homeHistory.filter(r=>!homeState.symbol || r.symbol===homeState.symbol);
   const syms=[...new Set(scope.map(x=>x.symbol))], dates=[...new Set(syms.map(s=>asOfByIssuer[s]).filter(Boolean))].sort();
   const time=dates.length===1?dates[0]:dates.length?dates[0]+' – '+dates.at(-1):'—';
@@ -584,8 +615,8 @@ function drawHome(){
   $('summaryTitle').textContent=(homeState.symbol ? companies[homeState.symbol] : tr('Seven companies','7社'))+tr(' · eight-quarter coverage',' · 直近8四半期の照合状況');
   overviewSummary(scope);
   $('feedTitle').textContent=tr('Earnings filings','決算開示一覧');
-  $('feedDescription').textContent=tr('Select a company or quarter to inspect reported figures and SEC evidence.','企業または四半期を選ぶと、報告された数値とSEC原文を確認できます。');
-  $('homeDownload').textContent=tr('Download filtered CSV','表示分をCSVで取得');
+  $('feedDescription').textContent=tr('Select a quarter to see its reported figures, reconciliation results and SEC source tables.','会計四半期を選ぶと、決算指標、照合結果、SEC原文の表を確認できます。');
+  $('homeDownload').textContent=uiText('exportCsv');
   $('modes').replaceChildren();
   for(const [value,label] of [['latest',tr('Latest per company','各社の最新決算')],['history',tr('Quarter history','四半期履歴')]]){
     const btn=node('button',label);btn.type='button';btn.dataset.mode=value;btn.setAttribute('aria-pressed',String(homeState.mode===value));
@@ -593,11 +624,11 @@ function drawHome(){
     $('modes').append(btn);
   }
   $('companyLabel').textContent=tr('Company','企業');$('statusLabel').textContent=tr('Automated check','自動照合');
-  optionList($('companyFilter'),[['',tr('All companies','全7社')],...Object.keys(companies).sort().map(k=>[k,companies[k]])],homeState.symbol);
+  optionList($('companyFilter'),[['',tr('All companies','全7社')],...issuerEntries],homeState.symbol);
   const knownStatuses=new Set(homeHistory.flatMap(r=>r.d.facts.map(f=>f.status)));
   optionList($('statusFilter'),[['',tr('All statuses','すべて')],...[...new Set([...statusOrder,...knownStatuses])].filter(s=>knownStatuses.has(s)).map(s=>[s,statusText(s)])],homeState.status);
   const head=node('tr');
-  for(const [label,cls] of [[tr('Company','企業'),''],[tr('Release filed','決算発表提出日'),''],[tr('Fiscal quarter','会計四半期'),''],[tr('Revenue trend¹','売上推移¹'),'spark-cell'],[tr('Automated check','自動照合'),''],[tr('Human review','担当者確認'),'']]){
+  for(const [label,cls] of [[tr('Company','企業'),''],[tr('Release filing date','決算発表の提出日'),''],[tr('Fiscal quarter','会計四半期'),''],[tr('Revenue trend¹','売上高の推移¹'),'spark-cell'],[tr('Automated check','自動照合'),''],[uiText('review'),'']]){
     const th=node('th',label,cls);th.scope='col';head.append(th);
   }
   $('feedHeader').replaceChildren(head);
@@ -607,7 +638,7 @@ function drawHome(){
   $('resultCount').textContent=tr(rows.length+' quarters · '+metricCount+' checks',rows.length+' 四半期 · '+metricCount+' 指標');
   $('emptyResult').hidden=!!rows.length;$('emptyResult').textContent=tr('No quarters match these filters.','この条件に該当する四半期はありません。');
   $('homeDownload').disabled=!rows.length;
-  $('publicScope').textContent=tr('¹ Quarterly revenue, scaled per company for the displayed trend. Independent demonstration using SEC filings.','¹ 売上推移は各行の対象四半期までの最大8期を行ごとの目盛で表示。SEC提出資料を用いた独立デモです。');
+  $('publicScope').textContent=tr('¹ Quarterly revenue, scaled per company for the displayed trend. Independent demonstration using SEC filings.','¹ 売上高の推移は各行の対象四半期までの最大8期を行ごとの目盛で表示。SEC提出資料を用いた独立デモです。');
 }
 $('companyFilter').onchange=e=>{homeState.symbol=e.target.value;drawHome();};
 $('statusFilter').onchange=e=>{homeState.status=e.target.value;if(homeState.status) homeState.mode='history';drawHome();};
@@ -625,7 +656,10 @@ $('narrSelect').onchange=e=>{
   drawNarratives();
 };
 $('lang').onclick=()=>{ja=!ja;draw();
-  if(!onHome && location.protocol!=='file:')window.history.replaceState(null,'',eventPage?narrativeURL(ticker,chosenAcc):detailURL(ticker,records[selected].period));
+  if(!onHome && location.protocol!=='file:'){
+    const url=eventPage?narrativeURL(ticker,chosenAcc):detailURL(ticker,records[selected].period);
+    window.history.replaceState(null,'',url+(query.has('baseline')?'&baseline=1':''));
+  }
 };
 $('download').onclick=()=>{
 const fields=['Fiscal quarter','Metric','Reported value','Unit','Comparison value','Comparison unit','Comparison row','Comparison column','Check','Human review','Accession','Form 8-K','Exhibit 99.1','SHA-256'];

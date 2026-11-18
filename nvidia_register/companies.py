@@ -133,25 +133,22 @@ def render(data, rows, ticker, item, token):
             r["filing_date"], ISSUERS[symbol][0], r["form"], ", ".join(r["api_items"]) or "—"))
             + f'<td><a href="{escape(r["document_url"])}">{escape(r["accession_number"])}</a></td>'
             + f'<td>{escape(data[symbol]["as_of"])}</td>'
-            + f'<td><a href="{escape(narrative_url(symbol, r["accession_number"]))}">本文抽出を確認</a></td></tr>')
+            + f'<td><a href="{escape(narrative_url(symbol, r["accession_number"]))}">この8-KのQwen抽出結果</a></td></tr>')
     if not rows:
         tr.append('<tr><td colspan="7">この条件に該当する提出書類は0件です。</td></tr>')
     notice = '<section role="alert"><h2>取得状況</h2><ul>' + "".join(errors) + "</ul></section>" if errors else ""
-    detail_links = " ".join(f'<a href="/company/{symbol}?lang=ja">{name}の四半期決算</a>'
-                            for symbol, (name, _) in ISSUERS.items())
     return f"""
 <p>{period}</p><p>対象書類は Form 8-K・8-K/A です。提出番号からSEC原文を確認できます。</p>
 {notice}
-<nav class="actions" aria-label="企業の決算詳細">{detail_links}</nav>
 <form method="get" action="/companies"><label>企業 <select name="ticker">{''.join(options)}</select></label>
 <label>開示項目 <select name="item"><option value="">すべて</option>
 <option value="2.02"{selected}>Item 2.02（業績・財務状況）</option></select></label>
 <button>絞り込む</button></form>
-<p><strong>{len(rows)} 件</strong>　<a href="/companies.csv?ticker={ticker}&amp;item={item}">表示中の一覧をCSVで保存</a></p>
+<p><strong>{len(rows)} 件</strong>　<a href="/companies.csv?ticker={ticker}&amp;item={item}">CSVをダウンロード</a></p>
 <table><tr><th>提出日</th><th>企業</th><th>書類</th><th>SEC Item</th><th>提出番号・原文</th><th>取得基準日</th><th>Qwen 27B</th></tr>
 {''.join(tr)}</table>
 <details><summary>SECから全7社を更新</summary>
 <form method="post" action="/companies-fetch">{token}
 <label>SECへの連絡先メール <input type="email" name="contact" required></label>
 <button>7社の開示一覧を取得</button></form></details>
-<p><a href="/">NVIDIAのレビュー台帳</a>　<a href="/coverage">NVIDIAの四半期指標を照合</a></p>"""
+<p><a href="/">NVIDIAの開示レビュー</a>　<a href="/coverage">NVIDIAの四半期指標を照合</a></p>"""

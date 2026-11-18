@@ -70,13 +70,13 @@ def render(db,f,rows,hidden,token):
     query=urlencode({k:v for k,v in f.items() if v})
     content=['<p>各社の直近8四半期について、決算発表と定期報告書から売上高・希薄化後EPSを照合します。</p>',
         '<form method="get">'+controls+'<button>絞り込む</button></form>',
-        f'<p>{len(rows)}四半期 · {sum(len(r["metrics"]) for r in rows)}指標　'+link('/workflow.csv?'+query,'この条件でCSVを取得')+'</p>',
+        f'<p>{len(rows)}四半期 · {sum(len(r["metrics"]) for r in rows)}指標　'+link('/workflow.csv?'+query,'CSVをダウンロード')+'</p>',
         '<div style="overflow-x:auto"><table><thead><tr><th>企業・対象期</th><th>指標と単位</th><th>決算発表</th><th>定期報告</th><th>照合結果・理由</th><th>担当者確認</th></tr></thead><tbody>']
     for r in rows:
         company=link('/company/'+r['symbol']+'?lang=ja',r['symbol'])
         sources=' · '.join(filter(None,[link(r['filing'],'8-K'),link(r['exhibit'],'添付99.1'),link(r['report'],r['form'])]))
         if r['accession']:
-            sources += ' · '+link(narrative_url(r['symbol'],r['accession']),'この8-KのQwen抽出')
+            sources += ' · '+link(narrative_url(r['symbol'],r['accession']),'この8-KのQwen抽出結果')
         if r['candidates']:
             sources+=' <details><summary>提出候補</summary>'+ ' · '.join(link(c['url'],c['form']+' '+c['acc']) for c in r['candidates'])+'</details>'
         fields=dict(token=token,symbol=r['symbol'],period=r['period'],version=r['version'],previous=r['previous'],back=query)

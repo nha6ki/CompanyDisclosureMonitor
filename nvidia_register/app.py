@@ -218,7 +218,23 @@ def hidden(name,value):
 
 
 def page(title, content):
-    return f'<!doctype html><html lang="ja"><meta charset="utf-8"><meta name="viewport" content="width=device-width"><title>{h(title)}</title><style>{STYLE}</style><body><header><nav><a href="/"><strong>Company Disclosure Monitor</strong></a><a href="/companies">7社の開示一覧</a><a href="/workflow">四半期の照合・確認</a><a href="/demo">公開デモを見る ↗</a></nav></header><main><h1>{h(title)}</h1>{content}</main></body></html>'.encode()
+    company_links = ''.join(
+        f'<a href="/company/{symbol}?lang=ja">{h(name)}</a>'
+        for symbol, (name, _) in sorted(companies.ISSUERS.items(), key=lambda item: item[1][0]))
+    return f"""<!doctype html><html lang="ja"><meta charset="utf-8"><meta name="viewport" content="width=device-width">
+<title>{h(title)} | Company Disclosure Monitor</title><style>{STYLE}
+header {{background:white;color:#293e58;border-bottom:1px solid #d7dfe6}}
+header .mast,header nav {{max-width:1280px;margin:auto;padding-inline:clamp(16px,4vw,56px)}}
+header .mast {{padding-block:.8rem;border-bottom:1px solid #e5e9ed}}
+header nav {{min-height:0;justify-content:flex-start;gap:.1rem .3rem;flex-wrap:wrap;padding-block:.25rem;flex-direction:row;align-items:center}}
+header nav a {{padding:.4rem .65rem;text-decoration:none;border-radius:4px;white-space:nowrap}}
+header .mast a {{text-decoration:none}}header a:hover {{text-decoration:underline}}
+header nav a:hover {{background:#edf2f6}}.local-tools {{font-size:.9rem;border-top:1px solid #e5e9ed}}
+</style><body><header><div class="mast"><a href="/demo?lang=ja"><strong>Company Disclosure Monitor</strong></a></div>
+<nav aria-label="決算開示モニターと企業別台帳"><a href="/demo?lang=ja">決算開示モニター</a>{company_links}</nav>
+<nav class="local-tools" aria-label="ローカルの確認画面"><a href="/companies">7社の提出書類一覧</a>
+<a href="/workflow">四半期決算の照合</a><a href="/">NVIDIAの開示レビュー</a></nav></header>
+<main><h1>{h(title)}</h1>{content}</main></body></html>""".encode()
 
 
 def index(reg, needs):
@@ -253,15 +269,15 @@ def index(reg, needs):
         r = doc["record"]
         rows.append(f'<tr><td>{h(r["filing_date"])}</td><td><a href="/filing?acc={h(acc)}">{h(acc)}</a></td>'
                     f'<td>{count}</td><td>{h(" ／ ".join(issues) or "確認済み")}</td></tr>')
-    return page("NVIDIA 開示台帳", '<nav class="actions" aria-label="台帳メニュー"><a href="/">全件</a>　<a href="/?needs=1">要対応のみ</a>　<a href="/reviewed.csv">確認済み出来事CSV</a>　<a href="/financial.csv">確認済み決算指標CSV</a>　<a href="/checks.csv">照合検査CSV</a>　<a href="/coverage">期間カバレッジ</a></nav>'
+    return page("NVIDIAの開示レビュー", '<nav class="actions" aria-label="台帳メニュー"><a href="/">全件</a>　<a href="/?needs=1">要対応のみ</a>　<a href="/reviewed.csv">確認済み出来事CSV</a>　<a href="/financial.csv">確認済み決算指標CSV</a>　<a href="/checks.csv">照合検査CSV</a>　<a href="/coverage">期間カバレッジ</a></nav>'
                 + '<form method="post" action="/refresh">'+hidden("token",reg.token)+'<button>保存済みの開示を再取り込み</button></form>'+reporting.notices(reg)+reporting.controls(reg,hidden)
                 + f'<p>表示 {len(rows)} 書類</p><table><tr><th>提出日</th><th>提出番号</th><th>出来事数</th><th>確認状況</th></tr>{"".join(rows)}</table>')
 
 
 def detail(reg, acc):
     doc = reg.docs[acc]
-    parts = ['<a href="/">台帳に戻る</a>',f'<p><a href="{h(doc["record"]["document_url"])}">SEC原文</a></p>']
-    parts.append(f'<p><a href="{h(companies.narrative_url("NVDA",acc))}">この書類のQwen抽出・根拠段落</a></p>')
+    parts = ['<a href="/">NVIDIAの開示レビューに戻る</a>',f'<p><a href="{h(doc["record"]["document_url"])}">SEC原文</a></p>']
+    parts.append(f'<p><a href="{h(companies.narrative_url("NVDA",acc))}">この8-KのQwen抽出結果</a></p>')
     financial = reporting.metric_page(reg,acc,hidden)
     if financial: parts.append(financial)
     parts.extend("<p>"+h("99.1の決算表を取得済み。他の添付は未確認" if financial and "添付本文は未読" in i else i)+"</p>" for i in doc["issues"])
@@ -354,7 +370,7 @@ def application(reg,port):
                         mime = "text/csv; charset=utf-8"
                         headers.append(("Content-Disposition",'attachment; filename="m7-quarterly.csv"'))
                     else:
-                        body = page("7社の四半期照合",workbench.render(db,conditions,rows,hidden,reg.token))
+                        body = page("四半期決算の照合",workbench.render(db,conditions,rows,hidden,reg.token))
             elif method == "GET" and path in ("/companies", "/companies.csv"):
                 ticker, item = companies.filters(parse_qs(env["QUERY_STRING"]))
                 data = companies.load(reg.root)
@@ -364,7 +380,7 @@ def application(reg,port):
                     mime = "text/csv; charset=utf-8"
                     headers.append(("Content-Disposition", 'attachment; filename="m7_filings.csv"'))
                 else:
-                    body = page("Magnificent Seven 開示一覧", companies.render(
+                    body = page("7社の提出書類一覧", companies.render(
                         data, rows, ticker, item, hidden("token", reg.token)))
             elif method == "GET" and (path == "/demo" or path.removeprefix("/company/") in companies.ISSUERS and path.startswith("/company/")):
                 body = (Path(__file__).resolve().parent / "public_demo" / "index.html").read_bytes()
@@ -399,7 +415,7 @@ def application(reg,port):
                     mime="text/csv; charset=utf-8"
                     headers.append(("Content-Disposition",f'attachment; filename="nvidia_{result["first"]}_{result["last"]}.csv"'))
                 else:
-                    body=page("期間カバレッジ",'<a href="/">開示台帳へ</a>'+periods.render(reg.root,result,reg,hidden))
+                    body=page("期間カバレッジ",'<a href="/">NVIDIAの開示レビューへ</a>'+periods.render(reg.root,result,reg,hidden))
             elif method == "GET" and path == "/checks.csv":
                 body,mime = reporting.reconciliation_csv(reg),"text/csv; charset=utf-8"
                 headers.append(("Content-Disposition",'attachment; filename="nvidia_checks.csv"'))
