@@ -158,6 +158,14 @@ def filing_updates(template):
     return before + marker + script_json(filings) + '</script>' + after
 
 
+def extraction_states():
+    states = load(DATA / 'demo-extraction-states.json')
+    local = DATA / 'extraction-states.json'
+    if local.is_file():
+        states.update(load(local))
+    return states
+
+
 def build_snapshot():
     quarters, dates = inputs()
     _, latest = decisions()
@@ -183,6 +191,7 @@ def build_snapshot():
     template = (ROOT / 'index.template.html').read_text(encoding='utf-8')
     template = filing_updates(template)
     for marker, content in {
+        '@@EXTRACTION_STATES@@':script_json(extraction_states()),
         '@@AS_OF@@':script_json(dates), '@@HISTORY@@':script_json(quarters),
         '// @include review-demo.js':(ROOT/'review-demo.js').read_text(encoding='utf-8'),
         '// @include financials.js':(ROOT/'financials.js').read_text(encoding='utf-8'),

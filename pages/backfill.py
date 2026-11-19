@@ -98,6 +98,7 @@ def run(contact, prior=None, retry=False, prepare=False):
             sources = daily.Sources(daily.pipeline.fetcher(contact), daily.PROJECT/'register_data/quarter_sources')
             highlights.process_queue(daily.PRIVATE, jobs, sources, retry, checkpoint, summary)
             checkpoint()
+        highlights.update_public_states(queue)
         for key, error in summary['errors'].items():
             print(f'{key}: {error}', flush=True)
         return int(bool(summary['errors']) or (not prepare and any(

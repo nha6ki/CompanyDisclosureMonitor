@@ -124,6 +124,37 @@ def extract(folder, job, fetch, config, retry=False, runner=llm_runner.run):
     return transient
 
 
+def extraction_state(job):
+    state = job['state']
+    if state != 'done':
+        return state
+    sections = (job.get('candidate') or {}).get('sections', {})
+    if not sections:
+        return 'unknown'
+    return 'candidates' if any(s['events'] for s in sections.values()) else 'empty'
+
+
+def update_public_states(queue):
+    # Keep raw candidates, notes and model errors in the local review directory.
+    with manage.lock('reviews'):
+        path = manage.DATA / 'extraction-states.json'
+        overrides = load(path) if path.is_file() else {}
+        current = manage.extraction_states()
+        changes = {}
+        for key, job in queue.items():
+            state = extraction_state(job)
+            # Merely preparing a fresh local queue does not invalidate an archived result.
+            if state == 'pending' and key in current and 'candidate' not in job:
+                continue
+            if state != current.get(key):
+                changes[key] = state
+        if changes:
+            overrides.update(changes)
+            write_atomic(path, (json.dumps(overrides, sort_keys=True, indent=2)+'\n').encode())
+    if changes:
+        manage.build()
+
+
 def process_queue(folder, queue, fetch, retry, persist, summary):
     jobs=[v for v in queue.values() if v['state'] in ('pending','retry') or (retry and v['state']=='manual')]
     if not jobs: return
@@ -222,6 +253,8 @@ def index_page(folder, queue, summary):
     # Private directory contains only these two display files. It is outside the Pages build.
     import demo_history
     private_page=demo_history.replace_data(base,marker,original).replace("excel.href='./reports/'", "excel.href='../reports/'")
+    private_page=demo_history.replace_data(private_page, '<script type="application/json" id="extraction-states">',
+        {key:extraction_state(job) for key,job in records.items()})
     private_page=private_page.replace('<main id="narrative"', '<main data-local-review id="narrative"', 1)
     write_atomic(view/'detail.html',private_page.encode())
     write_atomic(view/'index.html',''.join(listing).encode())

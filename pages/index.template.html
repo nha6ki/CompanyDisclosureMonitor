@@ -154,6 +154,7 @@ a.review-badge{text-decoration:underline;text-underline-offset:.15em}
 <div class="wrap work"><section class="card" id="register"><div class="pad"><div class="heading"><h2 id="ledgerTitle"></h2><div class="ledger-downloads"><a class="download" id="excelDownload" download hidden></a><button type="button" class="download" id="download"></button></div></div><p class="sub" id="ledgerSub"></p><div id="ledgerViews"></div><p id="ledgerUnits"></p></div><div class="ledger"><table><thead id="head"></thead><tbody id="rows"></tbody></table></div></section>
 <section class="card pad focus" id="focus" tabindex="-1"><div class="kicker" id="evidence"></div><h2 id="selected"></h2><p class="meta" id="accession"></p><div class="tabs" id="tabs"></div><div id="reading" aria-live="polite"></div></section></div>
 <section class="wrap method"><details><summary id="methodTitle"></summary><p id="method"></p></details></section></main>
+<script type="application/json" id="extraction-states">@@EXTRACTION_STATES@@</script>
 <script type="application/json" id="issuer-asof">@@AS_OF@@</script>
 <script type="application/json" id="workflow-history">@@HISTORY@@</script>
 <script type="application/json" id="msft-record">{"period": "FY2027Q1", "accession": "0001193125-26-436122", "filing": "https://www.sec.gov/Archives/edgar/data/789019/000119312526436122/msft-20261028.htm", "url": "https://www.sec.gov/Archives/edgar/data/789019/000119312526436122/msft-ex99_1.htm", "sha": "913edaadd93a01d9c0aa2b6fba936040b157951ba33579e7249390bc91e99b63", "quarterly": "https://www.sec.gov/Archives/edgar/data/789019/000119312526436133/msft-20260930.htm", "quarterlyAccession": "0001193125-26-436133", "quarterlySha": "b0a6acbf5de340588e12f990b56ece4e5d67de2922bf5aa9a6ab379c742e92a8", "facts": [{"metric": "Revenue", "value": "92279", "detail": "92279", "unit": "USD millions", "detailUnit": "USD millions", "summaryRow": "Total revenue", "row": "Total revenue", "column": "Three months ended September 30, 2026", "status": "一致", "reason": ""}, {"metric": "Diluted earnings per share", "value": "4.92", "detail": "4.92", "unit": "USD/share", "detailUnit": "USD/share", "summaryRow": "Earnings per share / Diluted", "row": "Earnings per share / Diluted", "column": "Three months ended September 30, 2026", "status": "一致", "reason": ""}]}</script>
@@ -338,6 +339,7 @@ function selectChart(action,container,restoreFocus=true){
   evidence();
   if(restoreFocus) $(container).querySelector('[aria-pressed=true]').focus({preventScroll:true});
 }
+const extractionStates=JSON.parse($('extraction-states').textContent);
 const narrativeData=JSON.parse($('narrative-filings').textContent);
 const eventPage=query.get('tab')==='events';
 let chosenAcc=query.get('filing');
@@ -423,9 +425,32 @@ function renderSection(sec,acc){
   }
   return box;
 }
+function filingStatus(acc, filing, localReview){
+  const hasEvents=Object.values(filing.sections).some(section=>section.count>0);
+  const state=extractionStates[ticker+'/'+acc];
+  if(state==='manual')return hasEvents?'partial':'manual';
+  if(hasEvents)return localReview?'localEvents':'published';
+  return state && Object.hasOwn(filingStatusLabels,state)?state:'unknown';
+}
+const filingStatusLabels={
+  published:['Published highlights','掲載要点あり'],
+  localEvents:['Candidates available','抽出候補あり'],
+  partial:['Published highlights · partial review needed','掲載要点あり・一部は原文確認が必要'],
+  manual:['Source review required','原文確認が必要'],
+  empty:['Extraction complete · no candidates','抽出済み・候補なし'],
+  candidates:['Candidates awaiting review','抽出候補の確認待ち'],
+  attachment:['Exhibit list only','添付一覧のみ'],
+  pending:['Queued for extraction','抽出待ち'],
+  retry:['Awaiting another extraction attempt','抽出の再試行待ち'],
+  unknown:['Extraction status unavailable','抽出状況の記録なし']
+};
+function statusLabel(status,localReview){
+  if(status==='partial' && localReview)return tr('Candidates available · partial review needed','抽出候補あり・一部は原文確認が必要');
+  return tr(...filingStatusLabels[status]);
+}
 function drawNarratives(){
   const entries=issuerFilings(ticker);
-  const extracted=entries.filter(([,f])=>Object.keys(f.sections).length);
+  const extracted=entries.filter(([,f])=>Object.values(f.sections).some(s=>s.count>0));
   const n=extracted.reduce((sum,[,f])=>sum+Object.values(f.sections).reduce((s,v)=>s+v.count,0),0);
   $('narrName').textContent=companyTitle('narrative');
   const localReview=$('narrative').hasAttribute('data-local-review');
@@ -443,13 +468,16 @@ function drawNarratives(){
   if(!chosenAcc)chosenAcc=(extracted[0]||entries[0]||[])[0];
   const selectedFile=entries.find(([acc])=>acc===chosenAcc)?.[1];
   if(!selectedFile && chosenAcc)picker.append(new Option(tr('Filing not listed','台帳に該当書類なし'),chosenAcc));
-  const withHighlights=localReview?tr('With results','抽出結果あり'):tr('With published highlights','掲載要点あり');
-  const withoutHighlights=localReview?tr('Without results','抽出結果なし'):tr('Without published highlights','掲載要点なし');
-  for(const [yes,title] of [[true,withHighlights],[false,withoutHighlights]]){
-    const group=node('optgroup');group.label=title;
-    for(const [acc,f] of entries.filter(([,f])=>Boolean(Object.keys(f.sections).length)===yes))
-      group.append(new Option([f.date,f.form,acc].filter(Boolean).join(' · '),acc));
-    if(group.children.length)picker.append(group);
+  const groups=new Map();
+  for(const [acc,f] of entries){
+    const status=filingStatus(acc,f,localReview);
+    if(!groups.has(status)){
+      const group=node('optgroup');group.label=statusLabel(status,localReview);groups.set(status,group);
+    }
+    groups.get(status).append(new Option([f.date,f.form,acc].filter(Boolean).join(' · '),acc));
+  }
+  for(const status of Object.keys(filingStatusLabels)){
+    if(groups.has(status))picker.append(groups.get(status));
   }
   picker.value=chosenAcc||'';picker.disabled=!entries.length;
   if(!selectedFile){
@@ -462,10 +490,16 @@ function drawNarratives(){
   if(f.url && f.url.startsWith('https://www.sec.gov/Archives/')){
     const a=ledgerLink(f.url,tr('Open SEC filing ↗','SEC原文を開く ↗'));a.target='_blank';a.rel='noopener noreferrer';panel.append(a);
   }
-  if(!sections.length){
-    const empty=localReview?tr('No candidates are available for this filing.','この書類の確認候補はありません。')
-      :tr('No highlights have been published for this filing.','掲載中の要点はありません。');
-    panel.append(node('p',empty,'narr-empty'));return;
+  const status=filingStatus(chosenAcc,f,localReview);
+  const detail=node('p',statusLabel(status,localReview),'narr-meta');
+  detail.dataset.extraction=status;
+  panel.append(detail);
+  if(status==='empty'){
+    panel.append(node('p',tr('Qwen 27B found no highlight candidates in the filing sections it processed.',
+      'Qwen 27Bが処理した本文から、開示要点の候補は抽出されませんでした。'),'narr-empty'));
+  }else if(status==='manual' || status==='partial'){
+    panel.append(node('p',tr('One or more sections require a check against the original SEC filing.',
+      '本文と照らし合わせて確認する必要のある項目があります。'),'narr-empty'));
   }
   for(const sec of sections)panel.append(renderSection(sec,chosenAcc));
 }

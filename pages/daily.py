@@ -191,6 +191,7 @@ def run(contact, *, day=None, get=None, no_qwen=False, retry=False):
             highlights.index_page(PRIVATE,queue,summary)
         if not no_qwen:
             highlights.process_queue(PRIVATE,queue,sources,retry,checkpoint,summary)
+        highlights.update_public_states(queue)
         summary['qwen']=dict(Counter(x['state'] for x in queue.values()))
         save(PRIVATE/'status.json',summary)
         highlights.index_page(PRIVATE,queue,summary)

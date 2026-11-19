@@ -55,6 +55,24 @@ class BackfillChecks(unittest.TestCase):
         self.assertIn('offline', report['errors']['Qwen'])
         self.assertFalse((manage.OUTPUT/'backfill-results.json').exists())
 
+    def test_filing_states_use_the_queue_without_publishing_private_text(self):
+        baseline = manage.extraction_states()
+        key = next(k for k, state in baseline.items() if state == 'empty')
+        highlights.update_public_states({key: {'state':'pending'}})
+        self.assertEqual(manage.extraction_states()[key], 'empty')
+        section = {'events':[{'summary':'private candidate text'}]}
+        job = {'state':'manual', 'candidate':{'sections':{'one':section}}}
+        highlights.update_public_states({key: job})
+        self.assertEqual(manage.extraction_states()[key], 'manual')
+        job['state'] = 'done'
+        highlights.update_public_states({key: job})
+        self.assertEqual(manage.extraction_states()[key], 'candidates')
+        self.assertNotIn('private candidate text', (manage.OUTPUT/'index.html').read_text())
+        section['events'] = []
+        highlights.update_public_states({key: job})
+        self.assertEqual(manage.extraction_states()[key], 'empty')
+        self.assertEqual(highlights.extraction_state({'state':'done'}), 'unknown')
+
     def test_only_local_narrative_routes_expose_private_detail(self):
         backfill.run(None, prepare=True)
         handler = object.__new__(manage.PreviewHandler)
