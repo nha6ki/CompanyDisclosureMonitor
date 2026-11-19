@@ -96,8 +96,8 @@ header .issuer-nav{display:flex;min-height:0;align-items:stretch;justify-content
 .feed-table table{table-layout:auto;font-size:.95rem}.feed-table th,.feed-table td{padding:.77rem 1.05rem;text-align:left}
 .feed-table th{background:#edf1f5;color:#425268;font-size:.83rem;font-weight:620}
 .feed-table tbody tr{border-color:#e0e6ec}.feed-table tbody tr:hover{background:#f6f8fb}
-.company-link{display:inline-block;padding:.3rem .7rem;border-left:3px solid var(--accent);border-radius:4px;background:var(--accent);color:#fff;line-height:1.4;text-decoration:none;font-weight:640}
-.feed-table tr:is([data-issuer=AMZN],[data-issuer=MSFT],[data-issuer=NVDA]) .company-link{background:var(--leaf);color:var(--forest)}.company-link:hover,.quarter-link:hover{text-decoration:underline}
+.company-link{display:inline-block;min-width:6.4ch;padding:.25rem .55rem;border-left:3px solid var(--accent);border-radius:3px;background:var(--tint);color:var(--forest);font:600 .9rem/1.45 var(--mono);text-align:center;text-decoration:none}
+.company-link:hover,.quarter-link:hover{text-decoration:underline}
 .date-cell,.period-code{font-size:.86rem}.quarter-link{color:var(--ink);text-underline-offset:3px}.spark-single{display:inline-flex;align-items:end;gap:3px;height:24px;min-width:57px}
 .spark-single i{width:5px;background:var(--series);border-radius:1px 1px 0 0}.spark-single i:last-child{background:var(--accent)}
 .statusgroup{display:flex;align-items:center;gap:.35rem;flex-wrap:wrap}.machine-badge{display:inline-block;background:var(--badge-bg);color:var(--badge-ink);font-size:.84rem;padding:.25rem .57rem;border-radius:4px;font-weight:610}
@@ -429,7 +429,8 @@ function renderHeader(){
   for(const [symbol,name] of issuerEntries){
     let link=$('link'+symbol);
     if(!link){
-      link=node('a',name);
+      link=node('a',onHome ? symbol : name);
+      if(onHome) link.title=name;
       link.id='link'+symbol;
       nav.append(link);
     }
@@ -580,7 +581,7 @@ function revenueTrend(symbol, period){
 function feedRow({symbol,d}){
   const row=node('tr');row.dataset.issuer=symbol;
   const identity=node('td',null,'identity-cell'), a=node('a',null,'company-link');
-  a.href=detailURL(symbol,d.period);a.textContent=companies[symbol];identity.append(a);
+  a.href=detailURL(symbol,d.period);a.textContent=symbol;a.title=companies[symbol];identity.append(a);
   const quarter=node('td',null,'period-code'), qLink=node('a',periodText(d.period),'quarter-link');
   qLink.href=a.href;quarter.append(qLink);
   const trend=node('td',null,'spark-cell');trend.append(revenueTrend(symbol,d.period));
@@ -608,7 +609,7 @@ function drawHome(){
   const syms=[...new Set(scope.map(x=>x.symbol))], dates=[...new Set(syms.map(s=>asOfByIssuer[s]).filter(Boolean))].sort();
   const time=dates.length===1?dates[0]:dates.length?dates[0]+' – '+dates.at(-1):'—';
   $('snapshotDate').textContent=tr('Data as of ','データ取得日 ')+time;
-  $('summaryTitle').textContent=(homeState.symbol ? companies[homeState.symbol] : tr('Seven companies','7社'))+tr(' · eight-quarter coverage',' · 直近8四半期の照合状況');
+  $('summaryTitle').textContent=(homeState.symbol || tr('Seven companies','7社'))+tr(' · eight-quarter coverage',' · 直近8四半期の照合状況');
   overviewSummary(scope);
   $('feedTitle').textContent=tr('Earnings filings','決算開示一覧');
   $('feedDescription').textContent=tr('Select a quarter to see its reported figures, reconciliation results and SEC source tables.','会計四半期を選ぶと、決算指標、照合結果、SEC原文の表を確認できます。');
@@ -619,12 +620,12 @@ function drawHome(){
     btn.onclick=()=>{homeState.mode=value;drawHome();$('modes').querySelector('[aria-pressed=true]').focus();};
     $('modes').append(btn);
   }
-  $('companyLabel').textContent=tr('Company','企業');$('statusLabel').textContent=tr('Automated check','自動照合');
-  optionList($('companyFilter'),[['',tr('All companies','全7社')],...issuerEntries],homeState.symbol);
+  $('companyLabel').textContent=tr('Ticker','ティッカー');$('statusLabel').textContent=tr('Automated check','自動照合');
+  optionList($('companyFilter'),[['',tr('All companies','全7社')],...issuerEntries.map(([symbol])=>[symbol,symbol])],homeState.symbol);
   const knownStatuses=new Set(homeHistory.flatMap(r=>r.d.facts.map(f=>f.status)));
   optionList($('statusFilter'),[['',tr('All statuses','すべて')],...[...new Set([...statusOrder,...knownStatuses])].filter(s=>knownStatuses.has(s)).map(s=>[s,statusText(s)])],homeState.status);
   const head=node('tr');
-  for(const [label,cls] of [[tr('Company','企業'),''],[tr('Release filing date','決算発表の提出日'),''],[tr('Fiscal quarter','会計四半期'),''],[tr('Revenue trend¹','売上高の推移¹'),'spark-cell'],[tr('Automated check','自動照合'),''],[uiText('review'),'']]){
+  for(const [label,cls] of [[tr('Ticker','ティッカー'),''],[tr('Release filing date','決算発表の提出日'),''],[tr('Fiscal quarter','会計四半期'),''],[tr('Revenue trend¹','売上高の推移¹'),'spark-cell'],[tr('Automated check','自動照合'),''],[uiText('review'),'']]){
     const th=node('th',label,cls);th.scope='col';head.append(th);
   }
   $('feedHeader').replaceChildren(head);
