@@ -1,5 +1,7 @@
 # Company Disclosure Monitor
 
+**GitHub Pages edition** · [Local preview, official review commands and manual publication (日本語)](pages/README.md)
+
 A local SEC filing register with a self-contained English/Japanese demo. The NVIDIA baseline traces quarterly GAAP revenue and diluted EPS from Form 8-K exhibits to their source tables. The full workflow also supports filing collection, locally generated event candidates, human review and CSV delivery.
 
 ## Magnificent Seven filing index

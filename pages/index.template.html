@@ -1,0 +1,723 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#102b26"><title>Earnings filings | Company Disclosure Monitor</title>
+<meta name="description" content="Explore quarterly growth, profitability and cash flow for the Magnificent Seven. Trace the figures to SEC filings.">
+<style>
+:root{--ink:#172e29;--muted:#536760;--forest:#102e29;--line:#d5dcd3;--leaf:#c6ee72;--paper:#f6f7f2;--mono:'IBM Plex Mono',Consolas,monospace;font:16px/1.5 'Inter','Segoe UI',system-ui,sans-serif;color:var(--ink);background:var(--paper);font-variant-numeric:tabular-nums}
+*{box-sizing:border-box}body{margin:0}button,a,input,select{font:inherit}button,select{cursor:pointer}a{color:inherit;text-underline-offset:.2em}button{color:inherit}
+:focus-visible{outline:3px solid #007777;outline-offset:3px}.hero :focus-visible{outline-color:#fff}h1,h2,h3,p{margin:0}h1,h2,h3{line-height:1.12}a,button{touch-action:manipulation}
+.wrap{max-width:1320px;margin:auto;padding-inline:clamp(18px,4vw,66px)}header{background:#fafbf7;border-bottom:1px solid var(--line)}header .wrap{min-height:65px;display:flex;align-items:center;justify-content:space-between;gap:15px}
+.brand{display:inline-flex;gap:11px;align-items:center;line-height:1.18;text-decoration:none;font-weight:720;font-size:17px;letter-spacing:-.04em}.logo{display:flex;align-items:flex-end;gap:3px;padding:7px;background:var(--forest);height:32px;border-radius:4px}.logo i{width:4px;background:var(--leaf);height:9px}.logo i:nth-child(2){height:14px}.logo i:last-child{height:20px}
+.lang{padding:5px 10px;border-radius:4px;color:var(--ink);border:1px solid #abbaaf;background:transparent;font-size:13px;font-weight:650}
+.hero{color:#f6f8ef;background:var(--forest);border-bottom:4px solid var(--leaf)}.herogrid{display:grid;grid-template-columns:1.13fr 1fr;align-items:center;gap:clamp(32px,6vw,85px);padding-block:38px 34px}
+.eyebrow,.kicker,.meta{font:600 12px/1.45 var(--mono);letter-spacing:.085em;text-transform:uppercase}.eyebrow{color:#c1d7c8;margin-bottom:16px}.hero h1{font-size:clamp(38px,4.6vw,68px);letter-spacing:-.055em;font-weight:620}html[lang=ja] .hero h1{font-size:clamp(32px,3.7vw,52px);word-break:keep-all}.hero .summary{max-width:52ch;color:#d4e0d8;margin:14px 0 18px;font-size:15px}
+.period,.chart-meta{font:12px var(--mono);color:#bed0c5}.herochart{border:1px solid #446056;padding:19px 22px 13px;border-radius:7px;background:#16382f;min-width:0}.charttop{display:flex;align-items:center;justify-content:space-between;gap:10px}.charttop strong{font-size:14px}.chart-meta{font-size:11px}
+.plot-tools{display:flex;gap:4px;margin:12px 0 8px;flex-wrap:wrap}
+.plot-tools button{border-radius:4px;padding:6px 10px;font-size:13px;border:1px solid #527063;color:#e5efe6;background:transparent}
+.plot-tools button[aria-pressed=true]{background:var(--leaf);border-color:var(--leaf);color:#17382f;font-weight:650}
+.plot{display:grid;grid-template-columns:2.2em minmax(0,1fr);column-gap:6px;padding-top:12px}
+.scale{height:128px;position:relative;color:#c0d0c6;font:11px var(--mono);text-align:right}
+.scale span{position:absolute;right:0;transform:translateY(50%)}
+.bars{height:128px;display:grid;grid-template-columns:repeat(8,minmax(0,1fr));border-bottom:1px solid #809488;background:repeating-linear-gradient(to top,transparent 0 calc(33.333% - 1px),#3e584d calc(33.333% - 1px) 33.333%)}
+.plot-col{position:relative;display:flex;align-items:flex-end;justify-content:center;min-width:0;border:0;padding:0;background:transparent}
+.plot-col i{width:60%;min-width:7px;background:#85ae97;border-radius:2px 2px 0 0}
+.plot-col:hover i,.plot-col:focus-visible i{background:#aad9ad}
+.plot-col[aria-pressed=true] i{background:var(--leaf);outline:1px solid #e1f6b5;outline-offset:-1px}
+.periods{grid-column:2;display:grid;grid-template-columns:repeat(8,minmax(0,1fr));margin-top:5px;text-align:center;color:#d5e3d7;font:10px/1.45 var(--mono)}
+.periods small{display:block;font-size:9px;color:#b3c9ba}
+.plot-detail{margin-top:12px;padding-top:10px;border-top:1px solid #425c4f;display:flex;flex-wrap:wrap;justify-content:space-between;align-items:baseline;gap:6px 12px;font:13px/1.45 var(--mono)}
+
+.stats{display:grid;grid-template-columns:repeat(4,1fr);border-bottom:1px solid var(--line);padding-block:21px}.stat{border-left:1px solid var(--line);padding-left:clamp(12px,2vw,30px)}.stat:first-child{border:0;padding-left:0}.stat strong{font-size:clamp(25px,2.8vw,39px);letter-spacing:-.06em;line-height:1.1;display:block}.stat span{display:block;color:var(--muted);font-size:13px;margin-top:5px}
+.work{display:grid;grid-template-columns:minmax(0,1.55fr) minmax(305px,1fr);gap:26px;padding-block:30px 40px;align-items:start}.card{background:#fff;border:1px solid var(--line);border-radius:8px;min-width:0;overflow:hidden}.pad{padding:22px}.heading{display:flex;justify-content:space-between;align-items:center;gap:14px}h2{font-size:clamp(21px,2vw,29px);letter-spacing:-.045em}.sub{margin-top:8px;color:var(--muted);font-size:14px}.download{border:0;background:var(--ink);color:white;border-radius:5px;padding:9px 13px;font-weight:650;font-size:13px;white-space:nowrap}
+table{border-collapse:collapse;width:100%;font-size:14px}th,td{padding:12px 14px;text-align:right;white-space:nowrap}th:first-child,td:first-child{text-align:left}thead{background:#eff2eb;color:#48594f;font-size:12px}tbody tr{border-top:1px solid #e5e9e1}.ledger tbody tr.active{background:#f2f8e7;box-shadow:inset 3px 0 #5f8e35}.ledger tbody tr[data-i]{cursor:pointer}.ledger tbody tr[data-i]:hover,.ledger tbody tr:focus-within{background:var(--tint)}.pick{border:0;padding:6px 2px;color:inherit;background:transparent;font-weight:650;text-decoration:none}.ledger td{font-family:var(--mono);font-size:13px}.pill{display:inline-block;border-radius:4px;background:#e8f3ec;color:#24583f;font:600 12px/1.3 system-ui;padding:4px 7px}.pill.round{background:#fcf1d8;color:#735016}.ledger{overflow:auto}
+.focus{border-top:3px solid #829a56}.focus .kicker{color:#546547;margin-bottom:8px}.focus .meta{letter-spacing:0;color:var(--muted);font-weight:400;margin-top:8px}.tabs{display:flex;border-bottom:1px solid var(--line);gap:16px;margin:17px 0}.tabs button{border:0;background:transparent;border-bottom:2px solid transparent;padding:8px 0;font-size:14px;font-weight:650;color:var(--muted)}.tabs button[aria-pressed=true]{color:var(--ink);border-bottom-color:#517140}
+.fact{margin:11px 0;padding-bottom:11px;border-bottom:1px solid #e0e5dc}.fact span{font-size:13px;color:var(--muted);display:block}.fact strong{font:600 22px/1.6 var(--mono)}.fact small{font:13px var(--mono);color:var(--muted)}.rule{margin:11px 0;font-size:14px}.reference{font-size:13px;margin:12px 0 5px;color:var(--muted)}.links{display:flex;gap:15px;flex-wrap:wrap;font-size:14px;font-weight:650}.review{font-size:13px;margin-top:14px;color:var(--muted)}.method{padding-bottom:36px}.method details{border-block:1px solid var(--line);padding:15px 0}.method summary{cursor:pointer;font-weight:650}.method p{max-width:85ch;margin-top:10px;color:var(--muted)}.skip{position:absolute;left:-9999px}.skip:focus{left:1em;top:1em;background:white;padding:.5em;z-index:3}
+@media(max-width:900px){.work{grid-template-columns:1fr  minmax(265px,.8fr);gap:14px}.pad{padding:15px}th,td{padding:10px 7px}.herogrid{gap:25px}}
+@media(max-width:730px){.herogrid,.work{grid-template-columns:1fr}.herogrid{padding-block:25px;gap:18px}.hero h1{font-size:41px}.hero .summary{margin:10px 0}.bars,.scale{height:102px}.herochart{padding:13px 16px}.work{padding-block:20px;gap:14px}.stats{grid-template-columns:repeat(2,1fr);gap:16px}.stat:nth-child(3){border:0;padding-left:0}.heading{flex-wrap:wrap}.ledger{scrollbar-width:thin}.ledger th,.ledger td{padding:11px 7px}.brand{font-size:15px}.focus{scroll-margin-top:10px}.wrap{padding-inline:16px}}
+@media print{header,.download,.skip,.lang,.method{display:none}.work{grid-template-columns:1fr}.hero{background:white;color:black}.herochart{display:none}}
+
+.pill.bad{color:#822d21;background:#fbece7}.plot-col i{max-width:54px}
+
+/* Shared issuer palette. Status colors are independent of the selected company. */
+:root{--forest:#172b41;--leaf:#c4d9f4;--surface:#21374e;--series:#7792ae;--accent:#365d84;--tint:#edf2f8;--ink:#17283c;--muted:#526478;--line:#d7dfe6;--paper:#f7f8fa}
+[data-issuer=AAPL]{--forest:#292b30;--leaf:#dfe1e5;--surface:#393b41;--series:#a2a4aa;--accent:#43454c;--tint:#f0f1f2}
+[data-issuer=MSFT]{--forest:#063d3b;--leaf:#63dbc6;--surface:#10514c;--series:#47ae9e;--accent:#006b61;--tint:#e0f5f0}
+[data-issuer=GOOGL]{--forest:#3b2256;--leaf:#dcc0ff;--surface:#4c3069;--series:#b08acb;--accent:#73449b;--tint:#f3eafa}
+[data-issuer=AMZN]{--forest:#4f310a;--leaf:#ffc65c;--surface:#634018;--series:#d9a34f;--accent:#875309;--tint:#fff2d8}
+[data-issuer=NVDA]{--forest:#293c0d;--leaf:#b4e54b;--surface:#374d17;--series:#8cb54f;--accent:#526d15;--tint:#f0f6df}
+[data-issuer=META]{--forest:#132d62;--leaf:#a1c6ff;--surface:#1b407d;--series:#6696e5;--accent:#205bc1;--tint:#e8f0ff}
+[data-issuer=TSLA]{--forest:#511c25;--leaf:#ffaaaa;--surface:#65252d;--series:#d47780;--accent:#af2437;--tint:#fcebed}
+[hidden]{display:none!important}
+body{background:var(--paper)}
+header{background:#fff}
+header .masthead{min-height:3.45rem;flex-wrap:wrap;gap:.35rem .8rem;padding-block:.45rem}
+.mast-actions{display:flex;align-items:center;gap:.85rem;margin-left:auto}.mast-actions a{font-size:.87rem;color:var(--muted);text-underline-offset:.2em}
+.nav-band{border-top:1px solid #e5e9ed}
+header .issuer-nav{display:flex;min-height:0;align-items:stretch;justify-content:flex-start;gap:.12rem .28rem;flex-wrap:wrap;padding-block:.25rem}
+.issuer-nav a{display:inline-flex;align-items:center;min-height:38px;padding:.25rem .72rem;white-space:nowrap;font-size:.91rem;font-weight:540;color:#33465b;text-decoration:none;border-radius:4px}
+.issuer-nav a:hover{background:#edf2f6;text-decoration:underline;text-underline-offset:3px}
+.issuer-nav a[aria-current=page]{color:var(--accent);background:var(--tint);box-shadow:inset 0 -2px var(--accent);font-weight:700}
+@media(max-width:650px){header .issuer-nav{gap:.08rem .18rem;padding-block:.3rem}.issuer-nav a{padding:.25rem .55rem;min-height:36px}.mast-actions{gap:.45rem}}
+@media(max-width:380px){header .masthead .brand{font-size:.95rem;gap:.4rem}.masthead .lang{padding-inline:.6rem}.issuer-nav a{font-size:.86rem}}
+.logo{background:#1d344b}.logo i{background:#d4e3f5}.lang{min-height:36px;padding:.35rem .8rem;color:#293e58;border-color:#c9d3de}
+.issuer-nav [aria-current=page],.ledger tbody tr.active{background:var(--tint);color:var(--ink)}
+.ledger tbody tr.active{box-shadow:inset 3px 0 var(--accent)}
+.focus{border-color:var(--accent)}.focus .kicker{color:var(--accent)}.tabs button[aria-pressed=true]{border-color:var(--accent)}
+.herochart{background:var(--surface);border-color:#ffffff38}.eyebrow,.chart-meta,.period,.periods,.periods small,.scale,.hero .summary{color:#e3e9ed}
+.plot-col i{background:var(--series)}.plot-col:hover i,.plot-col:focus-visible i{background:var(--leaf)}
+.plot-col[aria-pressed=true] i{outline:none}.plot-tools button{color:#fff;border-color:#ffffff55}.plot-tools button[aria-pressed=true]{color:#1b2632}
+.plot-detail{border-color:#ffffff36}.bars{border-color:#ffffff69;background:repeating-linear-gradient(to top,transparent 0 calc(33.333% - 1px),#ffffff26 calc(33.333% - 1px) 33.333%)}
+:focus-visible{outline-color:#147892}.brand:focus-visible,.lang:focus-visible{outline-offset:3px}
+.overview-hero{background:var(--forest);color:white;border-bottom:4px solid var(--leaf)}
+.overview-grid{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(315px,.9fr);align-items:center;gap:clamp(28px,6vw,85px);padding-block:clamp(32px,4vw,62px)}
+.market-label,.snapshot-date,.result-count,.date-cell,.ticker,.period-code,.spark-single,.legend b{font-family:'IBM Plex Mono',Consolas,monospace;font-variant-numeric:tabular-nums}
+.market-label{color:var(--leaf);letter-spacing:.12em;font-weight:650;font-size:.86rem}.overview-hero h1{margin:.65rem 0 1rem;font-size:clamp(2.2rem,4.8vw,4.5rem);letter-spacing:-.055em;font-weight:630;line-height:1.08;text-wrap:balance}
+#homeIntro{color:#e0e8ef;line-height:1.65;max-width:37em}.snapshot-date{color:#d0dbe5;font-size:.88rem;margin-top:1.1rem}
+.summary-box{padding:1.3rem 1.5rem;background:var(--surface);border:1px solid #ffffff36;border-radius:9px}
+.summary-box h2{font-size:1rem;letter-spacing:0;font-weight:550;color:#e7edf5}
+.summary-total{display:flex;align-items:baseline;gap:.65rem;margin:.1rem 0 .7rem;font-variant-numeric:tabular-nums}.summary-total strong{font-size:2.9rem;line-height:1.2;font-weight:620;letter-spacing:-.05em}.summary-total span{font-size:.9rem;color:#dce4ec}
+.distribution{display:flex;height:9px;gap:2px;border-radius:3px;overflow:hidden}
+.legend{display:grid;grid-template-columns:1fr 1fr;gap:.15rem .9rem;margin-top:.78rem}
+.legend button{padding:.3rem .1rem;display:flex;align-items:center;gap:.48rem;border:0;background:transparent;text-align:left;color:#f7f9fc;font-size:.88rem}
+.legend button:hover{text-decoration:underline}.legend b{margin-left:auto}.legend i{width:.63rem;height:.63rem;border-radius:2px;flex:none}
+[data-kind=match]{--badge-bg:#e5f3ed;--badge-ink:#245c46;--segment:#83cfb4}
+[data-kind=absent]{--badge-bg:#eef1f5;--badge-ink:#46576e;--segment:#adc4e0}
+[data-kind=wait]{--badge-bg:#fff0d4;--badge-ink:#805004;--segment:#edbd62}
+[data-kind=amend]{--badge-bg:#f1e8f7;--badge-ink:#734389;--segment:#c3a2da}
+[data-kind=issue]{--badge-bg:#fbe7e1;--badge-ink:#963e31;--segment:#ed998b}
+.legend i,.distribution span{background:var(--segment)}
+.filings{padding-block:2.4rem 2.75rem}.feed-head,.tools,.selects,.modes,.public-foot{display:flex;align-items:center;gap:1rem}.feed-head,.tools,.public-foot{justify-content:space-between}.feed-head{align-items:flex-start}
+.feed-head h2{font-size:clamp(1.6rem,2.8vw,2.35rem);letter-spacing:-.045em}.feed-head p,.public-foot,.result-count{color:var(--muted);font-size:.9rem}.feed-head p{margin-top:.5rem}
+.export,.tools select{background:white;color:var(--ink);border:1px solid #c3ced8;border-radius:5px;min-height:38px;font-size:.91rem}.export{font-weight:650;padding:.55rem .95rem;white-space:nowrap}.export:hover,.tools select:hover{border-color:#647b94}
+.tools{margin:1.35rem 0 .8rem;flex-wrap:wrap;gap:.85rem}.modes{gap:0;border:1px solid #c3ced8;border-radius:5px;padding:3px;background:#edf1f4}
+.modes button{padding:.42rem .85rem;border:0;background:transparent;border-radius:3px;font-weight:600;font-size:.9rem}.modes button[aria-pressed=true]{background:white;box-shadow:0 1px 4px #172c4424;color:var(--accent)}
+.selects label{display:flex;align-items:center;gap:.5rem;font-size:.87rem;color:var(--muted)}.tools select{appearance:none;padding:.42rem 1.9rem .42rem .65rem;background-image:linear-gradient(45deg,transparent 50%,#546577 50%),linear-gradient(135deg,#546577 50%,transparent 50%);background-position:calc(100% - 14px) 50%,calc(100% - 10px) 50%;background-size:4px 4px;background-repeat:no-repeat}
+.result-count{margin:.75rem 0;font-size:.85rem}.feed-table{background:white;border:1px solid var(--line);border-radius:8px;overflow:hidden}
+.feed-table table{table-layout:auto;font-size:.95rem}.feed-table th,.feed-table td{padding:.77rem 1.05rem;text-align:left}
+.feed-table th{background:#edf1f5;color:#425268;font-size:.83rem;font-weight:620}
+.feed-table tbody tr{border-color:#e0e6ec}.feed-table tbody tr:hover{background:#f6f8fb}
+.company-link{display:inline-block;min-width:6.4ch;padding:.25rem .55rem;border-left:3px solid var(--accent);border-radius:3px;background:var(--tint);color:var(--forest);font:600 .9rem/1.45 var(--mono);text-align:center;text-decoration:none}
+.company-link:hover,.quarter-link:hover{text-decoration:underline}
+.date-cell,.period-code{font-size:.86rem}.quarter-link{color:var(--ink);text-underline-offset:3px}.spark-single{display:inline-flex;align-items:end;gap:3px;height:24px;min-width:57px}
+.spark-single i{width:5px;background:var(--series);border-radius:1px 1px 0 0}.spark-single i:last-child{background:var(--accent)}
+.statusgroup{display:flex;align-items:center;gap:.35rem;flex-wrap:wrap}.machine-badge{display:inline-block;background:var(--badge-bg);color:var(--badge-ink);font-size:.84rem;padding:.25rem .57rem;border-radius:4px;font-weight:610}
+.review-badge{display:inline-flex;align-items:center;gap:.4em;padding:.22em .6em;border:1px solid #d4dce2;border-radius:4px;background:#f0f3f5;color:#394653;font:600 .85rem/1.4 system-ui;vertical-align:middle;white-space:nowrap}
+.review-badge[data-review=pending]{background:#fff4de;color:#74490e;border-color:#e7d2a7}
+.review-badge[data-review=reviewed]{background:#e6f3e9;color:#205837;border-color:#b9d7c1}
+.review-badge[data-review=pending]::before{content:"";width:.6em;height:.6em;border:1.5px solid currentColor;border-radius:50%}
+.review-badge[data-review=reviewed]::before{content:"";width:.65em;height:.34em;border:solid currentColor;border-width:0 0 2px 2px;transform:translateY(-.1em) rotate(-45deg)}
+a.review-badge{text-decoration:underline;text-underline-offset:.15em}
+.review-col{font-size:.86rem;color:#4e6073}.public-foot{margin-block:0 1.8rem;padding-top:1rem;border-top:1px solid var(--line);font-size:.85rem;flex-wrap:wrap}.public-foot a{font-weight:600}
+#emptyResult{padding:1.1rem;background:white;border-bottom:1px solid var(--line)}
+@media(max-width:820px){.overview-grid{grid-template-columns:minmax(0,1fr) minmax(280px,.9fr);gap:1.3rem}.feed-table th,.feed-table td{padding:.65rem}.spark-cell{display:none}.selects{gap:.6rem}}
+@media(max-width:650px){.overview-grid{grid-template-columns:1fr;gap:1.3rem}.overview-hero h1{font-size:2.55rem}.summary-box{padding:1rem}.summary-total strong{font-size:2.3rem}.feed-head,.tools{align-items:flex-start}.feed-head{flex-wrap:wrap}.filings{padding-top:1.6rem}.selects{width:100%;flex-wrap:wrap}.selects label{font-size:.83rem}.tools select{max-width:13rem}.feed-table table,.feed-table tbody{display:block}.feed-table thead{display:none}.feed-table tbody tr{display:grid;grid-template-columns:minmax(0,1fr) auto;align-items:center;gap:.45rem .5rem;padding:.9rem}.feed-table td{display:block;padding:0;white-space:normal}.feed-table .spark-cell{display:none}.identity-cell{grid-column:1}.date-cell{grid-column:2;grid-row:1;text-align:right!important}.period-code{grid-column:1;grid-row:2}.status-cell{grid-column:2;grid-row:2}.statusgroup{justify-content:flex-end}.review-col{grid-column:1/-1}.review-col::before{content:attr(data-label) ' · '}.public-foot{align-items:flex-start}}
+.register-bar{background:white;border-bottom:1px solid var(--line)}#registerNav{display:flex;flex-wrap:wrap;gap:0 1.45rem}#registerNav a{padding:.95rem 0 .75rem;text-decoration:none;color:var(--muted);font-weight:650;border-bottom:3px solid transparent}#registerNav [aria-current]{color:var(--accent);border-color:var(--accent)}.narr-banner{background:var(--forest);color:white;padding:2.1rem 0}.narr-banner h1{font-size:clamp(1.7rem,4vw,3rem);margin:0 0 .5rem;color:white}.narr-banner p{color:var(--leaf);margin:0}.narr-body{padding-block:1.55rem 2.5rem}.narr-body label{display:grid;gap:.4rem;font-weight:600}.narr-body select{max-width:100%;width:36rem;min-height:43px;padding:.4rem;font:inherit;border:1px solid var(--line);background:white;border-radius:5px}.narr-doc{background:white;border:1px solid var(--line);border-radius:8px;padding:clamp(1rem,3vw,2rem);margin-top:1rem;overflow-wrap:anywhere}.narr-doc h2{font-size:clamp(1.3rem,3vw,2rem);margin:.3rem 0}.narr-meta,.narr-empty{color:var(--muted)}.narr-section{border-top:1px solid var(--line);margin-top:1.25rem;padding-top:1.2rem}.narr-section h3,.narr-event h4{margin:0 0 .5rem}.narr-event{margin:.8rem 0 1.2rem}.narr-event h4{font-size:1.12rem}.narr-event dl{display:grid;grid-template-columns:minmax(6.5rem,10rem) 1fr;margin:0}.narr-event dt,.narr-event dd{border-bottom:1px solid var(--line);margin:0;padding:.4rem}.narr-event dt{font-size:.88rem;color:var(--muted)}.narr-event dd a{font-size:.85rem;color:var(--accent);white-space:nowrap}.source-paragraphs{background:var(--tint);padding:.65rem .85rem;border-radius:5px}.source-paragraphs summary{font-weight:620;cursor:pointer}.source-paragraphs p:target{border-left:3px solid var(--accent);padding-left:.6rem}
+@media(max-width:500px){.narr-event dl{grid-template-columns:1fr}.narr-event dt{border:0;padding-bottom:0}.narr-event dd{padding-top:.12rem}}
+.narr-banner #narrIntro{color:#fff;line-height:1.6}.narr-banner #narrCount{margin-top:.65rem;font-size:.91rem}
+/* @include financials.css */
+</style></head><body>
+<a href="#register" class="skip" id="skip"></a>
+<header class="site-header">
+  <div class="wrap masthead">
+    <a class="brand" href="#overview"><span class="logo" aria-hidden="true"><i></i><i></i><i></i></span>Company Disclosure Monitor</a>
+    <div class="mast-actions"><button type="button" class="lang" id="lang"></button></div>
+  </div>
+  <div class="nav-band"><nav class="wrap issuer-nav" id="issuerNav" aria-label="Company navigation"><a id="back"></a></nav></div>
+</header>
+<main id="overview" hidden>
+  <section class="overview-hero"><div class="wrap overview-grid">
+    <div><p class="market-label" id="marketLabel"></p><h1 id="homeTitle"></h1><p id="homeIntro"></p><p class="snapshot-date" id="snapshotDate"></p></div>
+    <section class="summary-box" aria-labelledby="summaryTitle">
+      <h2 id="summaryTitle"></h2><div class="summary-total"><strong id="exactCount"></strong><span id="totalCount"></span></div>
+      <div class="distribution" id="distribution" aria-hidden="true"></div><div id="legend" class="legend"></div>
+    </section>
+  </div></section>
+  <section class="wrap filings" aria-labelledby="feedTitle" id="filings">
+    <div class="feed-head"><div><h2 id="feedTitle"></h2><p id="feedDescription"></p></div><button class="export" type="button" id="homeDownload"></button></div>
+    <div class="tools"><div class="modes" id="modes"></div><div class="selects">
+      <label><span id="companyLabel"></span><select id="companyFilter"></select></label>
+      <label><span id="statusLabel"></span><select id="statusFilter"></select></label>
+    </div></div>
+    <p id="resultCount" aria-live="polite" class="result-count"></p>
+    <div class="feed-table"><table><thead id="feedHeader"></thead><tbody id="feedRows"></tbody></table></div>
+    <p id="emptyResult" hidden></p>
+  </section>
+  <footer class="wrap public-foot"><span id="publicScope"></span><a id="edgar" href="https://www.sec.gov/edgar/search/">SEC EDGAR</a></footer>
+</main>
+
+<div id="registerBar" class="register-bar" hidden><nav id="registerNav" class="wrap"></nav></div>
+<main id="narrative" hidden><section class="narr-banner"><div class="wrap"><h1 id="narrName"></h1><p id="narrIntro"></p><p id="narrCount"></p></div></section>
+<section class="wrap narr-body"><label><span id="narrLabel"></span><select id="narrSelect"></select></label><article id="narrDetail" class="narr-doc"></article></section></main>
+<script type="application/json" id="narrative-filings">{"AAPL":{"0001140361-26-042798":{"date":"2026-11-09","form":"8-K","url":"https://www.sec.gov/Archives/edgar/data/320193/000114036126042798/ef20085077_8k.htm","items":["8.01","9.01"],"sections":{}},"0000320193-26-000024":{"date":"2026-11-02","form":"8-K","url":"https://www.sec.gov/Archives/edgar/data/320193/000032019326000024/aapl-20261102.htm","items":["2.02","9.01"],"sections":{}},"0001140361-26-035325":{"date":"2026-09-01","form":"8-K/A","url":"https://www.sec.gov/Archives/edgar/data/320193/000114036126035325/ef20081427_8ka.htm","items":["5.02"],"sections":{}}},"MSFT":{"0001193125-26-448357":{"date":"2026-11-05","form":"8-K","url":"https://www.sec.gov/Archives/edgar/data/789019/000119312526448357/d177209d8k.htm","items":["5.02"],"sections":{}},"0001193125-26-447173":{"date":"2026-11-04","form":"8-K","url":"https://www.sec.gov/Archives/edgar/data/789019/000119312526447173/d178557d8k.htm","items":["8.01","9.01"],"sections":{}},"0001193125-26-436149":{"date":"2026-10-28","form":"8-K","url":"https://www.sec.gov/Archives/edgar/data/789019/000119312526436149/msft-20261028.htm","items":["8.01","9.01"],"sections":{}},"0001193125-26-436122":{"date":"2026-10-28","form":"8-K","url":"https://www.sec.gov/Archives/edgar/data/789019/000119312526436122/msft-20261028.htm","items":["2.02","9.01"],"sections":{}},"0001193125-26-380280":{"date":"2026-09-02","form":"8-K","url":"https://www.sec.gov/Archives/edgar/data/789019/000119312526380280/d291965d8k.htm","items":["7.01","9.01"],"sections":{}}},"GOOGL":{"0001193125-26-449835":{"date":"2026-11-05","form":"8-K","url":"https://www.sec.gov/Archives/edgar/data/1652044/000119312526449835/d174184d8k.htm","items":["8.01","9.01"],"sections":{}},"0001652044-26-000080":{"date":"2026-10-28","form":"8-K","url":"https://www.sec.gov/Archives/edgar/data/1652044/000165204426000080/goog-20261028.htm","items":["2.02","9.01"],"sections":{}}},"AMZN":{"0001018724-26-000038":{"date":"2026-10-29","form":"8-K","url":"https://www.sec.gov/Archives/edgar/data/1018724/000101872426000038/amzn-20261029.htm","items":["2.02","9.01"],"sections":{}},"0001104659-26-107526":{"date":"2026-09-14","form":"8-K","url":"https://www.sec.gov/Archives/edgar/data/1018724/000110465926107526/tm2624614d5_8k.htm","items":["8.01","9.01"],"sections":{}},"0001018724-26-000036":{"date":"2026-09-09","form":"8-K","url":"https://www.sec.gov/Archives/edgar/data/1018724/000101872426000036/amzn-20260908.htm","items":["5.02"],"sections":{}}},"NVDA":{"0001045810-26-000088":{"date":"2026-11-17","form":"8-K","url":"https://www.sec.gov/Archives/edgar/data/1045810/000104581026000088/nvda-20261117.htm","items":["2.02","9.01"],"sections":{}},"0001045810-26-000082":{"date":"2026-11-12","form":"8-K","url":"https://www.sec.gov/Archives/edgar/data/1045810/000104581026000082/nvda-20261111.htm","items":["5.02","9.01"],"sections":{}},"0001045810-26-000078":{"date":"2026-09-03","form":"8-K","url":"https://www.sec.gov/Archives/edgar/data/1045810/000104581026000078/nvda-20260902.htm","items":["8.01"],"sections":{"section-01":{"id":"section-01","item":"8.01","state":"pending","count":1,"model":"nvidia-qwen38-27b:16k","sourceHash":"0ea586510cc2e4b817a29091e1a0c35beaf64844d98e84f199f00b15d9f35df7","sectionHash":"83810dd041a2019a273688f5d9d1b9210433aad3d77c83d18b5b88702458cab7"}}},"0001045810-26-000073":{"date":"2026-08-26","form":"8-K","url":"https://www.sec.gov/Archives/edgar/data/1045810/000104581026000073/nvda-20260826.htm","items":["2.02","9.01"],"sections":{}},"0001045810-26-000028":{"date":"2026-05-08","form":"8-K","url":"https://www.sec.gov/Archives/edgar/data/1045810/000104581026000028/nvda-20260507.htm","items":["5.02"],"sections":{"section-01":{"id":"section-01","item":"5.02","state":"pending","count":1,"model":"nvidia-qwen38-27b:16k","sourceHash":"87dd325ef6f0977f11e5aadd6e6f6732d957333b03bdb7fa792b922df4e52419","sectionHash":"1514eceef8aee00298bdc99011196d79ba41e005296f44dc9e83ea4e0299ea64"}}},"0001045810-26-000026":{"date":"2026-04-27","form":"8-K","url":"https://www.sec.gov/Archives/edgar/data/1045810/000104581026000026/nvda-20260424.htm","items":["5.02"],"sections":{"section-01":{"id":"section-01","item":"5.02","state":"pending","count":2,"model":"nvidia-qwen38-27b:16k","sourceHash":"42a5d9b50b58468d22da14757d9108373a2a97ab052082ffdaac48528fece78f","sectionHash":"00b25cae209e60cbd2724528e4cff492d1563fb517781be6ec21710d8bab53b1"}}},"0001045810-26-000069":{"date":"2026-08-17","form":"8-K","url":"https://www.sec.gov/Archives/edgar/data/1045810/000104581026000069/nvda-20260817.htm","items":["1.01","2.03","7.01"],"sections":{}},"0001045810-26-000060":{"date":"2026-07-02","form":"8-K","url":"https://www.sec.gov/Archives/edgar/data/1045810/000104581026000060/nvda-20260628.htm","items":["5.02"],"sections":{}},"0001045810-26-000056":{"date":"2026-06-30","form":"8-K","url":"https://www.sec.gov/Archives/edgar/data/1045810/000104581026000056/nvda-20260624.htm","items":["5.07"],"sections":{}},"0001193125-26-275783":{"date":"2026-06-18","form":"8-K","url":"https://www.sec.gov/Archives/edgar/data/1045810/000119312526275783/d48176d8k.htm","items":["8.01","9.01"],"sections":{}},"0001045810-26-000051":{"date":"2026-05-20","form":"8-K","url":"https://www.sec.gov/Archives/edgar/data/1045810/000104581026000051/nvda-20260520.htm","items":["2.02","9.01"],"sections":{}}},"META":{"0001193125-26-458525":{"date":"2026-11-12","form":"8-K","url":"https://www.sec.gov/Archives/edgar/data/1326801/000119312526458525/d177728d8k.htm","items":["8.01","9.01"],"sections":{}},"0001193125-26-450074":{"date":"2026-11-05","form":"8-K","url":"https://www.sec.gov/Archives/edgar/data/1326801/000119312526450074/d166273d8k.htm","items":["8.01","9.01"],"sections":{}},"0001193125-26-438017":{"date":"2026-10-29","form":"8-K","url":"https://www.sec.gov/Archives/edgar/data/1326801/000119312526438017/d183592d8k.htm","items":["1.01","3.03","5.03","9.01"],"sections":{}},"0001628280-26-066700":{"date":"2026-10-21","form":"8-K","url":"https://www.sec.gov/Archives/edgar/data/1326801/000162828026066700/meta-20261019.htm","items":["1.01","2.02","8.01","9.01"],"sections":{}}},"TSLA":{"0001628280-26-066738":{"date":"2026-10-21","form":"8-K","url":"https://www.sec.gov/Archives/edgar/data/1318605/000162828026066738/tsla-20261021.htm","items":["2.02","9.01"],"sections":{}},"0001628280-26-064366":{"date":"2026-10-02","form":"8-K","url":"https://www.sec.gov/Archives/edgar/data/1318605/000162828026064366/tsla-20261002.htm","items":["2.02","9.01"],"sections":{}},"0001628280-26-063820":{"date":"2026-09-29","form":"8-K","url":"https://www.sec.gov/Archives/edgar/data/1318605/000162828026063820/tsla-20260929.htm","items":["1.01","1.02","2.03","9.01"],"sections":{}}}}</script>
+<main id="top" hidden><section class="hero"><div class="wrap herogrid"><div><p class="eyebrow" id="eyebrow"></p><h1 id="title"></h1><p class="summary" id="summary"></p><p class="period" id="period"></p></div><figure class="herochart" style="margin:0"><figcaption class="charttop"><strong id="chartTitle"></strong><span class="chart-meta" id="axisUnit"></span></figcaption><div class="plot-tools" id="plotTools" role="group"></div><div class="plot"><div id="scale" class="scale" aria-hidden="true"></div><div class="bars" id="bars" role="group"></div><div id="periods" class="periods" aria-hidden="true"></div></div><div class="plot-detail"><output id="plotValue"></output></div></figure></div></section>
+<section class="wrap"><div class="stats" id="stats"></div></section>
+<div class="wrap work"><section class="card" id="register"><div class="pad"><div class="heading"><h2 id="ledgerTitle"></h2><div class="ledger-downloads"><a class="download" id="excelDownload" download hidden></a><button type="button" class="download" id="download"></button></div></div><p class="sub" id="ledgerSub"></p><div id="ledgerViews"></div><p id="ledgerUnits"></p></div><div class="ledger"><table><thead id="head"></thead><tbody id="rows"></tbody></table></div></section>
+<section class="card pad focus" id="focus" tabindex="-1"><div class="kicker" id="evidence"></div><h2 id="selected"></h2><p class="meta" id="accession"></p><div class="tabs" id="tabs"></div><div id="reading" aria-live="polite"></div></section></div>
+<section class="wrap method"><details><summary id="methodTitle"></summary><p id="method"></p></details></section></main>
+<script type="application/json" id="issuer-asof">@@AS_OF@@</script>
+<script type="application/json" id="workflow-history">@@HISTORY@@</script>
+<script type="application/json" id="msft-record">{"period": "FY2027Q1", "accession": "0001193125-26-436122", "filing": "https://www.sec.gov/Archives/edgar/data/789019/000119312526436122/msft-20261028.htm", "url": "https://www.sec.gov/Archives/edgar/data/789019/000119312526436122/msft-ex99_1.htm", "sha": "913edaadd93a01d9c0aa2b6fba936040b157951ba33579e7249390bc91e99b63", "quarterly": "https://www.sec.gov/Archives/edgar/data/789019/000119312526436133/msft-20260930.htm", "quarterlyAccession": "0001193125-26-436133", "quarterlySha": "b0a6acbf5de340588e12f990b56ece4e5d67de2922bf5aa9a6ab379c742e92a8", "facts": [{"metric": "Revenue", "value": "92279", "detail": "92279", "unit": "USD millions", "detailUnit": "USD millions", "summaryRow": "Total revenue", "row": "Total revenue", "column": "Three months ended September 30, 2026", "status": "一致", "reason": ""}, {"metric": "Diluted earnings per share", "value": "4.92", "detail": "4.92", "unit": "USD/share", "detailUnit": "USD/share", "summaryRow": "Earnings per share / Diluted", "row": "Earnings per share / Diluted", "column": "Three months ended September 30, 2026", "status": "一致", "reason": ""}]}</script>
+<script type="application/json" id="googl-record">{"period": "FY2026Q3", "accession": "0001652044-26-000080", "filing": "https://www.sec.gov/Archives/edgar/data/1652044/000165204426000080/goog-20261028.htm", "url": "https://www.sec.gov/Archives/edgar/data/1652044/000165204426000080/googexhibit991q32026.htm", "sha": "142f91ec04cc02992e8119eaee516c1591a1aadfa7c1fede5ce5a3cf0ffee180", "quarterly": "https://www.sec.gov/Archives/edgar/data/1652044/000165204426000084/goog-20260930.htm", "quarterlyAccession": "0001652044-26-000084", "quarterlySha": "05e101ee90c126065e67822feabb1b40a91fa17cfab83bc1ac0721ff553b9fea", "facts": [{"metric": "Revenue", "value": "127577", "detail": "127577", "unit": "USD millions", "detailUnit": "USD millions", "summaryRow": "Revenues", "row": "Revenues", "column": "Three months ended September 30, 2026", "status": "一致", "reason": ""}, {"metric": "Diluted earnings per share", "value": "2.12", "detail": "2.12", "unit": "USD/share", "detailUnit": "USD/share", "summaryRow": "Diluted net income per common share", "row": "Diluted net income per common share", "column": "Three months ended September 30, 2026", "status": "一致", "reason": ""}]}</script>
+<script type="application/json" id="aapl-record">{"period": "FY2026Q3", "accession": "0000320193-26-000018", "filing": "https://www.sec.gov/Archives/edgar/data/320193/000032019326000018/aapl-20260730.htm", "url": "https://www.sec.gov/Archives/edgar/data/320193/000032019326000018/a8-kex991q3202606272026.htm", "sha": "418e50d3e380df70c98af5d79644f6972ec3b526834407a828caf94eb6f1e35c", "quarterly": "https://www.sec.gov/Archives/edgar/data/320193/000032019326000020/aapl-20260627.htm", "quarterlyAccession": "0000320193-26-000020", "quarterlySha": "9afca93bb6e1dd4a20410bb6e708cdf5e9d5cbed3827c55dcde7efb655edf0e4", "facts": [{"metric": "Revenue", "value": "109417", "detail": "109417", "unit": "USD millions", "detailUnit": "USD millions", "summaryRow": "Total net sales", "row": "Total net sales", "column": "Three months ended June 27, 2026", "status": "一致", "reason": ""}, {"metric": "Diluted earnings per share", "value": "2.02", "detail": "2.02", "unit": "USD/share", "detailUnit": "USD/share", "summaryRow": "Earnings per share / Diluted", "row": "Earnings per share / Diluted", "column": "Three months ended June 27, 2026", "status": "一致", "reason": ""}]}</script>
+<script type="application/json" id="amzn-record">{"period": "FY2026Q3", "accession": "0001018724-26-000038", "filing": "https://www.sec.gov/Archives/edgar/data/1018724/000101872426000038/amzn-20261029.htm", "url": "https://www.sec.gov/Archives/edgar/data/1018724/000101872426000038/amzn-20260930xex991.htm", "sha": "a824be9fc31a5219e9667c5f80391b3e9365f5f17223c29142d18a7372d9e79a", "quarterly": "https://www.sec.gov/Archives/edgar/data/1018724/000101872426000040/amzn-20260930.htm", "quarterlyAccession": "0001018724-26-000040", "quarterlySha": "f0f2dd95692c8d88d073a9d90b83e806b4d073d047007a8860d30cbb5863f273", "facts": [{"metric": "Revenue", "value": "201944", "detail": "201944", "unit": "USD millions", "detailUnit": "USD millions", "summaryRow": "Total net sales", "row": "Total net sales", "column": "Three months ended September 30, 2026", "status": "一致", "reason": ""}, {"metric": "Diluted earnings per share", "value": "1.89", "detail": "1.89", "unit": "USD/share", "detailUnit": "USD/share", "summaryRow": "Diluted earnings per share", "row": "Diluted earnings per share", "column": "Three months ended September 30, 2026", "status": "一致", "reason": ""}]}</script>
+<script type="application/json" id="meta-record">{"period": "FY2026Q3", "accession": "0001628280-26-066700", "filing": "https://www.sec.gov/Archives/edgar/data/1326801/000162828026066700/meta-20261019.htm", "url": "https://www.sec.gov/Archives/edgar/data/1326801/000162828026066700/meta-09302026xexhibit991.htm", "sha": "2ea5ee6ea5f9fb960cae74f5bd421b5e052fdc3a246ade2b534757ccc673801d", "quarterly": "https://www.sec.gov/Archives/edgar/data/1326801/000162828026066773/meta-20260930.htm", "quarterlyAccession": "0001628280-26-066773", "quarterlySha": "0ea75a9311407dc3202c051c3166c7dbc7f4714ee77d599691dcab16b75a916e", "facts": [{"metric": "Revenue", "value": "64601", "detail": "64601", "unit": "USD millions", "detailUnit": "USD millions", "summaryRow": "Revenue", "row": "Revenue", "column": "Three months ended September 30, 2026", "status": "一致", "reason": ""}, {"metric": "Diluted earnings per share", "value": "3.83", "detail": "3.83", "unit": "USD/share", "detailUnit": "USD/share", "summaryRow": "Earnings per share / Diluted", "row": "Earnings per share / Diluted", "column": "Three months ended September 30, 2026", "status": "一致", "reason": ""}]}</script>
+<script type="application/json" id="tsla-record">{"period": "FY2026Q3", "accession": "0001628280-26-066738", "filing": "https://www.sec.gov/Archives/edgar/data/1318605/000162828026066738/tsla-20261021.htm", "url": "https://www.sec.gov/Archives/edgar/data/1318605/000162828026066738/exhibit9914.htm", "sha": "16ad073fcfab1bc5804614b9364fff04b3a47866e9435d77d632397697c466b3", "quarterly": "https://www.sec.gov/Archives/edgar/data/1318605/000162828026066775/tsla-20260930.htm", "quarterlyAccession": "0001628280-26-066775", "quarterlySha": "e037800784513ee9661f438d365e3b01b908ed1d892c4ca27ed43a18a678e60f", "facts": [{"metric": "Revenue", "value": "28046", "detail": "28046", "unit": "USD millions", "detailUnit": "USD millions", "summaryRow": "Total revenues", "row": "Total revenues", "column": "Three months ended September 30, 2026", "status": "一致", "reason": ""}, {"metric": "Diluted earnings per share", "value": "0.22", "detail": "0.22", "unit": "USD/share", "detailUnit": "USD/share", "summaryRow": "Net income per share of common stock attributable to common stockholders / Diluted", "row": "Net income per share of common stock attributable to common stockholders / Diluted", "column": "Three months ended September 30, 2026", "status": "一致", "reason": ""}]}</script>
+<script>
+'use strict';
+const nvidiaRecords=[{"period": "FY2025Q4", "accession": "0001045810-25-000021", "url": "https://www.sec.gov/Archives/edgar/data/1045810/000104581025000021/q4fy25pr.htm", "filing": "https://www.sec.gov/Archives/edgar/data/1045810/000104581025000021/nvda-20250226.htm", "sha": "fa6ce87a0fdcc5575be02a3b0eee94254e40c48569daaa8f75242dccaa537df2", "facts": [{"value": "39331", "unit": "USD millions", "detail": "39,331", "detailUnit": "USD millions", "row": "Revenue", "column": "Three Months Ended January 26, 2025", "status": "一致", "metric": "Revenue", "summaryRow": "Revenue"}, {"value": "0.89", "unit": "USD/share", "detail": "0.89", "detailUnit": "USD/share", "row": "Net income per share / Diluted", "column": "Three Months Ended January 26, 2025", "status": "一致", "metric": "Diluted earnings per share", "summaryRow": "Diluted earnings per share*"}]}, {"period": "FY2026Q1", "accession": "0001045810-25-000115", "url": "https://www.sec.gov/Archives/edgar/data/1045810/000104581025000115/q1fy26pr.htm", "filing": "https://www.sec.gov/Archives/edgar/data/1045810/000104581025000115/nvda-20250528.htm", "sha": "79bc02be125714e0ce3c8dafce485fd7a8453e08cbd7dcb743838c62ddcd4aeb", "facts": [{"value": "44062", "unit": "USD millions", "detail": "44,062", "detailUnit": "USD millions", "row": "Revenue", "column": "Three Months Ended April 27, 2025", "status": "一致", "metric": "Revenue", "summaryRow": "Revenue"}, {"value": "0.76", "unit": "USD/share", "detail": "0.76", "detailUnit": "USD/share", "row": "Net income per share / Diluted", "column": "Three Months Ended April 27, 2025", "status": "一致", "metric": "Diluted earnings per share", "summaryRow": "Diluted earnings per share*"}]}, {"period": "FY2026Q2", "accession": "0001045810-25-000207", "url": "https://www.sec.gov/Archives/edgar/data/1045810/000104581025000207/q2fy26pr.htm", "filing": "https://www.sec.gov/Archives/edgar/data/1045810/000104581025000207/nvda-20250827.htm", "sha": "bc75009f7205708f8ba1aec6de315e428165cb4f1cf44eae0753da890d08cbe3", "facts": [{"value": "46743", "unit": "USD millions", "detail": "46,743", "detailUnit": "USD millions", "row": "Revenue", "column": "Three Months Ended July 27, 2025", "status": "一致", "metric": "Revenue", "summaryRow": "Revenue"}, {"value": "1.08", "unit": "USD/share", "detail": "1.08", "detailUnit": "USD/share", "row": "Net income per share / Diluted", "column": "Three Months Ended July 27, 2025", "status": "一致", "metric": "Diluted earnings per share", "summaryRow": "Diluted earnings per share"}]}, {"period": "FY2026Q3", "accession": "0001045810-25-000228", "url": "https://www.sec.gov/Archives/edgar/data/1045810/000104581025000228/q3fy26pr.htm", "filing": "https://www.sec.gov/Archives/edgar/data/1045810/000104581025000228/nvda-20251119.htm", "sha": "8ac74c45b465287f643a4b37726f70ef4ab63392692ca0cae9ef6b5f3a62621e", "facts": [{"value": "57006", "unit": "USD millions", "detail": "57,006", "detailUnit": "USD millions", "row": "Revenue", "column": "Three Months Ended October 26, 2025", "status": "一致", "metric": "Revenue", "summaryRow": "Revenue"}, {"value": "1.30", "unit": "USD/share", "detail": "1.30", "detailUnit": "USD/share", "row": "Net income per share / Diluted", "column": "Three Months Ended October 26, 2025", "status": "一致", "metric": "Diluted earnings per share", "summaryRow": "Diluted earnings per share"}]}, {"period": "FY2026Q4", "accession": "0001045810-26-000019", "url": "https://www.sec.gov/Archives/edgar/data/1045810/000104581026000019/q4fy26pr.htm", "filing": "https://www.sec.gov/Archives/edgar/data/1045810/000104581026000019/nvda-20260225.htm", "sha": "a43b65f0fef5cf4622c5c6908b255ec3dd4a409ec84ef2d7ee0321b566649666", "facts": [{"value": "68127", "unit": "USD millions", "detail": "68,127", "detailUnit": "USD millions", "row": "Revenue", "column": "Three Months Ended January 25, 2026", "status": "一致", "metric": "Revenue", "summaryRow": "Revenue"}, {"value": "1.76", "unit": "USD/share", "detail": "1.76", "detailUnit": "USD/share", "row": "Net income per share / Diluted", "column": "Three Months Ended January 25, 2026", "status": "一致", "metric": "Diluted earnings per share", "summaryRow": "Diluted earnings per share"}]}, {"period": "FY2027Q1", "accession": "0001045810-26-000051", "url": "https://www.sec.gov/Archives/edgar/data/1045810/000104581026000051/q1fy27pr.htm", "filing": "https://www.sec.gov/Archives/edgar/data/1045810/000104581026000051/nvda-20260520.htm", "sha": "2987ebc03457f44d67d847c14a68a2fca1dd130d6c841245057a4f8b6c29843d", "facts": [{"value": "81615", "unit": "USD millions", "detail": "81,615", "detailUnit": "USD millions", "row": "Revenue", "column": "Three Months Ended April 26, 2026", "status": "一致", "metric": "Revenue", "summaryRow": "Revenue"}, {"value": "2.39", "unit": "USD/share", "detail": "2.39", "detailUnit": "USD/share", "row": "Net income per share / Diluted", "column": "Three Months Ended April 26, 2026", "status": "一致", "metric": "Diluted earnings per share", "summaryRow": "Diluted earnings per share"}]}, {"period": "FY2027Q2", "accession": "0001045810-26-000073", "url": "https://www.sec.gov/Archives/edgar/data/1045810/000104581026000073/q2fy27pr.htm", "filing": "https://www.sec.gov/Archives/edgar/data/1045810/000104581026000073/nvda-20260826.htm", "sha": "972e6c1d066a7ed8f114fcd866c89177c6bfb3f54a80c318b71a8d936fb0d164", "facts": [{"value": "96221", "unit": "USD millions", "detail": "96,221", "detailUnit": "USD millions", "row": "Revenue", "column": "Three Months Ended July 26, 2026", "status": "一致", "metric": "Revenue", "summaryRow": "Revenue"}, {"value": "2.46", "unit": "USD/share", "detail": "2.46", "detailUnit": "USD/share", "row": "Net income per share / Diluted", "column": "Three Months Ended July 26, 2026", "status": "一致", "metric": "Diluted earnings per share", "summaryRow": "Diluted earnings per share"}]}, {"period": "FY2027Q3", "accession": "0001045810-26-000088", "url": "https://www.sec.gov/Archives/edgar/data/1045810/000104581026000088/q3fy27pr.htm", "filing": "https://www.sec.gov/Archives/edgar/data/1045810/000104581026000088/nvda-20261117.htm", "sha": "699e2bf368f8a57fd056d7edb7d9d97f8abf4e57ec086fe988fd4933a169ef35", "facts": [{"value": "115.8", "unit": "USD billions", "detail": "115,844", "detailUnit": "USD millions", "row": "Revenue", "column": "Three Months Ended October 25, 2026", "status": "丸めの範囲で一致", "metric": "Revenue", "summaryRow": "Revenue"}, {"value": "2.70", "unit": "USD/share", "detail": "2.70", "detailUnit": "USD/share", "row": "Net income per share / Diluted", "column": "Three Months Ended October 25, 2026", "status": "一致", "metric": "Diluted earnings per share", "summaryRow": "Diluted earnings per share"}]}];
+const $=id=>document.getElementById(id);
+const query = new URLSearchParams(location.search);
+const companies = {NVDA:'NVIDIA', MSFT:'Microsoft', GOOGL:'Alphabet', AAPL:'Apple', AMZN:'Amazon', META:'Meta', TSLA:'Tesla'};
+const requested = query.get('company');
+const ticker = Object.hasOwn(companies, requested) ? requested : 'NVDA';
+const companyName = companies[ticker];
+const allHistory = JSON.parse($('workflow-history').textContent);
+const onHome = !Object.hasOwn(companies,requested) && !query.has('baseline');
+const history = !query.has('baseline') && allHistory[ticker];
+const records = history || (ticker === 'NVDA' ? nvidiaRecords : [JSON.parse($(ticker.toLowerCase()+'-record').textContent)]);
+const has10Q = Boolean(records[0].quarterly);
+let ja = query.has('lang') ? query.get('lang') === 'ja' : navigator.language.startsWith('ja');
+const requestedIndex=records.findIndex(d=>d.period===query.get('period'));
+let selected=requestedIndex<0 ? records.length-1 : requestedIndex;
+let metric = 0;
+const tr = (en, jp) => ja ? jp : en;
+// @include financials.js
+const wording = {
+  overview: ['Earnings filing monitor','決算開示モニター'],
+  earnings: ['Quarterly earnings register','四半期決算台帳'],
+  narrative: ['Filing highlights','開示要点'],
+  review: ['Human review','担当者確認'],
+  exportCsv: ['Download CSV','CSVをダウンロード'],
+  workflow: ['Quarterly reconciliation','四半期決算の照合'],
+  pending: ['Pending review','確認待ち']
+};
+const uiText = key => tr(...wording[key]);
+const issuerEntries = Object.entries(companies).sort((a,b)=>a[1].localeCompare(b[1],'en'));
+function companyTitle(key){return companyName+(ja?' ':' · ')+uiText(key);}
+const periodText = p => p.slice(0,6) + ' ' + p.slice(6);
+const numbers = (x, places) => x == null ? '—' : Number(String(x ?? '').replaceAll(',', '')).toLocaleString('en-US', {
+  minimumFractionDigits: places, maximumFractionDigits: places
+});
+const reviewNames={'未確認':'Pending','確認済み':'Reviewed','要対応':'Action required','再確認':'Review again'};
+const reviewText = state => !state || state==='未確認' ? uiText('pending') : tr(reviewNames[state] || state,state);
+function reviewBadge(state,label,tag='span'){
+  const badge=node(tag,label,'review-badge');
+  if(!state || state==='未確認' || state==='pending') badge.dataset.review='pending';
+  if(state==='確認済み' || state==='reviewed') badge.dataset.review='reviewed';
+  return badge;
+}
+function unit(u){return {'USD billions':tr('USD billions','十億ドル'),'USD millions':tr('USD million','百万ドル'),'USD/share':tr('USD/share','ドル／株')}[u]}
+const labels = {
+  '一致': ['Exact match', '一致'], '丸めの範囲で一致': ['Match after rounding','丸め一致'],
+  '不一致': ['Mismatch','不一致'], '要確認': ['Needs review','要確認'],
+  '累計差額と一致':['Matches derived quarter','累計差額と一致'], '累計差額と差異':['Differs from derived quarter','累計差額と差異'],
+  '照合待ち':['Awaiting filing','照合待ち'], '比較値なし':['No quarterly comparison value','比較値なし'],
+  '添付未特定':['Exhibit not identified','添付未特定'], '抽出失敗':['Extraction issue','抽出失敗'],
+  '訂正・重複':['Amendment or duplicate','訂正・重複'], '開示未検出':['No filing found','開示未検出']
+};
+function pill(status){
+  const style = status === '一致' ? '' : status === '丸めの範囲で一致' ? 'round' : 'bad';
+  if(history) return '<span class="machine-badge" data-kind="'+(statusKind[status]||'issue')+'">'+tr(...labels[status])+'</span>';
+  return '<span class="pill '+style+'">'+tr(...labels[status])+'</span>';
+}
+function rev(d){
+  const f = d.facts[0];
+  return f.value == null ? null : Number(f.value)/(f.unit === 'USD millions' ? 1000 : 1);
+}
+function focusPanel(){if(matchMedia('(max-width:730px)').matches){$('focus').focus({preventScroll:true});$('focus').scrollIntoView({block:'start'})}}
+function evidence(){
+const d=records[selected], f=d.facts[metric];$('selected').textContent=periodText(d.period);$('accession').textContent=d.accession ? tr('8-K accession number · ','8-K提出番号 · ')+d.accession : '';
+$('tabs').innerHTML=metricNames.slice(0,history?metricNames.length:2).map(pair=>tr(...pair)).map((t,i)=>'<button aria-pressed="'+(metric===i)+'" data-m="'+i+'">'+t+'</button>').join('');
+const reading = $('reading');
+reading.replaceChildren();
+function line(tag, text, className, parent=reading){
+  const el = document.createElement(tag);
+  el.textContent = text;
+  if(className) el.className = className;
+  parent.append(el);
+  return el;
+}
+function fact(title, value, units){
+  const box = line('div','','fact');
+  line('span',title,'',box);
+  const decimals = value == null ? 0 : (value.split('.')[1] || '').length;
+  line('strong',numbers(value,decimals),'',box);
+  line('small',' '+unit(units),'',box);
+}
+if(history && metric>=3){
+  renderAddedEvidence(d,reading);
+}else{
+if(history){
+  fact(tr('Earnings release (Exhibit 99.1)','決算発表資料（添付資料99.1）'),f.value,f.unit);
+  fact((d.form || tr('Periodic report','定期報告書'))+(metric===2 && d.financials.report.operating?.method==='difference'?tr(' · quarter from year-to-date totals',' · 累計値から算出'):''),f.detail,f.detailUnit);
+  if(metric!==2 && f.detail!=null && f.row) line('p',tr('XBRL source · ','XBRLの出典 · ')+f.row,'reference');
+}else{
+  fact((has10Q ? tr('EX-99.1 income statement','決算添付99.1の損益計算書') : tr('GAAP summary','GAAP概要表'))+' · '+f.summaryRow,f.value,f.unit);
+  fact((has10Q ? tr('10-Q income statement','10-Qの損益計算書') : tr('Consolidated income statement','連結損益計算書'))+' · '+f.row,f.detail,f.detailUnit);
+}
+reading.insertAdjacentHTML('beforeend',pill(f.status));
+const rules = {
+  '一致': tr('The figures agree for the same quarter and unit.','対象四半期と単位をそろえると両方の数値が一致します。'),
+  '丸めの範囲で一致': tr('The more precise figure agrees when rounded to the summary table’s reporting precision.','詳細値を概要表の表示桁に丸めると一致します。'),
+  '不一致': tr('The reported figures differ for this quarter and unit.','同じ四半期・単位の数値が異なります。'),
+  '要確認': tr('One or more source values could not be verified.','原表から値を特定できないため、確認が必要です。')
+};
+if(metric===2){
+  const e=d.financials;
+  if(e.release.operating)showSources(reading,e.release.operating,tr('Earnings release source row','決算発表資料の原文行'));
+  if(e.report.operating)showSources(reading,e.report.operating,tr('Periodic report source rows','定期報告書の原文行'));
+}
+if(rules[f.status]) line('p',rules[f.status],'rule');
+if(f.reason){
+  const explanations={
+    '同じ期末の10-Qまたは10-Kを待っています':tr('The monitor has not yet identified a 10-Q or 10-K for this quarter end.','同じ期末の10-Qまたは10-Kはまだ特定されていません。'),
+    '対象3か月の連結XBRL値なし':tr('No consolidated figure reported specifically for these three months was found in the XBRL data.','定期報告書のXBRLデータから、この3か月間だけの連結数値を取得できませんでした。'),
+    '提出候補の訂正・重複または期末日不一致':tr('The candidate filings include an amendment, a duplicate or conflicting quarter ends.','候補書類に訂正・重複があるか、期末日が一致しないため、照合を保留しています。')
+  };
+  line('p',explanations[f.reason]||f.reason,'reference');
+}
+if(f.column) line('p',(history ? tr('Quarter end · ','期末日 · ') : tr('Source column · ','原表の列 · '))+f.column,'reference');
+if(history && d.releaseDate) line('p',tr('8-K filing date · ','8-K提出日 · ')+d.releaseDate,'reference');
+if(history && d.reportDate) line('p',(d.form||tr('Periodic filing','定期報告書'))+tr(' filing date · ','提出日 · ')+d.reportDate,'reference');
+const links = line('div','','links');
+function source(url, title){
+  if(!url) return;
+  const a = line('a',title,'',links);
+  a.href = url;
+  a.target = '_blank';
+  a.rel = 'noopener noreferrer';
+}
+source(d.url,tr('Exhibit 99.1 ↗','添付資料99.1 ↗'));
+if(d.quarterly) source(d.quarterly,(d.form || '10-Q')+' ↗');
+source(d.filing,tr('Form 8-K ↗','8-K本文 ↗'));
+for(const c of d.candidates || []){
+  if(c.url!==d.quarterly && c.url!==d.filing) source(c.url,c.form+' · '+c.acc);
+}
+}
+const reviewLine=line('p',tr('Review for this quarter','この四半期の担当者確認')+' · ','review');
+reviewLine.append(reviewBadge(d.state,reviewText(d.state)));
+if(history) renderReviewDemo(d,reading);
+}
+function ledger(){
+if(history){renderFinancialLedger();return;}
+$('rows').innerHTML=records.map((d,i)=>({d,i})).reverse().map(({d,i})=>'<tr data-i="'+i+'" class="'+(i===selected?'active':'')+'"><td><button type="button" class="pick" aria-controls="focus" aria-pressed="'+(i===selected)+'" data-i="'+i+'">'+periodText(d.period)+'</button></td><td>'+(rev(d) ?? '—')+'</td><td>'+numbers(d.facts[1].value,2)+'</td><td>'+pill(d.facts[0].status)+'</td></tr>').join('');
+}
+function plot(){
+  if(history){renderMetricChart();return;}
+  const isRevenue = metric === 0;
+  const names = [tr('Revenue','売上高'),tr('Diluted EPS','希薄化後EPS')];
+  const values = records.map(d=>isRevenue ? rev(d) : (d.facts[1].value == null ? null : Number(d.facts[1].value)));
+  const suffix = isRevenue ? tr('USD billions','十億ドル') : tr('USD/share','ドル／株');
+  // Three equal intervals above a zero baseline; keep the two units independent.
+  const max = Math.max(1, ...values.filter(v=>v !== null));
+  const magnitude = 10 ** Math.floor(Math.log10(max / 3));
+  const step = Math.ceil(max / (3 * magnitude)) * magnitude;
+  for(const id of ['bars','periods']) $(id).style.gridTemplateColumns = 'repeat('+records.length+', minmax(0,1fr))';
+  const ceiling = 3 * step;
+  const format = v=>v == null ? '—' : isRevenue ? v.toLocaleString('en-US',{maximumFractionDigits:3}) : v.toFixed(2);
+  $('chartTitle').textContent=records.length === 1 ? tr('Reported quarter','対象四半期の値') : tr('Quarterly performance','四半期推移');
+  $('axisUnit').textContent=suffix;
+  $('plotTools').setAttribute('aria-label',tr('Chart metric','グラフの指標'));
+  $('plotTools').innerHTML=names.map((n,i)=>'<button type="button" data-m="'+i+'" aria-pressed="'+(metric===i)+'">'+n+'</button>').join('');
+  $('scale').innerHTML=[0,1,2,3].map(n=>'<span style="bottom:'+(100*n/3)+'%">'+Number((n*step).toPrecision(6))+'</span>').join('');
+  $('bars').setAttribute('aria-label',names[metric]+' · '+suffix);
+  $('bars').innerHTML=records.map((d,i)=>{
+    const label=periodText(d.period)+' · '+names[metric]+' · '+format(values[i])+' '+suffix;
+    return '<button type="button" class="plot-col" data-i="'+i+'" aria-pressed="'+(i===selected)+'" aria-label="'+label+'" title="'+label+'"><i aria-hidden="true" style="height:'+(100*(values[i] ?? 0)/ceiling)+'%"></i></button>';
+  }).join('');
+  $('periods').innerHTML=records.map(d=>'<span>'+d.period.slice(-2)+'<small>FY'+d.period.slice(4,6)+'</small></span>').join('');
+  $('plotValue').textContent=periodText(records[selected].period)+' · '+format(values[selected])+' '+suffix;
+}
+function selectChart(action,container,restoreFocus=true){
+  action();
+  plot();
+  ledger();
+  evidence();
+  if(restoreFocus) $(container).querySelector('[aria-pressed=true]').focus({preventScroll:true});
+}
+const narrativeData=JSON.parse($('narrative-filings').textContent);
+const eventPage=query.get('tab')==='events';
+let chosenAcc=query.get('filing');
+const vocabulary={
+  pending:wording.pending, reviewed:['Reviewed','確認済み'],
+  changed:['Source changed · review again','原文更新・再確認'], needs_revision:['Needs revision','要修正'],
+  appointment:['Appointment','就任'], retirement_notice:['Retirement notice','退任通知'],
+  acquisition_agreement:['Acquisition agreement','買収契約'], decision:['Decision','決定日'],
+  agreement:['Agreement','契約日'], effective:['Effective','発効日'], notice:['Notice','通知日'],
+  expected_completion:['Expected completion','完了見込み'], transition_end:['Transition end','移行支援終了日'],
+  reported:['Reported','開示済み'], expected:['Expected','見込み'], scheduled:['Scheduled','予定'],
+  pending_effective:['Pending effective date','発効前'], retirement_announced:['Retirement announced','退任表明'],
+  agreement_signed_pending_close:['Signed, closing pending','契約締結・完了待ち']
+};
+function term(v){return vocabulary[v] ? tr(...vocabulary[v]) : v;}
+function narrativeURL(symbol,acc){
+  return detailURL(symbol)+'&tab=events'+(acc?'&filing='+encodeURIComponent(acc):'');
+}
+function ledgerLink(url,label){
+  const a=node('a',label);a.href=url;return a;
+}
+function issuerFilings(symbol){
+  const data=new Map(Object.entries(narrativeData[symbol]||{}));
+  for(const q of allHistory[symbol]||[]){
+    if(q.accession && q.filing && !data.has(q.accession))
+      data.set(q.accession,{date:q.releaseDate,form:'8-K',url:q.filing,items:[],sections:{}});
+  }
+  return [...data].sort((a,b)=>(b[1].date||'').localeCompare(a[1].date||'') || b[0].localeCompare(a[0]));
+}
+function renderRegisterNav(){
+  const nav=$('registerNav');
+  const tabLabel=ja ? companyTitle : uiText;
+  const links=[ledgerLink(detailURL(ticker,records[selected]?.period),tabLabel('earnings')),
+               ledgerLink(narrativeURL(ticker),tabLabel('narrative'))];
+  links[eventPage?1:0].setAttribute('aria-current','page');
+  nav.setAttribute('aria-label',tr('Company registers','企業の台帳'));nav.replaceChildren(...links);
+}
+function narrativeField(dl,label,field,prefix){
+  if(!field)return;
+  const dd=node('dd',field.value??tr('Unknown','不明'));
+  for(const n of field.block_numbers){
+    const a=ledgerLink('#'+prefix+'-'+n,'¶'+n);
+    a.setAttribute('aria-label',tr('Source paragraph ','根拠段落 ')+n);
+    a.onclick=()=>{document.getElementById(prefix).open=true;};
+    dd.append(' ',a);
+  }
+  dl.append(node('dt',label),dd);
+}
+function renderSection(sec,acc){
+  const box=node('section',null,'narr-section');
+  const title=node('h3','Item '+sec.item+' · ');
+  title.append(reviewBadge(sec.state,term(sec.state)));box.append(title);
+  if(!sec.events){
+    box.append(node('p',tr('Candidate details are available to the reviewer. You can read the original SEC filing above.','候補の詳細は担当者向けの表示です。開示内容は上の「SEC原文を開く」から確認できます。')));return box;
+  }
+  const prefix='source-'+acc+'-'+sec.id;
+  for(const e of sec.events){
+    const article=node('article',null,'narr-event'),dl=node('dl');
+    article.append(node('h4',e.subject.value+' · '+term(e.event_type.value)));
+    for(const [label,field] of [[tr('Extracted summary (Japanese)','要点'),e.summary_ja],
+      [tr('Subject','対象者・対象組織'),e.subject],[tr('Organization','組織'),e.organization],
+      [tr('Event type','分類'),{...e.event_type,value:term(e.event_type.value)}],
+      [tr('Status at filing','提出時点の状態'),{...e.status_as_of_filing,value:term(e.status_as_of_filing.value)}],
+      ...e.dates.map(d=>[term(d.role)+' · '+term(d.certainty),d]),
+      ...e.conditions.map(c=>[tr('Condition','条件'),c]),[tr('Note (Japanese)','補足'),e.notes_ja]]){
+      narrativeField(dl,label,field,prefix);
+    }
+    article.append(dl);box.append(article);
+  }
+  if(!sec.events.length) box.append(node('p',tr('No candidate events were extracted from this section.','この項目からは出来事の候補が抽出されませんでした。')));
+  for(const note of sec.missing||[])box.append(node('p',note));
+  if(sec.blocks.length){
+    const sources=node('details',null,'source-paragraphs');sources.id=prefix;
+    sources.append(node('summary',tr('Source paragraphs','SEC原文の根拠段落')+' ('+sec.blocks.length+')'));
+    for(const b of sec.blocks){
+      const p=node('p');p.id=prefix+'-'+b.block_number;
+      p.append(node('b','¶'+b.block_number),' '+b.text);p.lang='en';sources.append(p);
+    }
+    box.append(sources);
+  }
+  return box;
+}
+function drawNarratives(){
+  const entries=issuerFilings(ticker);
+  const extracted=entries.filter(([,f])=>Object.keys(f.sections).length);
+  const n=extracted.reduce((sum,[,f])=>sum+Object.values(f.sections).reduce((s,v)=>s+v.count,0),0);
+  $('narrName').textContent=companyTitle('narrative');
+  $('narrIntro').textContent=extracted.length
+    ? tr('Qwen 27B identifies candidate events and extracts related dates and conditions. Each filing item shows its review status. Paragraph links identify the passages supporting a candidate.',
+         'Qwen 27Bが提出書類から出来事の候補と関連する日付・条件を抽出します。確認状況は開示項目ごとに示し、候補の詳細には根拠となる原文の段落番号を添えています。')
+    : tr('No Qwen 27B extraction results are available for this company yet. Select a filing below to read the SEC original.',
+         'この会社のQwen 27Bによる抽出結果はまだありません。下の一覧から提出書類を選ぶと、SEC原文を開けます。');
+  $('narrCount').hidden=!extracted.length;
+  $('narrCount').textContent=tr(extracted.length+' filing'+(extracted.length===1?'':'s')+' with results · '+n+' candidate event'+(n===1?'':'s'),
+    '抽出結果のある書類 '+extracted.length+'件 · 出来事の候補 '+n+'件');
+  document.title=$('narrName').textContent+(ja?'':' | Company Disclosure Monitor');
+  $('narrLabel').textContent=tr('Select a filing','提出書類を選ぶ');
+  const picker=$('narrSelect'),panel=$('narrDetail');picker.replaceChildren();panel.replaceChildren();
+  if(!chosenAcc)chosenAcc=(extracted[0]||entries[0]||[])[0];
+  const selectedFile=entries.find(([acc])=>acc===chosenAcc)?.[1];
+  if(!selectedFile && chosenAcc)picker.append(new Option(tr('Filing not listed','台帳に該当書類なし'),chosenAcc));
+  for(const [yes,title] of [[true,tr('With extraction results','抽出結果あり')],[false,tr('Without extraction results','抽出結果なし')]]){
+    const group=node('optgroup');group.label=title;
+    for(const [acc,f] of entries.filter(([,f])=>Boolean(Object.keys(f.sections).length)===yes))
+      group.append(new Option([f.date,f.form,acc].filter(Boolean).join(' · '),acc));
+    if(group.children.length)picker.append(group);
+  }
+  picker.value=chosenAcc||'';picker.disabled=!entries.length;
+  if(!selectedFile){
+    panel.append(node('p',tr('No matching filing in this company’s register.','この企業の台帳に該当する提出書類はありません。')));return;
+  }
+  const f=selectedFile,sections=Object.values(f.sections);
+  panel.append(node('h2',f.form+' · '+tr('Filed ','提出日 ')+f.date),
+    node('p',tr('SEC accession number · ','SEC提出番号 · ')+chosenAcc+
+      (f.items.length?'  /  Item '+f.items.join(', '):''),'narr-meta'));
+  if(f.url && f.url.startsWith('https://www.sec.gov/Archives/')){
+    const a=ledgerLink(f.url,tr('Open SEC filing ↗','SEC原文を開く ↗'));a.target='_blank';a.rel='noopener noreferrer';panel.append(a);
+  }
+  if(!sections.length){
+    if(extracted.length) panel.append(node('p',tr('No extraction results are available for this filing.','この書類には抽出結果がありません。'),'narr-empty'));return;
+  }
+  for(const sec of sections)panel.append(renderSection(sec,chosenAcc));
+}
+
+function renderHeader(){
+  const monitorURL='?'+overviewParams();
+  document.querySelector('.brand').href=monitorURL;
+  const monitor=$('back');
+  monitor.href=monitorURL;
+  monitor.textContent=uiText('overview');
+  const nav=$('issuerNav');
+  nav.setAttribute('aria-label',tr('Monitor and company registers','決算開示モニターと企業別台帳'));
+  for(const [symbol,name] of issuerEntries){
+    let link=$('link'+symbol);
+    if(!link){
+      link=node('a',name);
+      link.id='link'+symbol;
+      nav.append(link);
+    }
+    link.href=!onHome && eventPage ? narrativeURL(symbol) : detailURL(symbol);
+  }
+  for(const link of nav.querySelectorAll('[aria-current]'))link.removeAttribute('aria-current');
+  (onHome ? monitor : $('link'+ticker)).setAttribute('aria-current','page');
+  document.documentElement.lang=ja?'ja':'en';
+  $('lang').textContent=ja?'English':'日本語';$('lang').lang=ja?'en':'ja';
+}
+function draw(){
+$('overview').hidden=!onHome;$('top').hidden=onHome||eventPage;
+$('narrative').hidden=onHome||!eventPage;$('registerBar').hidden=onHome;
+if(onHome){drawHome();return;}
+document.body.dataset.issuer=ticker;
+renderHeader();
+renderRegisterNav();
+if(eventPage){
+  $('skip').href='#narrSelect';$('skip').textContent=tr('Select a filing','提出書類を選ぶ');
+  drawNarratives();return;
+}
+$('eyebrow').textContent='NASDAQ · '+ticker+'  /  '+(history ? 'SEC 8-K / 10-Q / 10-K' : has10Q ? 'SEC FORM 8-K + 10-Q' : 'SEC FORM 8-K');
+$('title').textContent=companyTitle('earnings');
+document.title=$('title').textContent+(ja?'':' | Company Disclosure Monitor');
+$('summary').textContent=history ? tr('Explore quarterly growth, profitability and cash flow. Select a metric and a quarter to see the source amounts and calculations.','売上高の伸び、営業利益率、キャッシュフローの推移を確認できます。指標と四半期を選ぶと、原文の数値や計算式が開きます。') : has10Q
+  ? tr('Compare quarterly GAAP revenue and diluted EPS in the earnings release and Form 10-Q.','決算発表資料と10-Qの原表で、四半期の売上高・希薄化後EPSを照合します。')
+  : tr('Trace eight quarters of revenue and diluted EPS to the GAAP summary and income statement.','8四半期の売上高・希薄化後EPSを、決算発表のGAAP概要表と損益計算書で照合します。');
+$('period').textContent=records.length === 1 ? periodText(records[0].period) : periodText(records[0].period)+' — '+periodText(records.at(-1).period);
+plot();
+const facts=records.flatMap(d=>d.facts);
+const matches=facts.filter(f=>f.status==='一致').length;
+const rounded=facts.filter(f=>f.status==='丸めの範囲で一致').length;
+const derivedMatches=facts.filter(f=>f.status==='累計差額と一致').length;
+const needs=facts.length-matches-rounded-derivedMatches;
+const stats=[
+  [records.length,tr('Fiscal quarters','対象四半期')],
+  [facts.filter(f=>f.value != null && f.detail != null).length+' / '+facts.length,tr('Checks with both figures available','両資料の値がそろった指標')],
+  [matches,tr('Direct exact matches','直接開示値の一致')],
+  needs || has10Q ? [needs,tr('Mismatched or unresolved','不一致・照合未確定')] : [rounded,tr('Match after rounding','丸めの範囲で一致')]
+];
+$('stats').innerHTML=stats.map(([n,t])=>'<div class="stat"><strong>'+n+'</strong><span>'+t+'</span></div>').join('');
+$('ledgerTitle').textContent=tr('Quarterly figures','四半期別の決算指標');$('ledgerSub').textContent=tr('Select a quarter to see its source figures.','行を選ぶと、その四半期の数値と出典が開きます。');
+const excel=$('excelDownload');
+excel.hidden=!history;
+if(history){excel.textContent=tr('Download Excel report','Excelレポートをダウンロード');excel.href='./reports/'+ticker+'-'+(ja?'ja':'en')+'.xlsx';}
+$('download').textContent=uiText('exportCsv');$('head').innerHTML='<tr>'+[tr('Fiscal quarter','会計四半期'),tr('Revenue ($B)','売上高（十億ドル）'),tr('Diluted EPS ($/share)','希薄化後EPS（ドル／株）'),tr('Revenue check','売上高の照合')].map(t=>'<th scope="col">'+t+'</th>').join('')+'</tr>';
+$('evidence').textContent=tr('Source table comparison','SEC原文の表との照合');$('skip').textContent=tr('Skip to register','台帳へ移動');
+$('methodTitle').textContent=tr('How the figures are compared','対象範囲と照合方法');
+$('method').textContent=history ? tr('The check compares consolidated figures in Exhibit 99.1 to Form 8-K with figures reported for the same three months in Form 10-Q or 10-K. A dash (—) marks an unavailable value. An amendment or conflicting filing requires a separate check.','決算発表資料（8-Kの添付資料99.1）の連結数値を、四半期報告書（10-Q）または年次報告書（10-K）に記載された同じ3か月間の値と照合します。取得できない値は「—」で示します。訂正や提出書類の重複がある場合は、照合を保留します。') : has10Q
+  ? tr('Python compares the three-month column in the income statement of Exhibit 99.1 with the same period in the 10-Q. EPS comes from the diluted earnings-per-share row.','Pythonが決算添付99.1と10-Qの損益計算書から、当四半期3か月の列を選んで照合します。EPSには希薄化後1株当たり利益の行を使用します。')
+  : tr('This independent demo covers NVIDIA GAAP revenue and diluted EPS for the eight fiscal quarters shown. Python compares the current-quarter GAAP summary with the three-month column of the consolidated income statement in the same SEC exhibit. The register shows revenue in billions of US dollars. The evidence panel and CSV retain the source units.','NVIDIAの8四半期を対象とした独立デモです。Pythonが同じ提出書類内のGAAP概要表と連結損益計算書の当四半期（3か月）列を照合しています。台帳は売上高を十億ドルで表示し、原表比較とCSVは開示時の単位を保持します。');
+if(history)$('method').textContent=tr('Checks compare consolidated GAAP revenue, diluted EPS and operating income across filings. A fourth-quarter operating income calculated from full-year and nine-month amounts is identified separately. Growth, margin and free cash flow are calculated indicators. Cash figures use a directly disclosed quarter when available. Otherwise, the monitor subtracts consecutive cumulative figures for the same fiscal year. A dash marks an unavailable value.','売上高・希薄化後EPS・営業利益は、決算発表資料と定期報告書の連結GAAP数値を照合します。通期と9か月累計の差で求めた第4四半期の営業利益には「累計差額」と表示します。売上高前年同期比・営業利益率・フリーキャッシュフローは当サイトの算出値です。キャッシュフロー項目には直接開示された四半期値を優先し、累計のみのときは同一年度の累計値から算出します。取得できない値は「—」で示します。');
+if(!history && ticker === 'AAPL') $('method').textContent += tr(' The selected quarter ends June 27, 2026 and has a matching 10-Q. The subsequent fourth quarter is covered by the annual 10-K.',' この照合は10-Qのある2026年6月27日終了の四半期が対象です。続く第4四半期は年次報告書10-Kの対象です。');
+if(!history && ticker === 'TSLA') $('method').textContent += tr(' Exhibit 99.1 is a slide deck. The parser reads the Q3-2026 column on its statement of operations (slide 27).',' 決算添付はスライド形式です。27ページの損益計算書からQ3-2026列を読み取ります。');
+ledger();evidence();
+}
+for(const id of ['bars','rows']){
+  $(id).onclick=e=>{
+    const target=e.target.closest(id==='rows' ? 'tr[data-i]' : 'button[data-i]');
+    if(!target)return;
+    // A keyboard-activated button needs its focus back after the table is rebuilt.
+    const restoreFocus=id!=='rows' || e.detail===0;
+    selectChart(()=>{selected=Number(target.dataset.i)},id,restoreFocus);
+    if(id==='rows') focusPanel();
+  };
+}
+for(const id of ['plotTools','tabs']){
+  $(id).onclick=e=>{
+    const button=e.target.closest('button[data-m]');
+    if(button) selectChart(()=>{metric=Number(button.dataset.m)},id);
+  };
+}
+const asOfByIssuer = JSON.parse($('issuer-asof').textContent);
+const homeState = {
+  mode:query.get('view')==='history' ? 'history' : 'latest',
+  symbol:Object.hasOwn(companies,query.get('issuer')) ? query.get('issuer') : '',
+  status:Object.hasOwn(labels,query.get('status')) ? query.get('status') : ''
+};
+const statusOrder = ['一致','累計差額と一致','丸めの範囲で一致','累計差額と差異','比較値なし','訂正・重複','照合待ち','不一致','抽出失敗','添付未特定','開示未検出','要確認'];
+const statusKind = {'一致':'match','累計差額と一致':'match','累計差額と差異':'issue','丸めの範囲で一致':'match','比較値なし':'absent','訂正・重複':'amend','照合待ち':'wait'};
+const statusText = s => labels[s] ? tr(...labels[s]) : s;
+const homeHistory = Object.entries(allHistory).flatMap(([symbol, quarters])=>quarters.map(d=>({symbol,d})));
+function node(tag, text, cls){
+  const el=document.createElement(tag);
+  if(text != null) el.textContent=text;
+  if(cls) el.className=cls;
+  return el;
+}
+function overviewParams(){
+  const params=new URLSearchParams({lang:ja?'ja':'en'});
+  if(homeState.mode==='history') params.set('view','history');
+  if(homeState.symbol) params.set('issuer',homeState.symbol);
+  if(homeState.status) params.set('status',homeState.status);
+  return params;
+}
+function detailURL(symbol, period){
+  const params=overviewParams();
+  params.set('company',symbol);
+  if(period) params.set('period',period);
+  return '?'+params;
+}
+function landingRows(){
+  let rows=homeHistory.filter(r=>!homeState.symbol || r.symbol===homeState.symbol);
+  if(homeState.mode==='latest'){
+    const last=new Map();
+    for(const row of rows){
+      if(!last.has(row.symbol) || row.d.period>last.get(row.symbol).d.period) last.set(row.symbol,row);
+    }
+    rows=[...last.values()];
+  }
+  if(homeState.status) rows=rows.filter(({d})=>d.facts.some(f=>f.status===homeState.status));
+  return rows.sort((a,b)=>(b.d.releaseDate||b.d.reportDate||'').localeCompare(a.d.releaseDate||a.d.reportDate||'') || a.symbol.localeCompare(b.symbol));
+}
+function optionList(el, values, selected){
+  el.replaceChildren(...values.map(([value,label])=>{
+    const item=node('option',label);item.value=value;return item;
+  }));
+  el.value=selected;
+}
+function showStatus(status){
+  homeState.mode='history';homeState.status=status;drawHome();
+}
+function overviewSummary(scope){
+  const facts=scope.flatMap(r=>r.d.facts);
+  const counts=new Map();
+  for(const f of facts) counts.set(f.status,(counts.get(f.status)||0)+1);
+  const exact=counts.get('一致')||0;
+  $('exactCount').textContent=exact;
+  $('totalCount').textContent=tr('direct exact matches out of '+facts.length+' checks','件で直接開示値が一致（自動照合 '+facts.length+'件中）');
+  $('legend').replaceChildren();$('distribution').replaceChildren();
+  for(const status of [...new Set([...statusOrder,...counts.keys()])]){
+    if(!counts.has(status)) continue;
+    const count=counts.get(status),kind=statusKind[status]||'issue';
+    const bar=node('span');bar.dataset.kind=kind;bar.style.flexGrow=count;$('distribution').append(bar);
+    const item=node('button');item.type='button';item.dataset.kind=kind;item.onclick=()=>{showStatus(status);$('statusFilter').focus();};
+    item.append(node('i'),node('span',statusText(status)),node('b',count));$('legend').append(item);
+  }
+}
+function revenueTrend(symbol, period){
+  const quarters=allHistory[symbol].filter(r=>r.period<=period).slice(-8);
+  const values=quarters.map(rev), max=Math.max(0,...values.filter(n=>n!==null));
+  const chart=node('span',null,'spark-single');
+  const title=tr('Revenue, USD billions','売上高、十億ドル')+' · '+quarters.map((r,i)=>r.period+' '+(values[i] ?? '—')).join(' / ');
+  chart.title=title;chart.setAttribute('role','img');chart.setAttribute('aria-label',title);
+  for(const value of values){
+    const bar=node('i');bar.style.height=(value==null || !max ? 0 : Math.max(2,Math.round(value/max*23)))+'px';chart.append(bar);
+  }
+  return chart;
+}
+function feedRow({symbol,d}){
+  const row=node('tr');row.dataset.issuer=symbol;
+  const identity=node('td',null,'identity-cell'), a=node('a',null,'company-link');
+  a.href=detailURL(symbol,d.period);a.textContent=symbol;a.title=companies[symbol];identity.append(a);
+  const quarter=node('td',null,'period-code'), qLink=node('a',periodText(d.period),'quarter-link');
+  qLink.href=a.href;quarter.append(qLink);
+  const trend=node('td',null,'spark-cell');trend.append(revenueTrend(symbol,d.period));
+  const figures=[0,3,1].map(i=>{
+    const cell=metricCell(d,i,i===0?4:null);cell.classList.add('home-figure');
+    cell.dataset.label=tr(...metricNames[i])+(i===0?tr(' ($B)','（十億ドル）'):i===1?tr(' ($/share)','（ドル／株）'):'');
+    if(i===0){const small=cell.querySelector('small');small.textContent=tr('YoY ','前年同期比 ')+small.textContent;}
+    return cell;
+  });
+  const statuses=node('td',null,'status-cell'),group=node('div',null,'statusgroup');
+  for(const status of new Set(d.facts.map(f=>f.status))){
+    const badge=node('span',statusText(status),'machine-badge');badge.dataset.kind=statusKind[status]||'issue';group.append(badge);
+  }
+  statuses.append(group);
+  const state=node('td',null,'review-col');state.dataset.label=uiText('review');
+  const badge=reviewBadge(d.state,reviewText(d.state),'a');
+  badge.href=detailURL(symbol,d.period)+'#focus';
+  state.append(badge);
+  row.append(identity,node('td',d.releaseDate||'—','date-cell'),quarter,...figures,trend,statuses,state);
+  return row;
+}
+function drawHome(){
+  renderHeader();
+  if(location.protocol==='https:' || location.protocol==='http:'){
+    window.history.replaceState(null,'','?'+overviewParams()+location.hash);
+  }
+  document.title=uiText('overview')+' | Company Disclosure Monitor';
+  document.body.dataset.issuer=homeState.symbol;
+  $('skip').href='#filings';$('skip').textContent=tr('Skip to earnings filings','決算開示一覧へ移動');
+  $('homeTitle').textContent=uiText('overview');
+  $('marketLabel').textContent='MAGNIFICENT SEVEN  /  SEC EDGAR';
+  $('homeIntro').textContent=tr('Compare quarterly growth, operating margins and diluted earnings per share across seven US companies. Open a quarter for cash flow, source figures and filing checks.','米国の主要7社について、売上高の伸び、営業利益率、希薄化後EPSを比較できます。四半期を選ぶと、キャッシュフロー、SEC原文、照合結果を確認できます。');
+  const scope=homeHistory.filter(r=>!homeState.symbol || r.symbol===homeState.symbol);
+  const syms=[...new Set(scope.map(x=>x.symbol))], dates=[...new Set(syms.map(s=>asOfByIssuer[s]).filter(Boolean))].sort();
+  const time=dates.length===1?dates[0]:dates.length?dates[0]+' – '+dates.at(-1):'—';
+  $('snapshotDate').textContent=tr('Data as of ','データ取得日 ')+time;
+  $('summaryTitle').textContent=(homeState.symbol || tr('Seven companies','7社'))+tr(' · checks for the last eight quarters',' · 直近8四半期の照合結果');
+  overviewSummary(scope);
+  $('feedTitle').textContent=tr('Earnings filings','決算開示一覧');
+  $('feedDescription').textContent=tr('Select a quarter to see the figures and their sources. Automated checks cover revenue, diluted EPS and operating income. Human review covers the quarter as a whole.','四半期を選ぶと、数値とその出典が開きます。売上高・希薄化後EPS・営業利益を自動照合し、担当者確認は四半期ごとに記録します。');
+  $('homeDownload').textContent=uiText('exportCsv');
+  $('modes').replaceChildren();
+  for(const [value,label] of [['latest',tr('Latest earnings','最新決算')],['history',tr('Quarter history','四半期履歴')]]){
+    const btn=node('button',label);btn.type='button';btn.dataset.mode=value;btn.setAttribute('aria-pressed',String(homeState.mode===value));
+    btn.onclick=()=>{homeState.mode=value;drawHome();$('modes').querySelector('[aria-pressed=true]').focus();};
+    $('modes').append(btn);
+  }
+  $('companyLabel').textContent=tr('Ticker','ティッカー');$('statusLabel').textContent=tr('Automated check','自動照合');
+  optionList($('companyFilter'),[['',tr('All companies','全7社')],...issuerEntries.map(([symbol])=>[symbol,symbol])],homeState.symbol);
+  const knownStatuses=new Set(homeHistory.flatMap(r=>r.d.facts.map(f=>f.status)));
+  optionList($('statusFilter'),[['',tr('All statuses','すべて')],...[...new Set([...statusOrder,...knownStatuses])].filter(s=>knownStatuses.has(s)).map(s=>[s,statusText(s)])],homeState.status);
+  const head=node('tr');
+  for(const [label,cls] of [[tr('Ticker','ティッカー'),''],[tr('8-K filing date','8-K提出日'),''],[tr('Fiscal quarter','会計四半期'),''],[tr('Revenue ($B) / YoY','売上高（十億ドル）／前年同期比'),''],[tr('Operating margin','営業利益率'),''],[tr('Diluted EPS ($/share)','希薄化後EPS（ドル／株）'),''],[tr('Revenue trend¹','売上高の推移¹'),'spark-cell'],[tr('Automated check','自動照合'),''],[uiText('review'),'']]){
+    const th=node('th',label,cls);th.scope='col';head.append(th);
+  }
+  $('feedHeader').replaceChildren(head);
+  const rows=landingRows();
+  $('feedRows').replaceChildren(...rows.map(feedRow));
+  const metricCount=rows.reduce((n,r)=>n+r.d.facts.filter(f=>!homeState.status||f.status===homeState.status).length,0);
+  $('resultCount').textContent=tr(rows.length+' quarter'+(rows.length===1?'':'s')+' · '+metricCount+' check'+(metricCount===1?'':'s'),'対象 '+rows.length+'四半期 · 照合 '+metricCount+'件');
+  $('emptyResult').hidden=!!rows.length;$('emptyResult').textContent=tr('No quarters match these filters.','この条件に該当する四半期はありません。');
+  $('homeDownload').disabled=!rows.length;
+  $('publicScope').textContent=tr('¹ Each chart shows up to eight quarters of revenue ending with the quarter shown. Each row has its own scale. An independent project using SEC EDGAR filings.','¹ 売上高のグラフは、その行の四半期までの最大8期を示します。目盛りは行ごとに異なります。SECの開示書類を使用した独立プロジェクトです。');
+}
+$('companyFilter').onchange=e=>{homeState.symbol=e.target.value;drawHome();};
+$('statusFilter').onchange=e=>{homeState.status=e.target.value;if(homeState.status) homeState.mode='history';drawHome();};
+$('homeDownload').onclick=()=>{
+  const header=['Ticker','Company','Data as of','Fiscal quarter','Period end','Release filed','Report filed','Metric','Unit','Reported value','Comparison value','Automated check','Human review','8-K accession','Form 8-K','Exhibit 99.1','Periodic report form','Periodic report','Report accession','Exhibit SHA-256','Report SHA-256','Comparison source','Exception','Other filing candidates'];
+  const rows=landingRows().flatMap(({symbol,d})=>d.facts.filter(f=>!homeState.status||f.status===homeState.status).map(f=>[symbol,companies[symbol],asOfByIssuer[symbol],d.period,d.end,d.releaseDate,d.reportDate,f.metric,f.unit,f.value,f.detail,labels[f.status]?.[0]||f.status,reviewNames[d.state]||d.state,d.accession,d.filing,d.url,d.form,d.quarterly,d.quarterlyAccession,d.sha,d.quarterlySha,f.row,f.reason,(d.candidates||[]).map(c=>c.url).join(' | ')]));
+  appendMetricCSV(header,rows,new Map(landingRows().map(({symbol,d})=>[symbol+'/'+d.period,d])),homeState.status);
+  const csv=[header,...rows].map(row=>row.map(v=>'"'+String(v??'').replaceAll('"','""')+'"').join(',')).join('\r\n')+'\r\n';
+  const url=URL.createObjectURL(new Blob(['\ufeff',csv],{type:'text/csv;charset=utf-8'}));
+  const a=node('a');a.href=url;a.download='disclosure-'+(homeState.symbol||'m7')+'-'+homeState.mode+'.csv';document.body.append(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(url),1000);
+};
+
+$('narrSelect').onchange=e=>{
+  chosenAcc=e.target.value;
+  if(location.protocol!=='file:')window.history.replaceState(null,'',narrativeURL(ticker,chosenAcc));
+  drawNarratives();
+};
+$('lang').onclick=()=>{ja=!ja;draw();
+  if(!onHome && location.protocol!=='file:'){
+    const url=eventPage?narrativeURL(ticker,chosenAcc):detailURL(ticker,records[selected].period);
+    window.history.replaceState(null,'',url+(query.has('baseline')?'&baseline=1':''));
+  }
+};
+$('download').onclick=()=>{
+const fields=['Fiscal quarter','Metric','Reported value','Unit','Comparison value','Comparison unit','Comparison row','Comparison column','Check','Human review','Accession','Form 8-K','Exhibit 99.1','SHA-256'];
+if(history || has10Q) fields.push('Periodic report','Report accession','Report SHA-256','Exception','Report form','Period end');
+const rows=records.flatMap(d=>d.facts.map(f=>[d.period,f.metric,f.value,f.unit,f.detail,f.detailUnit,f.row,f.column,labels[f.status][0],d.state || 'Pending',d.accession,d.filing,d.url,d.sha,...(history || has10Q ? [d.quarterly,d.quarterlyAccession,d.quarterlySha,f.reason,d.form || (history ? '' : '10-Q'),d.end || ''] : [])]));
+if(history)appendMetricCSV(fields,rows,new Map(records.map(d=>[ticker+'/'+d.period,d])),'');
+const csv=[fields,...rows].map(r=>r.map(x=>'"'+String(x ?? '').replaceAll('"','""')+'"').join(',')).join('\r\n')+'\r\n';
+const url=URL.createObjectURL(new Blob(['\ufeff',csv],{type:'text/csv;charset=utf-8'})),a=document.createElement('a');a.href=url;a.download=history ? ticker+'-'+records[0].period+'-'+records.at(-1).period+'.csv' : has10Q ? companyName.toLowerCase().replaceAll(' ','-')+'-'+records[0].period+'-reconciliation.csv' : 'nvidia-filing-coverage-FY2025Q4-FY2027Q3.csv';document.body.append(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(url),1000);
+};
+// @include review-demo.js
+draw();
+</script></body></html>

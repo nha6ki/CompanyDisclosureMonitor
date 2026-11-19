@@ -1,0 +1,50 @@
+[
+  {
+    "symbol": "AAPL",
+    "period": "FY2026Q4",
+    "revision": 1,
+    "evidence": "384ddd0907816cebf34d9774980cc17f4078dc22165dc7f1838e40ef82f573a5",
+    "state": "確認済み",
+    "saved_at": "2026-11-19 01:55:27"
+  },
+  {
+    "symbol": "AAPL",
+    "period": "FY2026Q4",
+    "revision": 2,
+    "evidence": "384ddd0907816cebf34d9774980cc17f4078dc22165dc7f1838e40ef82f573a5",
+    "state": "未確認",
+    "saved_at": "2026-11-19 01:55:28"
+  },
+  {
+    "symbol": "NVDA",
+    "period": "FY2027Q2",
+    "revision": 1,
+    "evidence": "legacy:0959d4d0887f7b8294727ef630f899dae0b800c883a0cc6aab49ad177daa632a",
+    "state": "確認済み",
+    "saved_at": "2026-11-19 00:54:58"
+  },
+  {
+    "symbol": "NVDA",
+    "period": "FY2027Q3",
+    "revision": 1,
+    "evidence": "legacy:ed06aedbf3ace7c2e512897fed0d0d6a472de35f08ed7280881208310a1049cf",
+    "state": "確認済み",
+    "saved_at": "2026-11-19 00:47:53"
+  },
+  {
+    "symbol": "NVDA",
+    "period": "FY2027Q3",
+    "revision": 2,
+    "evidence": "legacy:ed06aedbf3ace7c2e512897fed0d0d6a472de35f08ed7280881208310a1049cf",
+    "state": "未確認",
+    "saved_at": "2026-11-19 00:48:02"
+  },
+  {
+    "symbol": "NVDA",
+    "period": "FY2027Q3",
+    "revision": 3,
+    "evidence": "legacy:ed06aedbf3ace7c2e512897fed0d0d6a472de35f08ed7280881208310a1049cf",
+    "state": "確認済み",
+    "saved_at": "2026-11-19 00:52:25"
+  }
+]

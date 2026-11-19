@@ -1,0 +1,31 @@
+name: Publish disclosure monitor
+on:
+  workflow_dispatch:
+permissions:
+  contents: read
+concurrency:
+  group: disclosure-pages
+  cancel-in-progress: false
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v6
+      - run: python3 pages/manage.py build
+      - uses: actions/upload-pages-artifact@v4
+        with:
+          path: _site
+  publish:
+    needs: build
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deploy.outputs.page_url }}
+    steps:
+      - name: Deploy
+        id: deploy
+        uses: actions/deploy-pages@v4
