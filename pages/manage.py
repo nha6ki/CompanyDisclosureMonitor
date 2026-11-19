@@ -115,23 +115,40 @@ def build():
 def filing_updates(template):
     published = DATA/'filings.json'
     approvals = DATA/'approved-highlights.json'
-    if not published.exists() and not approvals.exists():
-        return template
     marker = '<script type="application/json" id="narrative-filings">'
     before, body = template.split(marker, 1)
     contents, after = body.split('</script>', 1)
     filings = json.loads(contents)
+    # The template includes legacy candidate counts. Only source-checked events enter the public build.
+    for batch in filings.values():
+        for filing in batch.values():
+            filing['sections'] = {}
     for sym, records in (load(published) if published.exists() else {}).items():
         for acc, row in records.items():
             old = filings[sym].get(acc, {})
             filings[sym][acc] = dict(row, sections=old.get('sections', {}))
-    for sym, records in (load(approvals) if approvals.exists() else {}).items():
-        for acc, row in records.items():
-            entry = filings[sym].setdefault(acc, dict(row, sections={}))
-            for sid, sec in row['sections'].items():
-                if sec['state'] != 'reviewed':
-                    raise ValueError('Only reviewed highlights may enter the Pages build.')
-                entry['sections'][sid] = sec
+    for decisions in (DATA/'reviewed-demo.json', approvals):
+        if not decisions.is_file():
+            continue
+        for sym, records in load(decisions).items():
+            for acc, row in records.items():
+                entry = filings[sym].setdefault(acc, dict(row, sections={}))
+                sections = entry['sections']
+                hashes = {sec['sourceHash'] for sec in row['sections'].values()}
+                if len(hashes) > 1:
+                    raise ValueError('Conflicting filing versions: '+acc)
+                if hashes:
+                    sections = {sid:sec for sid,sec in sections.items() if sec['sourceHash'] in hashes}
+                    entry['sections'] = sections
+                for sid, sec in row['sections'].items():
+                    if sec['state'] != 'reviewed':
+                        raise ValueError('Only reviewed highlights may enter the Pages build.')
+                    if sec['count'] != len(sec['events']):
+                        raise ValueError('Highlight count mismatch: '+acc)
+                    if not sec['events']:
+                        sections.pop(sid, None)
+                    elif sections.get(sid, {}).get('reviewedCandidate') != digest(dict(sec, state='pending')):
+                        sections[sid] = sec
     return before + marker + script_json(filings) + '</script>' + after
 
 
@@ -191,13 +208,8 @@ class PreviewHandler(SimpleHTTPRequestHandler):
         super().do_GET()
 
     def translate_path(self, path):
-        from urllib.parse import parse_qs, urlsplit
-        request = urlsplit(path)
-        name = request.path
-        if name in ('/', '/index.html') and parse_qs(request.query).get('tab') == ['events']:
-            review = ROOT.parent / 'register_data/pages_daily/review/detail.html'
-            if review.is_file():
-                return str(review)
+        from urllib.parse import urlsplit
+        name = urlsplit(path).path
         local = {'/local-review/':'index.html','/local-review/index.html':'index.html','/local-review/detail.html':'detail.html',
                  '/local-review/backfill-results.json':'backfill-results.json'}
         if name in local:

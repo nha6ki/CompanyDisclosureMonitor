@@ -1,0 +1,1560 @@
+{
+  "AAPL": {
+    "0001140361-26-042798": {
+      "date": "2026-11-09",
+      "form": "8-K",
+      "url": "https://www.sec.gov/Archives/edgar/data/320193/000114036126042798/ef20085077_8k.htm",
+      "items": [
+        "8.01",
+        "9.01"
+      ],
+      "sections": {
+        "section-01": {
+          "id": "section-01",
+          "item": "8.01",
+          "state": "reviewed",
+          "model": "nvidia-qwen38-27b:16k",
+          "sourceHash": "51382a44c8ac5ed6c6e9948a0c6d1bd2605796b585b8c068c6a2661506c318cd",
+          "sectionHash": "5b3faf9bc8b10abd280351bc8ff55418a0ee7395e6cc15025808218f2332ad7e",
+          "events": [
+            {
+              "event_id": "event-1",
+              "event_type": {
+                "value": "other",
+                "block_numbers": [
+                  64
+                ]
+              },
+              "subject": {
+                "value": "Apple Inc.",
+                "block_numbers": [
+                  64
+                ]
+              },
+              "organization": {
+                "value": "Apple Inc.",
+                "block_numbers": [
+                  64
+                ]
+              },
+              "summary_ja": {
+                "value": "Appleは11月9日、変動金利債2銘柄と固定金利債5銘柄の発行・売却を完了した。",
+                "block_numbers": [
+                  64
+                ]
+              },
+              "status_as_of_filing": {
+                "value": "completed_as_reported",
+                "block_numbers": [
+                  64
+                ]
+              },
+              "dates": [
+                {
+                  "role": "agreement",
+                  "value": "2026-11-05",
+                  "precision": "day",
+                  "certainty": "reported",
+                  "block_numbers": [
+                    64
+                  ]
+                },
+                {
+                  "role": "effective",
+                  "value": "2026-11-09",
+                  "precision": "day",
+                  "certainty": "reported",
+                  "block_numbers": [
+                    64
+                  ]
+                }
+              ],
+              "conditions": [],
+              "notes_ja": {
+                "value": "各銘柄の条件は、2024年11月1日付の社債契約に基づく2026年11月9日付の証明書に定められた。",
+                "block_numbers": [
+                  65
+                ]
+              }
+            }
+          ],
+          "count": 1,
+          "blocks": [
+            {
+              "block_number": 64,
+              "text": "On November 9, 2026, Apple Inc. (“Apple”) consummated the issuance and sale of $500,000,000 aggregate principal amount of its Floating Rate Notes due 2028 (the “2028 Floating Rate Notes”), $750,000,000 aggregate principal amount of its Floating Rate Notes due 2029 (the “2029 Floating Rate Notes”), $1,000,000,000 aggregate principal amount of its 4.650% Notes due 2028 (the “2028 Fixed Rate Notes”), $1,000,000,000 aggregate principal amount of its 4.750% Notes due 2029 (the “2029 Fixed Rate Notes”), $1,000,000,000 aggregate principal amount of its 4.900% Notes due 2031 (the “2031 Fixed Rate Notes”), $1,250,000,000 aggregate principal amount of its 5.100% Notes due 2033 (the “2033 Fixed Rate Notes”) and $2,000,000,000 aggregate principal amount of its 5.350% Notes due 2036 (the “2036 Fixed Rate Notes” and, together with the 2028 Floating Rate Notes, the 2029 Floating Rate Notes, the 2028 Fixed Rate Notes, the 2029 Fixed Rate Notes, the 2031 Fixed Rate Notes and the 2033 Fixed Rate Notes, the “Notes”), pursuant to an underwriting agreement (the “Underwriting Agreement”) dated November 5, 2026 among Apple and Goldman Sachs & Co. LLC, BofA Securities, Inc., Deutsche Bank Securities Inc. and J.P. Morgan Securities LLC, as representatives of the several underwriters named therein."
+            },
+            {
+              "block_number": 65,
+              "text": "The Notes are being issued pursuant to an indenture, dated as of November 1, 2024 (the “Indenture”), between Apple and The Bank of New York Mellon Trust Company, N.A., as trustee, together with the officer’s certificate, dated November 9, 2026 (the “Officer’s Certificate”), issued pursuant to the Indenture establishing the terms of each series of Notes."
+            }
+          ],
+          "missing": [],
+          "reviewedCandidate": "4d382507de7ac55ab7e1c987cea65252b1b86552da2eb93214726fb67a896db2"
+        }
+      }
+    }
+  },
+  "MSFT": {
+    "0001193125-26-448357": {
+      "date": "2026-11-05",
+      "form": "8-K",
+      "url": "https://www.sec.gov/Archives/edgar/data/789019/000119312526448357/d177209d8k.htm",
+      "items": [
+        "5.02"
+      ],
+      "sections": {
+        "section-01": {
+          "id": "section-01",
+          "item": "5.02",
+          "state": "reviewed",
+          "model": "nvidia-qwen38-27b:16k",
+          "sourceHash": "d46a2f02be4d6dfba1e6c244f621981de39814eb19011557a6e91da042142799",
+          "sectionHash": "92c3b7ceb4ddd34f13041934b7a285ef50a8294640b027bef8f0aa33a25c67b4",
+          "events": [
+            {
+              "event_id": "event-1",
+              "event_type": {
+                "value": "non_reelection",
+                "block_numbers": [
+                  50
+                ]
+              },
+              "subject": {
+                "value": "Emma N. Walmsley",
+                "block_numbers": [
+                  50
+                ]
+              },
+              "organization": {
+                "value": "Microsoft Corporation",
+                "block_numbers": [
+                  50
+                ]
+              },
+              "summary_ja": {
+                "value": "Emma N. Walmsley取締役は11月4日、2026年の定時株主総会で再選を求めない意向をMicrosoftに通知した。",
+                "block_numbers": [
+                  50
+                ]
+              },
+              "status_as_of_filing": {
+                "value": "serving_until_meeting",
+                "block_numbers": [
+                  50
+                ]
+              },
+              "dates": [
+                {
+                  "role": "notice",
+                  "value": "2026-11-04",
+                  "precision": "day",
+                  "certainty": "reported",
+                  "block_numbers": [
+                    50
+                  ]
+                }
+              ],
+              "conditions": [],
+              "notes_ja": {
+                "value": "株主総会まで取締役として続任する。経営陣との意見の不一致によるものではない。",
+                "block_numbers": [
+                  50
+                ]
+              }
+            }
+          ],
+          "count": 1,
+          "blocks": [
+            {
+              "block_number": 50,
+              "text": "(b) On November 4, 2026, Emma N. Walmsley, a member of the Board of Directors of Microsoft Corporation (the “Company”) since 2019, informed the Company of her decision not to stand for re-election at the Company’s 2026 annual shareholder meeting (the “Annual Meeting”). Ms. Walmsley will continue to serve as a director until the Annual Meeting. Her decision not to stand for re-election is not as a result of any disagreement with management on any matter relating to the Company’s operations, policies, or practices."
+            }
+          ],
+          "missing": [],
+          "reviewedCandidate": "f981bc65b219ef16aa5d866aa9cc5ea4cfe5e0a2d9cfe06dc6cab96e441038d8"
+        }
+      }
+    },
+    "0001193125-26-447173": {
+      "date": "2026-11-04",
+      "form": "8-K",
+      "url": "https://www.sec.gov/Archives/edgar/data/789019/000119312526447173/d178557d8k.htm",
+      "items": [
+        "8.01",
+        "9.01"
+      ],
+      "sections": {
+        "section-01": {
+          "id": "section-01",
+          "item": "8.01",
+          "state": "reviewed",
+          "model": "nvidia-qwen38-27b:16k",
+          "sourceHash": "a849c65e0c6ba80cc2cda9cd1919a38add8f53a7ccdf93da31601f48b43e521e",
+          "sectionHash": "733e76ed28c1e4df3b7db6c4a04f3101ba3397b21ddf5896a615b9cadf815e08",
+          "events": [
+            {
+              "event_id": "event-1",
+              "event_type": {
+                "value": "other",
+                "block_numbers": [
+                  56
+                ]
+              },
+              "subject": {
+                "value": "Microsoft Corporation",
+                "block_numbers": [
+                  56
+                ]
+              },
+              "organization": {
+                "value": "Microsoft Corporation",
+                "block_numbers": [
+                  56
+                ]
+              },
+              "summary_ja": {
+                "value": "Microsoftは10月29日、固定金利債と変動金利債の発行・売却について引受契約を締結した。",
+                "block_numbers": [
+                  56
+                ]
+              },
+              "status_as_of_filing": {
+                "value": "completed_as_reported",
+                "block_numbers": [
+                  56
+                ]
+              },
+              "dates": [
+                {
+                  "role": "agreement",
+                  "value": "2026-10-29",
+                  "precision": "day",
+                  "certainty": "reported",
+                  "block_numbers": [
+                    56
+                  ]
+                }
+              ],
+              "conditions": [],
+              "notes_ja": {
+                "value": "J.P. Morgan Securities、UBS Securities、Wells Fargo Securitiesが引受団の代表を務めた。",
+                "block_numbers": [
+                  56
+                ]
+              }
+            }
+          ],
+          "count": 1,
+          "blocks": [
+            {
+              "block_number": 56,
+              "text": "On October 29, 2026, Microsoft Corporation (the “Company”) entered into an Underwriting Agreement (the “Underwriting Agreement”) with the several underwriters named therein, for which J.P. Morgan Securities LLC, UBS Securities LLC and Wells Fargo Securities, LLC acted as representatives, for the issuance and sale by the Company of $1,000,000,000 aggregate principal amount of the Company’s Floating Rate Notes due 2028 (the “2028 Floating Rate Notes”), $2,000,000,000 aggregate principal amount of the Company’s 4.850% Notes due 2028 (the “2028 Notes”), $1,000,000,000 aggregate principal amount of the Company’s Floating Rate Notes due 2029 (the “2029 Floating Rate Notes” and together with the 2028 Floating Rate Notes, the “Floating Rate Notes”), $3,250,000,000 aggregate principal amount of the Company’s 5.000% Notes due 2029 (the “2029 Notes”), $3,250,000,000 aggregate principal amount of the Company’s 5.200% Notes due 2031 (the “2031 Notes”), $2,500,000,000 aggregate principal amount of the Company’s 5.350% Notes due 2033 (the “2033 Notes”), $4,000,000,000 aggregate principal amount of the Company’s 5.550% Notes due 2036 (the “2036 Notes”), $2,000,000,000 aggregate principal amount of the Company’s 6.150% Notes due 2046 (the “2046 Notes”), $4,000,000,000 aggregate principal amount of the Company’s 6.250% Notes due 2056 (the “2056 Notes”) and $2,000,000,000 aggregate principal amount of the Company’s 6.350% Notes due 2066 (the “2066 Notes” and, collectively with the 2028 Notes, the 2029 Notes, the 2031 Notes, the 2033 Notes, the 2036 Notes, the 2046 Notes and the 2056 Notes, the “Fixed Rate Notes” and the Fixed Rate Notes, together with the Floating Rate Notes, the “Notes”)."
+            }
+          ],
+          "missing": [],
+          "reviewedCandidate": "d0725d0993bf2d6099b21752b72984b1375b66573204504584bc5e64bb861083"
+        }
+      }
+    }
+  },
+  "GOOGL": {
+    "0001193125-26-449835": {
+      "date": "2026-11-05",
+      "form": "8-K",
+      "url": "https://www.sec.gov/Archives/edgar/data/1652044/000119312526449835/d174184d8k.htm",
+      "items": [
+        "8.01",
+        "9.01"
+      ],
+      "sections": {
+        "section-01": {
+          "id": "section-01",
+          "item": "8.01",
+          "state": "reviewed",
+          "model": "nvidia-qwen38-27b:16k",
+          "sourceHash": "bd5e81de2a187508bc740c36753f3374a64b445b73edde37f21406eee19e668c",
+          "sectionHash": "b2a5de3a4489fa45f516cc0d0d9b5448f7da9a29346bdfbb008651b09d5199d8",
+          "events": [
+            {
+              "event_id": "event-1",
+              "event_type": {
+                "value": "other",
+                "block_numbers": [
+                  134,
+                  135
+                ]
+              },
+              "subject": {
+                "value": "Alphabet Inc.",
+                "block_numbers": [
+                  135
+                ]
+              },
+              "organization": {
+                "value": "Alphabet Inc.",
+                "block_numbers": [
+                  135
+                ]
+              },
+              "summary_ja": {
+                "value": "Alphabetは11月5日、額面総額60億ユーロのシニア債の公募を完了した。",
+                "block_numbers": [
+                  135
+                ]
+              },
+              "status_as_of_filing": {
+                "value": "completed_as_reported",
+                "block_numbers": [
+                  135
+                ]
+              },
+              "dates": [
+                {
+                  "role": "effective",
+                  "value": "2026-11-05",
+                  "precision": "day",
+                  "certainty": "reported",
+                  "block_numbers": [
+                    135
+                  ]
+                }
+              ],
+              "conditions": [],
+              "notes_ja": null
+            }
+          ],
+          "count": 1,
+          "blocks": [
+            {
+              "block_number": 134,
+              "text": "Alphabet Inc. Euro-Denominated Senior Notes Offering"
+            },
+            {
+              "block_number": 135,
+              "text": "On November 5, 2026, Alphabet Inc. (“Alphabet”) closed its underwritten public offering of €6 billion aggregate principal amount of euro-denominated senior notes (the “Notes”) pursuant to Alphabet’s registration statement on Form S-3 (File No. 333-296395). The Notes were issued pursuant to an Indenture (the “Indenture”), dated as of February 12, 2016, between Alphabet and The Bank of New York Mellon Trust Company, N.A., as trustee."
+            }
+          ],
+          "missing": [],
+          "reviewedCandidate": "5db8a0a9115d66e5674d536628a996de8f4b28ebd7ae8050c0c6dea5f63298de"
+        }
+      }
+    }
+  },
+  "NVDA": {
+    "0001045810-26-000078": {
+      "date": "2026-09-03",
+      "form": "8-K",
+      "url": "https://www.sec.gov/Archives/edgar/data/1045810/000104581026000078/nvda-20260902.htm",
+      "items": [
+        "8.01"
+      ],
+      "sections": {
+        "section-01": {
+          "id": "section-01",
+          "item": "8.01",
+          "state": "reviewed",
+          "model": "nvidia-qwen38-27b:16k",
+          "sourceHash": "0ea586510cc2e4b817a29091e1a0c35beaf64844d98e84f199f00b15d9f35df7",
+          "sectionHash": "83810dd041a2019a273688f5d9d1b9210433aad3d77c83d18b5b88702458cab7",
+          "events": [
+            {
+              "event_id": "event-1",
+              "event_type": {
+                "value": "acquisition_agreement",
+                "block_numbers": [
+                  42
+                ]
+              },
+              "subject": {
+                "value": "Hugging Face, Inc.",
+                "block_numbers": [
+                  42
+                ]
+              },
+              "organization": {
+                "value": "NVIDIA Corporation",
+                "block_numbers": [
+                  42
+                ]
+              },
+              "summary_ja": {
+                "value": "NVIDIA Corporationは、Hugging Face, Inc.の買収に関する最終合意書に署名した。",
+                "block_numbers": [
+                  42
+                ]
+              },
+              "status_as_of_filing": {
+                "value": "agreement_signed_pending_close",
+                "block_numbers": [
+                  42,
+                  44
+                ]
+              },
+              "dates": [
+                {
+                  "role": "agreement",
+                  "value": "2026-09-02",
+                  "precision": "day",
+                  "certainty": "reported",
+                  "block_numbers": [
+                    42
+                  ]
+                },
+                {
+                  "role": "expected_completion",
+                  "value": "2027-H1",
+                  "precision": "half_year",
+                  "certainty": "expected",
+                  "block_numbers": [
+                    44
+                  ]
+                }
+              ],
+              "conditions": [
+                {
+                  "value": "慣習的なクローズ条件の充足または免除、および必要な規制当局の承認の取得",
+                  "block_numbers": [
+                    44
+                  ]
+                }
+              ],
+              "notes_ja": {
+                "value": "買収対価は調整前で約119億ドル。NVIDIAに加わる従業員向けに最大約10億ドルの株式報酬制度を設け、Hugging Faceのプラットフォームのオープン性を維持する方針を示した。",
+                "block_numbers": [
+                  43,
+                  45
+                ]
+              }
+            }
+          ],
+          "count": 1,
+          "blocks": [
+            {
+              "block_number": 42,
+              "text": "On September 2, 2026, NVIDIA Corporation (“NVIDIA”) entered into a definitive agreement to acquire Hugging Face, Inc. (“Hugging Face”). Hugging Face operates a platform and community for developing, sharing and deploying open-source models, datasets and applications."
+            },
+            {
+              "block_number": 43,
+              "text": "The transaction includes an approximately $11.9 billion purchase price payable to Hugging Face stockholders, subject to certain adjustments, and an equity-based retention program of up to approximately $1.0 billion for Hugging Face employees joining NVIDIA."
+            },
+            {
+              "block_number": 44,
+              "text": "The transaction is expected to close in the first half of 2027, subject to the satisfaction or waiver of customary closing conditions, including receipt of required regulatory approvals."
+            },
+            {
+              "block_number": 45,
+              "text": "NVIDIA expects the acquisition to provide additional resources to Hugging Face and support developers building, sharing and deploying open models and applications. NVIDIA has committed to, among other things, keep Hugging Face’s platform open, consistent with Hugging Face’s existing practices. Under this commitment, Hugging Face would continue to permit model makers, developers, and users to upload and download models and datasets of their choosing and to support other silicon vendors."
+            }
+          ],
+          "missing": [],
+          "reviewedCandidate": "5d1327fd7d95f0fcf258682a5a24883bf8839ff5a6d4bfb6478c7923f215f3a2"
+        }
+      }
+    },
+    "0001045810-26-000028": {
+      "date": "2026-05-08",
+      "form": "8-K",
+      "url": "https://www.sec.gov/Archives/edgar/data/1045810/000104581026000028/nvda-20260507.htm",
+      "items": [
+        "5.02"
+      ],
+      "sections": {
+        "section-01": {
+          "id": "section-01",
+          "item": "5.02",
+          "state": "reviewed",
+          "model": "nvidia-qwen38-27b:16k",
+          "sourceHash": "87dd325ef6f0977f11e5aadd6e6f6732d957333b03bdb7fa792b922df4e52419",
+          "sectionHash": "1514eceef8aee00298bdc99011196d79ba41e005296f44dc9e83ea4e0299ea64",
+          "events": [
+            {
+              "event_id": "event-1",
+              "event_type": {
+                "value": "appointment",
+                "block_numbers": [
+                  43
+                ]
+              },
+              "subject": {
+                "value": "Suzanne Nora Johnson",
+                "block_numbers": [
+                  43
+                ]
+              },
+              "organization": {
+                "value": "NVIDIA Corporation",
+                "block_numbers": [
+                  43
+                ]
+              },
+              "summary_ja": {
+                "value": "NVIDIA Corporationの取締役会が、Suzanne Nora Johnson氏を取締役および監査委員会委員に任命することを決定した。",
+                "block_numbers": [
+                  43
+                ]
+              },
+              "status_as_of_filing": {
+                "value": "pending_effective",
+                "block_numbers": [
+                  43
+                ]
+              },
+              "dates": [
+                {
+                  "role": "decision",
+                  "value": "2026-05-07",
+                  "precision": "day",
+                  "certainty": "reported",
+                  "block_numbers": [
+                    43
+                  ]
+                },
+                {
+                  "role": "effective",
+                  "value": "2026-07-13",
+                  "precision": "day",
+                  "certainty": "scheduled",
+                  "block_numbers": [
+                    43
+                  ]
+                }
+              ],
+              "conditions": [],
+              "notes_ja": {
+                "value": "任命は2026年7月13日に発効する。取締役会の定数は10名から11名に増加する。",
+                "block_numbers": [
+                  43
+                ]
+              }
+            }
+          ],
+          "count": 1,
+          "blocks": [
+            {
+              "block_number": 43,
+              "text": "On May 7, 2026, the Board of Directors, or the Board, of NVIDIA Corporation appointed Suzanne Nora Johnson as a member of the Board and as a member of the Audit Committee of the Board and the number of directors constituting the full Board was increased from ten to eleven, in each case effective July 13, 2026. Ms. Nora Johnson will join the Board effective July 13, 2026, due to a prior professional commitment."
+            }
+          ],
+          "missing": [],
+          "reviewedCandidate": "5270f2ad0bea614e6d3cef7f10b0ba1e933e0c345b9d7fdb8decc54def8a0ece"
+        }
+      }
+    },
+    "0001045810-26-000026": {
+      "date": "2026-04-27",
+      "form": "8-K",
+      "url": "https://www.sec.gov/Archives/edgar/data/1045810/000104581026000026/nvda-20260424.htm",
+      "items": [
+        "5.02"
+      ],
+      "sections": {
+        "section-01": {
+          "id": "section-01",
+          "item": "5.02",
+          "state": "reviewed",
+          "model": "nvidia-qwen38-27b:16k",
+          "sourceHash": "42a5d9b50b58468d22da14757d9108373a2a97ab052082ffdaac48528fece78f",
+          "sectionHash": "00b25cae209e60cbd2724528e4cff492d1563fb517781be6ec21710d8bab53b1",
+          "events": [
+            {
+              "event_id": "event-1",
+              "event_type": {
+                "value": "retirement_notice",
+                "block_numbers": [
+                  43
+                ]
+              },
+              "subject": {
+                "value": "Donald Robertson",
+                "block_numbers": [
+                  43
+                ]
+              },
+              "organization": {
+                "value": "NVIDIA Corporation",
+                "block_numbers": [
+                  43
+                ]
+              },
+              "summary_ja": {
+                "value": "Donald Robertson氏が、2026年5月4日付でVice PresidentおよびChief Accounting Officerの役職から退任する意向を通知した。",
+                "block_numbers": [
+                  43
+                ]
+              },
+              "status_as_of_filing": {
+                "value": "retirement_announced",
+                "block_numbers": [
+                  43
+                ]
+              },
+              "dates": [
+                {
+                  "role": "notice",
+                  "value": "2026-04-24",
+                  "precision": "day",
+                  "certainty": "reported",
+                  "block_numbers": [
+                    43
+                  ]
+                },
+                {
+                  "role": "effective",
+                  "value": "2026-05-04",
+                  "precision": "day",
+                  "certainty": "scheduled",
+                  "block_numbers": [
+                    43
+                  ]
+                },
+                {
+                  "role": "transition_end",
+                  "value": "2026-07-01",
+                  "precision": "day",
+                  "certainty": "scheduled",
+                  "block_numbers": [
+                    43
+                  ]
+                }
+              ],
+              "conditions": [],
+              "notes_ja": {
+                "value": "退任後、2026年7月1日まではVP, Financeとしてプロジェクト支援に従事する。",
+                "block_numbers": [
+                  43
+                ]
+              }
+            },
+            {
+              "event_id": "event-2",
+              "event_type": {
+                "value": "appointment",
+                "block_numbers": [
+                  45
+                ]
+              },
+              "subject": {
+                "value": "Scott Gawel",
+                "block_numbers": [
+                  45
+                ]
+              },
+              "organization": {
+                "value": "NVIDIA Corporation",
+                "block_numbers": [
+                  43
+                ]
+              },
+              "summary_ja": {
+                "value": "NVIDIAは4月26日、Scott Gawel氏を副社長兼最高会計責任者に任命した。発効日は入社日の5月4日。",
+                "block_numbers": [
+                  45
+                ]
+              },
+              "status_as_of_filing": {
+                "value": "pending_effective",
+                "block_numbers": [
+                  45
+                ]
+              },
+              "dates": [
+                {
+                  "role": "decision",
+                  "value": "2026-04-26",
+                  "precision": "day",
+                  "certainty": "reported",
+                  "block_numbers": [
+                    45
+                  ]
+                },
+                {
+                  "role": "effective",
+                  "value": "2026-05-04",
+                  "precision": "day",
+                  "certainty": "scheduled",
+                  "block_numbers": [
+                    45
+                  ]
+                }
+              ],
+              "conditions": [],
+              "notes_ja": null
+            }
+          ],
+          "count": 2,
+          "blocks": [
+            {
+              "block_number": 43,
+              "text": "On April 24, 2026, Donald Robertson, Vice President, or VP, and Chief Accounting Officer, or CAO, of NVIDIA Corporation, or the Company, notified the Company of his intention to retire from his role as VP and CAO, effective May 4, 2026. Following such date, he will remain with the Company as VP, Finance to support various projects until July 1, 2026."
+            },
+            {
+              "block_number": 45,
+              "text": "On April 26, 2026, the Company appointed Scott Gawel, age 55, as VP and CAO of the Company, effective upon the commencement of his employment with the Company on May 4, 2026. In this role, he will serve as the Company's principal accounting officer."
+            }
+          ],
+          "missing": [],
+          "reviewedCandidate": "12e915020e5adc40d8c22a8649a48d7c75b4e6c06c007ba803c458f10ee684cd"
+        }
+      }
+    },
+    "0001045810-26-000069": {
+      "date": "2026-08-17",
+      "form": "8-K",
+      "url": "https://www.sec.gov/Archives/edgar/data/1045810/000104581026000069/nvda-20260817.htm",
+      "items": [
+        "1.01",
+        "2.03",
+        "7.01"
+      ],
+      "sections": {
+        "section-03": {
+          "id": "section-03",
+          "item": "7.01",
+          "state": "reviewed",
+          "model": "nvidia-qwen38-27b:16k",
+          "sourceHash": "a134b93273671911ee1d4fe83fda3c2d777997d2a9b0f9c2deee44c3839beb56",
+          "sectionHash": "f9055c72b4c9b2c51477e349da41a25fee1b562a403d4a43fd28a7496c9fcb1f",
+          "events": [
+            {
+              "event_id": "event-1",
+              "event_type": {
+                "value": "other",
+                "block_numbers": [
+                  53
+                ]
+              },
+              "subject": {
+                "value": "NVIDIA",
+                "block_numbers": [
+                  53
+                ]
+              },
+              "organization": {
+                "value": "SB Energy",
+                "block_numbers": [
+                  53
+                ]
+              },
+              "summary_ja": {
+                "value": "NVIDIAがSB Energyとのパートナーシップを発表した。",
+                "block_numbers": [
+                  53
+                ]
+              },
+              "status_as_of_filing": {
+                "value": "completed_as_reported",
+                "block_numbers": [
+                  53
+                ]
+              },
+              "dates": [
+                {
+                  "role": "notice",
+                  "value": "2026-08-17",
+                  "precision": "day",
+                  "certainty": "reported",
+                  "block_numbers": [
+                    53
+                  ]
+                }
+              ],
+              "conditions": [],
+              "notes_ja": null
+            }
+          ],
+          "count": 1,
+          "blocks": [
+            {
+              "block_number": 53,
+              "text": "On August 17, 2026, NVIDIA issued a press release announcing the partnership with SB Energy. The press release is attached as Exhibit 99.1 hereto and is incorporated herein by reference."
+            }
+          ],
+          "missing": [],
+          "reviewedCandidate": "f1ba56c4bdce73e0ef772c8fbdaeefa03b0847d653066da620c2b0033bbf1bd0"
+        }
+      }
+    },
+    "0001045810-26-000060": {
+      "date": "2026-07-02",
+      "form": "8-K",
+      "url": "https://www.sec.gov/Archives/edgar/data/1045810/000104581026000060/nvda-20260628.htm",
+      "items": [
+        "5.02"
+      ],
+      "sections": {
+        "section-01": {
+          "id": "section-01",
+          "item": "5.02",
+          "state": "reviewed",
+          "model": "nvidia-qwen38-27b:16k",
+          "sourceHash": "f8fcd73c02fd65c74bf07eaf276f703540db21810cf471823469e3cd06b3115d",
+          "sectionHash": "0b28b737d41ab3690e3a1e1427bfc31e27dfa55493b8c4bd0faf13a25b3e6980",
+          "events": [
+            {
+              "event_id": "event-1",
+              "event_type": {
+                "value": "retirement_notice",
+                "block_numbers": [
+                  43
+                ]
+              },
+              "subject": {
+                "value": "Ajay K. Puri",
+                "block_numbers": [
+                  43
+                ]
+              },
+              "organization": {
+                "value": "NVIDIA Corporation",
+                "block_numbers": [
+                  43
+                ]
+              },
+              "summary_ja": {
+                "value": "Ajay K. Puri氏が、後任の就任日に合わせて役職を退任する意向を通知した。",
+                "block_numbers": [
+                  43
+                ]
+              },
+              "status_as_of_filing": {
+                "value": "retirement_announced",
+                "block_numbers": [
+                  43
+                ]
+              },
+              "dates": [
+                {
+                  "role": "notice",
+                  "value": "2026-06-28",
+                  "precision": "day",
+                  "certainty": "reported",
+                  "block_numbers": [
+                    43
+                  ]
+                },
+                {
+                  "role": "effective",
+                  "value": null,
+                  "precision": null,
+                  "certainty": "unknown",
+                  "block_numbers": []
+                }
+              ],
+              "conditions": [],
+              "notes_ja": {
+                "value": "後任への円滑な移行を確保するため、シニアアドバイザー役として会社に残留する予定である。",
+                "block_numbers": [
+                  43
+                ]
+              }
+            },
+            {
+              "event_id": "event-2",
+              "event_type": {
+                "value": "appointment",
+                "block_numbers": [
+                  45
+                ]
+              },
+              "subject": {
+                "value": "Nicholas Parker",
+                "block_numbers": [
+                  45
+                ]
+              },
+              "organization": {
+                "value": "NVIDIA Corporation",
+                "block_numbers": [
+                  43
+                ]
+              },
+              "summary_ja": {
+                "value": "NVIDIAは7月1日、Nicholas Parker氏を世界のフィールド業務を統括する上級副社長に任命した。発効は入社時で、提出時点では8月24日の入社を見込んでいた。",
+                "block_numbers": [
+                  45
+                ]
+              },
+              "status_as_of_filing": {
+                "value": "pending_effective",
+                "block_numbers": [
+                  45
+                ]
+              },
+              "dates": [
+                {
+                  "role": "decision",
+                  "value": "2026-07-01",
+                  "precision": "day",
+                  "certainty": "reported",
+                  "block_numbers": [
+                    45
+                  ]
+                },
+                {
+                  "role": "effective",
+                  "value": "2026-08-24",
+                  "precision": "day",
+                  "certainty": "expected",
+                  "block_numbers": [
+                    45
+                  ]
+                }
+              ],
+              "conditions": [],
+              "notes_ja": null
+            }
+          ],
+          "count": 2,
+          "blocks": [
+            {
+              "block_number": 43,
+              "text": "On June 28, 2026, Ajay K. Puri, Executive Vice President, Worldwide Field Operations of NVIDIA Corporation, or the Company, notified the Company of his intention to retire from his role effective upon the employment commencement date of his successor. Mr. Puri, a 21-year executive at NVIDIA, is expected to remain with the Company in a senior advisory role to ensure a seamless transition to his successor."
+            },
+            {
+              "block_number": 45,
+              "text": "On July 1, 2026, the Company appointed Nicholas Parker, age 55, as Executive Vice President, Worldwide Field Operations of the Company, effective upon the commencement of his employment with the Company, which is anticipated to be on August 24, 2026."
+            }
+          ],
+          "missing": [
+            "Ajay K. Puri氏の退任発効日は、後任のNicholas Parker氏の就任開始日に依存しており、具体的な日付は未確定である。"
+          ],
+          "reviewedCandidate": "9e69d256a6b9ac9e76225e1b42cb5b9af380e1f1c70242d42b4b86370acd2246"
+        }
+      }
+    },
+    "0001045810-26-000056": {
+      "date": "2026-06-30",
+      "form": "8-K",
+      "url": "https://www.sec.gov/Archives/edgar/data/1045810/000104581026000056/nvda-20260624.htm",
+      "items": [
+        "5.07"
+      ],
+      "sections": {
+        "section-01": {
+          "id": "section-01",
+          "item": "5.07",
+          "state": "reviewed",
+          "model": "nvidia-qwen38-27b:16k",
+          "sourceHash": "160da83d3368d0192789f2c25b95d5072b4dfe8375ce3bab76e2daa7f28c3826",
+          "sectionHash": "7b73e00ae0b7e729de858265be9dcbfb59028aa3f6ab83efafc60b5d7f68c696",
+          "events": [
+            {
+              "event_id": "event-1",
+              "event_type": {
+                "value": "director_election",
+                "block_numbers": [
+                  42,
+                  43
+                ]
+              },
+              "subject": {
+                "value": "NVIDIA Corporation",
+                "block_numbers": [
+                  42
+                ]
+              },
+              "organization": {
+                "value": "NVIDIA Corporation",
+                "block_numbers": [
+                  42
+                ]
+              },
+              "summary_ja": {
+                "value": "6月24日の定時株主総会で、株主は取締役候補10人全員の取締役選任を承認した。",
+                "block_numbers": [
+                  42,
+                  43
+                ]
+              },
+              "status_as_of_filing": {
+                "value": "completed_as_reported",
+                "block_numbers": [
+                  42,
+                  43
+                ]
+              },
+              "dates": [
+                {
+                  "role": "decision",
+                  "value": "2026-06-24",
+                  "precision": "day",
+                  "certainty": "reported",
+                  "block_numbers": [
+                    42
+                  ]
+                }
+              ],
+              "conditions": [],
+              "notes_ja": null
+            }
+          ],
+          "count": 1,
+          "blocks": [
+            {
+              "block_number": 42,
+              "text": "On June 24, 2026, at the 2026 Annual Meeting of Stockholders of NVIDIA Corporation, or the 2026 Annual Meeting, the following proposals were adopted or rejected by the margin indicated."
+            },
+            {
+              "block_number": 43,
+              "text": "1. Stockholders approved the election of each of our ten (10) director nominees to hold office until the 2027 Annual Meeting of Stockholders of NVIDIA Corporation and until his or her successor is elected or appointed. The results of the voting were as follows:"
+            }
+          ],
+          "missing": [],
+          "reviewedCandidate": "2b50f93ee029dbbb198bc37faf814dddbbb01cbac26596b95c3d18771cab541c"
+        }
+      }
+    },
+    "0001193125-26-275783": {
+      "date": "2026-06-18",
+      "form": "8-K",
+      "url": "https://www.sec.gov/Archives/edgar/data/1045810/000119312526275783/d48176d8k.htm",
+      "items": [
+        "8.01",
+        "9.01"
+      ],
+      "sections": {
+        "section-01": {
+          "id": "section-01",
+          "item": "8.01",
+          "state": "reviewed",
+          "model": "nvidia-qwen38-27b:16k",
+          "sourceHash": "7c8407c7976622e411ba11a1bcdf77e9d644c71060324ae333b0d348418ddcf5",
+          "sectionHash": "839b63b33e309ef6231da3928b86a0f8d7137dacd00141549246b4f56f295a37",
+          "events": [
+            {
+              "event_id": "event-1",
+              "event_type": {
+                "value": "other",
+                "block_numbers": [
+                  48
+                ]
+              },
+              "subject": {
+                "value": "NVIDIA Corporation",
+                "block_numbers": [
+                  48
+                ]
+              },
+              "organization": {
+                "value": "NVIDIA Corporation",
+                "block_numbers": [
+                  48
+                ]
+              },
+              "summary_ja": {
+                "value": "NVIDIA Corporationは、2026年6月18日に、2028年満期から2056年満期までの7銘柄の社債（総額250億ドル）の発行を完了した。",
+                "block_numbers": [
+                  48
+                ]
+              },
+              "status_as_of_filing": {
+                "value": "completed_as_reported",
+                "block_numbers": [
+                  48
+                ]
+              },
+              "dates": [
+                {
+                  "role": "effective",
+                  "value": "2026-06-18",
+                  "precision": "day",
+                  "certainty": "reported",
+                  "block_numbers": [
+                    48
+                  ]
+                }
+              ],
+              "conditions": [],
+              "notes_ja": {
+                "value": "本発行は、2026年6月15日付の引受契約に基づき、Goldman Sachs & Co. LLC、J.P. Morgan Securities LLC、Morgan Stanley & Co. LLCを代表とする引受人との間で実施された。",
+                "block_numbers": [
+                  49
+                ]
+              }
+            }
+          ],
+          "count": 1,
+          "blocks": [
+            {
+              "block_number": 48,
+              "text": "On June 18, 2026, NVIDIA Corporation (the “Company”) completed an offering of $3,500,000,000 aggregate principal amount of its 4.250% Notes due 2028 (the “2028 Notes”), $3,500,000,000 aggregate principal amount of its 4.350% Notes due 2029 (the “2029 Notes”), $4,000,000,000 aggregate principal amount of its 4.500% Notes due 2031 (the “2031 Notes”), $3,500,000,000 aggregate principal amount of its 4.750% Notes due 2033 (the “2033 Notes”), $4,000,000,000 aggregate principal amount of its 4.950% Notes due 2036 (the “2036 Notes”), $3,000,000,000 aggregate principal amount of its 5.550% Notes due 2046 (the “2046 Notes”) and $3,500,000,000 aggregate principal amount of its 5.625% Notes due 2056 (the “2056 Notes” and, together with the 2028 Notes, the 2029 Notes, the 2031 Notes, the 2033 Notes, the 2036 Notes, and the 2046 Notes, the “Notes”). The offering of the Notes was made pursuant to the Company’s Registration Statement on Form S-3 (File No. 333-287619), which Registration Statement relates to the offer and sale on a delayed basis from time to time of an indeterminate amount of the Company’s securities, including debt securities. Further information concerning the Notes and related matters is set forth in the Company’s Prospectus Supplement dated June 15, 2026, which was filed with the Securities and Exchange Commission on June 17, 2026."
+            },
+            {
+              "block_number": 49,
+              "text": "In connection with the issuance of the Notes, the Company entered into an Underwriting Agreement dated as of June 15, 2026 (the “Underwriting Agreement”) with Goldman Sachs & Co. LLC, J.P. Morgan Securities LLC and Morgan Stanley & Co. LLC, as representatives of the several underwriters listed in Schedule I to the Underwriting Agreement. The foregoing description of the Underwriting Agreement is qualified in its entirety by the terms of such agreement, a copy of which is attached hereto as Exhibit 1.1 and is incorporated by reference herein."
+            }
+          ],
+          "missing": [],
+          "reviewedCandidate": "3a37706a4f327bee2fd4ab0a81124bb008fffd0c427bfc6de66ec906b60d269f"
+        }
+      }
+    }
+  },
+  "META": {
+    "0001193125-26-458525": {
+      "date": "2026-11-12",
+      "form": "8-K",
+      "url": "https://www.sec.gov/Archives/edgar/data/1326801/000119312526458525/d177728d8k.htm",
+      "items": [
+        "8.01",
+        "9.01"
+      ],
+      "sections": {
+        "section-01": {
+          "id": "section-01",
+          "item": "8.01",
+          "state": "reviewed",
+          "model": "nvidia-qwen38-27b:16k",
+          "sourceHash": "437336a7607d65795426fb0cba231bb70327578d1855c48b8566911affe83c4c",
+          "sectionHash": "c1799987c0da35dc8e6803a15e9145ab062f453954f0e2114fbb7eddb151a333",
+          "events": [
+            {
+              "event_id": "event-1",
+              "event_type": {
+                "value": "other",
+                "block_numbers": [
+                  52
+                ]
+              },
+              "subject": {
+                "value": "Meta Platforms, Inc.",
+                "block_numbers": [
+                  52
+                ]
+              },
+              "organization": {
+                "value": "Meta Platforms, Inc.",
+                "block_numbers": [
+                  52
+                ]
+              },
+              "summary_ja": {
+                "value": "Metaは11月12日、ユーロ建てシニア債6銘柄の発行を完了した。額面総額は90億ユーロで、満期は2031年から2065年にわたる。",
+                "block_numbers": [
+                  52
+                ]
+              },
+              "status_as_of_filing": {
+                "value": "completed_as_reported",
+                "block_numbers": [
+                  52
+                ]
+              },
+              "dates": [
+                {
+                  "role": "effective",
+                  "value": "2026-11-12",
+                  "precision": "day",
+                  "certainty": "reported",
+                  "block_numbers": [
+                    52
+                  ]
+                }
+              ],
+              "conditions": [],
+              "notes_ja": {
+                "value": "本発行は、2026年11月4日付の引受契約に基づき、Citigroup Global Markets LimitedおよびMorgan Stanley & Co. International plcを代表とする引受人との間で実施された。",
+                "block_numbers": [
+                  53
+                ]
+              }
+            }
+          ],
+          "count": 1,
+          "blocks": [
+            {
+              "block_number": 52,
+              "text": "On November 12, 2026, Meta Platforms, Inc. (the “Company”) completed an offering of €1,750,000,000 aggregate principal amount of its 4.300% Senior Notes due 2031 (the “2031 Notes”), €1,250,000,000 aggregate principal amount of its 4.650% Senior Notes due 2033 (the “2033 Notes”), €1,000,000,000 aggregate principal amount of its 4.900% Senior Notes due 2035 (the “2035 Notes”), €1,750,000,000 aggregate principal amount of its 5.400% Senior Notes due 2038 (the “2038 Notes”), €1,750,000,000 aggregate principal amount of its 6.050% Senior Notes due 2044 (the “2044 Notes”), and €1,500,000,000 aggregate principal amount of its 6.400% Senior Notes due 2065 (the “2065 Notes” and, together with the 2031 Notes, the 2033 Notes, the 2035 Notes, the 2038 Notes, and the 2044 Notes, the “EUR Notes”). The offering of the EUR Notes was made pursuant to the Company’s Registration Statement on Form S-3 (File No. 333-295425), which Registration Statement relates to the offer and sale on a delayed basis from time to time of an indeterminate amount of the Company’s debt securities. Further information concerning the EUR Notes and related matters is set forth in the Company’s Prospectus Supplement dated November 4, 2026, which was filed with the Securities and Exchange Commission on November 6, 2026."
+            },
+            {
+              "block_number": 53,
+              "text": "In connection with the issuance of the EUR Notes, the Company entered into an Underwriting Agreement dated as of November 4, 2026 (the “Underwriting Agreement”) with Citigroup Global Markets Limited and Morgan Stanley & Co. International plc, as representatives of the several underwriters listed in Schedule II to the Underwriting Agreement. The foregoing description of the Underwriting Agreement is qualified in its entirety by the terms of such agreement, a copy of which is attached hereto as Exhibit 1.1 and is incorporated by reference herein."
+            }
+          ],
+          "missing": [],
+          "reviewedCandidate": "20bd9d065212768493486140ad3d75903af3780df3a3765345c23194efc758bf"
+        }
+      }
+    },
+    "0001193125-26-438017": {
+      "date": "2026-10-29",
+      "form": "8-K",
+      "url": "https://www.sec.gov/Archives/edgar/data/1326801/000119312526438017/d183592d8k.htm",
+      "items": [
+        "1.01",
+        "3.03",
+        "5.03",
+        "9.01"
+      ],
+      "sections": {
+        "section-01": {
+          "id": "section-01",
+          "item": "1.01",
+          "state": "reviewed",
+          "model": "nvidia-qwen38-27b:16k",
+          "sourceHash": "72ebaf9debdb1b8a278cdc65ec7b7c6aebb0926c81f6b1f2183dcc05e42a980d",
+          "sectionHash": "c103f19eb20b9a2571ff835797791551a1a996050dd2adfe8ac15cc7bf9a9154",
+          "events": [
+            {
+              "event_id": "event-1",
+              "event_type": {
+                "value": "other",
+                "block_numbers": [
+                  47,
+                  49
+                ]
+              },
+              "subject": {
+                "value": "Meta Platforms, Inc.",
+                "block_numbers": [
+                  49
+                ]
+              },
+              "organization": {
+                "value": "Meta Platforms, Inc.",
+                "block_numbers": [
+                  49
+                ]
+              },
+              "summary_ja": {
+                "value": "Metaは10月26日、強制転換優先株式を裏付けとする預託株式2億5,000万株について引受契約を締結し、10月29日に募集を完了した。",
+                "block_numbers": [
+                  49,
+                  51
+                ]
+              },
+              "status_as_of_filing": {
+                "value": "completed_as_reported",
+                "block_numbers": [
+                  51
+                ]
+              },
+              "dates": [
+                {
+                  "role": "agreement",
+                  "value": "2026-10-26",
+                  "precision": "day",
+                  "certainty": "reported",
+                  "block_numbers": [
+                    49
+                  ]
+                },
+                {
+                  "role": "effective",
+                  "value": "2026-10-29",
+                  "precision": "day",
+                  "certainty": "reported",
+                  "block_numbers": [
+                    51
+                  ]
+                }
+              ],
+              "conditions": [],
+              "notes_ja": {
+                "value": "引受団には、超過割当分を対象に、最大3,750万株を追加購入できる30日間のオプションが付与された。",
+                "block_numbers": [
+                  50
+                ]
+              }
+            },
+            {
+              "event_id": "event-2",
+              "event_type": {
+                "value": "other",
+                "block_numbers": [
+                  57,
+                  58
+                ]
+              },
+              "subject": {
+                "value": "Meta Platforms, Inc.",
+                "block_numbers": [
+                  49
+                ]
+              },
+              "organization": {
+                "value": "Meta Platforms, Inc.",
+                "block_numbers": [
+                  49
+                ]
+              },
+              "summary_ja": {
+                "value": "Metaは10月26日、Morgan Stanley Capital ServicesおよびGoldman Sachsと、当初合計4,000万株のクラスA普通株式を対象とする先渡売却契約を締結した。",
+                "block_numbers": [
+                  58
+                ]
+              },
+              "status_as_of_filing": {
+                "value": "settlement_pending",
+                "block_numbers": [
+                  59
+                ]
+              },
+              "dates": [
+                {
+                  "role": "agreement",
+                  "value": "2026-10-26",
+                  "precision": "day",
+                  "certainty": "reported",
+                  "block_numbers": [
+                    58
+                  ]
+                }
+              ],
+              "conditions": [
+                {
+                  "value": "一定の条件の下、Metaが2027年11月19日までの日を決済日として指定する。複数回に分けた決済も可能。",
+                  "block_numbers": [
+                    59
+                  ]
+                },
+                {
+                  "value": "先渡売却価格は、オーバーナイト銀行調達金利からスプレッドを差し引いた金利などに基づいて調整される。",
+                  "block_numbers": [
+                    60
+                  ]
+                }
+              ],
+              "notes_ja": {
+                "value": "会社は当初、先物販売者から普通株式引受人へのClass A普通株式の売却から収益を受けない。",
+                "block_numbers": [
+                  59
+                ]
+              }
+            }
+          ],
+          "count": 2,
+          "blocks": [
+            {
+              "block_number": 47,
+              "text": "Item 1.01. Entry into a Material Definitive Agreement."
+            },
+            {
+              "block_number": 49,
+              "text": "On October 26, 2026, Meta Platforms, Inc. (the “Company”) entered into an underwriting agreement (the “Underwriting Agreement (Depositary Shares)”) with Morgan Stanley & Co. LLC and Goldman Sachs & Co. LLC as the representatives of the several underwriters named therein (the “Depositary Shares Underwriters”), pursuant to which the Company agreed to issue and sell 250,000,000 Series A depositary shares (the “Depositary Shares”), each representing a 1/20th interest in a share of 6.50% Series A Mandatory Convertible Preferred Stock, liquidation preference $1,000.00 per share, par value $0.000006 per share (the “Preferred Stock” and such offering, the “Depositary Shares Offering”)."
+            },
+            {
+              "block_number": 50,
+              "text": "Pursuant to the Underwriting Agreement (Depositary Shares), the Company granted the Depositary Shares Underwriters an option to purchase up to an additional 37,500,000 Depositary Shares, which is exercisable within a 30-day period beginning on, and including, the date of the Underwriting Agreement (Depositary Shares), solely to cover over-allotments, if any."
+            },
+            {
+              "block_number": 51,
+              "text": "The Depositary Shares Offering closed on October 29, 2026. A validity opinion issued by the Company’s counsel with respect to the Depositary Shares sold in the Depositary Shares Offering and the Preferred Stock underlying such Depositary Shares is filed as Exhibit 5.1 hereto."
+            },
+            {
+              "block_number": 57,
+              "text": "Common Stock Offering in Connection with Forward Sale Agreements"
+            },
+            {
+              "block_number": 58,
+              "text": "On October 26, 2026, the Company entered into forward sale agreements (each, a “Forward Sale Agreement”) with each of Morgan Stanley Capital Services LLC and Goldman Sachs & Co. LLC (each, a “Forward Purchaser”), initially relating to an aggregate of 40,000,000 shares of the Company’s Class A common stock, par value $0.000006 per share (“Class A Common Stock”). In connection with the Forward Sale Agreements, the Company entered into an Underwriting Agreement (the “Underwriting Agreement (Common Stock)”) with Morgan Stanley & Co. LLC and Goldman Sachs & Co. LLC, as the representatives of the underwriters named therein (the “Common Stock Underwriters”), Morgan Stanley & Co. LLC and Goldman Sachs & Co. LLC, as forward sellers (the “Forward Sellers”), and the Forward Purchasers, pursuant to which the Forward Sellers sold to the Common Stock Underwriters an aggregate of 40,000,000 shares of Class A Common Stock. As contemplated by the Forward Sale Agreements, the Forward Sellers borrowed from third parties all such shares of Class A Common Stock. The Common Stock Underwriters have been granted a 30-day option to purchase up to an additional 6,000,000 shares of Class A Common Stock. If such option is exercised, then the Company plans to enter into additional forward sale agreements with each Forward Purchaser in respect of the number of shares of Class A Common Stock that is subject to the exercise of such option."
+            },
+            {
+              "block_number": 59,
+              "text": "The Company will not initially receive any proceeds from the sale of Class A Common Stock by the Forward Sellers to the Common Stock Underwriters. Each Forward Sale Agreement provides for settlement on a settlement date or dates to be specified at the Company’s discretion, subject to certain conditions, on or prior to November 19, 2027. On each settlement date, the Company will issue shares of Class A Common Stock to the relevant Forward Purchaser at the then-applicable forward sale price. Notwithstanding the foregoing, upon the issuance of the Company’s Class C common stock, par value $0.000006 per share (“Class C Common Stock”) to be established by the Company’s Amended and Restated Certificate of Incorporation filed with the Secretary of State of the State of Delaware on October 21, 2026 and satisfaction of certain other conditions, each Forward Sale Agreement will reference both Class A Common Stock and the Class C Common Stock and, in certain circumstances, the Company will have the ability to settle each Forward Sale Agreement by delivering only shares of Class C Common Stock."
+            },
+            {
+              "block_number": 60,
+              "text": "The forward sale price is initially $622.91875 per share. Each Forward Sale Agreement provides that the initial forward sale price will be subject to adjustment on a daily basis based on a floating interest rate factor equal to the overnight bank funding rate less a spread, and will be decreased by an amount per share specified in such Forward Sale Agreement on each of certain dates specified in such Forward Sale Agreement. If the overnight bank funding rate is less than the spread on any day, the interest rate factor will result in a daily reduction of the forward sale price for such day. In addition, upon issuance of the Class C Common Stock and satisfaction of certain other conditions, the applicable forward sale price will be subject to reduction if the Company elects to settle any Forward Sale Agreement by delivery of Class C Common Stock, in certain cases, for a portion of each Forward Sale Agreement, based in part on the difference between the trading price of the Class A Common Stock and the Class C Common Stock at that time."
+            }
+          ],
+          "missing": [],
+          "reviewedCandidate": "b5e0a1124e6d0dbe94bf939674684b6780e46d7b7b5e5bd0b3f2043238e9c394"
+        }
+      }
+    }
+  },
+  "TSLA": {
+    "0001628280-26-063820": {
+      "date": "2026-09-29",
+      "form": "8-K",
+      "url": "https://www.sec.gov/Archives/edgar/data/1318605/000162828026063820/tsla-20260929.htm",
+      "items": [
+        "1.01",
+        "1.02",
+        "2.03",
+        "9.01"
+      ],
+      "sections": {
+        "section-01": {
+          "id": "section-01",
+          "item": "1.01",
+          "state": "reviewed",
+          "model": "nvidia-qwen38-27b:16k",
+          "sourceHash": "cc59c03355f5365ee206ebb60c9f7849c2c218eb2f69ece54057023285c9382e",
+          "sectionHash": "1d505054bb69fe31d717c81399540084ea0b424f5743c3e20f2dd223ae2c841a",
+          "events": [
+            {
+              "event_id": "event-1",
+              "event_type": {
+                "value": "other",
+                "block_numbers": [
+                  44,
+                  45
+                ]
+              },
+              "subject": {
+                "value": "Tesla, Inc.",
+                "block_numbers": [
+                  45
+                ]
+              },
+              "organization": {
+                "value": "Tesla, Inc.",
+                "block_numbers": [
+                  45
+                ]
+              },
+              "summary_ja": {
+                "value": "Teslaは9月29日、200億ドルの3年物タームローン枠と、80億ドルの5年物および20億ドルの364日物のリボルビング信用枠を設定する契約を締結した。",
+                "block_numbers": [
+                  45,
+                  46,
+                  47,
+                  48
+                ]
+              },
+              "status_as_of_filing": {
+                "value": "completed_as_reported",
+                "block_numbers": [
+                  45
+                ]
+              },
+              "dates": [
+                {
+                  "role": "agreement",
+                  "value": "2026-09-29",
+                  "precision": "day",
+                  "certainty": "reported",
+                  "block_numbers": [
+                    45,
+                    46,
+                    47,
+                    48
+                  ]
+                }
+              ],
+              "conditions": [],
+              "notes_ja": {
+                "value": "9月29日時点で、これらの信用枠に基づく借入残高はなかった。",
+                "block_numbers": [
+                  60
+                ]
+              }
+            }
+          ],
+          "count": 1,
+          "blocks": [
+            {
+              "block_number": 44,
+              "text": "Item 1.01 Entry Into a Material Definitive Agreement."
+            },
+            {
+              "block_number": 45,
+              "text": "On September 29, 2026, Tesla, Inc. (“Tesla”) entered into the following credit agreements:"
+            },
+            {
+              "block_number": 46,
+              "text": "•$20.0 billion senior unsecured three-year delayed draw term loan facility (the “Term Loan Facility”) pursuant to a Delayed Draw Term Loan Credit Agreement, dated as of September 29, 2026 (the “DDTL Credit Agreement”), by and among Tesla, as borrower, Citibank, N.A. (“Citi”), as administrative agent, and the lenders and other agents party thereto."
+            },
+            {
+              "block_number": 47,
+              "text": "•$8.0 billion senior unsecured five-year revolving facility (the “Five-Year Revolving Facility”) pursuant to a Five-Year Revolving Credit Agreement, dated as of September 29, 2026 (the “Five-Year Revolving Credit Agreement”), by and among Tesla, as borrower, Wells Fargo Bank, National Association (“WF Bank”), as administrative agent, and the lenders, issuing banks and other agents party thereto."
+            },
+            {
+              "block_number": 48,
+              "text": "•$2.0 billion senior unsecured 364-day revolving credit facility (the “364-Day Revolving Facility”) pursuant to a 364-Day Revolving Credit Agreement, dated as of September 29, 2026 (the “364-Day Revolving Credit Agreement”), by and among Tesla, as borrower, WF Bank, as administrative agent, and the lenders and other agents party thereto."
+            },
+            {
+              "block_number": 60,
+              "text": "The proceeds of loans under the Facilities, and letters of credit issued under the Five-Year Revolving Facility, may be used for general corporate purposes or for any other purpose not otherwise prohibited by the applicable Credit Agreement. No loans were outstanding under the Facilities as of September 29, 2026."
+            }
+          ],
+          "missing": [],
+          "reviewedCandidate": "24b40542e770ec4884946fd6f8bed3707607f0cb2ca71ffad7590909f73884c6"
+        },
+        "section-02": {
+          "id": "section-02",
+          "item": "1.02",
+          "state": "reviewed",
+          "model": "nvidia-qwen38-27b:16k",
+          "sourceHash": "cc59c03355f5365ee206ebb60c9f7849c2c218eb2f69ece54057023285c9382e",
+          "sectionHash": "3ec5a2a41c4bc410afc5126440eab31f043844fee793cbb84e123f84c9dd65b4",
+          "events": [
+            {
+              "event_id": "event-1",
+              "event_type": {
+                "value": "other",
+                "block_numbers": [
+                  68,
+                  69,
+                  70
+                ]
+              },
+              "subject": {
+                "value": "Tesla",
+                "block_numbers": [
+                  70
+                ]
+              },
+              "organization": {
+                "value": "Citi",
+                "block_numbers": [
+                  70
+                ]
+              },
+              "summary_ja": {
+                "value": "Teslaは9月29日、新しい信用契約の締結に伴い、既存の50億ドルのリボルビング信用枠を解約した。",
+                "block_numbers": [
+                  70
+                ]
+              },
+              "status_as_of_filing": {
+                "value": "completed_as_reported",
+                "block_numbers": [
+                  70
+                ]
+              },
+              "dates": [
+                {
+                  "role": "effective",
+                  "value": "2026-09-29",
+                  "precision": "day",
+                  "certainty": "reported",
+                  "block_numbers": [
+                    70
+                  ]
+                }
+              ],
+              "conditions": [],
+              "notes_ja": {
+                "value": "既存の信用枠に借入残高はなく、早期解約に伴う違約金も発生しなかった。",
+                "block_numbers": [
+                  70
+                ]
+              }
+            }
+          ],
+          "count": 1,
+          "blocks": [
+            {
+              "block_number": 68,
+              "text": "Item 1.02 Termination of a Material Definitive Agreement."
+            },
+            {
+              "block_number": 69,
+              "text": "Termination of Revolving Credit Facility"
+            },
+            {
+              "block_number": 70,
+              "text": "As previously reported, Tesla is a party to that certain Credit Agreement, dated as of January 20, 2023 (as further amended from time to time, the “Existing Revolving Credit Agreement”), with Citi, as administrative agent and the lenders and other agents party thereto. The Existing Revolving Credit Agreement had aggregate commitments of $5.0 billion and was set to mature on January 20, 2028. On September 29, 2026, the Existing Revolving Credit Agreement was terminated by the parties in connection with Tesla’s entry into the Credit Agreements. Tesla did not have any borrowings outstanding under the Existing Revolving Credit Agreement and did not incur any early termination penalties in connection with the termination of the Existing Revolving Credit Agreement. Some of the lenders under the Existing Revolving Credit Agreement, or their affiliates, are lenders under the Credit Agreements."
+            }
+          ],
+          "missing": [],
+          "reviewedCandidate": "9b0856fc9552977e2adad69be2487b903145fbe6a430653390727aa1ecc0f683"
+        }
+      }
+    }
+  }
+}

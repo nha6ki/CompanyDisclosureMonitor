@@ -60,6 +60,8 @@ class BackfillChecks(unittest.TestCase):
         handler = object.__new__(manage.PreviewHandler)
         handler.directory = str(manage.OUTPUT)
         self.assertEqual(Path(handler.translate_path('/?lang=ja&company=AAPL&tab=events')),
+                         manage.OUTPUT)
+        self.assertEqual(Path(handler.translate_path('/local-review/detail.html?company=AAPL&tab=events')),
                          self.private/'review/detail.html')
         self.assertEqual(Path(handler.translate_path('/local-review/backfill-results.json')),
                          self.private/'review/backfill-results.json')

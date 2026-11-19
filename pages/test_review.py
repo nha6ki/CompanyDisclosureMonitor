@@ -49,6 +49,20 @@ class LocalReviews(unittest.TestCase):
         self.command('reviewed',self.state()[2])
         self.assertEqual(self.state()[0],'確認済み')
 
+    def test_published_revision_survives_reapproval_of_uncorrected_candidate(self):
+        symbol, acc, sid = 'META', 'test-filing', 'section-01'
+        candidate = dict(state='pending', sourceHash='source', count=1, events=[{'text':'original'}])
+        corrected = dict(candidate, state='reviewed', events=[{'text':'corrected'}],
+                         reviewedCandidate=manage.digest(candidate))
+        def decisions(section):
+            return {symbol:{acc:{'sections':{sid:section}}}}
+        template = '<script type="application/json" id="narrative-filings">{"META":{}}</script>'
+        (manage.DATA/'reviewed-demo.json').write_text(json.dumps(decisions(corrected)))
+        (manage.DATA/'approved-highlights.json').write_text(json.dumps(decisions(dict(candidate, state='reviewed'))))
+        result = manage.filing_updates(template)
+        self.assertIn('"text":"corrected"', result)
+        self.assertNotIn('"text":"original"', result)
+
     def test_release_contains_only_public_artifacts(self):
         with redirect_stdout(StringIO()): manage.build()
         self.assertEqual(len(list(manage.OUTPUT.rglob('*.xlsx'))),14)

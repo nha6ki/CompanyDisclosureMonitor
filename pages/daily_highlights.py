@@ -205,7 +205,7 @@ def index_page(folder, queue, summary):
                 candidate = private_sections.get(sid)
                 if approved.get('state') == 'reviewed' and (not job.get('version') or
                         approved['sourceHash'] == job['version']) and (
-                        candidate is None or dict(approved, state='pending') == dict(candidate, state='pending')):
+                        candidate is None or approved.get('reviewedCandidate') == digest(candidate) or dict(approved, state='pending') == dict(candidate, state='pending')):
                     private_sections[sid] = approved
             original[sym][acc] = dict(entry, sections=private_sections)
             url='detail.html?'+urlencode(dict(lang='ja',company=sym,tab='events',filing=acc))
@@ -222,5 +222,6 @@ def index_page(folder, queue, summary):
     # Private directory contains only these two display files. It is outside the Pages build.
     import demo_history
     private_page=demo_history.replace_data(base,marker,original).replace("excel.href='./reports/'", "excel.href='../reports/'")
+    private_page=private_page.replace('<main id="narrative"', '<main data-local-review id="narrative"', 1)
     write_atomic(view/'detail.html',private_page.encode())
     write_atomic(view/'index.html',''.join(listing).encode())
