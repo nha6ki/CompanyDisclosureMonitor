@@ -63,10 +63,11 @@ def filings(symbol, day, get):
     return sorted(indexed.values(),key=lambda r:(r["day"],r["acc"]))
 
 
-def scan(symbol, get, day):
+def scan(symbol, get, day, filing_index=None):
     groups = defaultdict(lambda: {"releases":[], "reports":[]})
     issues = []
-    for r in filings(symbol,day,get):
+    for source in filings(symbol,day,get) if filing_index is None else filing_index:
+        r = dict(source)
         if not r['form'].startswith("8-K"):
             end = date.fromisoformat(r['end'])
             key = ordinal(symbol,end)

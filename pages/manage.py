@@ -112,6 +112,29 @@ def build():
         build_snapshot()
 
 
+def filing_updates(template):
+    published = DATA/'filings.json'
+    approvals = DATA/'approved-highlights.json'
+    if not published.exists() and not approvals.exists():
+        return template
+    marker = '<script type="application/json" id="narrative-filings">'
+    before, body = template.split(marker, 1)
+    contents, after = body.split('</script>', 1)
+    filings = json.loads(contents)
+    for sym, records in (load(published) if published.exists() else {}).items():
+        for acc, row in records.items():
+            old = filings[sym].get(acc, {})
+            filings[sym][acc] = dict(row, sections=old.get('sections', {}))
+    for sym, records in (load(approvals) if approvals.exists() else {}).items():
+        for acc, row in records.items():
+            entry = filings[sym].setdefault(acc, dict(row, sections={}))
+            for sid, sec in row['sections'].items():
+                if sec['state'] != 'reviewed':
+                    raise ValueError('Only reviewed highlights may enter the Pages build.')
+                entry['sections'][sid] = sec
+    return before + marker + script_json(filings) + '</script>' + after
+
+
 def build_snapshot():
     quarters, dates = inputs()
     _, latest = decisions()
@@ -130,6 +153,7 @@ def build_snapshot():
         for row in rows:
             row['state'] = official(row, latest.get((symbol,row['period'])))
     template = (ROOT / 'index.template.html').read_text(encoding='utf-8')
+    template = filing_updates(template)
     for marker, content in {
         '@@AS_OF@@':script_json(dates), '@@HISTORY@@':script_json(quarters),
         '// @include review-demo.js':(ROOT/'review-demo.js').read_text(encoding='utf-8'),
@@ -148,6 +172,31 @@ def build_snapshot():
     for name, content in documents.items():
         write_atomic(OUTPUT / name, content)
     print('Built',sum(map(len,quarters.values())),'quarters and',len(documents)-2,'Excel reports in',OUTPUT,flush=True)
+
+
+class PreviewHandler(SimpleHTTPRequestHandler):
+    def do_GET(self):
+        path=self.path.partition('?')[0]
+        if path in ('/local-review/', '/local-review/index.html') and not Path(self.translate_path(path)).is_file():
+            body=('<!doctype html><html lang="ja"><meta charset="utf-8"><title>開示要点の確認候補</title>'
+                  '<h1>開示要点の確認候補</h1><p>初回のSECチェックが終わると、ここに結果が表示されます。'
+                  '日次タスクを登録した後、ページを再読み込みしてください。</p></html>').encode()
+            self.send_response(200)
+            self.send_header('Content-Type', 'text/html; charset=utf-8')
+            self.send_header('Content-Length', str(len(body)))
+            self.send_header('Cache-Control','no-store')
+            self.end_headers()
+            self.wfile.write(body)
+            return
+        super().do_GET()
+
+    def translate_path(self, path):
+        from urllib.parse import urlsplit
+        name = urlsplit(path).path
+        local = {'/local-review/':'index.html','/local-review/index.html':'index.html','/local-review/detail.html':'detail.html'}
+        if name in local:
+            return str(ROOT.parent/'register_data/pages_daily/review'/local[name])
+        return super().translate_path(path)
 
 
 def main():
@@ -169,7 +218,7 @@ def main():
             return
         build()
         if args.command == 'preview':
-            handler = partial(SimpleHTTPRequestHandler, directory=str(OUTPUT))
+            handler = partial(PreviewHandler, directory=str(OUTPUT))
             with ThreadingHTTPServer(('127.0.0.1',args.port), handler) as server:
                 print(f'http://127.0.0.1:{server.server_port}/?lang=ja',flush=True)
                 server.serve_forever()

@@ -20,3 +20,4 @@ update_backups/
 # Local Pages build and advisory locks
 /_site/
 /pages/data/*.lock
+/.venv-pages/

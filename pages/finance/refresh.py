@@ -21,14 +21,14 @@ from manage import DATA, SYMBOLS, lock, write_atomic
 
 
 
-def generate(history, cache):
+def generate(history, cache, *, fetch_bytes=None, indexes=None):
     def fetch(url):
-        return (cache / sha256(url.encode()).hexdigest()).read_bytes()
+        return fetch_bytes(url) if fetch_bytes else (cache / sha256(url.encode()).hexdigest()).read_bytes()
 
     snapshot = {}
     for symbol, records in history.items():
         index = cache / (symbol + '.json')
-        filings = json.loads(index.read_text()) if index.exists() else []
+        filings = indexes[symbol] if indexes is not None else (json.loads(index.read_text()) if index.exists() else [])
         reports = build_report_metrics(symbol, records, fetch, filings)
         entries = {}
         for record in records:
@@ -58,12 +58,7 @@ def generate(history, cache):
     return snapshot
 
 
-def update(seed, cache):
-    issuers = seed['issuers']
-    if set(issuers) != SYMBOLS:
-        raise ValueError('Expected a complete seven-company quarterly snapshot.')
-    history = presentation(r for issuer in issuers.values() for r in issuer['rows'])
-    extra = generate(history, cache)
+def add_indicators(history, extra):
     for sym, rows in history.items():
         for d in rows:
             d.pop('state')
@@ -80,6 +75,15 @@ def update(seed, cache):
                detailUnit='USD millions', row=' − '.join(s['tag']+' · '+s['column'] for s in report['sources']) if report else '',
                column=d['end'],status=status,reason=d['facts'][0]['reason'] if status in ('訂正・重複','照合待ち') else ''))
             d['financials']={key:e[key] for key in ('release','report')}
+
+
+def update(seed, cache):
+    issuers = seed['issuers']
+    if set(issuers) != SYMBOLS:
+        raise ValueError('Expected a complete seven-company quarterly snapshot.')
+    history = presentation(r for issuer in issuers.values() for r in issuer['rows'])
+    extra = generate(history, cache)
+    add_indicators(history, extra)
     with lock('reports'), lock('reviews'):
         for name,payload in [('quarters',history),('as-of',{s:seed['asof'] for s in history})]:
             write_atomic(DATA/(name+'.json'),(json.dumps(payload,ensure_ascii=False,indent=2)+'\n').encode())

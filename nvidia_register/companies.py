@@ -35,14 +35,14 @@ def window_start(end):
     return end - timedelta(days=89)
 
 
-def collect(ticker, end, get):
+def collect(ticker, end, get, start=None):
     _, cik = ISSUERS[ticker]
     prefix = f"CIK{cik:010d}"
     base = "https://data.sec.gov/submissions/"
     feed = json.loads(get(base + prefix + ".json"))
     if int(feed["cik"]) != cik:
         raise ValueError(f"{ticker}: SEC issuer CIK mismatch")
-    start = window_start(end)
+    start = start or window_start(end)
     filings = feed["filings"]
     pages = [filings["recent"]]
     for archive in filings["files"]:
