@@ -19,7 +19,7 @@ ISSUERS = {
     "GOOGL": ("Alphabet", 1652044),
     "AMZN": ("Amazon", 1018724),
     "NVDA": ("NVIDIA", 1045810),
-    "META": ("Meta Platforms", 1326801),
+    "META": ("Meta", 1326801),
     "TSLA": ("Tesla", 1318605),
 }
 SEED = Path(__file__).resolve().parent / "examples" / "m7_filings.json"
