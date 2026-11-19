@@ -24,7 +24,7 @@ function renderReviewDemo(record, parent){
   }
   open.onclick=()=>{
     if(practice.has(key))practice.delete(key);
-    else practice.set(key,record.state);
+    else practice.set(key,displayReview(record));
     refresh();
   };
   toggle.onclick=()=>{practice.set(key,practice.get(key)==='確認済み'?'未確認':'確認済み');refresh();};

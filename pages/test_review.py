@@ -49,6 +49,24 @@ class LocalReviews(unittest.TestCase):
         self.command('reviewed',self.state()[2])
         self.assertEqual(self.state()[0],'確認済み')
 
+    def test_demo_defaults_yield_to_local_decisions_and_updated_sources(self):
+        history, latest = manage.decisions()
+        baseline = manage.load(manage.DATA / 'demo-quarters.json')
+        quarters, _ = manage.inputs()
+        for symbol, rows in quarters.items():
+            for row in rows:
+                self.assertTrue(manage.has_demo_default(baseline, symbol, row, latest.get((symbol, row['period']))))
+        row = quarters['AAPL'][-1]
+        key = ('AAPL', row['period'])
+        self.assertFalse(manage.has_demo_default(baseline, 'AAPL', dict(row, sha='updated'), latest[key]))
+        self.assertFalse(manage.has_demo_default(baseline, 'AAPL', dict(row, period='FY2030Q1'), None))
+        self.command('pending')
+        self.command('pending')
+        updated, latest = manage.decisions()
+        self.assertEqual(len(updated), len(history) + 1)
+        self.assertFalse(manage.has_demo_default(baseline, 'AAPL', row, latest[key]))
+        self.assertEqual(manage.official(row, latest[key]), '未確認')
+
     def test_published_revision_survives_reapproval_of_uncorrected_candidate(self):
         symbol, acc, sid = 'META', 'test-filing', 'section-01'
         candidate = dict(state='pending', sourceHash='source', count=1, events=[{'text':'original'}])

@@ -1,6 +1,6 @@
 <!doctype html>
 <html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<meta name="theme-color" content="#102b26"><title>Earnings filings | Company Disclosure Monitor</title>
+<meta name="theme-color" content="#102b26"><title>Magnificent 7 Earnings Disclosure Monitor</title>
 <meta name="description" content="Explore quarterly growth, profitability and cash flow for the Magnificent Seven. Trace the figures to SEC filings.">
 <style>
 :root{--ink:#172e29;--muted:#536760;--forest:#102e29;--line:#d5dcd3;--leaf:#c6ee72;--paper:#f6f7f2;--mono:'IBM Plex Mono',Consolas,monospace;font:16px/1.5 'Inter','Segoe UI',system-ui,sans-serif;color:var(--ink);background:var(--paper);font-variant-numeric:tabular-nums}
@@ -183,10 +183,11 @@ let metric = 0;
 const tr = (en, jp) => ja ? jp : en;
 // @include financials.js
 const wording = {
+  siteTitle: ['Magnificent 7 Earnings Disclosure Monitor','Magnificent 7 決算開示モニター'],
   overview: ['Earnings filing monitor','決算開示モニター'],
   earnings: ['Quarterly earnings register','四半期決算台帳'],
   narrative: ['Filing highlights','開示要点'],
-  review: ['Human review','担当者確認'],
+  review: ['Review status','確認状態'],
   exportCsv: ['Download CSV','CSVをダウンロード'],
   workflow: ['Quarterly reconciliation','四半期決算の照合'],
   pending: ['Pending review','確認待ち']
@@ -200,6 +201,7 @@ const numbers = (x, places) => x == null ? '—' : Number(String(x ?? '').replac
 });
 const reviewNames={'未確認':'Pending','確認済み':'Reviewed','要対応':'Action required','再確認':'Review again'};
 const reviewText = state => !state || state==='未確認' ? uiText('pending') : tr(reviewNames[state] || state,state);
+const displayReview = record => record.demoReviewed ? '確認済み' : record.state;
 function reviewBadge(state,label,tag='span'){
   const badge=node(tag,label,'review-badge');
   if(!state || state==='未確認' || state==='pending') badge.dataset.review='pending';
@@ -294,8 +296,9 @@ for(const c of d.candidates || []){
   if(c.url!==d.quarterly && c.url!==d.filing) source(c.url,c.form+' · '+c.acc);
 }
 }
-const reviewLine=line('p',tr('Review for this quarter','この四半期の担当者確認')+' · ','review');
-reviewLine.append(reviewBadge(d.state,reviewText(d.state)));
+const status=displayReview(d);
+const reviewLine=line('p',(d.demoReviewed ? tr('Quarter review (demo)','この四半期の確認状態（デモ）') : tr('Quarter review','この四半期の確認状態'))+' · ','review');
+reviewLine.append(reviewBadge(status,reviewText(status)));
 if(history) renderReviewDemo(d,reading);
 }
 function ledger(){
@@ -434,7 +437,7 @@ function drawNarratives(){
   $('narrCount').hidden=!extracted.length;
   $('narrCount').textContent=tr(extracted.length+' filing'+(extracted.length===1?'':'s')+' · '+n+' highlight'+(n===1?'':'s'),
     '対象書類 '+extracted.length+'件 · '+(localReview?'要点候補 ':'掲載要点 ')+n+'件');
-  document.title=$('narrName').textContent+(ja?'':' | Company Disclosure Monitor');
+  document.title=$('narrName').textContent+' | '+uiText('siteTitle');
   $('narrLabel').textContent=tr('Select a filing','提出書類を選ぶ');
   const picker=$('narrSelect'),panel=$('narrDetail');picker.replaceChildren();panel.replaceChildren();
   if(!chosenAcc)chosenAcc=(extracted[0]||entries[0]||[])[0];
@@ -502,7 +505,7 @@ if(eventPage){
 }
 $('eyebrow').textContent='NASDAQ · '+ticker+'  /  '+(history ? 'SEC 8-K / 10-Q / 10-K' : has10Q ? 'SEC FORM 8-K + 10-Q' : 'SEC FORM 8-K');
 $('title').textContent=companyTitle('earnings');
-document.title=$('title').textContent+(ja?'':' | Company Disclosure Monitor');
+document.title=$('title').textContent+' | '+uiText('siteTitle');
 $('summary').textContent=history ? tr('Explore quarterly growth, profitability and cash flow. Select a metric and a quarter to see the source amounts and calculations.','売上高の伸び、営業利益率、キャッシュフローの推移を確認できます。指標と四半期を選ぶと、原文の数値や計算式が開きます。') : has10Q
   ? tr('Compare quarterly GAAP revenue and diluted EPS in the earnings release and Form 10-Q.','決算発表資料と10-Qの原表で、四半期の売上高・希薄化後EPSを照合します。')
   : tr('Trace eight quarters of revenue and diluted EPS to the GAAP summary and income statement.','8四半期の売上高・希薄化後EPSを、決算発表のGAAP概要表と損益計算書で照合します。');
@@ -647,7 +650,8 @@ function feedRow({symbol,d}){
   }
   statuses.append(group);
   const state=node('td',null,'review-col');state.dataset.label=uiText('review');
-  const badge=reviewBadge(d.state,reviewText(d.state),'a');
+  const status=displayReview(d);
+  const badge=reviewBadge(status,reviewText(status),'a');
   badge.href=detailURL(symbol,d.period)+'#focus';
   state.append(badge);
   row.append(identity,node('td',d.releaseDate||'—','date-cell'),quarter,...figures,trend,statuses,state);
@@ -658,10 +662,10 @@ function drawHome(){
   if(location.protocol==='https:' || location.protocol==='http:'){
     window.history.replaceState(null,'','?'+overviewParams()+location.hash);
   }
-  document.title=uiText('overview')+' | Company Disclosure Monitor';
+  document.title=uiText('siteTitle');
   document.body.dataset.issuer=homeState.symbol;
   $('skip').href='#filings';$('skip').textContent=tr('Skip to earnings filings','決算開示一覧へ移動');
-  $('homeTitle').textContent=uiText('overview');
+  $('homeTitle').textContent=uiText('siteTitle');
   $('marketLabel').textContent='MAGNIFICENT SEVEN  /  SEC EDGAR';
   $('homeIntro').textContent=tr('Compare quarterly growth, operating margins and diluted earnings per share across seven US companies. Open a quarter for cash flow, source figures and filing checks.','米国の主要7社について、売上高の伸び、営業利益率、希薄化後EPSを比較できます。四半期を選ぶと、キャッシュフロー、SEC原文、照合結果を確認できます。');
   const scope=homeHistory.filter(r=>!homeState.symbol || r.symbol===homeState.symbol);
@@ -671,7 +675,7 @@ function drawHome(){
   $('summaryTitle').textContent=(homeState.symbol || tr('Seven companies','7社'))+tr(' · checks for the last eight quarters',' · 直近8四半期の照合結果');
   overviewSummary(scope);
   $('feedTitle').textContent=tr('Earnings filings','決算開示一覧');
-  $('feedDescription').textContent=tr('Select a quarter to see the figures and their sources. Automated checks cover revenue, diluted EPS and operating income. Human review covers the quarter as a whole.','四半期を選ぶと、数値とその出典が開きます。売上高・希薄化後EPS・営業利益を自動照合し、担当者確認は四半期ごとに記録します。');
+  $('feedDescription').textContent=tr('Select a quarter to see the figures and their sources. Automated checks cover revenue, diluted EPS and operating income. The demo starts with the included quarters marked as reviewed.','四半期を選ぶと、数値とその出典が開きます。売上高・希薄化後EPS・営業利益を自動照合し、デモでは収録した四半期の初期表示を「確認済み」としています。');
   $('homeDownload').textContent=uiText('exportCsv');
   $('modes').replaceChildren();
   for(const [value,label] of [['latest',tr('Latest earnings','最新決算')],['history',tr('Quarter history','四半期履歴')]]){

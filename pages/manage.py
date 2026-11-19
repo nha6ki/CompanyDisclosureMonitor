@@ -59,6 +59,11 @@ def official(row, decision):
     return decision['state'] if decision['evidence'] == digest(row) else '再確認'
 
 
+def has_demo_default(baseline, symbol, row, decision):
+    # A new source snapshot or a local review supersedes the packaged example.
+    return baseline.get(symbol, {}).get(row['period']) == digest([row, decision])
+
+
 def write_atomic(path, payload):
     path.parent.mkdir(parents=True, exist_ok=True)
     with tempfile.NamedTemporaryFile(dir=path.parent, delete=False) as tmp:
@@ -96,7 +101,8 @@ def review(args):
         if args.expect and args.expect != version:
             raise ValueError('Evidence has changed. Check the quarter again.')
         state = '確認済み' if args.command == 'reviewed' else '未確認'
-        if official(row, decision) != state:
+        baseline = load(DATA / 'demo-quarters.json')
+        if official(row, decision) != state or has_demo_default(baseline, key[0], row, decision):
             history.append(dict(symbol=key[0], period=key[1], revision=decision['revision'] + 1 if decision else 1,
                                 state=state, evidence=version, saved_at=datetime.now(timezone.utc).isoformat(timespec='seconds')))
             write_atomic(DATA / 'reviews.json', (json.dumps(history, ensure_ascii=False, indent=2)+'\n').encode())
@@ -155,6 +161,7 @@ def filing_updates(template):
 def build_snapshot():
     quarters, dates = inputs()
     _, latest = decisions()
+    baseline = load(DATA / 'demo-quarters.json')
     manifest = load(DATA / 'reports.json')
     documents = {}
     for symbol, rows in quarters.items():
@@ -168,7 +175,11 @@ def build_snapshot():
                 raise ValueError('Report checksum mismatch: ' + name)
             documents['reports/' + name] = content
         for row in rows:
-            row['state'] = official(row, latest.get((symbol,row['period'])))
+            decision = latest.get((symbol, row['period']))
+            is_example = has_demo_default(baseline, symbol, row, decision)
+            row['state'] = official(row, decision)
+            if is_example:
+                row['demoReviewed'] = True
     template = (ROOT / 'index.template.html').read_text(encoding='utf-8')
     template = filing_updates(template)
     for marker, content in {
