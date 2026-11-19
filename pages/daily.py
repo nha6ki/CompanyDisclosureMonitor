@@ -199,7 +199,16 @@ def run(contact, *, day=None, get=None, no_qwen=False, retry=False):
 
 
 def approve(sym, acc, sid, expected):
-    with locked(PRIVATE), manage.lock('reviews'):
+    with locked(PRIVATE):
+        _approve_locked(sym, acc, sid, expected)
+        manage.build()
+        status_file = PRIVATE/'status.json'
+        summary = load(status_file) if status_file.is_file() else dict(checked_at=datetime.now(timezone.utc).isoformat(), errors={})
+        highlights.index_page(PRIVATE, load(PRIVATE/'queue.json'), summary)
+
+
+def _approve_locked(sym, acc, sid, expected):
+    with manage.lock('reviews'):
         job=load(PRIVATE/'queue.json')[sym+'/'+acc]
         entry=job['candidate']
         section=entry['sections'][sid]
@@ -211,7 +220,6 @@ def approve(sym, acc, sid, expected):
         filing['sections']={k:v for k,v in filing['sections'].items() if v['sourceHash']==job['version']}
         filing['sections'][sid]=dict(section,state='reviewed')
         save(dest,approved)
-    manage.build()
 
 
 if __name__=='__main__':

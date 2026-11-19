@@ -106,7 +106,10 @@ def extract(folder, job, fetch, config, retry=False, runner=llm_runner.run):
             checked=llm_runner.events.validate(payload,{acc:ctx})
             if not checked['mechanical_checks_passed']:
                 notes.append(sid+' 保存された候補と原文が一致しません。');continue
-            candidate['sections'][sid]=narratives.section(payload['filings'][0],doc,'pending')
+            filing = payload['filings'][0]
+            if filing['extraction_status'] == 'needs_review':
+                notes.append(sid+' モデルが本文の判断を保留しました。')
+            candidate['sections'][sid]=narratives.section(filing,doc,'pending')
         if transient: break
     if not parsed['sections']: notes.append('本文をItem単位に分割できませんでした。')
     job['candidate']=candidate
@@ -142,6 +145,21 @@ def process_queue(folder, queue, fetch, retry, persist, summary):
             if 'network_error' in failure: break
 
 
+def ledger_records(html, quarters):
+    """Mirror issuerFilings() in the Pages UI, including quarter-only 8-K links."""
+    entries = json.loads(html.split(narratives.MARKER, 1)[1].split('</script>', 1)[0])
+    records = {}
+    for sym in ISSUERS:
+        batch = entries[sym]
+        for row in quarters[sym]:
+            if row['accession'] and row['filing']:
+                batch.setdefault(row['accession'], dict(date=row['releaseDate'], form='8-K', url=row['filing'], items=[]))
+        for acc, row in batch.items():
+            records[sym+'/'+acc] = dict(ticker=sym, accession_number=acc, filing_date=row['date'],
+                form=row['form'], document_url=row['url'], api_items=row['items'])
+    return records
+
+
 def index_page(folder, queue, summary):
     view=folder/'review'
     base=(manage.OUTPUT/'index.html').read_text()
@@ -151,6 +169,24 @@ def index_page(folder, queue, summary):
              '<style>body{max-width:64rem;margin:2rem auto;padding:0 1rem;font:16px/1.65 system-ui;color:#203b50}article{border-top:1px solid #ccd5da;padding:.6rem 0}h3,p{margin:.35rem 0}code{overflow-wrap:anywhere}a{color:#125885}</style>',
              '<h1>開示要点の確認候補</h1><p>ローカルで抽出した8-K本文の候補です。要点と原文の段落を見比べてください。</p>',
              '<p>最終チェック '+escape(summary['checked_at'])+'</p>']
+    targets = ledger_records(base, manage.inputs()[0])
+    records = {}
+    for key, record in targets.items():
+        job = queue.get(key, {})
+        records[key] = dict(record=record, state=job.get('state', 'pending'), notes=job.get('notes', []),
+                            candidate=job.get('candidate'))
+    states = {key:row['state'] for key, row in records.items()}
+    complete = sum(state == 'done' for state in states.values())
+    attachment = sum(state == 'attachment' for state in states.values())
+    manual = sum(state == 'manual' for state in states.values())
+    remaining = len(states) - complete - attachment - manual
+    listing.append(f'<p>台帳掲載 {len(targets)}件 · 抽出済 {complete}件 · 添付一覧のみ {attachment}件 · '
+                   f'原文確認が必要 {manual}件 · 未処理 {remaining}件</p>')
+    report = dict(model=MODEL, checked_at=summary['checked_at'], total=len(targets), extracted=complete,
+                  attachment_only=attachment, manual=manual, outstanding=remaining, errors=summary['errors'],
+                  filings=records)
+    write_atomic(view/'backfill-results.json', json.dumps(report, ensure_ascii=False, indent=2).encode())
+    listing.append('<p><a href="backfill-results.json" download>抽出結果と根拠をダウンロード（JSON）</a></p>')
     for key,msg in summary['errors'].items():listing.append('<p>'+escape(key+' · '+msg)+'</p>')
     for sym,issues in summary.get('incidents',{}).items():
         for item in issues:
@@ -162,11 +198,23 @@ def index_page(folder, queue, summary):
         for job in batch:
             r=job['record'];acc=r['accession_number']
             entry=job.get('candidate') or metadata(r)
-            original.setdefault(sym,{})[acc]=entry
+            # Keep existing published decisions visible when their exact evidence matches.
+            previous = original.setdefault(sym, {}).get(acc, {})
+            private_sections = dict(entry['sections'])
+            for sid, approved in previous.get('sections', {}).items():
+                candidate = private_sections.get(sid)
+                if approved.get('state') == 'reviewed' and (not job.get('version') or
+                        approved['sourceHash'] == job['version']) and (
+                        candidate is None or dict(approved, state='pending') == dict(candidate, state='pending')):
+                    private_sections[sid] = approved
+            original[sym][acc] = dict(entry, sections=private_sections)
             url='detail.html?'+urlencode(dict(lang='ja',company=sym,tab='events',filing=acc))
             listing.append('<article><h3><a href="'+escape(url,quote=True)+'">'+escape(r['filing_date']+' · '+r['form']+' · '+acc)+'</a></h3><p>'+escape(STATES[job['state']])+'</p>')
             for note in job.get('notes',[]): listing.append('<p>'+escape(note)+'</p>')
             for sid,section in entry['sections'].items():
+                if private_sections[sid].get('state') == 'reviewed':
+                    listing.append('<p>'+escape(sid+' · 確認済み')+'</p>')
+                    continue
                 cmd='.venv-pages/bin/python pages/daily.py --approve '+' '.join([sym,acc,sid,digest(section)])
                 listing.append('<details><summary>'+escape('Item '+section['item']+' · '+sid+' を確認した後の承認コマンド')+'</summary><code>'+escape(cmd)+'</code></details>')
             listing.append('</article>')

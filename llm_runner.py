@@ -146,9 +146,13 @@ def post(config, body):
     if len(raw) > MAX_RESPONSE_BYTES:
         raise TrialError('response_too_large')
     try:
-        return json.loads(raw)
+        response = json.loads(raw)
     except (ValueError, UnicodeError):
         raise TrialError('response_not_json') from None
+    if config['model'] == 'nvidia-qwen38-27b:16k' and urlsplit(config['base_url']).hostname == '127.0.0.1':
+        if not isinstance(response, dict) or response.get('model') != config['model']:
+            raise TrialError('unexpected_ollama_response_model')
+    return response
 
 
 def parse_response(response):

@@ -191,9 +191,15 @@ class PreviewHandler(SimpleHTTPRequestHandler):
         super().do_GET()
 
     def translate_path(self, path):
-        from urllib.parse import urlsplit
-        name = urlsplit(path).path
-        local = {'/local-review/':'index.html','/local-review/index.html':'index.html','/local-review/detail.html':'detail.html'}
+        from urllib.parse import parse_qs, urlsplit
+        request = urlsplit(path)
+        name = request.path
+        if name in ('/', '/index.html') and parse_qs(request.query).get('tab') == ['events']:
+            review = ROOT.parent / 'register_data/pages_daily/review/detail.html'
+            if review.is_file():
+                return str(review)
+        local = {'/local-review/':'index.html','/local-review/index.html':'index.html','/local-review/detail.html':'detail.html',
+                 '/local-review/backfill-results.json':'backfill-results.json'}
         if name in local:
             return str(ROOT.parent/'register_data/pages_daily/review'/local[name])
         return super().translate_path(path)
