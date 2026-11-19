@@ -1,0 +1,258 @@
+{
+  "AAPL": {
+    "0001140361-26-042798": {
+      "date": "2026-11-09",
+      "form": "8-K",
+      "url": "https://www.sec.gov/Archives/edgar/data/320193/000114036126042798/ef20085077_8k.htm",
+      "items": [
+        "8.01",
+        "9.01"
+      ],
+      "sections": {}
+    },
+    "0000320193-26-000024": {
+      "date": "2026-11-02",
+      "form": "8-K",
+      "url": "https://www.sec.gov/Archives/edgar/data/320193/000032019326000024/aapl-20261102.htm",
+      "items": [
+        "2.02",
+        "9.01"
+      ],
+      "sections": {}
+    },
+    "0001140361-26-035325": {
+      "date": "2026-09-01",
+      "form": "8-K/A",
+      "url": "https://www.sec.gov/Archives/edgar/data/320193/000114036126035325/ef20081427_8ka.htm",
+      "items": [
+        "5.02"
+      ],
+      "sections": {}
+    }
+  },
+  "AMZN": {
+    "0001018724-26-000038": {
+      "date": "2026-10-29",
+      "form": "8-K",
+      "url": "https://www.sec.gov/Archives/edgar/data/1018724/000101872426000038/amzn-20261029.htm",
+      "items": [
+        "2.02",
+        "9.01"
+      ],
+      "sections": {}
+    },
+    "0001104659-26-107526": {
+      "date": "2026-09-14",
+      "form": "8-K",
+      "url": "https://www.sec.gov/Archives/edgar/data/1018724/000110465926107526/tm2624614d5_8k.htm",
+      "items": [
+        "8.01",
+        "9.01"
+      ],
+      "sections": {}
+    },
+    "0001018724-26-000036": {
+      "date": "2026-09-09",
+      "form": "8-K",
+      "url": "https://www.sec.gov/Archives/edgar/data/1018724/000101872426000036/amzn-20260908.htm",
+      "items": [
+        "5.02"
+      ],
+      "sections": {}
+    }
+  },
+  "GOOGL": {
+    "0001193125-26-449835": {
+      "date": "2026-11-05",
+      "form": "8-K",
+      "url": "https://www.sec.gov/Archives/edgar/data/1652044/000119312526449835/d174184d8k.htm",
+      "items": [
+        "8.01",
+        "9.01"
+      ],
+      "sections": {}
+    },
+    "0001652044-26-000080": {
+      "date": "2026-10-28",
+      "form": "8-K",
+      "url": "https://www.sec.gov/Archives/edgar/data/1652044/000165204426000080/goog-20261028.htm",
+      "items": [
+        "2.02",
+        "9.01"
+      ],
+      "sections": {}
+    }
+  },
+  "META": {
+    "0001193125-26-458525": {
+      "date": "2026-11-12",
+      "form": "8-K",
+      "url": "https://www.sec.gov/Archives/edgar/data/1326801/000119312526458525/d177728d8k.htm",
+      "items": [
+        "8.01",
+        "9.01"
+      ],
+      "sections": {}
+    },
+    "0001193125-26-450074": {
+      "date": "2026-11-05",
+      "form": "8-K",
+      "url": "https://www.sec.gov/Archives/edgar/data/1326801/000119312526450074/d166273d8k.htm",
+      "items": [
+        "8.01",
+        "9.01"
+      ],
+      "sections": {}
+    },
+    "0001193125-26-438017": {
+      "date": "2026-10-29",
+      "form": "8-K",
+      "url": "https://www.sec.gov/Archives/edgar/data/1326801/000119312526438017/d183592d8k.htm",
+      "items": [
+        "1.01",
+        "3.03",
+        "5.03",
+        "9.01"
+      ],
+      "sections": {}
+    },
+    "0001628280-26-066700": {
+      "date": "2026-10-21",
+      "form": "8-K",
+      "url": "https://www.sec.gov/Archives/edgar/data/1326801/000162828026066700/meta-20261019.htm",
+      "items": [
+        "1.01",
+        "2.02",
+        "8.01",
+        "9.01"
+      ],
+      "sections": {}
+    }
+  },
+  "MSFT": {
+    "0001193125-26-448357": {
+      "date": "2026-11-05",
+      "form": "8-K",
+      "url": "https://www.sec.gov/Archives/edgar/data/789019/000119312526448357/d177209d8k.htm",
+      "items": [
+        "5.02"
+      ],
+      "sections": {}
+    },
+    "0001193125-26-447173": {
+      "date": "2026-11-04",
+      "form": "8-K",
+      "url": "https://www.sec.gov/Archives/edgar/data/789019/000119312526447173/d178557d8k.htm",
+      "items": [
+        "8.01",
+        "9.01"
+      ],
+      "sections": {}
+    },
+    "0001193125-26-436149": {
+      "date": "2026-10-28",
+      "form": "8-K",
+      "url": "https://www.sec.gov/Archives/edgar/data/789019/000119312526436149/msft-20261028.htm",
+      "items": [
+        "8.01",
+        "9.01"
+      ],
+      "sections": {}
+    },
+    "0001193125-26-436122": {
+      "date": "2026-10-28",
+      "form": "8-K",
+      "url": "https://www.sec.gov/Archives/edgar/data/789019/000119312526436122/msft-20261028.htm",
+      "items": [
+        "2.02",
+        "9.01"
+      ],
+      "sections": {}
+    },
+    "0001193125-26-380280": {
+      "date": "2026-09-02",
+      "form": "8-K",
+      "url": "https://www.sec.gov/Archives/edgar/data/789019/000119312526380280/d291965d8k.htm",
+      "items": [
+        "7.01",
+        "9.01"
+      ],
+      "sections": {}
+    }
+  },
+  "NVDA": {
+    "0001045810-26-000088": {
+      "date": "2026-11-17",
+      "form": "8-K",
+      "url": "https://www.sec.gov/Archives/edgar/data/1045810/000104581026000088/nvda-20261117.htm",
+      "items": [
+        "2.02",
+        "9.01"
+      ],
+      "sections": {}
+    },
+    "0001045810-26-000082": {
+      "date": "2026-11-12",
+      "form": "8-K",
+      "url": "https://www.sec.gov/Archives/edgar/data/1045810/000104581026000082/nvda-20261111.htm",
+      "items": [
+        "5.02",
+        "9.01"
+      ],
+      "sections": {}
+    },
+    "0001045810-26-000078": {
+      "date": "2026-09-03",
+      "form": "8-K",
+      "url": "https://www.sec.gov/Archives/edgar/data/1045810/000104581026000078/nvda-20260902.htm",
+      "items": [
+        "8.01"
+      ],
+      "sections": {}
+    },
+    "0001045810-26-000073": {
+      "date": "2026-08-26",
+      "form": "8-K",
+      "url": "https://www.sec.gov/Archives/edgar/data/1045810/000104581026000073/nvda-20260826.htm",
+      "items": [
+        "2.02",
+        "9.01"
+      ],
+      "sections": {}
+    }
+  },
+  "TSLA": {
+    "0001628280-26-066738": {
+      "date": "2026-10-21",
+      "form": "8-K",
+      "url": "https://www.sec.gov/Archives/edgar/data/1318605/000162828026066738/tsla-20261021.htm",
+      "items": [
+        "2.02",
+        "9.01"
+      ],
+      "sections": {}
+    },
+    "0001628280-26-064366": {
+      "date": "2026-10-02",
+      "form": "8-K",
+      "url": "https://www.sec.gov/Archives/edgar/data/1318605/000162828026064366/tsla-20261002.htm",
+      "items": [
+        "2.02",
+        "9.01"
+      ],
+      "sections": {}
+    },
+    "0001628280-26-063820": {
+      "date": "2026-09-29",
+      "form": "8-K",
+      "url": "https://www.sec.gov/Archives/edgar/data/1318605/000162828026063820/tsla-20260929.htm",
+      "items": [
+        "1.01",
+        "1.02",
+        "2.03",
+        "9.01"
+      ],
+      "sections": {}
+    }
+  }
+}

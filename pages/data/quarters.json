@@ -9,10 +9,10 @@
       "accession": "0000320193-25-000007",
       "filing": "https://www.sec.gov/Archives/edgar/data/320193/000032019325000007/aapl-20250130.htm",
       "url": "https://www.sec.gov/Archives/edgar/data/320193/000032019325000007/a8-kex991q1202512282024.htm",
-      "sha": "7ecb5ff5cd7b49bb180c80c7a800255ec8bd306b225f6ba692ea393f1ffbcc6b",
+      "sha": "88381933a0de82372773601afa131b70b34b98df12dc0e9d3a03fe6c4a45fcf8",
       "quarterly": "https://www.sec.gov/Archives/edgar/data/320193/000032019325000008/aapl-20241228.htm",
       "quarterlyAccession": "0000320193-25-000008",
-      "quarterlySha": "abadbd26cda0c2d0089d133ee755a1106326b0fd026322c35a12fbd4a0bde5bf",
+      "quarterlySha": "789eb012ee6a0d34bdbab8f86bb62050fa978b8bfc5cc936958f8acff5c57289",
       "form": "10-Q",
       "facts": [
         {
@@ -208,10 +208,10 @@
       "accession": "0000320193-25-000055",
       "filing": "https://www.sec.gov/Archives/edgar/data/320193/000032019325000055/aapl-20250501.htm",
       "url": "https://www.sec.gov/Archives/edgar/data/320193/000032019325000055/a8-kex991q2202503292025.htm",
-      "sha": "555fe89b625cb1a607d023ae5179a12d34fcdcdeee23f0309b8d5f4b78905701",
+      "sha": "fa2eb2ce1e4458913399a1d87edef92014fff629444547cdbc44303b327d50b0",
       "quarterly": "https://www.sec.gov/Archives/edgar/data/320193/000032019325000057/aapl-20250329.htm",
       "quarterlyAccession": "0000320193-25-000057",
-      "quarterlySha": "eb68d9c56c3323c3e610facebbb0e7f9a21b555aa7c6e3d293972145a220ad48",
+      "quarterlySha": "886dd8df3a0898df0b9ec0a5f29312d6c1f24da334a9469911b4f02e06559444",
       "form": "10-Q",
       "facts": [
         {
@@ -399,10 +399,10 @@
       "accession": "0000320193-25-000071",
       "filing": "https://www.sec.gov/Archives/edgar/data/320193/000032019325000071/aapl-20250731.htm",
       "url": "https://www.sec.gov/Archives/edgar/data/320193/000032019325000071/a8-kex991q3202506282025.htm",
-      "sha": "f406f82840bb1b222a9112ed2c5ae609e77c7c87a8fdf8829b33ba577d22b8f4",
+      "sha": "4d535146411f47160e697f09f3301005b91019a5d973d7d90ee81124b7abb313",
       "quarterly": "https://www.sec.gov/Archives/edgar/data/320193/000032019325000073/aapl-20250628.htm",
       "quarterlyAccession": "0000320193-25-000073",
-      "quarterlySha": "ef49651a716c112d0a0373f1bb41d70fd3984f8fc6b1e0c660e90517d02fb013",
+      "quarterlySha": "9114b2af46e03c25918a2a10bee65ad40e10220692803bf98eec8e94cc8cfa1d",
       "form": "10-Q",
       "facts": [
         {
@@ -590,10 +590,10 @@
       "accession": "0000320193-25-000077",
       "filing": "https://www.sec.gov/Archives/edgar/data/320193/000032019325000077/aapl-20251030.htm",
       "url": "https://www.sec.gov/Archives/edgar/data/320193/000032019325000077/a8-kex991q4202509272025.htm",
-      "sha": "03c1c831c513dd038e9538e74a0b15c1903f4e2ecedecaee22ac192ca608532d",
+      "sha": "a3f43c7c580440a652bd9f0ad7846bf6d6d44b2b077375ca685ce0df7f9f9433",
       "quarterly": "https://www.sec.gov/Archives/edgar/data/320193/000032019325000079/aapl-20250927.htm",
       "quarterlyAccession": "0000320193-25-000079",
-      "quarterlySha": "1aa7482bc93c4fe93f0b6c1b37b2bb9f0123c751d01d34a01ac59e807bc04077",
+      "quarterlySha": "4087b45d78f642ee2290ba7e8253d1c4a3aaf10b3158568e36af38cccad621e0",
       "form": "10-K",
       "facts": [
         {
@@ -784,10 +784,10 @@
       "accession": "0000320193-26-000005",
       "filing": "https://www.sec.gov/Archives/edgar/data/320193/000032019326000005/aapl-20260129.htm",
       "url": "https://www.sec.gov/Archives/edgar/data/320193/000032019326000005/a8-kex991q1202612272025.htm",
-      "sha": "05753a0a7fa67e73cc3b03e935296c6ba37ce060d76aa75ce02272b39537e9be",
+      "sha": "c5f04e123c724c5ccbd22f59b19cb53aecf76efb45c2b2071970e5ebdd923128",
       "quarterly": "https://www.sec.gov/Archives/edgar/data/320193/000032019326000006/aapl-20251227.htm",
       "quarterlyAccession": "0000320193-26-000006",
-      "quarterlySha": "120c9301f5ecd201dad9b25a7727ac6a4d76a1f5d9be7bb80c14e9360ec2aab0",
+      "quarterlySha": "8b06d6c02fa1d336b678cf2ce6b36901435de6eb48d5103e1e9318666d2b89dc",
       "form": "10-Q",
       "facts": [
         {
@@ -983,10 +983,10 @@
       "accession": "0000320193-26-000011",
       "filing": "https://www.sec.gov/Archives/edgar/data/320193/000032019326000011/aapl-20260430.htm",
       "url": "https://www.sec.gov/Archives/edgar/data/320193/000032019326000011/a8-kex991q2202603282026.htm",
-      "sha": "25f9da5f0733fb3ac055e9513a66fbbc68ff4f46094c44d644c86ac87f2fb8d7",
+      "sha": "75a7880bee7d582b622a0034d50053fa4662c36c9cf942d7629ad563a4eda4cc",
       "quarterly": "https://www.sec.gov/Archives/edgar/data/320193/000032019326000013/aapl-20260328.htm",
       "quarterlyAccession": "0000320193-26-000013",
-      "quarterlySha": "5c5e26db2d80447c02149798b109dd37c296c4375a3763ccdf95a5e35a71abfa",
+      "quarterlySha": "6f608e4e59c227a05e72ebcdc6c7e3ffb48f3cd28136992ce4d032bb352a94d3",
       "form": "10-Q",
       "facts": [
         {
@@ -1174,10 +1174,10 @@
       "accession": "0000320193-26-000018",
       "filing": "https://www.sec.gov/Archives/edgar/data/320193/000032019326000018/aapl-20260730.htm",
       "url": "https://www.sec.gov/Archives/edgar/data/320193/000032019326000018/a8-kex991q3202606272026.htm",
-      "sha": "418e50d3e380df70c98af5d79644f6972ec3b526834407a828caf94eb6f1e35c",
+      "sha": "45c8d2346495344cd29befb31ae4d77e20929d0737719cbc1edd63501f362dd5",
       "quarterly": "https://www.sec.gov/Archives/edgar/data/320193/000032019326000020/aapl-20260627.htm",
       "quarterlyAccession": "0000320193-26-000020",
-      "quarterlySha": "9afca93bb6e1dd4a20410bb6e708cdf5e9d5cbed3827c55dcde7efb655edf0e4",
+      "quarterlySha": "dfe7093c3c55ae8855a57a0b844c72e617a0538e99d10cd9fd06dc60f58ec7f4",
       "form": "10-Q",
       "facts": [
         {
@@ -1365,10 +1365,10 @@
       "accession": "0000320193-26-000024",
       "filing": "https://www.sec.gov/Archives/edgar/data/320193/000032019326000024/aapl-20261102.htm",
       "url": "https://www.sec.gov/Archives/edgar/data/320193/000032019326000024/a8-kex991q4202609262026.htm",
-      "sha": "1055bbd4fc275a543f1ce7d7e3eb34ba5c79f2a04226bfa2df355da5c489a752",
+      "sha": "db6ba51956b57a51245db516840aad082ff29f7ca08809d9738f1426f6f15299",
       "quarterly": "https://www.sec.gov/Archives/edgar/data/320193/000032019326000026/aapl-20260926.htm",
       "quarterlyAccession": "0000320193-26-000026",
-      "quarterlySha": "a57a9acaf658191789ccc31102d9e86d97dab038ae65b7efcd5a8fb1c5feafdc",
+      "quarterlySha": "459b63b059e4036714e3be84db04d343bef03c42d95659004f2e2e743717115c",
       "form": "10-K",
       "facts": [
         {
@@ -1561,10 +1561,10 @@
       "accession": "0001018724-25-000002",
       "filing": "https://www.sec.gov/Archives/edgar/data/1018724/000101872425000002/amzn-20250206.htm",
       "url": "https://www.sec.gov/Archives/edgar/data/1018724/000101872425000002/amzn-20241231xex991.htm",
-      "sha": "bab7e95596ad922cd4edef04b02f60c8b0a26a2cca3c5850ecc60d34437f97cf",
+      "sha": "8dc0e2a5a0991771b11c4c076e24b61c77343ff3d372299e4ffffc604f9cd9ad",
       "quarterly": "https://www.sec.gov/Archives/edgar/data/1018724/000101872425000004/amzn-20241231.htm",
       "quarterlyAccession": "0001018724-25-000004",
-      "quarterlySha": "a6ce053b296d488811bb800d8f883bd1fb5d36502c5424028c3c4395dd68763e",
+      "quarterlySha": "fe427cad09b0f6aea3f1771b0289cffec4a18f856eb43a6971558772331a6482",
       "form": "10-K",
       "facts": [
         {
@@ -1781,10 +1781,10 @@
       "accession": "0001018724-25-000034",
       "filing": "https://www.sec.gov/Archives/edgar/data/1018724/000101872425000034/amzn-20250501.htm",
       "url": "https://www.sec.gov/Archives/edgar/data/1018724/000101872425000034/amzn-20250331xex991.htm",
-      "sha": "b6223a67e007aed7c5f20f088c6edab33eb5ad586ee1851d802f69eaaf01466a",
+      "sha": "8a31d4f7c9a1993cc0c0c74d33fdcb23695f212bf1055912c38642afba299299",
       "quarterly": "https://www.sec.gov/Archives/edgar/data/1018724/000101872425000036/amzn-20250331.htm",
       "quarterlyAccession": "0001018724-25-000036",
-      "quarterlySha": "e37180be577b82df310200b1d3610202fda6872e5a7d61fe081f33a2b3023101",
+      "quarterlySha": "b7cd5a07b5309c50962c4bafe69860fa19d299023b8d91f5f6e865a9b98c06f8",
       "form": "10-Q",
       "facts": [
         {
@@ -1980,10 +1980,10 @@
       "accession": "0001018724-25-000084",
       "filing": "https://www.sec.gov/Archives/edgar/data/1018724/000101872425000084/amzn-20250731.htm",
       "url": "https://www.sec.gov/Archives/edgar/data/1018724/000101872425000084/amzn-20250630xex991.htm",
-      "sha": "831907eb9d07d10d9b3cf0ccaaccd402a3174fd2292ff736ab62580e2a01dab2",
+      "sha": "c238076d7c57f46397c3bd9dd32df99d424d439ecd8ec4e1f10bcfa822a4a75d",
       "quarterly": "https://www.sec.gov/Archives/edgar/data/1018724/000101872425000086/amzn-20250630.htm",
       "quarterlyAccession": "0001018724-25-000086",
-      "quarterlySha": "ded0385afc1d6ab0789742696fc7370f1fe8e673514e845c4c5f6dd5f4378eac",
+      "quarterlySha": "a0232ab2252af57637777f9e53a113bc566051aba0dd8bfdf62a811370ef0b0a",
       "form": "10-Q",
       "facts": [
         {
@@ -2179,10 +2179,10 @@
       "accession": "0001018724-25-000121",
       "filing": "https://www.sec.gov/Archives/edgar/data/1018724/000101872425000121/amzn-20251030.htm",
       "url": "https://www.sec.gov/Archives/edgar/data/1018724/000101872425000121/amzn-20250930xex991.htm",
-      "sha": "2be2bd88c0e1b0cbc1bfcf77859502221a7edc05bdac2d7c2660bceed7ddcb4d",
+      "sha": "e206178de18c15a73a29e22bc9f2febf78c659ee23f9f1bfc88c3f0d9f4eb5fd",
       "quarterly": "https://www.sec.gov/Archives/edgar/data/1018724/000101872425000123/amzn-20250930.htm",
       "quarterlyAccession": "0001018724-25-000123",
-      "quarterlySha": "f9dc0d026ccb4168b1fdb8814dfb17a2432c194ec568379554194a9ce4b930f2",
+      "quarterlySha": "bf4ec830dbfa6c21c1f0dfaaccdd1a8b7041b33d3dfa605a23779a2b035a9565",
       "form": "10-Q",
       "facts": [
         {
@@ -2378,10 +2378,10 @@
       "accession": "0001018724-26-000002",
       "filing": "https://www.sec.gov/Archives/edgar/data/1018724/000101872426000002/amzn-20260205.htm",
       "url": "https://www.sec.gov/Archives/edgar/data/1018724/000101872426000002/amzn-20251231xex991.htm",
-      "sha": "3040e9a3a6298bf25da2a097e6c2027fd5cbacbdba30433b091d16026dc3d6a3",
+      "sha": "a0b4cc0c6709ba17582e98b000c29bd1157f5ecdf3445929af9011c76898e612",
       "quarterly": "https://www.sec.gov/Archives/edgar/data/1018724/000101872426000004/amzn-20251231.htm",
       "quarterlyAccession": "0001018724-26-000004",
-      "quarterlySha": "76d7a40c83edb532bfd48c1da4b1bdda1c14f0a28c8d82aa046b67855ed27f03",
+      "quarterlySha": "06f3c537381aab243df31aa92fd3f9040be55f56d6e7eed733ca0c47906ea7bc",
       "form": "10-K",
       "facts": [
         {
@@ -2598,10 +2598,10 @@
       "accession": "0001018724-26-000012",
       "filing": "https://www.sec.gov/Archives/edgar/data/1018724/000101872426000012/amzn-20260429.htm",
       "url": "https://www.sec.gov/Archives/edgar/data/1018724/000101872426000012/amzn-20260331xex991.htm",
-      "sha": "f9fb172506a8454d80c1adcfbc7c14efc5f0225f3728e3f3bb377965e8d3d202",
+      "sha": "3e4df865f864183d700d3e0a308e9654a07859badde5ee07282475d389557c78",
       "quarterly": "https://www.sec.gov/Archives/edgar/data/1018724/000101872426000014/amzn-20260331.htm",
       "quarterlyAccession": "0001018724-26-000014",
-      "quarterlySha": "5a47c137022a163a993ca5937ee9089ec04776e80b86bd447706f0cd113ba135",
+      "quarterlySha": "4859fff2949368b30e7940a00a288c25db42c9627291c14b3c6e6cebdd48f9dd",
       "form": "10-Q",
       "facts": [
         {
@@ -2797,10 +2797,10 @@
       "accession": "0001018724-26-000024",
       "filing": "https://www.sec.gov/Archives/edgar/data/1018724/000101872426000024/amzn-20260730.htm",
       "url": "https://www.sec.gov/Archives/edgar/data/1018724/000101872426000024/amzn-20260630xex991.htm",
-      "sha": "c48c05149809712fd31384384473b6b9710b037dc8d1f6c641d155a499dbce2a",
+      "sha": "3f0a0a00ba6d10d02221621a721f039404fa841c224385d876e4ec59bd8b1e95",
       "quarterly": "https://www.sec.gov/Archives/edgar/data/1018724/000101872426000026/amzn-20260630.htm",
       "quarterlyAccession": "0001018724-26-000026",
-      "quarterlySha": "7bd2fae20369fb3871881aa159aeb413c652c0046f0f34e23b527f8409d16ac6",
+      "quarterlySha": "49a686d6541b72f69ee34517ba5068d9ed76d856d0d691f7594aaf41a45e5127",
       "form": "10-Q",
       "facts": [
         {
@@ -2996,10 +2996,10 @@
       "accession": "0001018724-26-000038",
       "filing": "https://www.sec.gov/Archives/edgar/data/1018724/000101872426000038/amzn-20261029.htm",
       "url": "https://www.sec.gov/Archives/edgar/data/1018724/000101872426000038/amzn-20260930xex991.htm",
-      "sha": "a824be9fc31a5219e9667c5f80391b3e9365f5f17223c29142d18a7372d9e79a",
+      "sha": "efa8b88e424ec3640caa081abcb514d121565448f20d5e0a26556fabbd2ca64f",
       "quarterly": "https://www.sec.gov/Archives/edgar/data/1018724/000101872426000040/amzn-20260930.htm",
       "quarterlyAccession": "0001018724-26-000040",
-      "quarterlySha": "f0f2dd95692c8d88d073a9d90b83e806b4d073d047007a8860d30cbb5863f273",
+      "quarterlySha": "583f231e4f87aa2580773552e7272df1654f5dcccc90a01335e10b6064628ff6",
       "form": "10-Q",
       "facts": [
         {
@@ -3197,10 +3197,10 @@
       "accession": "0001652044-25-000010",
       "filing": "https://www.sec.gov/Archives/edgar/data/1652044/000165204425000010/goog-20250204.htm",
       "url": "https://www.sec.gov/Archives/edgar/data/1652044/000165204425000010/googexhibit991q42024.htm",
-      "sha": "83aab51b779c49342e81210e11d88044575b43dc72cd546556623bfa60d1c748",
+      "sha": "5997170e32a604abb0d5300a779ab3b075404b91aa2e8ccd4cbe007fb573451a",
       "quarterly": "https://www.sec.gov/Archives/edgar/data/1652044/000165204425000014/goog-20241231.htm",
       "quarterlyAccession": "0001652044-25-000014",
-      "quarterlySha": "e45854a50e0fe087c889629cbea50e019f5e5cdf4f808c8f230ada673dd9a194",
+      "quarterlySha": "f67858b4b171987ed121b2ef922211574fcef99b81465f8eb8681f15122bff7c",
       "form": "10-K",
       "facts": [
         {
@@ -3417,10 +3417,10 @@
       "accession": "0001652044-25-000040",
       "filing": "https://www.sec.gov/Archives/edgar/data/1652044/000165204425000040/goog-20250423.htm",
       "url": "https://www.sec.gov/Archives/edgar/data/1652044/000165204425000040/googexhibit991q12025.htm",
-      "sha": "b7d004b4fc2d1746b890be8c9518aa1b55c37af5a6c314370c99ec98dcf0f53b",
+      "sha": "4355ef6dd7d78c2431429e7c35eea24839830e01b2919cd4d64c177fd8360f21",
       "quarterly": "https://www.sec.gov/Archives/edgar/data/1652044/000165204425000043/goog-20250331.htm",
       "quarterlyAccession": "0001652044-25-000043",
-      "quarterlySha": "30958deed11a5bfcead58050e3a70e8cd3187ef59c718709fb5f0ac151d17b95",
+      "quarterlySha": "eeeeaccad7fbab6580f7c5bffd5c0a06f6c0e9d6ceb3fe6c4a2ea6762645a5ff",
       "form": "10-Q",
       "facts": [
         {
@@ -3616,10 +3616,10 @@
       "accession": "0001652044-25-000056",
       "filing": "https://www.sec.gov/Archives/edgar/data/1652044/000165204425000056/goog-20250723.htm",
       "url": "https://www.sec.gov/Archives/edgar/data/1652044/000165204425000056/googexhibit991q22025.htm",
-      "sha": "d1024d802fad91491e4c29a52c45cfec5070816e263d34e4610361f42363fb1d",
+      "sha": "604fb30748c6c8ccd090b8f99ead3243bf1b1a48ccc530bf1780fb5b493bc120",
       "quarterly": "https://www.sec.gov/Archives/edgar/data/1652044/000165204425000062/goog-20250630.htm",
       "quarterlyAccession": "0001652044-25-000062",
-      "quarterlySha": "90c1dbbe9864ea698bb0a85dba7656338e9884a1ad767d5e6750bff7973b633b",
+      "quarterlySha": "b573cc4ae4614ec1f1af5219f8d75fe5375e102b3a0a56acf4b8a876cb317caf",
       "form": "10-Q",
       "facts": [
         {
@@ -3833,10 +3833,10 @@
       "accession": "0001652044-25-000087",
       "filing": "https://www.sec.gov/Archives/edgar/data/1652044/000165204425000087/goog-20251029.htm",
       "url": "https://www.sec.gov/Archives/edgar/data/1652044/000165204425000087/googexhibit991q32025.htm",
-      "sha": "035146db29dd7735e02f7704d2b9e40fdb5e09a48d9c4ed7a98c17d50fa3e7e6",
+      "sha": "3cbb1dd047e9fcde0c186722e956db6e458f261a6d5d8bc5d2961444972ceb0d",
       "quarterly": "https://www.sec.gov/Archives/edgar/data/1652044/000165204425000091/goog-20250930.htm",
       "quarterlyAccession": "0001652044-25-000091",
-      "quarterlySha": "182f1db397f39d9107ad14685e6335bd9bf0fe51abe42809ba792fe4e4b3d081",
+      "quarterlySha": "8e625d4953c09b59412f3ea0ed460d6f9fca5acdf3c8d7691f8e9cff5ea11f1a",
       "form": "10-Q",
       "facts": [
         {
@@ -4050,10 +4050,10 @@
       "accession": "0001652044-26-000012",
       "filing": "https://www.sec.gov/Archives/edgar/data/1652044/000165204426000012/goog-20260204.htm",
       "url": "https://www.sec.gov/Archives/edgar/data/1652044/000165204426000012/googexhibit991q42025.htm",
-      "sha": "19cac19147e1a5cadd4fd09d25aaf00b5c281870386a2daf21f4b13e708965e3",
+      "sha": "a040a7314736fc663de5d13904ec25f15e6e26262ddd61d6832e212a73c012d3",
       "quarterly": "https://www.sec.gov/Archives/edgar/data/1652044/000165204426000018/goog-20251231.htm",
       "quarterlyAccession": "0001652044-26-000018",
-      "quarterlySha": "6cd47e03a34cdd6847ddeb6d90546a706fac3266e99359e0f1f4a00286497e46",
+      "quarterlySha": "97f15a5d1ddea729fc9762c07599f6c75e1d9c69164f35ba41de1633dcd4db90",
       "form": "10-K",
       "facts": [
         {
@@ -4270,10 +4270,10 @@
       "accession": "0001652044-26-000043",
       "filing": "https://www.sec.gov/Archives/edgar/data/1652044/000165204426000043/goog-20260429.htm",
       "url": "https://www.sec.gov/Archives/edgar/data/1652044/000165204426000043/googexhibit991q12026.htm",
-      "sha": "e82863b6c37f3059b8795b65d2884bb1b8b98fed98e5ba977263f1da8a57db88",
+      "sha": "8e82cbe5c3379a4dc0f2ea521b8c6a926b2746962d424bb6feed392e175ceb68",
       "quarterly": "https://www.sec.gov/Archives/edgar/data/1652044/000165204426000048/goog-20260331.htm",
       "quarterlyAccession": "0001652044-26-000048",
-      "quarterlySha": "e74883f95d118c0dc1488e450ad7ddfcefd137e1415601cc97e7d29c1116116e",
+      "quarterlySha": "c615cccd30204524ee25c2109abd20f3eca1209c1cc2e6e1932b9245c8e71985",
       "form": "10-Q",
       "facts": [
         {
@@ -4469,10 +4469,10 @@
       "accession": "0001652044-26-000066",
       "filing": "https://www.sec.gov/Archives/edgar/data/1652044/000165204426000066/goog-20260722.htm",
       "url": "https://www.sec.gov/Archives/edgar/data/1652044/000165204426000066/googexhibit991q22026.htm",
-      "sha": "3da2f9bed3f4d73a4498c577778dc41a1ae2433f274974e2bb08345cf02ae223",
+      "sha": "5892c3f5f320a331ca8020c45f332640d42de17b64ffb001742f4b649f8b8c4e",
       "quarterly": "https://www.sec.gov/Archives/edgar/data/1652044/000165204426000071/goog-20260630.htm",
       "quarterlyAccession": "0001652044-26-000071",
-      "quarterlySha": "a5f7079d2449fac80bcddd812d494e364f113589f62cf944b426d51fa0ddac10",
+      "quarterlySha": "a03a0dd63ca9c9b9a83fb1b88ee21dd862b42572217efeaf4484f375d648863e",
       "form": "10-Q",
       "facts": [
         {
@@ -4686,10 +4686,10 @@
       "accession": "0001652044-26-000080",
       "filing": "https://www.sec.gov/Archives/edgar/data/1652044/000165204426000080/goog-20261028.htm",
       "url": "https://www.sec.gov/Archives/edgar/data/1652044/000165204426000080/googexhibit991q32026.htm",
-      "sha": "142f91ec04cc02992e8119eaee516c1591a1aadfa7c1fede5ce5a3cf0ffee180",
+      "sha": "7b157d88c5c29b5b6dd021203bffb11d0d0d05eb44087d4629a2bf11e5ef572b",
       "quarterly": "https://www.sec.gov/Archives/edgar/data/1652044/000165204426000084/goog-20260930.htm",
       "quarterlyAccession": "0001652044-26-000084",
-      "quarterlySha": "05e101ee90c126065e67822feabb1b40a91fa17cfab83bc1ac0721ff553b9fea",
+      "quarterlySha": "bf3aa8db0b622f998e0354c2877204ec88e6545c529e5a9ebc8ea6dbc5568b86",
       "form": "10-Q",
       "facts": [
         {
@@ -4905,10 +4905,10 @@
       "accession": "0001326801-25-000014",
       "filing": "https://www.sec.gov/Archives/edgar/data/1326801/000132680125000014/meta-20250129.htm",
       "url": "https://www.sec.gov/Archives/edgar/data/1326801/000132680125000014/meta-12312024xexhibit991.htm",
-      "sha": "88b959c6a5cbfc09fe180a40d98358d82e430872bf3aa8eca0bcfd9d40309433",
+      "sha": "107d9ec38c9375cd67e65fdd22cf1c13a8b6a6dee7fdcad39dd5226d1e3caf68",
       "quarterly": "https://www.sec.gov/Archives/edgar/data/1326801/000132680125000017/meta-20241231.htm",
       "quarterlyAccession": "0001326801-25-000017",
-      "quarterlySha": "fba414e4192914a6f92f9d527aae372cfeaf72d26853528af44c74f5d9851e0d",
+      "quarterlySha": "40a1e15748d9c5a010f4dff54a572b962035d655f37033ba7412e0bb87318552",
       "form": "10-K",
       "facts": [
         {
@@ -5125,10 +5125,10 @@
       "accession": "0001326801-25-000050",
       "filing": "https://www.sec.gov/Archives/edgar/data/1326801/000132680125000050/meta-20250430.htm",
       "url": "https://www.sec.gov/Archives/edgar/data/1326801/000132680125000050/meta-03312025xexhibit991.htm",
-      "sha": "467f17e3dee7dc4d37d939dc381c0867646aaec6b8f841529dd6bbad781028d8",
+      "sha": "2a840aaad6986bc61b7188e6818f0a28b2a034258750635bceae95dff9b46147",
       "quarterly": "https://www.sec.gov/Archives/edgar/data/1326801/000132680125000054/meta-20250331.htm",
       "quarterlyAccession": "0001326801-25-000054",
-      "quarterlySha": "66bb52cbf602c6855e20375231feae6a8a80980cc7750004d7865b89e940404e",
+      "quarterlySha": "d901f3cd9456a13d3fa1f0dc84009a9d8171c1428e325cbd5ab57032a739ab7b",
       "form": "10-Q",
       "facts": [
         {
@@ -5324,10 +5324,10 @@
       "accession": "0001628280-25-036719",
       "filing": "https://www.sec.gov/Archives/edgar/data/1326801/000162828025036719/meta-20250730.htm",
       "url": "https://www.sec.gov/Archives/edgar/data/1326801/000162828025036719/meta-06302025xexhibit991.htm",
-      "sha": "8fe1f60066963270e7d57e32d361e68e34ca3561abe734d591913fbe6ffe7f44",
+      "sha": "3421d48b5bfe5c5ea00c7cfc18d1c73cbd4bdd677af7704ce28d77e66d27eeda",
       "quarterly": "https://www.sec.gov/Archives/edgar/data/1326801/000162828025036791/meta-20250630.htm",
       "quarterlyAccession": "0001628280-25-036791",
-      "quarterlySha": "d763f402798f3ddf0bce1056b43624d241e2eb5a95854ca1c114911979dcee01",
+      "quarterlySha": "38853c13840eb18a515e82ff59b14faca688b8f68e0b4fc202d6c0246cc8bb75",
       "form": "10-Q",
       "facts": [
         {
@@ -5541,10 +5541,10 @@
       "accession": "0001628280-25-047114",
       "filing": "https://www.sec.gov/Archives/edgar/data/1326801/000162828025047114/meta-20251029.htm",
       "url": "https://www.sec.gov/Archives/edgar/data/1326801/000162828025047114/meta-09302025xexhibit991.htm",
-      "sha": "019c6ef0a06dc21069a61b820e3789ad8dcb0a165b1115dcc49c782870e62240",
+      "sha": "57222f4333c8895ee0c309ca5397a14f6ff9551ac4087403e22913795c011771",
       "quarterly": "https://www.sec.gov/Archives/edgar/data/1326801/000162828025047240/meta-20250930.htm",
       "quarterlyAccession": "0001628280-25-047240",
-      "quarterlySha": "a9afbed5ca916a6647308ab21a45cbc69e7a4c5be27b8a7221fab4270ce6a657",
+      "quarterlySha": "4c255dbd7cc1083d63335f9905ec18aeaf6acedee0107eb9529d2cd22dc775f9",
       "form": "10-Q",
       "facts": [
         {
@@ -5758,10 +5758,10 @@
       "accession": "0001628280-26-003832",
       "filing": "https://www.sec.gov/Archives/edgar/data/1326801/000162828026003832/meta-20260128.htm",
       "url": "https://www.sec.gov/Archives/edgar/data/1326801/000162828026003832/meta-12312025xexhibit991.htm",
-      "sha": "f52c1c1743e862a714e8196282fc244ed3186264ba45b1c928cce62414704621",
+      "sha": "1a83b4dd10809cf53af8931dd2f8fe9e7033cd7227d9420c5b7b3cd082689ed1",
       "quarterly": "https://www.sec.gov/Archives/edgar/data/1326801/000162828026003942/meta-20251231.htm",
       "quarterlyAccession": "0001628280-26-003942",
-      "quarterlySha": "f78fe1cbc2a5c786cbb67362e22a79c19ae606f5cdbae9faed231f210a574053",
+      "quarterlySha": "eff5a208320f8f8fc19b67b600fb031bced78000934e1dd1248434331b0efe5e",
       "form": "10-K",
       "facts": [
         {
@@ -5978,10 +5978,10 @@
       "accession": "0001628280-26-028364",
       "filing": "https://www.sec.gov/Archives/edgar/data/1326801/000162828026028364/meta-20260429.htm",
       "url": "https://www.sec.gov/Archives/edgar/data/1326801/000162828026028364/meta-03312026xexhibit991.htm",
-      "sha": "90738e6f458bbea6358aabab4f6d6717337d0e628cffea8f39170bc0b410a3ac",
+      "sha": "3768b7f718c3eb9cf6722f4c53207f41eaac8665dd1f372063c31686690da22c",
       "quarterly": "https://www.sec.gov/Archives/edgar/data/1326801/000162828026028526/meta-20260331.htm",
       "quarterlyAccession": "0001628280-26-028526",
-      "quarterlySha": "08ebd28b12f9931f6db8c0803cd6b09b1f086451fd7a3625ea4c0dcec6eceb1c",
+      "quarterlySha": "007daf94f082d74bd6951e0002c754a978b19ca996e6fb8d0f07b73835f8b39d",
       "form": "10-Q",
       "facts": [
         {
@@ -6177,10 +6177,10 @@
       "accession": "0001628280-26-050596",
       "filing": "https://www.sec.gov/Archives/edgar/data/1326801/000162828026050596/meta-20260729.htm",
       "url": "https://www.sec.gov/Archives/edgar/data/1326801/000162828026050596/meta-06302026xexhibit991.htm",
-      "sha": "9141d30cf5fa5063b8f2d041bb4a08548b55a3ce526d4abcd5fd875402bb05cf",
+      "sha": "ca5276e417c2bb5ad9506ef4528f89e3ea9f583215a017e3a891fd4e563b1f72",
       "quarterly": "https://www.sec.gov/Archives/edgar/data/1326801/000162828026050705/meta-20260630.htm",
       "quarterlyAccession": "0001628280-26-050705",
-      "quarterlySha": "6ed73c37a6bf6c45f5becbf56107d45228849955dd5c6d43e0cd3e0d5e6a4d24",
+      "quarterlySha": "df53026a8a67e847be480894d41d9281180f51e214cb45d16f6b03f52de9e361",
       "form": "10-Q",
       "facts": [
         {
@@ -6394,10 +6394,10 @@
       "accession": "0001628280-26-066700",
       "filing": "https://www.sec.gov/Archives/edgar/data/1326801/000162828026066700/meta-20261019.htm",
       "url": "https://www.sec.gov/Archives/edgar/data/1326801/000162828026066700/meta-09302026xexhibit991.htm",
-      "sha": "2ea5ee6ea5f9fb960cae74f5bd421b5e052fdc3a246ade2b534757ccc673801d",
+      "sha": "8580bdbcafc3abb1f109b5c1e4bcd93ee9ebb378bacac3da03d8664a215ca79f",
       "quarterly": "https://www.sec.gov/Archives/edgar/data/1326801/000162828026066773/meta-20260930.htm",
       "quarterlyAccession": "0001628280-26-066773",
-      "quarterlySha": "0ea75a9311407dc3202c051c3166c7dbc7f4714ee77d599691dcab16b75a916e",
+      "quarterlySha": "95fbc1f1b3e8e3942b27d3206a77d8edab9b1b63ec5a61c73cdc6fe6c86a4f14",
       "form": "10-Q",
       "facts": [
         {
@@ -6613,10 +6613,10 @@
       "accession": "0000950170-25-010484",
       "filing": "https://www.sec.gov/Archives/edgar/data/789019/000095017025010484/msft-20250129.htm",
       "url": "https://www.sec.gov/Archives/edgar/data/789019/000095017025010484/msft-ex99_1.htm",
-      "sha": "10e292cf4ded056a340045cd839414f2c3a15bdb69f2b6663c24f22b31847030",
+      "sha": "76100e26930a8dec90ac350e6e4437f18f4ece1de902a069772ad29454c9a5ab",
       "quarterly": "https://www.sec.gov/Archives/edgar/data/789019/000095017025010491/msft-20241231.htm",
       "quarterlyAccession": "0000950170-25-010491",
-      "quarterlySha": "8a778c2d558e59ea40184ac0610ae37aef28275b22a2b7eb320a2c9ca66543f3",
+      "quarterlySha": "cba965eed6320d4a7b66dd77707bffd0dbebdcad2f4d14f742ad248e1ac453ec",
       "form": "10-Q",
       "facts": [
         {
@@ -6812,10 +6812,10 @@
       "accession": "0000950170-25-061032",
       "filing": "https://www.sec.gov/Archives/edgar/data/789019/000095017025061032/msft-20250430.htm",
       "url": "https://www.sec.gov/Archives/edgar/data/789019/000095017025061032/msft-ex99_1.htm",
-      "sha": "bba900f493c6e2eb55c754648b72dbafe65549440c060cd6b4d9a4f6ebee2a4d",
+      "sha": "4a063541dcb91388c8af5ede0d3ade62cd68ea32ccc96ddafe9d40c0b9f00d72",
       "quarterly": "https://www.sec.gov/Archives/edgar/data/789019/000095017025061046/msft-20250331.htm",
       "quarterlyAccession": "0000950170-25-061046",
-      "quarterlySha": "9e3518772d828182911eda6ed1d87746a0dbb0b5a121a6701c4d30d90733288c",
+      "quarterlySha": "ede67e0edab4cefd6e7ae3a932555ef605115f897a3cdf8d7ef24ceb6a6bb932",
       "form": "10-Q",
       "facts": [
         {
@@ -7011,10 +7011,10 @@
       "accession": "0000950170-25-100226",
       "filing": "https://www.sec.gov/Archives/edgar/data/789019/000095017025100226/msft-20250730.htm",
       "url": "https://www.sec.gov/Archives/edgar/data/789019/000095017025100226/msft-ex99_1.htm",
-      "sha": "d72d760a58619d84643278ae8df96721c01c70db336db6c2c002c51d17b6cfc1",
+      "sha": "3b2c219e8ac69ad5d90eedaed6fe73878ecd0f381f6cbc9a0fa41a1c2f87c7ab",
       "quarterly": "https://www.sec.gov/Archives/edgar/data/789019/000095017025100235/msft-20250630.htm",
       "quarterlyAccession": "0000950170-25-100235",
-      "quarterlySha": "78a507e1d8afa48d803a7c323d42bb8d4836fa10b87dbd8dd356f3cd86248e0f",
+      "quarterlySha": "3242ad0597ac8e02b62dc001a499916705f2ff2aed29789ed1656c047fffd655",
       "form": "10-K",
       "facts": [
         {
@@ -7231,10 +7231,10 @@
       "accession": "0001193125-25-256310",
       "filing": "https://www.sec.gov/Archives/edgar/data/789019/000119312525256310/msft-20251028.htm",
       "url": "https://www.sec.gov/Archives/edgar/data/789019/000119312525256310/msft-ex99_1.htm",
-      "sha": "baeca304411cccbe20f5f84c34f9e61d9f35aa32a18081b2ff0ffc0e94b022e8",
+      "sha": "494b5a05cf503923c0cdd5a6d8ba998f81d795256861197e103e385343ca9f2e",
       "quarterly": "https://www.sec.gov/Archives/edgar/data/789019/000119312525256321/msft-20250930.htm",
       "quarterlyAccession": "0001193125-25-256321",
-      "quarterlySha": "c0b0599c8fe5cfd5f06da76108b87ac12a93cc0088ccc00536280c1f60a5566e",
+      "quarterlySha": "36d02dea428d03aeeb7bff4700c6de36dd7c15a32ee149e022b7c98d949411ea",
       "form": "10-Q",
       "facts": [
         {
@@ -7430,10 +7430,10 @@
       "accession": "0001193125-26-027198",
       "filing": "https://www.sec.gov/Archives/edgar/data/789019/000119312526027198/msft-20260128.htm",
       "url": "https://www.sec.gov/Archives/edgar/data/789019/000119312526027198/msft-ex99_1.htm",
-      "sha": "c12168c74b879b8c85fdd6b8084b08d0fc0c4639a6fee161db2909c5b7c9ec33",
+      "sha": "92f4daed4e9482b02c12ba74f83e3630528e4c93149b71fff545c0dfb9ba81f4",
       "quarterly": "https://www.sec.gov/Archives/edgar/data/789019/000119312526027207/msft-20251231.htm",
       "quarterlyAccession": "0001193125-26-027207",
-      "quarterlySha": "50369ba60726a25ec887033e9e57f7fbcbe60eb5c4b80962132d480a950dab29",
+      "quarterlySha": "fed1474f58e6944f2984f166848cee6a174f749f8578a6f8c205d7681b7d4cca",
       "form": "10-Q",
       "facts": [
         {
@@ -7629,10 +7629,10 @@
       "accession": "0001193125-26-191457",
       "filing": "https://www.sec.gov/Archives/edgar/data/789019/000119312526191457/msft-20260429.htm",
       "url": "https://www.sec.gov/Archives/edgar/data/789019/000119312526191457/msft-ex99_1.htm",
-      "sha": "9fa555d8bfe86df184a716716c218648177ba64dca2fba9b7a95c4ee0af3c5c9",
+      "sha": "979057f46d8055af4d1095d8695f8a760df39ad96782034f507505be7d9f5828",
       "quarterly": "https://www.sec.gov/Archives/edgar/data/789019/000119312526191507/msft-20260331.htm",
       "quarterlyAccession": "0001193125-26-191507",
-      "quarterlySha": "becb5256c472e7772b2e73d150ef2d903232b3af482249e5385e5bad6d5b7301",
+      "quarterlySha": "7f0c80697452fba7c2257c379a7040faf17b9e3c83c0f2ad93fe6cd69ed8db74",
       "form": "10-Q",
       "facts": [
         {
@@ -7828,10 +7828,10 @@
       "accession": "0001193125-26-323632",
       "filing": "https://www.sec.gov/Archives/edgar/data/789019/000119312526323632/msft-20260729.htm",
       "url": "https://www.sec.gov/Archives/edgar/data/789019/000119312526323632/msft-ex99_1.htm",
-      "sha": "1ee486a49f19236f39f9f06f303a107ea3c59ff88f954cc1e3346dfcb192c454",
+      "sha": "6aab549a75f357ca52f17a210a2c7ccae90e64448d1f8c93eabc6a032d779024",
       "quarterly": "https://www.sec.gov/Archives/edgar/data/789019/000119312526323660/msft-20260630.htm",
       "quarterlyAccession": "0001193125-26-323660",
-      "quarterlySha": "272a7589057cb08403551d303f80905682cdbf61f4741e495ceb0983446653a0",
+      "quarterlySha": "79896469de382160521fb3c4f4ecf8d21cc07057d6633b77feab485dd9c8ef1d",
       "form": "10-K",
       "facts": [
         {
@@ -8048,10 +8048,10 @@
       "accession": "0001193125-26-436122",
       "filing": "https://www.sec.gov/Archives/edgar/data/789019/000119312526436122/msft-20261028.htm",
       "url": "https://www.sec.gov/Archives/edgar/data/789019/000119312526436122/msft-ex99_1.htm",
-      "sha": "913edaadd93a01d9c0aa2b6fba936040b157951ba33579e7249390bc91e99b63",
+      "sha": "3a061c806bee19214af72a6f1b21d8727d4eaa32378194845646565f2c7d9438",
       "quarterly": "https://www.sec.gov/Archives/edgar/data/789019/000119312526436133/msft-20260930.htm",
       "quarterlyAccession": "0001193125-26-436133",
-      "quarterlySha": "b0a6acbf5de340588e12f990b56ece4e5d67de2922bf5aa9a6ab379c742e92a8",
+      "quarterlySha": "5af1796d36aa67843d9572e0db0b75d56485037a5125acc7d3b952ebcdf4efa7",
       "form": "10-Q",
       "facts": [
         {
@@ -8249,10 +8249,10 @@
       "accession": "0001045810-25-000021",
       "filing": "https://www.sec.gov/Archives/edgar/data/1045810/000104581025000021/nvda-20250226.htm",
       "url": "https://www.sec.gov/Archives/edgar/data/1045810/000104581025000021/q4fy25pr.htm",
-      "sha": "fa6ce87a0fdcc5575be02a3b0eee94254e40c48569daaa8f75242dccaa537df2",
+      "sha": "9db7b10f5278367e536b1cb6c85402a389cb5a0185c4c17391c5e800d32c7f99",
       "quarterly": "https://www.sec.gov/Archives/edgar/data/1045810/000104581025000023/nvda-20250126.htm",
       "quarterlyAccession": "0001045810-25-000023",
-      "quarterlySha": "74f32072fa751c1e8ac70c1aae8e017d0ca899846db563f11167d1b4d38859c2",
+      "quarterlySha": "8d7be1843e663f96dac208e7b5976b80841c2aba0218c8fdcf7cab282c69394c",
       "form": "10-K",
       "facts": [
         {
@@ -8470,10 +8470,10 @@
       "accession": "0001045810-25-000115",
       "filing": "https://www.sec.gov/Archives/edgar/data/1045810/000104581025000115/nvda-20250528.htm",
       "url": "https://www.sec.gov/Archives/edgar/data/1045810/000104581025000115/q1fy26pr.htm",
-      "sha": "79bc02be125714e0ce3c8dafce485fd7a8453e08cbd7dcb743838c62ddcd4aeb",
+      "sha": "8278e898781cd34fb480b45ebfb61c088298dffb99565f179ce32ea7ebb9fbc6",
       "quarterly": "https://www.sec.gov/Archives/edgar/data/1045810/000104581025000116/nvda-20250427.htm",
       "quarterlyAccession": "0001045810-25-000116",
-      "quarterlySha": "8302b9eadb8e89003bfbbe4396d0f55cd422eff6fd278876cbba9591498e3a7d",
+      "quarterlySha": "b3e44a0574a886217c705f41e77b798cba73511315174c2b8f8af5fabf52abdb",
       "form": "10-Q",
       "facts": [
         {
@@ -8670,10 +8670,10 @@
       "accession": "0001045810-25-000207",
       "filing": "https://www.sec.gov/Archives/edgar/data/1045810/000104581025000207/nvda-20250827.htm",
       "url": "https://www.sec.gov/Archives/edgar/data/1045810/000104581025000207/q2fy26pr.htm",
-      "sha": "bc75009f7205708f8ba1aec6de315e428165cb4f1cf44eae0753da890d08cbe3",
+      "sha": "24312cbc7ab93e85d6e76e7a71e03fb7b550d9533041ac23946b0d7223c158b5",
       "quarterly": "https://www.sec.gov/Archives/edgar/data/1045810/000104581025000209/nvda-20250727.htm",
       "quarterlyAccession": "0001045810-25-000209",
-      "quarterlySha": "88ffd85fcd099b8757914e57045672a90f662705e3f570e5b4f3a9f370226c28",
+      "quarterlySha": "874aca0688612df510db3caee7565104bca0a5711186652acdbe2dd6b1e7e984",
       "form": "10-Q",
       "facts": [
         {
@@ -8888,10 +8888,10 @@
       "accession": "0001045810-25-000228",
       "filing": "https://www.sec.gov/Archives/edgar/data/1045810/000104581025000228/nvda-20251119.htm",
       "url": "https://www.sec.gov/Archives/edgar/data/1045810/000104581025000228/q3fy26pr.htm",
-      "sha": "8ac74c45b465287f643a4b37726f70ef4ab63392692ca0cae9ef6b5f3a62621e",
+      "sha": "23151d52b241c033a5a8bfdab264449063b7f3e80e83f47e63c3dbc92ae840c3",
       "quarterly": "https://www.sec.gov/Archives/edgar/data/1045810/000104581025000230/nvda-20251026.htm",
       "quarterlyAccession": "0001045810-25-000230",
-      "quarterlySha": "03ba0025e2f9683e36028abf6b317b416bf5f0a713638682de6b898692136b35",
+      "quarterlySha": "772a564b776cd920ce24ba9276d14fd8780aa3d4e4bac4a3b15eb12442734225",
       "form": "10-Q",
       "facts": [
         {
@@ -9106,10 +9106,10 @@
       "accession": "0001045810-26-000019",
       "filing": "https://www.sec.gov/Archives/edgar/data/1045810/000104581026000019/nvda-20260225.htm",
       "url": "https://www.sec.gov/Archives/edgar/data/1045810/000104581026000019/q4fy26pr.htm",
-      "sha": "a43b65f0fef5cf4622c5c6908b255ec3dd4a409ec84ef2d7ee0321b566649666",
+      "sha": "07115b3d072d0c00eab4ad9d1b2bb1f2dbea57994dcabfbd556e3fcf6e4f4585",
       "quarterly": "https://www.sec.gov/Archives/edgar/data/1045810/000104581026000021/nvda-20260125.htm",
       "quarterlyAccession": "0001045810-26-000021",
-      "quarterlySha": "2a8b6e294f59a9437d802de932f1a8f6221c81b5c143b9e94050170b03976667",
+      "quarterlySha": "7c3b00ad631f2b571be11ec9f42af6fef7be3bc88a92594ef44ed32e68713f02",
       "form": "10-K",
       "facts": [
         {
@@ -9327,10 +9327,10 @@
       "accession": "0001045810-26-000051",
       "filing": "https://www.sec.gov/Archives/edgar/data/1045810/000104581026000051/nvda-20260520.htm",
       "url": "https://www.sec.gov/Archives/edgar/data/1045810/000104581026000051/q1fy27pr.htm",
-      "sha": "2987ebc03457f44d67d847c14a68a2fca1dd130d6c841245057a4f8b6c29843d",
+      "sha": "dc9c99b9a80ff0151307726606bc18643fb5421fa4478f52f0bd4a28b92ad225",
       "quarterly": "https://www.sec.gov/Archives/edgar/data/1045810/000104581026000052/nvda-20260426.htm",
       "quarterlyAccession": "0001045810-26-000052",
-      "quarterlySha": "705df02ed8e8c9de7fc7df965ca7cceb61b0c456b9ff34d2cdfbcea4be092ef1",
+      "quarterlySha": "388f28b1aed5ebb5cc2bfd3438e466b160b10bf82efd7df2cfbe27efdb54e2d7",
       "form": "10-Q",
       "facts": [
         {
@@ -9527,10 +9527,10 @@
       "accession": "0001045810-26-000073",
       "filing": "https://www.sec.gov/Archives/edgar/data/1045810/000104581026000073/nvda-20260826.htm",
       "url": "https://www.sec.gov/Archives/edgar/data/1045810/000104581026000073/q2fy27pr.htm",
-      "sha": "972e6c1d066a7ed8f114fcd866c89177c6bfb3f54a80c318b71a8d936fb0d164",
+      "sha": "803818d975db5e881dcf0dab2fabbc97d2bf4a13f8a078b3f3ed9207d51f75c9",
       "quarterly": "https://www.sec.gov/Archives/edgar/data/1045810/000104581026000075/nvda-20260726.htm",
       "quarterlyAccession": "0001045810-26-000075",
-      "quarterlySha": "6435175cdcf30d81a149c8f245b748aa58fcb9a5015b5b7c53aed4c47ada6500",
+      "quarterlySha": "ae28c242d8bc734fe821039eba37dd082b7765fe390f817fca91590215d53cbf",
       "form": "10-Q",
       "facts": [
         {
@@ -9745,7 +9745,7 @@
       "accession": "0001045810-26-000088",
       "filing": "https://www.sec.gov/Archives/edgar/data/1045810/000104581026000088/nvda-20261117.htm",
       "url": "https://www.sec.gov/Archives/edgar/data/1045810/000104581026000088/q3fy27pr.htm",
-      "sha": "699e2bf368f8a57fd056d7edb7d9d97f8abf4e57ec086fe988fd4933a169ef35",
+      "sha": "d954ba76d916400abb4ff133fcc4984dc125c8172b6947b673e01959a8a5b9e7",
       "quarterly": "",
       "quarterlyAccession": "",
       "quarterlySha": "",
@@ -9887,7 +9887,7 @@
       "accession": "0001628280-25-002993",
       "filing": "https://www.sec.gov/Archives/edgar/data/1318605/000162828025002993/tsla-20250129.htm",
       "url": "https://www.sec.gov/Archives/edgar/data/1318605/000162828025002993/exhibit991.htm",
-      "sha": "ce4f7697ba8cc4a76c2c1b9e043d843e5fd601ddc2ffec3a5b86c1c74f402d39",
+      "sha": "4482a8d70abf6c499a02f59f1df8ba2df5f89ae54205b2a625d1db3d5d6219ff",
       "quarterly": "https://www.sec.gov/Archives/edgar/data/1318605/000162828025003063/tsla-20241231.htm",
       "quarterlyAccession": "0001628280-25-003063",
       "quarterlySha": "",
@@ -10010,10 +10010,10 @@
       "accession": "0001628280-25-018851",
       "filing": "https://www.sec.gov/Archives/edgar/data/1318605/000162828025018851/tsla-20250422.htm",
       "url": "https://www.sec.gov/Archives/edgar/data/1318605/000162828025018851/exhbit991.htm",
-      "sha": "8244fbd3d5a7afe73edd61de01aad84c07a305705e5d662a0ea5df090a4eea0c",
+      "sha": "e513679ac19e168844caa3307e3b9c5629d769744ccade8efd0dab2ca868e326",
       "quarterly": "https://www.sec.gov/Archives/edgar/data/1318605/000162828025018911/tsla-20250331.htm",
       "quarterlyAccession": "0001628280-25-018911",
-      "quarterlySha": "0a4599f22d2c58fe72c8d9835c0a5244420387d111211f0150e80ecd1ca7f6fd",
+      "quarterlySha": "7b3cca39a1d9d45c942af6e1972a2eee25172634097716ade412ef45ac17fe75",
       "form": "10-Q",
       "facts": [
         {
@@ -10210,10 +10210,10 @@
       "accession": "0001628280-25-035738",
       "filing": "https://www.sec.gov/Archives/edgar/data/1318605/000162828025035738/tsla-20250723.htm",
       "url": "https://www.sec.gov/Archives/edgar/data/1318605/000162828025035738/exhibit991.htm",
-      "sha": "1a7137736db5edccf1b6fbaacafd678c13af656a92e29bb8dcb6183a1fe1e809",
+      "sha": "d6d1b29f53e2742a6fbceff9441c2c504eee56a7392fe4a098a8366a48cad4d4",
       "quarterly": "https://www.sec.gov/Archives/edgar/data/1318605/000162828025035806/tsla-20250630.htm",
       "quarterlyAccession": "0001628280-25-035806",
-      "quarterlySha": "52ed29d209255825d33858fafd29c17ca342a5d62f315c0aa6001676aa5220b0",
+      "quarterlySha": "54e26e1431852af378b28c12423cc82734d03b219060fc628c7bc714e987bff0",
       "form": "10-Q",
       "facts": [
         {
@@ -10428,10 +10428,10 @@
       "accession": "0001628280-25-045861",
       "filing": "https://www.sec.gov/Archives/edgar/data/1318605/000162828025045861/tsla-20251022.htm",
       "url": "https://www.sec.gov/Archives/edgar/data/1318605/000162828025045861/exhibit991.htm",
-      "sha": "fa490e505c1cafdf3fc825784a1076a2b5bcbb1e7ea51baf489defc747b8f13c",
+      "sha": "525bec31b2364bc962ca5e4e1cec19913782ab76137497ae8c7be100a98bd911",
       "quarterly": "https://www.sec.gov/Archives/edgar/data/1318605/000162828025045968/tsla-20250930.htm",
       "quarterlyAccession": "0001628280-25-045968",
-      "quarterlySha": "cc264bfe1648e78c3de92fb9c81bbe3b42815942f491c0536e61f9bb84fe90e7",
+      "quarterlySha": "9b803d09319f7645b43b5e504dedce89687d445c34092db3c07111125e04bbea",
       "form": "10-Q",
       "facts": [
         {
@@ -10662,7 +10662,7 @@
       "accession": "0001628280-26-003837",
       "filing": "https://www.sec.gov/Archives/edgar/data/1318605/000162828026003837/tsla-20260128.htm",
       "url": "https://www.sec.gov/Archives/edgar/data/1318605/000162828026003837/exhibit991.htm",
-      "sha": "3800555b49158d4ae501a01f3bf7773763a667d8b48c7e558443c164c9211e9a",
+      "sha": "5bc884dc4b057e77ca7dd507e812312c8a18380fde44bd4480f800ade5357453",
       "quarterly": "https://www.sec.gov/Archives/edgar/data/1318605/000162828026003952/tsla-20251231.htm",
       "quarterlyAccession": "0001628280-26-003952",
       "quarterlySha": "",
@@ -10786,10 +10786,10 @@
       "accession": "0001628280-26-026551",
       "filing": "https://www.sec.gov/Archives/edgar/data/1318605/000162828026026551/tsla-20260422.htm",
       "url": "https://www.sec.gov/Archives/edgar/data/1318605/000162828026026551/exhibit991.htm",
-      "sha": "b2c721f441170f7c1ece2528c172f5d76f10d2837d8964af2508b7a9af47d77f",
+      "sha": "dd768efc420269ffecc1a147cf892cde94e3028dfca06f3e76ae952f76c1145d",
       "quarterly": "https://www.sec.gov/Archives/edgar/data/1318605/000162828026026673/tsla-20260331.htm",
       "quarterlyAccession": "0001628280-26-026673",
-      "quarterlySha": "8feb8360434320e3d86a4c7028701fab77db791dcf7e548fb968f070ecb1d1a8",
+      "quarterlySha": "bff3d68bfd8a2d12df527021230c931fea5351cdde12711ecbc7fda8fdada41b",
       "form": "10-Q",
       "facts": [
         {
@@ -10986,10 +10986,10 @@
       "accession": "0001628280-26-049213",
       "filing": "https://www.sec.gov/Archives/edgar/data/1318605/000162828026049213/tsla-20260722.htm",
       "url": "https://www.sec.gov/Archives/edgar/data/1318605/000162828026049213/exhibit991.htm",
-      "sha": "a735c85ff171eb5407f2ef7dec916e85d222255b5b9c228c56d3b6bbaf6c49b0",
+      "sha": "543a834d97ae40521e61974551efbdf6b8eb8a03cadca8a5ae3abcf1ae1669b3",
       "quarterly": "https://www.sec.gov/Archives/edgar/data/1318605/000162828026049270/tsla-20260630.htm",
       "quarterlyAccession": "0001628280-26-049270",
-      "quarterlySha": "d73ba014ab80bb4e7b180ed03f9d8466465fd90bb783306ebea031b466399dac",
+      "quarterlySha": "ccc9a2fb8d69633f9ac91275bad990dd5c96eaa405644bdab232e5b292fce5c8",
       "form": "10-Q",
       "facts": [
         {
@@ -11204,10 +11204,10 @@
       "accession": "0001628280-26-066738",
       "filing": "https://www.sec.gov/Archives/edgar/data/1318605/000162828026066738/tsla-20261021.htm",
       "url": "https://www.sec.gov/Archives/edgar/data/1318605/000162828026066738/exhibit9914.htm",
-      "sha": "16ad073fcfab1bc5804614b9364fff04b3a47866e9435d77d632397697c466b3",
+      "sha": "cfa47434c196b3e7e65c6e851fc0ad2de4577cc85eb6885441ec6503ea6c3ca3",
       "quarterly": "https://www.sec.gov/Archives/edgar/data/1318605/000162828026066775/tsla-20260930.htm",
       "quarterlyAccession": "0001628280-26-066775",
-      "quarterlySha": "e037800784513ee9661f438d365e3b01b908ed1d892c4ca27ed43a18a678e60f",
+      "quarterlySha": "04d99f339d1f1aadb9aab1e57aeb62b4585e6003ee1ad8500342bfcf0dc23b85",
       "form": "10-Q",
       "facts": [
         {
