@@ -10,7 +10,7 @@ import re
 import time
 from urllib.error import HTTPError, URLError
 from urllib.parse import urlsplit
-from urllib.request import Request, HTTPRedirectHandler, build_opener
+from urllib.request import Request, HTTPRedirectHandler, ProxyHandler, build_opener
 
 import structured_events as events
 
@@ -86,7 +86,8 @@ def provider_schema(schema):
 
 def document_input(acc, context):
     s = context['section']
-    return {'accession_number': acc, 'source_sha256': context['source_sha256'],
+    issuer = {'issuer': context['issuer']} if 'issuer' in context else {}
+    return {**issuer, 'accession_number': acc, 'source_sha256': context['source_sha256'],
             'as_of_date': context['filing_date'], 'section_id': s['section_id'],
             'section_sha256': s['text_sha256'], 'item': s['item'],
             'blocks': [{'block_number': s['block_start'] + i, 'text': b} for i, b in enumerate(s['blocks'])]}
@@ -94,9 +95,13 @@ def document_input(acc, context):
 
 def make_request(config, doc):
     prompt = (events.DATA / 'extraction_prompt.txt').read_text(encoding='utf-8')
+    if 'issuer' in doc:
+        prompt = prompt.replace('NVIDIAの指定された提出書類', '指定された提出企業の開示書類')
     prompt += '\n今回のdocumentsは1資料だけです。この1資料だけをfilings配列に含めてください。'
     # Generation constraints alone do not communicate the full contract to the model.
     prompt += '\n出力JSON Schema:\n' + json.dumps(events.SCHEMA, ensure_ascii=False, separators=(',', ':'))
+    if 'issuer' in doc:
+        prompt = prompt.replace('"title":"NVIDIA event output v0.1"', '"title":"SEC filing event output"')
     body = {'model': config['model'] or 'MODEL_NOT_CONFIGURED', 'stream': False,
             'messages': [{'role': config['instruction_role'], 'content': prompt},
                          {'role': 'user', 'content': json.dumps({'documents': [doc]}, ensure_ascii=False)}],
@@ -128,7 +133,10 @@ def post(config, body):
     request = Request(config['base_url'].rstrip('/') + '/chat/completions',
                       data=json.dumps(body, ensure_ascii=False).encode(), headers=headers, method='POST')
     try:
-        with build_opener(NoRedirect()).open(request, timeout=config['timeout_seconds']) as response:
+        handlers = [NoRedirect()]
+        if urlsplit(config['base_url']).hostname in ('127.0.0.1','localhost','::1'):
+            handlers.append(ProxyHandler({}))
+        with build_opener(*handlers).open(request, timeout=config['timeout_seconds']) as response:
             raw = response.read(MAX_RESPONSE_BYTES + 1)
     except HTTPError as exc:
         # Do not echo provider error bodies or headers, which may contain credentials.
@@ -138,9 +146,13 @@ def post(config, body):
     if len(raw) > MAX_RESPONSE_BYTES:
         raise TrialError('response_too_large')
     try:
-        return json.loads(raw)
+        response = json.loads(raw)
     except (ValueError, UnicodeError):
         raise TrialError('response_not_json') from None
+    if config['model'] == 'nvidia-qwen38-27b:16k' and urlsplit(config['base_url']).hostname == '127.0.0.1':
+        if not isinstance(response, dict) or response.get('model') != config['model']:
+            raise TrialError('unexpected_ollama_response_model')
+    return response
 
 
 def parse_response(response):

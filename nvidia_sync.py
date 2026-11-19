@@ -20,17 +20,22 @@ FEED = "https://data.sec.gov/submissions/CIK0001045810.json"
 def select(feed, start):
     if int(feed["cik"]) != 1045810:
         raise ValueError("Expected NVIDIA submissions")
-    recent = feed["filings"]["recent"]
+    for _, row in filing_rows(feed["filings"]["recent"], start, 1045810, "NVDA", {"8-K"}):
+        yield row
+
+
+def filing_rows(recent, start, cik, ticker, forms, end=date.max):
+    """Read aligned SEC columns. The issuer CIK determines the archive folder."""
     fields = ("form", "filingDate", "accessionNumber", "primaryDocument", "items")
     for form, day, accession, filename, items in zip(*(recent[k] for k in fields), strict=True):
-        if form != "8-K" or date.fromisoformat(day) < start:
+        if form not in forms or not start <= date.fromisoformat(day) <= end:
             continue
         if not re.fullmatch(r"[0-9]{10}-[0-9]{2}-[0-9]{6}", accession):
             raise ValueError("Invalid accession number")
         if not re.fullmatch(r"[A-Za-z0-9_-][A-Za-z0-9_.-]*\.html?", filename, re.I):
             raise ValueError(f"Unsupported primary document: {filename}")
-        url = f"https://www.sec.gov/Archives/edgar/data/1045810/{accession.replace('-', '')}/{filename}"
-        yield dict(ticker="NVDA", accession_number=accession, filing_date=day,
+        url = f"https://www.sec.gov/Archives/edgar/data/{cik}/{accession.replace('-', '')}/{filename}"
+        yield form, dict(ticker=ticker, accession_number=accession, filing_date=day,
                    document_url=url, api_items=[s.strip() for s in items.split(",") if s.strip()])
 
 

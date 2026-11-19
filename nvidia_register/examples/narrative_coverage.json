@@ -1,0 +1,61 @@
+{
+  "NVDA": {
+    "0001045810-26-000028": {
+      "date": "2026-05-08",
+      "form": "8-K",
+      "url": "https://www.sec.gov/Archives/edgar/data/1045810/000104581026000028/nvda-20260507.htm",
+      "items": [
+        "5.02"
+      ],
+      "sections": {
+        "section-01": {
+          "id": "section-01",
+          "item": "5.02",
+          "state": "pending",
+          "model": "nvidia-qwen38-27b:16k",
+          "sourceHash": "87dd325ef6f0977f11e5aadd6e6f6732d957333b03bdb7fa792b922df4e52419",
+          "sectionHash": "1514eceef8aee00298bdc99011196d79ba41e005296f44dc9e83ea4e0299ea64",
+          "count": 1
+        }
+      }
+    },
+    "0001045810-26-000026": {
+      "date": "2026-04-27",
+      "form": "8-K",
+      "url": "https://www.sec.gov/Archives/edgar/data/1045810/000104581026000026/nvda-20260424.htm",
+      "items": [
+        "5.02"
+      ],
+      "sections": {
+        "section-01": {
+          "id": "section-01",
+          "item": "5.02",
+          "state": "pending",
+          "model": "nvidia-qwen38-27b:16k",
+          "sourceHash": "42a5d9b50b58468d22da14757d9108373a2a97ab052082ffdaac48528fece78f",
+          "sectionHash": "00b25cae209e60cbd2724528e4cff492d1563fb517781be6ec21710d8bab53b1",
+          "count": 2
+        }
+      }
+    },
+    "0001045810-26-000078": {
+      "date": "2026-09-03",
+      "form": "8-K",
+      "url": "https://www.sec.gov/Archives/edgar/data/1045810/000104581026000078/nvda-20260902.htm",
+      "items": [
+        "8.01"
+      ],
+      "sections": {
+        "section-01": {
+          "id": "section-01",
+          "item": "8.01",
+          "state": "pending",
+          "model": "nvidia-qwen38-27b:16k",
+          "sourceHash": "0ea586510cc2e4b817a29091e1a0c35beaf64844d98e84f199f00b15d9f35df7",
+          "sectionHash": "83810dd041a2019a273688f5d9d1b9210433aad3d77c83d18b5b88702458cab7",
+          "count": 1
+        }
+      }
+    }
+  }
+}

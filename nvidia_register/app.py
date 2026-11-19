@@ -1,5 +1,6 @@
 """Local NVIDIA register. Run with the extractor project's Python environment."""
 import argparse
+from contextlib import closing
 import csv
 from copy import deepcopy
 import io
@@ -10,13 +11,21 @@ import sys
 from hashlib import sha256
 from html import escape as h
 from pathlib import Path
-from urllib.parse import parse_qs
+from urllib.parse import parse_qs, urlencode
 from wsgiref.simple_server import make_server
 
 ROOT = Path(__file__).resolve().parent.parent
 sys.path.insert(0, str(ROOT))
 import reporting
+import companies
+import microsoft
+import alphabet
+import issuer_financials
 import periods
+import pipeline
+import workbench
+import demo_history
+import narratives
 import llm_runner
 import read_sections
 import structured_events as events
@@ -71,7 +80,7 @@ class Register:
                            document_url=doc["record"]["document_url"], status="sections_ready",
                            section=dict(section_id=source["section_id"], item=source["item"], text_sha256=source["section_sha256"],
                                         block_start=blocks[0]["block_number"], blocks=[b["text"] for b in blocks]))
-                self.add(doc, f, ctx, view["review"][acc]["status"])
+                self.add(doc, f, ctx, view["review"][acc]["status"], view["model"])
         for doc in docs.values():
             known_items = {s["ctx"]["section"]["item"] for s in doc["sections"].values()}
             if set(doc["record"]["api_items"]) - known_items - {"9.01"}:
@@ -106,10 +115,10 @@ class Register:
         issues = ["添付本文は未読（Item 9.01）"] if "9.01" in record["api_items"] else []
         return {"record":record, "issues":issues, "sections":{}}
 
-    def add(self, doc, f, ctx, state):
+    def add(self, doc, f, ctx, state, model=None):
         validate(f, ctx)
         sid = ctx["section"]["section_id"]
-        doc["sections"][sid] = dict(ctx=ctx, original=f, state=state,
+        doc["sections"][sid] = dict(ctx=ctx, original=f, state=state, model=model,
                                     fingerprint=digest([f, state]))
 
     def inbox(self, doc):
@@ -143,7 +152,7 @@ class Register:
             if len(data["filings"]) != 1:
                 raise ValueError("対象の提出書類が一意ではありません")
             if sid not in doc["sections"]:
-                self.add(doc, data["filings"][0], ctx, "pending")
+                self.add(doc, data["filings"][0], ctx, "pending", read(completed).get("config", {}).get("model"))
 
     def current(self, acc, sid):
         s = self.docs[acc]["sections"][sid]
@@ -209,11 +218,28 @@ def hidden(name,value):
 
 
 def page(title, content):
-    return f'<!doctype html><html lang="ja"><meta charset="utf-8"><meta name="viewport" content="width=device-width"><title>{h(title)}</title><style>{STYLE}</style><body><header><nav><a href="/"><strong>Company Disclosure Monitor</strong></a><a href="/demo">公開デモを見る ↗</a></nav></header><main><h1>{h(title)}</h1>{content}</main></body></html>'.encode()
+    company_links = ''.join(
+        f'<a href="/company/{symbol}?lang=ja">{h(name)}</a>'
+        for symbol, (name, _) in sorted(companies.ISSUERS.items(), key=lambda item: item[1][0]))
+    return f"""<!doctype html><html lang="ja"><meta charset="utf-8"><meta name="viewport" content="width=device-width">
+<title>{h(title)} | Company Disclosure Monitor</title><style>{STYLE}
+header {{background:white;color:#293e58;border-bottom:1px solid #d7dfe6}}
+header .mast,header nav {{max-width:1280px;margin:auto;padding-inline:clamp(16px,4vw,56px)}}
+header .mast {{padding-block:.8rem;border-bottom:1px solid #e5e9ed}}
+header nav {{min-height:0;justify-content:flex-start;gap:.1rem .3rem;flex-wrap:wrap;padding-block:.25rem;flex-direction:row;align-items:center}}
+header nav a {{padding:.4rem .65rem;text-decoration:none;border-radius:4px;white-space:nowrap}}
+header .mast a {{text-decoration:none}}header a:hover {{text-decoration:underline}}
+header nav a:hover {{background:#edf2f6}}.local-tools {{font-size:.9rem;border-top:1px solid #e5e9ed}}
+</style><body><header><div class="mast"><a href="/demo?lang=ja"><strong>Company Disclosure Monitor</strong></a></div>
+<nav aria-label="決算開示モニターと企業別台帳"><a href="/demo?lang=ja">決算開示モニター</a>{company_links}</nav>
+<nav class="local-tools" aria-label="ローカルの確認画面"><a href="/companies">7社の提出書類一覧</a>
+<a href="/workflow">四半期決算の照合</a><a href="/">NVIDIAの開示レビュー</a></nav></header>
+<main><h1>{h(title)}</h1>{content}</main></body></html>""".encode()
 
 
 def index(reg, needs):
     rows = []
+    projection = narratives.collect(reg.root, reg)["NVDA"]
     for acc, doc in reg.ordered():
         issues = list(doc["issues"])
         m = reporting.metrics(reg,acc)
@@ -233,19 +259,25 @@ def index(reg, needs):
                 msg = LABEL[state]
             if state != "reviewed":
                 issues.append(sid + " " + msg)
+        for sid, saved in projection.get(acc, {}).get("sections", {}).items():
+            if sid not in doc["sections"]:
+                count += saved["count"]
+                if saved["state"] != "reviewed":
+                    issues.append("Qwen · Item " + saved["item"] + " " + LABEL[saved["state"]])
         if needs and not issues:
             continue
         r = doc["record"]
         rows.append(f'<tr><td>{h(r["filing_date"])}</td><td><a href="/filing?acc={h(acc)}">{h(acc)}</a></td>'
                     f'<td>{count}</td><td>{h(" ／ ".join(issues) or "確認済み")}</td></tr>')
-    return page("NVIDIA 開示台帳", '<nav class="actions" aria-label="台帳メニュー"><a href="/">全件</a>　<a href="/?needs=1">要対応のみ</a>　<a href="/reviewed.csv">確認済み出来事CSV</a>　<a href="/financial.csv">確認済み決算指標CSV</a>　<a href="/checks.csv">照合検査CSV</a>　<a href="/coverage">期間カバレッジ</a></nav>'
+    return page("NVIDIAの開示レビュー", '<nav class="actions" aria-label="台帳メニュー"><a href="/">全件</a>　<a href="/?needs=1">要対応のみ</a>　<a href="/reviewed.csv">確認済み出来事CSV</a>　<a href="/financial.csv">確認済み決算指標CSV</a>　<a href="/checks.csv">照合検査CSV</a>　<a href="/coverage">期間カバレッジ</a></nav>'
                 + '<form method="post" action="/refresh">'+hidden("token",reg.token)+'<button>保存済みの開示を再取り込み</button></form>'+reporting.notices(reg)+reporting.controls(reg,hidden)
                 + f'<p>表示 {len(rows)} 書類</p><table><tr><th>提出日</th><th>提出番号</th><th>出来事数</th><th>確認状況</th></tr>{"".join(rows)}</table>')
 
 
 def detail(reg, acc):
     doc = reg.docs[acc]
-    parts = ['<a href="/">台帳に戻る</a>',f'<p><a href="{h(doc["record"]["document_url"])}">SEC原文</a></p>']
+    parts = ['<a href="/">NVIDIAの開示レビューに戻る</a>',f'<p><a href="{h(doc["record"]["document_url"])}">SEC原文</a></p>']
+    parts.append(f'<p><a href="{h(companies.narrative_url("NVDA",acc))}">この8-Kの開示要点</a></p>')
     financial = reporting.metric_page(reg,acc,hidden)
     if financial: parts.append(financial)
     parts.extend("<p>"+h("99.1の決算表を取得済み。他の添付は未確認" if financial and "添付本文は未読" in i else i)+"</p>" for i in doc["issues"])
@@ -300,6 +332,17 @@ def application(reg,port):
                 if path == "/refresh":
                     reg.refresh()
                     target = "/"
+                elif path == "/workflow-review":
+                    with closing(pipeline.connect(reg.root)) as db:
+                        pipeline.review(db,form)
+                    query = workbench.filters(parse_qs(form.get('back','')))
+                    target = '/workflow?' + urlencode({k:v for k,v in query.items() if v})
+                elif path == "/workflow-sync":
+                    pipeline.sync(reg.root,periods.fetcher(form["contact"]))
+                    target = "/workflow"
+                elif path == "/companies-fetch":
+                    companies.refresh(reg.root, periods.fetcher(form["contact"]))
+                    target = "/companies"
                 elif path == "/coverage-fetch":
                     result=periods.run(reg.root,periods.fetcher(form['contact']),form.get('first'),form.get('last'))
                     target='/coverage?range='+result['first']+'-'+result['last']
@@ -318,8 +361,45 @@ def application(reg,port):
                     raise KeyError(path)
                 status,body = "303 See Other",b""
                 headers.append(("Location",target))
-            elif method == "GET" and path == "/demo":
-                body=(Path(__file__).resolve().parent/"public_demo"/"index.html").read_bytes()
+            elif method == "GET" and path in ("/workflow", "/workflow.csv"):
+                conditions = workbench.filters(parse_qs(env["QUERY_STRING"]))
+                with closing(pipeline.connect(reg.root)) as db:
+                    rows = workbench.selected(db,conditions)
+                    if path.endswith(".csv"):
+                        body = workbench.export(rows)
+                        mime = "text/csv; charset=utf-8"
+                        headers.append(("Content-Disposition",'attachment; filename="m7-quarterly.csv"'))
+                    else:
+                        body = page("四半期決算の照合",workbench.render(db,conditions,rows,hidden,reg.token))
+            elif method == "GET" and path in ("/companies", "/companies.csv"):
+                ticker, item = companies.filters(parse_qs(env["QUERY_STRING"]))
+                data = companies.load(reg.root)
+                rows = companies.matches(data, ticker, item)
+                if path.endswith(".csv"):
+                    body = reporting.csvdata(companies.csv_rows(data, rows))
+                    mime = "text/csv; charset=utf-8"
+                    headers.append(("Content-Disposition", 'attachment; filename="m7_filings.csv"'))
+                else:
+                    body = page("7社の提出書類一覧", companies.render(
+                        data, rows, ticker, item, hidden("token", reg.token)))
+            elif method == "GET" and (path == "/demo" or path.removeprefix("/company/") in companies.ISSUERS and path.startswith("/company/")):
+                body = (Path(__file__).resolve().parent / "public_demo" / "index.html").read_bytes()
+                symbol = (parse_qs(env["QUERY_STRING"]).get("company", [""])[0]
+                          if path == "/demo" else path.rsplit("/", 1)[1])
+                if symbol not in companies.ISSUERS:
+                    symbol = ""
+                pairs = {"MSFT": microsoft.PAIR, "GOOGL": alphabet.PAIR, **issuer_financials.PAIRS}
+                if symbol in pairs and (local := pairs[symbol].local_result(reg.root)).is_file():
+                    marker = f'<script type="application/json" id="{symbol.lower()}-record">'
+                    before, middle = body.decode("utf-8").split(marker, 1)
+                    _, after = middle.split("</script>", 1)
+                    data = json.dumps(read(local), ensure_ascii=True).replace("<", chr(92) + "u003c")
+                    body = (before + marker + data + "</script>" + after).encode("utf-8")
+                with closing(pipeline.connect(reg.root)) as db:
+                    data = demo_history.presentation(r for r in pipeline.records(db) if not symbol or r['symbol']==symbol)
+                    dates = dict(db.execute('SELECT symbol,asof FROM syncs'))
+                html = demo_history.embed(body.decode("utf-8"), data, dates)
+                body = narratives.embed(html, narratives.collect(reg.root, reg), include_pending=True).encode("utf-8")
             elif method == "GET" and path == "/report":
                 number = int(parse_qs(env["QUERY_STRING"])["id"][0])
                 result = reg.db.execute("SELECT data FROM reports WHERE id=?",(number,)).fetchone()
@@ -335,7 +415,7 @@ def application(reg,port):
                     mime="text/csv; charset=utf-8"
                     headers.append(("Content-Disposition",f'attachment; filename="nvidia_{result["first"]}_{result["last"]}.csv"'))
                 else:
-                    body=page("期間カバレッジ",'<a href="/">開示台帳へ</a>'+periods.render(reg.root,result,reg,hidden))
+                    body=page("期間カバレッジ",'<a href="/">NVIDIAの開示レビューへ</a>'+periods.render(reg.root,result,reg,hidden))
             elif method == "GET" and path == "/checks.csv":
                 body,mime = reporting.reconciliation_csv(reg),"text/csv; charset=utf-8"
                 headers.append(("Content-Disposition",'attachment; filename="nvidia_checks.csv"'))
