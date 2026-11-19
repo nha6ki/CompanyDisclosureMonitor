@@ -12,6 +12,7 @@ import tempfile
 from zoneinfo import ZoneInfo
 
 import manage
+import publish_daily
 from manage import digest, load, write_atomic
 from reports import report
 
@@ -193,6 +194,11 @@ def run(contact, *, day=None, get=None, no_qwen=False, retry=False):
             highlights.process_queue(PRIVATE,queue,sources,retry,checkpoint,summary)
         highlights.update_public_states(queue)
         summary['qwen']=dict(Counter(x['state'] for x in queue.values()))
+        if (PRIVATE / publish_daily.SWITCH).is_file():
+            try:
+                summary['publication'] = publish_daily.publish(PRIVATE)
+            except (OSError, RuntimeError, ValueError, KeyError) as error:
+                summary['errors']['publication'] = str(error)
         save(PRIVATE/'status.json',summary)
         highlights.index_page(PRIVATE,queue,summary)
         print(json.dumps({k:summary[k] for k in ('changed','errors','qwen')},ensure_ascii=False),flush=True)
