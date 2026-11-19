@@ -429,8 +429,7 @@ function renderHeader(){
   for(const [symbol,name] of issuerEntries){
     let link=$('link'+symbol);
     if(!link){
-      link=node('a',onHome ? symbol : name);
-      if(onHome) link.title=name;
+      link=node('a',name);
       link.id='link'+symbol;
       nav.append(link);
     }
