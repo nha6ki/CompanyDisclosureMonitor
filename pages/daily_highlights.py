@@ -138,7 +138,7 @@ def update_public_states(queue):
     # Keep raw candidates, notes and model errors in the local review directory.
     with manage.lock('reviews'):
         path = manage.DATA / 'extraction-states.json'
-        overrides = load(path) if path.is_file() else {}
+        overrides = manage.load_optional_mapping(path)
         current = manage.extraction_states()
         changes = {}
         for key, job in queue.items():

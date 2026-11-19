@@ -34,7 +34,7 @@ python3 pages/manage.py build
 
 1. ローカルで確認後、作業ブランチ `feature/github-pages` を既存の `nha6ki/CompanyDisclosureMonitor` に保存するかをご自身で決定します。確認を追加した場合は先に `pages/data/reviews.json` をコミットします。作業ブランチの保存には、対象のリモートを確認してから `git push -u origin feature/github-pages` を実行します。
 2. 公開を決めた段階で、作業ブランチの変更をプルリクエストなどで既定ブランチに取り込みます。GitHubの **Settings → Pages → Build and deployment → Source** は **GitHub Actions** を選択します。利用できるリポジトリの可視性はGitHubプランに従います。
-3. **Actions → Publish disclosure monitor → Run workflow** で公開するブランチを選び、ご自身で実行します。付属ワークフローの起動条件は `workflow_dispatch` のみです。公開に使うファイルは `_site/` のHTMLとレポートです。次回以降も正式な変更を反映するタイミングで手動実行します。
+3. **Actions → Publish disclosure monitor → Run workflow** で公開するブランチを選び、ご自身で実行します。付属ワークフローの起動条件は `workflow_dispatch` のみです。公開に使うファイルは `_site/` のHTMLとレポートです。日次タスクからの自動反映は下記の手順で有効化できます。
 
 [GitHub Pages の公開元](https://docs.github.com/en/pages/getting-started-with-github-pages/configuring-a-publishing-source-for-your-github-pages-site) · [手動ワークフロー](https://docs.github.com/en/actions/how-tos/manage-workflow-runs/manually-run-a-workflow)
 
@@ -63,7 +63,7 @@ bash setup-daily.sh your-email@example.com 09:00
 従来の `feature/github-pages` 作業ブランチをローカルで更新し、専用の仮想環境を準備します。Windows タスク **M7 Pages Daily** を登録して初回をすぐに起動し、WSL上でプレビューを開きます。Windows側でOllamaを起動し、登録済みの `nvidia-qwen38-27b:16k` を使用してください。PCが停止中は実行できません。Windowsが実行可能になってからの遅延起動を有効にしています。
 
 - [台帳](http://127.0.0.1:8765/?lang=ja)で決算指標とExcelを確認できます。既に同じポートでプレビューを開いている場合、以前のプロセスを Ctrl+C で終了し、更新した版で開き直してください。
-- [開示要点の確認候補](http://127.0.0.1:8765/local-review/)には企業別の候補、SEC原文、根拠段落、照合に失敗した書類が表示されます。担当者の確認後に限り、画面にある節単位の承認コマンドでPages用データに取り込みます。公開操作は引き続き手動です。
+- [開示要点の確認候補](http://127.0.0.1:8765/local-review/)には企業別の候補、SEC原文、根拠段落、照合に失敗した書類が表示されます。担当者の確認後に限り、画面にある節単位の承認コマンドでPages用データに取り込みます。自動反映を有効にすると、承認した要点を次回の日次実行で公開します。
 - 確認画面を後で開くには、作業フォルダーで `python3 pages/manage.py preview` を実行します。確認画面を閉じても登録済みのタスクはWindowsで継続します。
 - Windows PowerShellで `Get-ScheduledTaskInfo -TaskName 'M7 Pages Daily'` を実行すると、前回実行結果と次回実行予定を確認できます。停止する場合は `Disable-ScheduledTask -TaskName 'M7 Pages Daily'`、再開は `Enable-ScheduledTask -TaskName 'M7 Pages Daily'` です。
 
@@ -73,7 +73,7 @@ bash setup-daily.sh your-email@example.com 09:00
 
 Qwenは初回に同梱データの取得日以降の8-K・8-K/Aと、確認期間内の各社直近1件をキューに入れます。2回目以降は新着・訂正書類と前回の未処理分が対象です。本文で認識したItem単位で、必要に応じて原文の段落番号を保って分割し、日本語の候補、日付、条件、根拠番号を検査します。添付一覧（Item 9.01）は集計のみで、添付決算資料の全文要約は対象外です。未対応見出し、長すぎる単一段落、機械検証で不一致の候補は画面に要確認と表示します。Qwen停止時は台帳とExcelを先に準備し、保存したキューを次回再試行します。
 
-日次実行はGitへのコミット、push、Pagesへの公開を行いません。確認済みの候補だけを `pages/data/approved-highlights.json` に入れます。ローカルの未確認本文・処理ログ・モデル応答はGit管理外の `register_data/pages_daily/` に保存されます。手動で早めに再試行するには次のコマンドを使用します。
+初期設定ではローカル更新まで行います。確認済みの候補だけを `pages/data/approved-highlights.json` に入れます。ローカルの未確認本文・処理ログ・モデル応答はGit管理外の `register_data/pages_daily/` に保存されます。手動で早めに再試行するには次のコマンドを使用します。
 
 ```bash
 .venv-pages/bin/python pages/daily.py --contact your-email@example.com
@@ -91,4 +91,12 @@ Qwenは初回に同梱データの取得日以降の8-K・8-K/Aと、確認期�
 
 同梱の過去のNVIDIA実行結果はモデル名、固定原文・節のハッシュ、入力段落、応答と検証結果の整合を確認し、3書類4件の候補として復元します。新たに機械検証を通った節はローカル確認画面（/local-review/）の企業別詳細に「確認待ち」で反映します。通常の会社ページには、SEC原文との照合を終えた掲載要点を表示します。根拠の照合に失敗したものは「原文確認が必要」、接続失敗は未処理として数えます。同じコマンドを再実行すると、成功済みの推論を再利用します。
 
-確認とJSONの保存は http://127.0.0.1:8766/local-review/ から行えます。公開用に採用する節は原文と見比べ、作業ディレクトリで画面の承認コマンドを実行してください。確認中のデータはローカルに保存します。GitHubへの送信・公開操作は別途手動です。
+確認とJSONの保存は http://127.0.0.1:8766/local-review/ から行えます。公開用に採用する節は原文と見比べ、作業ディレクトリで画面の承認コマンドを実行してください。確認中のデータはローカルに保存します。一括抽出はローカルで完了し、自動反映は日次タスクが担当します。
+
+## 日次更新を公開サイトに自動反映する
+
+Windowsタスク「M7 Pages Daily」とGitHub Pagesの初回公開を設定した後、最新版の配布ZIPの展開先で `bash enable-auto-publish.sh` を実行します。既存の日次タスクのスケジュールとWSLのGitHub CLI認証を利用します。有効化時には現在の差分も反映します。
+
+台帳、Excel、書類別の抽出状態、承認した要点と四半期確認記録に差分があれば、`nha6ki/CompanyDisclosureMonitor` の `main` から取得した作業コピーで公開用ビルドを検証し、対象データだけをコミットしてpushします。続けて `pages.yml` を起動し、公開の完了を確認します。候補本文と処理ログはWSLに残ります。原文確認が必要な書類やOllamaの一時停止があっても、正常に生成できた台帳の変更は反映の対象です。
+
+公開に失敗した場合は次回の日次処理で再試行します。GitHub側で同じファイルに別の更新がある場合はエラーで停止し、`main` の変更を保護します。公開状況またはエラーは `register_data/pages_daily/status.json` で確認できます。今すぐ同期するにはWSLのプロジェクトで `python3 pages/publish_daily.py`、自動公開だけを停止するには `python3 pages/publish_daily.py --disable` を実行します。

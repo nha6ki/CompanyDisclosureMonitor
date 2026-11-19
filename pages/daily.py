@@ -12,7 +12,8 @@ import tempfile
 from zoneinfo import ZoneInfo
 
 import manage
-from manage import digest, load, write_atomic
+import publish_daily
+from manage import digest, load, load_optional_mapping, write_atomic
 from reports import report
 
 PAGES = Path(__file__).resolve().parent
@@ -64,20 +65,26 @@ def quarterly(symbol, index, sources, day):
 
 def recover(folder):
     # A killed WSL process may leave a prepared transaction. Reapplying these bytes is idempotent.
+    applied = folder / 'applied'
+    if applied.exists():
+        shutil.rmtree(applied)
     pending = folder/'prepared'
     if not pending.exists():
         return
     for path in sorted(pending.rglob('*')):
         if path.is_file():
             write_atomic(PAGES/path.relative_to(pending),path.read_bytes())
-    pending.rename(folder/'applied')
-    shutil.rmtree(folder/'applied')
+    pending.rename(applied)
+    shutil.rmtree(applied)
+
+
+def resume_updates(folder):
+    with manage.lock('reports'), manage.lock('reviews'):
+        recover(folder)
 
 
 def apply_updates(folder, snapshots, day, filings, failures=None):
     with manage.lock('reports'), manage.lock('reviews'):
-        if (folder/'applied').is_dir():
-            shutil.rmtree(folder/'applied')
         recover(folder)
         data, dates = manage.inputs()
         manifest = load(manage.DATA/'reports.json')
@@ -107,7 +114,7 @@ def apply_updates(folder, snapshots, day, filings, failures=None):
             if changed:
                 for name,obj in [('quarters',data),('as-of',dates),('reports',manifest)]:
                     save(stage/'data'/(name+'.json'),obj)
-            old=load(manage.DATA/'filings.json') if (manage.DATA/'filings.json').is_file() else {}
+            old = load_optional_mapping(manage.DATA / 'filings.json')
             if filings and old!=filings:
                 save(stage/'data/filings.json',filings)
             if stage.exists():
@@ -142,16 +149,14 @@ def collect_filing_jobs(symbol, day, sources, last, baseline, queue, published):
 def run(contact, *, day=None, get=None, no_qwen=False, retry=False):
     day=day or datetime.now(ZoneInfo('America/New_York')).date()
     with locked(PRIVATE):
-        with manage.lock('reports'), manage.lock('reviews'):
-            if (PRIVATE/'applied').exists(): shutil.rmtree(PRIVATE/'applied')
-            recover(PRIVATE)
+        resume_updates(PRIVATE)
         sources=Sources(get or pipeline.fetcher(contact),PROJECT/'register_data/quarter_sources')
         state_file=PRIVATE/'last-check.json'
-        state=load(state_file) if state_file.is_file() else {}
+        state=load_optional_mapping(state_file)
         queue_file=PRIVATE/'queue.json'
-        queue=load(queue_file) if queue_file.is_file() else {}
+        queue=load_optional_mapping(queue_file)
         pubfile=PAGES/'data/filings.json'
-        published=load(pubfile) if pubfile.is_file() else {}
+        published=load_optional_mapping(pubfile)
         current,dates=manage.inputs()
         summary={'checked_at':datetime.now(timezone.utc).isoformat(),'errors':{},'incidents':{},'changed':[]}
         snapshots={}
@@ -193,6 +198,11 @@ def run(contact, *, day=None, get=None, no_qwen=False, retry=False):
             highlights.process_queue(PRIVATE,queue,sources,retry,checkpoint,summary)
         highlights.update_public_states(queue)
         summary['qwen']=dict(Counter(x['state'] for x in queue.values()))
+        if (PRIVATE / publish_daily.SWITCH).is_file():
+            try:
+                summary['publication'] = publish_daily.publish(PRIVATE)
+            except (OSError, RuntimeError, ValueError, KeyError) as error:
+                summary['errors']['publication'] = str(error)
         save(PRIVATE/'status.json',summary)
         highlights.index_page(PRIVATE,queue,summary)
         print(json.dumps({k:summary[k] for k in ('changed','errors','qwen')},ensure_ascii=False),flush=True)
@@ -216,7 +226,7 @@ def _approve_locked(sym, acc, sid, expected):
         if section['sourceHash']!=job['version'] or digest(section)!=expected:
             raise ValueError('Candidate changed. Open the local review again.')
         dest=manage.DATA/'approved-highlights.json'
-        approved=load(dest) if dest.is_file() else {}
+        approved=load_optional_mapping(dest)
         filing=approved.setdefault(sym,{}).setdefault(acc,highlights.metadata(job['record']))
         filing['sections']={k:v for k,v in filing['sections'].items() if v['sourceHash']==job['version']}
         filing['sections'][sid]=dict(section,state='reviewed')
