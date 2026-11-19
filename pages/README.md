@@ -1,6 +1,6 @@
 # GitHub Pages 版の使い方
 
-「Company Disclosure Monitor - Magnificent 7」は、7社の直近8四半期を収録した日本語・英語の静的サイトです。台帳、開示要点、SEC原文へのリンク、CSV、14個のExcelレポートを同じ公開フォルダーから配信できます。準備と正式な担当者確認はWSLで行います。
+「Company Disclosure Monitor: The Magnificent Seven」は、7社の直近8四半期を収録した日本語・英語の静的サイトです。台帳、開示要点、SEC原文へのリンク、CSV、14個のExcelレポートを同じ公開フォルダーから配信できます。準備と正式な担当者確認はWSLで行います。
 
 ## 手元で開く
 
