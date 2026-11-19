@@ -294,12 +294,12 @@ function plot(){
   $('periods').innerHTML=records.map(d=>'<span>'+d.period.slice(-2)+'<small>FY'+d.period.slice(4,6)+'</small></span>').join('');
   $('plotValue').textContent=periodText(records[selected].period)+' · '+format(values[selected])+' '+suffix;
 }
-function selectChart(action,container){
+function selectChart(action,container,restoreFocus=true){
   action();
   plot();
   ledger();
   evidence();
-  $(container).querySelector('[aria-pressed=true]').focus({preventScroll:true});
+  if(restoreFocus) $(container).querySelector('[aria-pressed=true]').focus({preventScroll:true});
 }
 const narrativeData=JSON.parse($('narrative-filings').textContent);
 const eventPage=query.get('tab')==='events';
@@ -490,7 +490,9 @@ for(const id of ['bars','rows']){
   $(id).onclick=e=>{
     const target=e.target.closest(id==='rows' ? 'tr[data-i]' : 'button[data-i]');
     if(!target)return;
-    selectChart(()=>{selected=Number(target.dataset.i)},id);
+    // A keyboard-activated button needs its focus back after the table is rebuilt.
+    const restoreFocus=id!=='rows' || e.detail===0;
+    selectChart(()=>{selected=Number(target.dataset.i)},id,restoreFocus);
     if(id==='rows') focusPanel();
   };
 }
