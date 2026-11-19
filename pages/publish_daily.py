@@ -54,9 +54,7 @@ def dispatch():
     return str(json.loads(payload)['workflow_run_id'])
 
 
-def publish(private):
-    receipt = private / 'publish-checkpoint.json'
-    state = manage.load(receipt) if receipt.exists() else {'baseline': revision_files(ROOT, BASE)}
+def read_public_inputs():
     with manage.lock('reports'), manage.lock('reviews'):
         inputs = {}
         for name in FILES:
@@ -65,6 +63,42 @@ def publish(private):
                 raise ValueError('Unexpected symlink: ' + name)
             if path.exists() or name not in OPTIONAL:
                 inputs[name] = path.read_bytes()
+    return inputs
+
+
+def files_to_stage(changed, local, state, remote):
+    staged = []
+    sending = state.get('sending', {})
+    for name in changed:
+        existing = remote.get(name)
+        if existing == local.get(name):
+            continue
+        expected = existing == state['baseline'].get(name)
+        previously_sent = name in sending and existing == sending[name]
+        if not (expected or previously_sent):
+            raise ValueError('GitHub main also changed this file; reconcile it locally: ' + name)
+        staged.append(name)
+    return staged
+
+
+def complete_deployment(receipt, state):
+    run = state.get('run')
+    if run:
+        info = json.loads(command('gh', 'run', 'view', run, '-R', REPO, '--json', 'status,conclusion'))
+        if info['status'] == 'completed' and info['conclusion'] != 'success':
+            run = None
+    if not run:
+        run = dispatch()
+        state['run'] = run
+        save(receipt, state)
+    command('gh', 'run', 'watch', run, '-R', REPO, '--exit-status')
+    return run
+
+
+def publish(private):
+    receipt = private / 'publish-checkpoint.json'
+    state = manage.load(receipt) if receipt.exists() else {'baseline': revision_files(ROOT, BASE)}
+    inputs = read_public_inputs()
     # Git blob IDs allow comparison with main without modifying the operator's working tree.
     local = {name: sha1(b'blob ' + str(len(data)).encode() + b'\0' + data).hexdigest()
              for name, data in inputs.items()}
@@ -79,18 +113,13 @@ def publish(private):
             repo = Path(temp) / 'release'
             command(*GIT, 'clone', '--quiet', '--branch', 'main', '--single-branch', '--depth', '1', REMOTE, str(repo))
             remote = revision_files(repo, 'HEAD')
-            staged = []
-            for name in changed:
-                if remote.get(name) == local.get(name):
-                    continue
-                if remote.get(name) != baseline.get(name) and not (name in sending and remote.get(name) == sending[name]):
-                    raise ValueError('GitHub main also changed this file; reconcile it locally: ' + name)
-                dest = repo / name
+            staged = files_to_stage(changed, local, state, remote)
+            for name in staged:
+                destination = repo / name
                 if name in inputs:
-                    dest.write_bytes(inputs[name])
+                    destination.write_bytes(inputs[name])
                 else:
-                    dest.unlink()
-                staged.append(name)
+                    destination.unlink()
             # Build the actual tree that GitHub will deploy, including any unrelated changes on main.
             command(sys.executable, 'pages/manage.py', 'build', cwd=repo)
             if staged:
@@ -109,16 +138,7 @@ def publish(private):
             state = dict(baseline=local, pending=True)
             save(receipt, state)
 
-    run = state.get('run')
-    if run:
-        info = json.loads(command('gh', 'run', 'view', run, '-R', REPO, '--json', 'status,conclusion'))
-        if info['status'] == 'completed' and info['conclusion'] != 'success':
-            run = None
-    if not run:
-        run = dispatch()
-        state['run'] = run
-        save(receipt, state)
-    command('gh', 'run', 'watch', run, '-R', REPO, '--exit-status')
+    run = complete_deployment(receipt, state)
     save(receipt, {'baseline':local})
     return {'state':'published', 'run_url':f'https://github.com/{REPO}/actions/runs/{run}'}
 

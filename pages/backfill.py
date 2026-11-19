@@ -4,7 +4,6 @@ from collections import Counter
 from datetime import datetime, timezone
 from hashlib import sha256
 from pathlib import Path
-import shutil
 
 import daily
 import daily_highlights as highlights
@@ -62,15 +61,11 @@ def read_prior(path, targets):
 def run(contact, prior=None, retry=False, prepare=False):
     # Use the daily task's lock, queue and evidence cache so the two entry points can resume each other.
     with daily.locked(daily.PRIVATE):
-        with manage.lock('reports'), manage.lock('reviews'):
-            applied = daily.PRIVATE / 'applied'
-            if applied.exists():
-                shutil.rmtree(applied)
-            daily.recover(daily.PRIVATE)
+        daily.resume_updates(daily.PRIVATE)
         manage.build()
         targets = highlights.ledger_records((manage.OUTPUT / 'index.html').read_text(), manage.inputs()[0])
         queue_path = daily.PRIVATE / 'queue.json'
-        queue = manage.load(queue_path) if queue_path.is_file() else {}
+        queue = manage.load_optional_mapping(queue_path)
         seed = read_prior(prior, targets) if prior else {}
         jobs = {}
         for key, record in targets.items():

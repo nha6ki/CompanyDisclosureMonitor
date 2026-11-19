@@ -22,6 +22,10 @@ def load(path):
     return json.loads(path.read_text(encoding='utf-8'))
 
 
+def load_optional_mapping(path):
+    return load(path) if path.is_file() else {}
+
+
 def digest(value):
     data = json.dumps(value, sort_keys=True, separators=(',', ':'), ensure_ascii=False, allow_nan=False)
     return sha256(data.encode()).hexdigest()
