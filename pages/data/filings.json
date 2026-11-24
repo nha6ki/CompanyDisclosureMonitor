@@ -127,6 +127,15 @@
         "9.01"
       ],
       "sections": {}
+    },
+    "0001628280-26-075541": {
+      "date": "2026-11-23",
+      "form": "8-K",
+      "url": "https://www.sec.gov/Archives/edgar/data/1326801/000162828026075541/meta-20261118.htm",
+      "items": [
+        "8.01"
+      ],
+      "sections": {}
     }
   },
   "MSFT": {
@@ -216,6 +225,16 @@
       "url": "https://www.sec.gov/Archives/edgar/data/1045810/000104581026000073/nvda-20260826.htm",
       "items": [
         "2.02",
+        "9.01"
+      ],
+      "sections": {}
+    },
+    "0001045810-26-000090": {
+      "date": "2026-11-23",
+      "form": "8-K",
+      "url": "https://www.sec.gov/Archives/edgar/data/1045810/000104581026000090/nvda-20261122.htm",
+      "items": [
+        "5.02",
         "9.01"
       ],
       "sections": {}
